@@ -280,12 +280,6 @@ export const HomePage = () => {
                 </Link>
               </div>
             </div>
-                >
-                  <span>Explore Digital Products Ecosystem</span>
-                  <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>
