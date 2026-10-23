@@ -130,16 +130,7 @@ export const Navbar = () => {
             {/* Logo Badge Container (Bigger & Crisp) */}
             <div className="relative flex items-center justify-center p-1 sm:p-1.5 rounded-2xl bg-white shadow-md border border-slate-200 group-hover:scale-105 group-hover:shadow-royal-500/25 transition-all">
               <img
-                src="/assets/namah-siddham-logo.png"
-                onError={(e) => {
-                  if (!e.target.dataset.triedJpg) {
-                    e.target.dataset.triedJpg = 'true';
-                    e.target.src = '/assets/namah-siddham-logo.jpg';
-                  } else {
-                    e.target.onerror = null;
-                    e.target.src = '/assets/namah-siddham-emblem.svg';
-                  }
-                }}
+                src="/assets/namah-siddham-emblem.svg"
                 alt="Namah Siddham Corporation Logo"
                 className="h-12 sm:h-14 md:h-16 w-auto object-contain"
               />

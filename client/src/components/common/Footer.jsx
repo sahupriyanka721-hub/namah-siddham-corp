@@ -16,16 +16,7 @@ export const Footer = () => {
               <div className="flex items-center space-x-3.5">
                 <div className="p-2 rounded-2xl bg-white shadow-md">
                   <img
-                    src="/assets/namah-siddham-logo.png"
-                    onError={(e) => {
-                      if (!e.target.dataset.triedJpg) {
-                        e.target.dataset.triedJpg = 'true';
-                        e.target.src = '/assets/namah-siddham-logo.jpg';
-                      } else {
-                        e.target.onerror = null;
-                        e.target.src = '/assets/namah-siddham-emblem.svg';
-                      }
-                    }}
+                    src="/assets/namah-siddham-emblem.svg"
                     alt="Namah Siddham Corporation Logo"
                     className="h-12 sm:h-14 w-auto object-contain"
                   />

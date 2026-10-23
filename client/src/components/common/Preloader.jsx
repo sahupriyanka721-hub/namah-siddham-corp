@@ -43,16 +43,7 @@ export const Preloader = () => {
 
           <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white p-3 shadow-2xl flex items-center justify-center transform transition-transform duration-700 animate-bounce" style={{ animationDuration: '2.5s' }}>
             <img
-              src="/assets/namah-siddham-logo.png"
-              onError={(e) => {
-                if (!e.target.dataset.triedJpg) {
-                  e.target.dataset.triedJpg = 'true';
-                  e.target.src = '/assets/namah-siddham-logo.jpg';
-                } else {
-                  e.target.onerror = null;
-                  e.target.src = '/assets/namah-siddham-emblem.svg';
-                }
-              }}
+              src="/assets/namah-siddham-emblem.svg"
               alt="Namah Siddham Corporation Logo"
               className="w-full h-full object-contain"
             />
