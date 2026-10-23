@@ -98,6 +98,7 @@ export const ContactPage = () => {
       <SeoMeta
         title="Contact Us — Corporate Inquiries"
         description="Official contact details, registered office address in Bhopal MP, and project inquiry form for Namah Siddham Corporation Private Limited."
+        keywords="Contact Namah Siddham, Bhopal Office Address, IT Company Phone Email, Project Inquiries, CIN U77100MP2026PTC087531, Corporate Inquiry Bhopal, Partner With Us"
       />
 
       {/* Header Banner */}

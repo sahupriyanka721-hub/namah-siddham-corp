@@ -52,6 +52,7 @@ export const ServicesPage = () => {
       <SeoMeta
         title="IT Services & Digital Solutions"
         description="Comprehensive IT services including Website Development, Custom Software, Mobile Applications, and Digital Marketing by Namah Siddham Corporation Private Limited."
+        keywords="Website Development Bhopal, Custom Software ERP CRM, Mobile App Development Android iOS, Digital Marketing SEO Agency, Namah Siddham IT Services, Corporate Software Engineering, Bhopal IT Company"
       />
 
       {/* Header Banner */}

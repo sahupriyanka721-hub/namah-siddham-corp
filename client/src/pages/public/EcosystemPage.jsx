@@ -41,6 +41,7 @@ export const EcosystemPage = () => {
       <SeoMeta
         title="Our Digital Products & Aggregator Platforms"
         description="Explore the portfolio of digital marketplaces and aggregator platforms operated by Namah Siddham Corporation Private Limited."
+        keywords="Digital Products, Online Marketplaces, Aggregator Platforms India, HomeServixo, Carrento, Jainamshree, SuperiorMart, Home Services Repair Bhopal, Car Rental Mobility, Jain Ecommerce Satvik, Namah Siddham Ecosystem"
       />
 
       {/* Header Banner */}

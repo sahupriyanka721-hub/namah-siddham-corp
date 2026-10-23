@@ -75,6 +75,7 @@ export const HomePage = () => {
       <SeoMeta
         title="Home"
         description="Namah Siddham Corporation Private Limited combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners."
+        keywords="Namah Siddham Corporation Private Limited, Namah Siddham, CIN U77100MP2026PTC087531, Bhopal IT Company, IT Services Madhya Pradesh, Website Development, Custom Software, Digital Platforms, HomeServixo, Carrento, Jainamshree, SuperiorMart, Aggregator Business Model"
       />
 
       {/* ========================================================================= */}

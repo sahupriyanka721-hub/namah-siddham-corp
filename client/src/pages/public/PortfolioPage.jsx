@@ -43,6 +43,7 @@ export const PortfolioPage = () => {
       <SeoMeta
         title="Portfolio & Case Studies"
         description="Explore software engineering architectures, digital platforms, and demonstration projects delivered by Namah Siddham Corporation Private Limited."
+        keywords="Software Engineering Portfolio, Case Studies, Full Stack Projects, Architecture Demonstrations, Namah Siddham Works, ERP System Implementation, Mobile App Portfolio"
       />
 
       {/* Header Banner */}
