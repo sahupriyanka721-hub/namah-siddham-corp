@@ -45,8 +45,13 @@ export const Preloader = () => {
             <img
               src="/assets/namah-siddham-logo.png"
               onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = '/assets/namah-siddham-emblem.svg';
+                if (!e.target.dataset.triedJpg) {
+                  e.target.dataset.triedJpg = 'true';
+                  e.target.src = '/assets/namah-siddham-logo.jpg';
+                } else {
+                  e.target.onerror = null;
+                  e.target.src = '/assets/namah-siddham-emblem.svg';
+                }
               }}
               alt="Namah Siddham Corporation Logo"
               className="w-full h-full object-contain"

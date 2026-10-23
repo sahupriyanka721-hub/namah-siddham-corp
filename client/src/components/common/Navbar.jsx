@@ -127,16 +127,21 @@ export const Navbar = () => {
             className="flex items-center space-x-3 sm:space-x-3.5 group focus:outline-none shrink-0"
             title="Namah Siddham Corporation Private Limited"
           >
-            {/* Logo Badge Container */}
-            <div className="relative flex items-center justify-center p-1.5 sm:p-2 rounded-2xl bg-white shadow-md border border-slate-200 group-hover:scale-105 group-hover:shadow-royal-500/25 transition-all">
+            {/* Logo Badge Container (Bigger & Crisp) */}
+            <div className="relative flex items-center justify-center p-1 sm:p-1.5 rounded-2xl bg-white shadow-md border border-slate-200 group-hover:scale-105 group-hover:shadow-royal-500/25 transition-all">
               <img
                 src="/assets/namah-siddham-logo.png"
                 onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = '/assets/namah-siddham-emblem.svg';
+                  if (!e.target.dataset.triedJpg) {
+                    e.target.dataset.triedJpg = 'true';
+                    e.target.src = '/assets/namah-siddham-logo.jpg';
+                  } else {
+                    e.target.onerror = null;
+                    e.target.src = '/assets/namah-siddham-emblem.svg';
+                  }
                 }}
                 alt="Namah Siddham Corporation Logo"
-                className="h-10 sm:h-12 w-auto object-contain"
+                className="h-12 sm:h-14 md:h-16 w-auto object-contain"
               />
             </div>
 
