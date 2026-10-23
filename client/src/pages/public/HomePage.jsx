@@ -94,25 +94,25 @@ export const HomePage = () => {
               </div>
 
               <h1 className="font-serif font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
-                Technology That Builds Businesses and Connects Opportunities
+                Technology That Builds Businesses and <span className="text-gradient-orange">Connects Opportunities</span>
               </h1>
 
               <p className="text-base sm:text-lg text-surface-300 leading-relaxed font-normal">
                 Namah Siddham Corporation Private Limited combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.
               </p>
 
-              {/* CTAs */}
+              {/* CTAs with Logo Color Combination */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-royal-500 hover:bg-royal-600 text-white font-bold text-sm sm:text-base shadow-soft-md transition-all transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-gradient-to-r from-royal-500 to-royal-600 hover:from-royal-600 hover:to-royal-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-royal-500/30 transition-all transform hover:-translate-y-0.5"
                 >
                   <span>Explore Our IT Services</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
                 <Link
                   to="/products"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-navy-800/90 hover:bg-navy-800 text-surface-200 border border-navy-700 font-semibold text-sm sm:text-base transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-navy-800/90 hover:bg-orange-500/10 text-orange-400 border border-orange-500/40 font-bold text-sm sm:text-base transition-all transform hover:-translate-y-0.5"
                 >
                   <span>Discover Our Products</span>
                 </Link>
@@ -232,23 +232,23 @@ export const HomePage = () => {
 
           {/* Two Professional Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
-            {/* Card 1: IT Services */}
-            <div className="bg-surface-100 rounded-2xl p-8 border border-surface-200 hover:border-royal-500/40 hover:shadow-soft-md transition-all space-y-4 flex flex-col justify-between">
+            {/* Card 1: IT Services (Electric Royal Blue Theme) */}
+            <div className="bg-gradient-to-br from-white to-royal-50/40 rounded-3xl p-8 border-2 border-royal-100 hover:border-royal-500 hover:shadow-xl hover:shadow-royal-500/10 transition-all space-y-4 flex flex-col justify-between group">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-royal-50 border border-royal-200 text-royal-600 flex items-center justify-center">
-                  <Code2 className="w-6 h-6" />
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-royal-500 to-royal-600 text-white shadow-md shadow-royal-500/30 flex items-center justify-center transform group-hover:scale-105 transition-transform">
+                  <Code2 className="w-7 h-7" />
                 </div>
-                <h3 className="font-serif font-bold text-xl text-navy-900">
+                <h3 className="font-serif font-bold text-2xl text-navy-900 group-hover:text-royal-600 transition-colors">
                   1. IT Services and Digital Solutions
                 </h3>
-                <p className="text-xs sm:text-sm text-surface-500 leading-relaxed">
+                <p className="text-xs sm:text-sm text-surface-600 leading-relaxed">
                   Tailored corporate websites, business management systems, custom software, ERP, mobile apps, and search marketing built for business efficiency and modern digital visibility.
                 </p>
               </div>
               <div className="pt-4 border-t border-surface-200">
                 <Link
                   to="/services"
-                  className="inline-flex items-center text-xs font-bold text-royal-600 hover:text-royal-700 group"
+                  className="inline-flex items-center text-sm font-bold text-royal-600 hover:text-royal-700 group"
                 >
                   <span>Explore IT Services &amp; Capabilities</span>
                   <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
@@ -256,23 +256,29 @@ export const HomePage = () => {
               </div>
             </div>
 
-            {/* Card 2: Digital Products & Aggregators */}
-            <div className="bg-surface-100 rounded-2xl p-8 border border-surface-200 hover:border-orange-500/40 hover:shadow-soft-md transition-all space-y-4 flex flex-col justify-between">
+            {/* Card 2: Digital Products & Aggregators (Solar Orange Theme) */}
+            <div className="bg-gradient-to-br from-white to-orange-50/40 rounded-3xl p-8 border-2 border-orange-100 hover:border-orange-500 hover:shadow-xl hover:shadow-orange-500/10 transition-all space-y-4 flex flex-col justify-between group">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-orange-50 border border-orange-200 text-orange-600 flex items-center justify-center">
-                  <Layers className="w-6 h-6" />
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-500 via-orange-500 to-orange-600 text-white shadow-md shadow-orange-500/30 flex items-center justify-center transform group-hover:scale-105 transition-transform">
+                  <Layers className="w-7 h-7" />
                 </div>
-                <h3 className="font-serif font-bold text-xl text-navy-900">
+                <h3 className="font-serif font-bold text-2xl text-navy-900 group-hover:text-orange-600 transition-colors">
                   2. Digital Products and Aggregator Platforms
                 </h3>
-                <p className="text-xs sm:text-sm text-surface-500 leading-relaxed">
+                <p className="text-xs sm:text-sm text-surface-600 leading-relaxed">
                   Specialized multi-sided platforms connecting consumers with vetted home technicians, mobility fleet hosts, authentic satvik merchants, and multi-category e-commerce sellers.
                 </p>
               </div>
               <div className="pt-4 border-t border-surface-200">
                 <Link
                   to="/products"
-                  className="inline-flex items-center text-xs font-bold text-orange-600 hover:text-orange-700 group"
+                  className="inline-flex items-center text-sm font-bold text-orange-600 hover:text-orange-700 group"
+                >
+                  <span>Explore Digital Products Ecosystem</span>
+                  <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </div>
                 >
                   <span>Explore Digital Products Ecosystem</span>
                   <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />

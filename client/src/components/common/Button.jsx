@@ -18,17 +18,19 @@ export const Button = ({
 
   const variants = {
     primary:
-      'bg-forest-900 text-white hover:bg-forest-800 focus:ring-forest-700 shadow-soft-sm',
+      'bg-gradient-to-r from-royal-500 to-royal-600 text-white hover:from-royal-600 hover:to-royal-700 focus:ring-royal-400 shadow-md shadow-royal-500/20 font-bold',
     gold:
-      'bg-gold-500 text-forest-950 font-semibold hover:bg-gold-400 focus:ring-gold-400 shadow-soft-sm',
+      'bg-gradient-to-r from-gold-500 to-orange-500 text-white font-bold hover:from-gold-400 hover:to-orange-400 focus:ring-orange-400 shadow-md shadow-orange-500/20',
+    orange:
+      'bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold hover:from-orange-600 hover:to-orange-700 focus:ring-orange-400 shadow-md shadow-orange-500/20',
     secondary:
-      'bg-sage-100 text-forest-900 hover:bg-sage-200 focus:ring-forest-600',
+      'bg-royal-50 text-royal-700 hover:bg-royal-100 border border-royal-200 focus:ring-royal-500 font-semibold',
     outline:
-      'border border-forest-800 text-forest-900 hover:bg-forest-50 focus:ring-forest-700',
+      'border-2 border-royal-500 text-royal-600 hover:bg-royal-50 focus:ring-royal-500 font-bold',
     danger:
-      'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-soft-sm',
+      'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-soft-sm font-bold',
     ghost:
-      'text-forest-800 hover:bg-forest-50 hover:text-forest-950',
+      'text-navy-800 hover:bg-royal-50 hover:text-royal-600 font-semibold',
   };
 
   const sizes = {

@@ -7,19 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Corporate Brand Palette (Calibrated to Exact "NS" Monogram Logo)
+        // Corporate Brand Palette (Exact "NS" Monogram: Electric Royal Blue & Sunburst Orange)
         royal: {
-          50: '#F0F7FF',
+          50: '#F0F6FF',
           100: '#E0EFFF',
           200: '#B8DBFF',
           300: '#75B5FF',
-          400: '#2988FF',
-          500: '#0062E3', // Logo 'N' Primary Vibrant Blue
-          600: '#0050D8',
+          400: '#3385FF',
+          500: '#0066FF', // Logo 'N' Primary Electric Royal Blue
+          600: '#0052D4',
           700: '#003EAA',
           800: '#052D75',
-          900: '#0B234F',
-          950: '#071633',
+          900: '#0A192F', // Deep Midnight Sapphire
+          950: '#050E1C',
         },
         navy: {
           50: '#F4F6F8',
@@ -30,9 +30,9 @@ export default {
           500: '#3E5775',
           600: '#2F435C',
           700: '#253549',
-          800: '#202B3C', // Dark Navy for Typography & Headers
-          900: '#17202D',
-          950: '#0A111C',
+          800: '#1A2536',
+          900: '#0F1826', // High contrast dark navy
+          950: '#070D16',
         },
         gold: {
           50: '#FFFDF0',
@@ -40,7 +40,7 @@ export default {
           200: '#FFF099',
           300: '#FFE166',
           400: '#FFD12E',
-          500: '#FFB800', // Logo Golden Yellow Accent & Ahimsa Hand
+          500: '#FFB800', // Logo Ahimsa Symbol & Sunburst Gold
           600: '#E6A200',
           700: '#B87E00',
           800: '#946200',
@@ -53,12 +53,12 @@ export default {
           200: '#FFDCAD',
           300: '#FFBE75',
           400: '#FF9B38',
-          500: '#F27700', // Logo 'S' Growth Accent Orange
-          600: '#D86200',
-          700: '#B34D00',
-          800: '#8F3B00',
-          900: '#752F00',
-          950: '#401500',
+          500: '#F57C00', // Logo 'S' Warm Solar Orange
+          600: '#E65100',
+          700: '#BF360C',
+          800: '#8F2808',
+          900: '#752006',
+          950: '#401002',
         },
         surface: {
           50: '#FFFFFF',

@@ -347,17 +347,17 @@ export const Navbar = () => {
             </Link>
           </nav>
 
-          {/* Prominent CTAs */}
-          <div className="hidden lg:flex items-center space-x-2.5 shrink-0">
+          {/* Prominent CTAs matching Logo Palette */}
+          <div className="hidden lg:flex items-center space-x-3 shrink-0">
             <Link
               to="/products"
-              className="inline-flex items-center px-3.5 py-2 text-xs font-semibold rounded-xl text-surface-200 border border-navy-700 hover:bg-navy-800 hover:text-white transition-colors"
+              className="inline-flex items-center px-4 py-2 text-xs font-bold rounded-xl text-orange-400 border border-orange-500/50 hover:bg-orange-500/10 hover:border-orange-400 hover:text-orange-300 transition-all transform hover:-translate-y-0.5"
             >
               Explore Our Products
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center px-4 py-2 text-xs font-bold rounded-xl bg-royal-500 hover:bg-royal-600 text-white shadow-soft-sm transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center px-5 py-2.5 text-xs font-extrabold rounded-xl bg-gradient-to-r from-royal-500 to-royal-600 hover:from-royal-600 hover:to-royal-700 text-white shadow-lg shadow-royal-500/30 transition-all transform hover:-translate-y-0.5"
             >
               <span>Let's Discuss Your Project</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
