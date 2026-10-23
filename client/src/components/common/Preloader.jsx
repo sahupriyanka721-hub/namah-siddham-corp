@@ -41,11 +41,20 @@ export const Preloader = () => {
           {/* Subtle spinning glow ring around emblem */}
           <div className="absolute -inset-3 rounded-full bg-gradient-to-r from-royal-500 via-gold-500 to-orange-500 opacity-30 blur-md animate-spin" style={{ animationDuration: '6s' }} />
 
-          <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-white p-3 shadow-2xl flex items-center justify-center transform transition-transform duration-700 animate-bounce" style={{ animationDuration: '2.5s' }}>
+          <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-white p-3 shadow-2xl flex items-center justify-center transform transition-transform duration-700 animate-bounce" style={{ animationDuration: '2.5s' }}>
             <img
-              src="/assets/namah-siddham-emblem.svg"
+              src="/assets/namah-siddham-logo.jpg"
+              onError={(e) => {
+                if (!e.target.dataset.triedPng) {
+                  e.target.dataset.triedPng = 'true';
+                  e.target.src = '/assets/namah-siddham-logo.png';
+                } else {
+                  e.target.onerror = null;
+                  e.target.src = '/assets/namah-siddham-emblem.svg';
+                }
+              }}
               alt="Namah Siddham Corporation Logo"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain rounded-2xl"
             />
           </div>
         </div>

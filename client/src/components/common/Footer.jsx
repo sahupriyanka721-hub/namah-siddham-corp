@@ -14,11 +14,20 @@ export const Footer = () => {
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="inline-block focus:outline-none">
               <div className="flex items-center space-x-3.5">
-                <div className="p-2 rounded-2xl bg-white shadow-md">
+                <div className="p-2 rounded-2xl bg-white shadow-lg border border-slate-100">
                   <img
-                    src="/assets/namah-siddham-emblem.svg"
+                    src="/assets/namah-siddham-logo.jpg"
+                    onError={(e) => {
+                      if (!e.target.dataset.triedPng) {
+                        e.target.dataset.triedPng = 'true';
+                        e.target.src = '/assets/namah-siddham-logo.png';
+                      } else {
+                        e.target.onerror = null;
+                        e.target.src = '/assets/namah-siddham-emblem.svg';
+                      }
+                    }}
                     alt="Namah Siddham Corporation Logo"
-                    className="h-12 sm:h-14 w-auto object-contain"
+                    className="h-14 sm:h-16 w-auto object-contain rounded-xl"
                   />
                 </div>
                 <div className="flex flex-col">
