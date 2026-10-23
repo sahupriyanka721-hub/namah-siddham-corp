@@ -60,7 +60,7 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
               src="/assets/namah-siddham-logo.png"
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = '/assets/logo-white.svg';
+                e.target.src = '/assets/namah-siddham-logo.svg';
               }}
               alt="Namah Siddham Logo"
               className="h-8 w-auto object-contain"

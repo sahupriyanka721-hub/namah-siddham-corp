@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
+import Preloader from './components/common/Preloader';
 
 // Public Pages
 import HomePage from './pages/public/HomePage';
@@ -55,7 +56,9 @@ const PublicLayout = () => {
 
 export function App() {
   return (
-    <Routes>
+    <>
+      <Preloader />
+      <Routes>
       {/* Public Pages */}
       <Route element={<PublicLayout />}>
         <Route path="/" element={<HomePage />} />
@@ -120,6 +123,7 @@ export function App() {
         <Route path="profile" element={<AdminProfile />} />
       </Route>
     </Routes>
+    </>
   );
 }
 

@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Vibrant Blue Gradients for 'N' and Arrow -->
+    <linearGradient id="nStemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0088FF" />
+      <stop offset="50%" stop-color="#0062E3" />
+      <stop offset="100%" stop-color="#003EAA" />
+    </linearGradient>
+
+    <linearGradient id="nDiagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0069F5" />
+      <stop offset="70%" stop-color="#0047BA" />
+      <stop offset="100%" stop-color="#002A7A" />
+    </linearGradient>
+
+    <linearGradient id="nRightGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0077FF" />
+      <stop offset="100%" stop-color="#004BBF" />
+    </linearGradient>
+
+    <!-- Warm Golden-Orange Gradients for 'S' -->
+    <linearGradient id="sGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFBD00" />
+      <stop offset="40%" stop-color="#FFA000" />
+      <stop offset="75%" stop-color="#F27700" />
+      <stop offset="100%" stop-color="#D84A00" />
+    </linearGradient>
+
+    <!-- Golden Gradients for Jain Ahimsa Symbol -->
+    <linearGradient id="ahimsaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFDE59" />
+      <stop offset="45%" stop-color="#FFB300" />
+      <stop offset="100%" stop-color="#E67E00" />
+    </linearGradient>
+
+    <!-- Orbit Ribbon Gradients -->
+    <linearGradient id="swoopBlue" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0072FF" />
+      <stop offset="50%" stop-color="#0052CC" />
+      <stop offset="100%" stop-color="#003399" />
+    </linearGradient>
+
+    <linearGradient id="swoopGold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFB800" />
+      <stop offset="60%" stop-color="#F58220" />
+      <stop offset="100%" stop-color="#E65100" />
+    </linearGradient>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#001845" flood-opacity="0.2" />
+    </filter>
+  </defs>
+
+  <g id="ns-logo-mark" filter="url(#softShadow)">
+    <!-- ========================================== -->
+    <!-- 1. JAIN AHIMSA EMBLEM AT THE TOP (Center)  -->
+    <!-- ========================================== -->
+    <g id="jain-ahimsa" transform="translate(195, 115) scale(0.85)">
+      <!-- Three Triratna Crowns / Arches at top -->
+      <path d="M -18 -82 C -18 -92, -10 -92, -10 -82 L -10 -72 L -18 -72 Z" fill="url(#ahimsaGold)" />
+      <path d="M -5 -88 C -5 -98, 5 -98, 5 -88 L 5 -72 L -5 -72 Z" fill="url(#ahimsaGold)" />
+      <path d="M 10 -82 C 10 -92, 18 -92, 18 -82 L 18 -72 L 10 -72 Z" fill="url(#ahimsaGold)" />
+
+      <!-- Outer Flamed Teardrop Canopy Frame -->
+      <path d="M 0 -72 C 32 -48, 52 -18, 38 18 C 30 38, 12 48, 0 48 C -12 48, -30 38, -38 18 C -52 -18, -32 -48, 0 -72 Z" 
+            fill="none" stroke="url(#ahimsaGold)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+
+      <!-- Inner Sacred Ahimsa Hand -->
+      <!-- Palm and 4 Fingers -->
+      <path d="M -16 -40 C -16 -48, -10 -48, -10 -40 L -10 -22 L -4 -22 L -4 -46 C -4 -54, 2 -54, 2 -46 L 2 -22 L 8 -22 L 8 -42 C 8 -50, 14 -50, 14 -42 L 14 -20 L 19 -20 C 23 -20, 25 -16, 23 -12 L 20 2 C 18 18, 6 28, -2 28 C -10 28, -20 18, -22 6 L -24 -14 C -24 -20, -16 -20, -16 -24 Z" 
+            fill="none" stroke="url(#ahimsaGold)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+
+      <!-- Dharmachakra (Wheel with 24 rays in palm) -->
+      <circle cx="0" cy="5" r="14" fill="#FFFFFF" stroke="url(#ahimsaGold)" stroke-width="3" />
+      <circle cx="0" cy="5" r="4" fill="url(#ahimsaGold)" />
+      <!-- Spokes of wheel -->
+      <line x1="0" y1="-8" x2="0" y2="18" stroke="url(#ahimsaGold)" stroke-width="1.8" />
+      <line x1="-13" y1="5" x2="13" y2="5" stroke="url(#ahimsaGold)" stroke-width="1.8" />
+      <line x1="-9" y1="-4" x2="9" y2="14" stroke="url(#ahimsaGold)" stroke-width="1.8" />
+      <line x1="-9" y1="14" x2="9" y2="-4" stroke="url(#ahimsaGold)" stroke-width="1.8" />
+    </g>
+
+    <!-- ========================================== -->
+    <!-- 2. LETTER "N" (Vibrant Royal Blue Gradient)-->
+    <!-- ========================================== -->
+    <g id="letter-n">
+      <!-- Left Vertical Pillar -->
+      <path d="M 72 155 L 112 155 L 112 265 L 72 265 Z" fill="url(#nStemGrad)" />
+
+      <!-- Right Vertical Pillar -->
+      <path d="M 172 168 L 202 168 L 202 315 L 172 290 Z" fill="url(#nRightGrad)" />
+
+      <!-- Diagonal Crossbar with 3D Bevel -->
+      <path d="M 72 155 L 122 155 L 202 315 L 162 315 Z" fill="url(#nDiagGrad)" />
+      <!-- 3D highlight edge on top of N -->
+      <path d="M 72 155 L 122 155 L 110 168 L 72 168 Z" fill="#40A0FF" opacity="0.7" />
+    </g>
+
+    <!-- ========================================== -->
+    <!-- 3. LETTER "S" (Warm Sunburst Gold/Orange)  -->
+    <!-- ========================================== -->
+    <g id="letter-s">
+      <path d="M 298 156 C 265 156, 208 160, 208 206 C 208 245, 255 248, 268 258 C 285 272, 276 292, 252 292 C 228 292, 215 278, 206 265 L 180 292 C 198 316, 222 322, 250 322 C 298 322, 318 295, 318 266 C 318 228, 268 222, 254 212 C 240 200, 248 184, 268 184 C 288 184, 298 195, 305 204 L 328 178 C 318 165, 306 156, 298 156 Z" 
+            fill="url(#sGrad)" />
+      <!-- Subtle top highlight on S -->
+      <path d="M 298 156 C 265 156, 215 160, 208 190 C 215 170, 260 166, 298 166 Z" fill="#FFE27A" opacity="0.6" />
+    </g>
+
+    <!-- ========================================== -->
+    <!-- 4. DYNAMIC SWOOP RIBBON & ASCENDING ARROW  -->
+    <!-- ========================================== -->
+    <!-- Inner Golden Swoop Ribbon -->
+    <path d="M 40 252 C 40 286, 95 308, 172 308 C 235 308, 296 278, 335 186 C 322 254, 250 295, 175 295 C 105 295, 52 276, 52 252 Z" 
+          fill="url(#swoopGold)" />
+
+    <!-- Outer Vibrant Blue Ribbon Sweeping Upward -->
+    <path d="M 32 242 C 32 284, 98 296, 172 296 C 245 296, 305 245, 332 178 L 314 186 C 290 236, 238 278, 172 278 C 104 278, 48 266, 48 242 Z" 
+          fill="url(#swoopBlue)" />
+
+    <!-- Ascending Arrow Head pointing to top-right -->
+    <polygon points="325,178 350,138 305,170 322,176" fill="#004ABB" />
+    <polygon points="325,178 350,138 318,155" fill="#0069F5" />
+
+    <!-- ========================================== -->
+    <!-- 5. FLOATING DIGITAL TECHNOLOGY PIXEL BLOCKS -->
+    <!-- ========================================== -->
+    <!-- Pixel 1: Blue Large -->
+    <rect x="342" y="115" width="18" height="18" rx="2" fill="#0062E3" />
+    <!-- Pixel 2: Gold Large -->
+    <rect x="363" y="130" width="17" height="17" rx="2" fill="#FFA000" />
+    <!-- Pixel 3: Blue Medium -->
+    <rect x="350" y="148" width="12" height="12" rx="1.5" fill="#0050D8" />
+    <!-- Pixel 4: Gold Small -->
+    <rect x="344" y="138" width="8" height="8" rx="1" fill="#FFB800" />
+    <!-- Pixel 5: Orange Small -->
+    <rect x="360" y="165" width="11" height="11" rx="1" fill="#F27700" />
+  </g>
+</svg>

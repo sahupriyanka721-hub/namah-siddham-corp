@@ -1,32 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
   <defs>
-    <linearGradient id="favOrbit" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFBE00" />
-      <stop offset="60%" stop-color="#F28C00" />
-      <stop offset="100%" stop-color="#0756B8" />
+    <linearGradient id="favN" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0088FF" />
+      <stop offset="60%" stop-color="#0062E3" />
+      <stop offset="100%" stop-color="#003EAA" />
     </linearGradient>
-    <linearGradient id="favBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0756B8" />
-      <stop offset="100%" stop-color="#053C83" />
+    <linearGradient id="favS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFBD00" />
+      <stop offset="50%" stop-color="#F27700" />
+      <stop offset="100%" stop-color="#D84A00" />
+    </linearGradient>
+    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFDE59" />
+      <stop offset="100%" stop-color="#E67E00" />
     </linearGradient>
   </defs>
-  <!-- Dynamic Orbit -->
-  <ellipse cx="50" cy="50" rx="46" ry="24" transform="rotate(-28 50 50)" fill="none" stroke="url(#favOrbit)" stroke-width="4.5" stroke-dasharray="210 20" stroke-linecap="round" />
-  <!-- Growth Arrow -->
-  <path d="M 88 23 L 98 17 L 92 31 Z" fill="#F28C00" />
-  <!-- Center Shield -->
-  <circle cx="50" cy="50" r="36" fill="url(#favBlue)" stroke="#FFBE00" stroke-width="2" />
-  <!-- Three Dots -->
-  <circle cx="43" cy="27" r="2.5" fill="#FFBE00" />
-  <circle cx="50" cy="25" r="2.5" fill="#FFBE00" />
-  <circle cx="57" cy="27" r="2.5" fill="#FFBE00" />
-  <!-- Crescent -->
-  <path d="M 42 22 Q 50 25 58 22 Q 50 28 42 22 Z" fill="#FFFFFF" />
-  <!-- Hand Silhouette & Chakra -->
-  <g transform="translate(32, 28) scale(0.72)">
-    <path d="M 25 22 C 22 20, 16 23, 16 28 L 16 38 C 16 45, 23 54, 32 54 C 41 54, 48 45, 48 38 L 48 27 C 48 24, 45 22, 42 23 C 40 23, 39 25, 39 28 L 39 22 C 39 19, 36 17, 33 18 C 31 18, 30 20, 30 22 L 30 18 C 30 15, 27 13, 24 14 C 22 14, 21 16, 21 19 L 21 28 Z" fill="#FFFFFF" />
-    <circle cx="32" cy="38" r="9" fill="#FFBE00" />
-    <circle cx="32" cy="38" r="7" fill="#0756B8" />
-    <circle cx="32" cy="38" r="2.5" fill="#FFBE00" />
+
+  <!-- Background rounded card -->
+  <rect width="400" height="400" rx="80" fill="#FFFFFF" />
+
+  <g transform="translate(10, 5) scale(0.95)">
+    <!-- Ahimsa Top Symbol -->
+    <g transform="translate(195, 115) scale(0.85)">
+      <path d="M 0 -72 C 32 -48, 52 -18, 38 18 C 30 38, 12 48, 0 48 C -12 48, -30 38, -38 18 C -52 -18, -32 -48, 0 -72 Z" 
+            fill="none" stroke="url(#favGold)" stroke-width="7" />
+      <path d="M -16 -40 C -16 -48, -10 -48, -10 -40 L -10 -22 L -4 -22 L -4 -46 C -4 -54, 2 -54, 2 -46 L 2 -22 L 8 -22 L 8 -42 C 8 -50, 14 -50, 14 -42 L 14 -20 L 19 -20 C 23 -20, 25 -16, 23 -12 L 20 2 C 18 18, 6 28, -2 28 C -10 28, -20 18, -22 6 L -24 -14 C -24 -20, -16 -20, -16 -24 Z" 
+            fill="none" stroke="url(#favGold)" stroke-width="5" />
+      <circle cx="0" cy="5" r="13" fill="#FFFFFF" stroke="url(#favGold)" stroke-width="3" />
+      <circle cx="0" cy="5" r="4" fill="url(#favGold)" />
+    </g>
+
+    <!-- N -->
+    <path d="M 72 155 L 112 155 L 112 265 L 72 265 Z" fill="url(#favN)" />
+    <path d="M 172 168 L 202 168 L 202 315 L 172 290 Z" fill="#004BBF" />
+    <path d="M 72 155 L 122 155 L 202 315 L 162 315 Z" fill="url(#favN)" />
+
+    <!-- S -->
+    <path d="M 298 156 C 265 156, 208 160, 208 206 C 208 245, 255 248, 268 258 C 285 272, 276 292, 252 292 C 228 292, 215 278, 206 265 L 180 292 C 198 316, 222 322, 250 322 C 298 322, 318 295, 318 266 C 318 228, 268 222, 254 212 C 240 200, 248 184, 268 184 C 288 184, 298 195, 305 204 L 328 178 C 318 165, 306 156, 298 156 Z" 
+          fill="url(#favS)" />
+
+    <!-- Orbit -->
+    <path d="M 40 252 C 40 286, 95 308, 172 308 C 235 308, 296 278, 335 186 C 322 254, 250 295, 175 295 C 105 295, 52 276, 52 252 Z" fill="#FFB800" />
+    <path d="M 32 242 C 32 284, 98 296, 172 296 C 245 296, 305 245, 332 178 L 314 186 C 290 236, 238 278, 172 278 C 104 278, 48 266, 48 242 Z" fill="#0062E3" />
+    <polygon points="325,178 350,138 305,170 322,176" fill="#0062E3" />
+
+    <!-- Pixels -->
+    <rect x="342" y="115" width="18" height="18" rx="2" fill="#0062E3" />
+    <rect x="363" y="130" width="17" height="17" rx="2" fill="#FFA000" />
   </g>
 </svg>

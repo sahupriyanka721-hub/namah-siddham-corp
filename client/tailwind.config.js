@@ -7,19 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Corporate Brand Palette (Master Prompt 1 & 2)
+        // Corporate Brand Palette (Calibrated to Exact "NS" Monogram Logo)
         royal: {
-          50: '#F0F6FD',
-          100: '#E0EEFA',
-          200: '#BADBF6',
-          300: '#7EBEF0',
-          400: '#3A9CE8',
-          500: '#0756B8', // Primary Action Royal Blue
-          600: '#064AA0',
-          700: '#053C83',
-          800: '#06346C',
-          900: '#0B2D59',
-          950: '#071C38',
+          50: '#F0F7FF',
+          100: '#E0EFFF',
+          200: '#B8DBFF',
+          300: '#75B5FF',
+          400: '#2988FF',
+          500: '#0062E3', // Logo 'N' Primary Vibrant Blue
+          600: '#0050D8',
+          700: '#003EAA',
+          800: '#052D75',
+          900: '#0B234F',
+          950: '#071633',
         },
         navy: {
           50: '#F4F6F8',
@@ -32,33 +32,33 @@ export default {
           700: '#253549',
           800: '#202B3C', // Dark Navy for Typography & Headers
           900: '#17202D',
-          950: '#0F151F',
+          950: '#0A111C',
         },
         gold: {
           50: '#FFFDF0',
           100: '#FFF9D1',
-          200: '#FFF2A3',
-          300: '#FFE666',
-          400: '#FFD926',
-          500: '#FFBE00', // Golden Yellow Accent
-          600: '#E6A700',
-          700: '#B88200',
-          800: '#946600',
-          900: '#7A5200',
-          950: '#422A00',
+          200: '#FFF099',
+          300: '#FFE166',
+          400: '#FFD12E',
+          500: '#FFB800', // Logo Golden Yellow Accent & Ahimsa Hand
+          600: '#E6A200',
+          700: '#B87E00',
+          800: '#946200',
+          900: '#7A4E00',
+          950: '#422700',
         },
         orange: {
           50: '#FFF8F0',
           100: '#FFEFD6',
           200: '#FFDCAD',
-          300: '#FFC27A',
-          400: '#FFA142',
-          500: '#F28C00', // Growth Accent Orange
-          600: '#D97700',
-          700: '#B35E00',
-          800: '#8F4900',
-          900: '#753C00',
-          950: '#401E00',
+          300: '#FFBE75',
+          400: '#FF9B38',
+          500: '#F27700', // Logo 'S' Growth Accent Orange
+          600: '#D86200',
+          700: '#B34D00',
+          800: '#8F3B00',
+          900: '#752F00',
+          950: '#401500',
         },
         surface: {
           50: '#FFFFFF',

@@ -144,7 +144,7 @@ export const HomePage = () => {
                       src="/assets/namah-siddham-logo.png"
                       onError={(e) => {
                         e.target.onerror = null;
-                        e.target.src = '/assets/logo-white.svg';
+                        e.target.src = '/assets/namah-siddham-logo.svg';
                       }}
                       alt="Namah Siddham Brand"
                       className="h-9 w-auto"
