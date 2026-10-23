@@ -13,15 +13,27 @@ export const Footer = () => {
           {/* Column 1: Brand Logo & Introduction */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="inline-block focus:outline-none">
-              <img
-                src="/assets/namah-siddham-logo.png"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = '/assets/logo-white.svg';
-                }}
-                alt="Namah Siddham Corporation Logo"
-                className="h-11 w-auto object-contain"
-              />
+              <div className="flex items-center space-x-3.5">
+                <div className="p-1.5 rounded-2xl bg-white/10 border border-white/15">
+                  <img
+                    src="/assets/namah-siddham-logo.png"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = '/assets/namah-siddham-emblem.svg';
+                    }}
+                    alt="Namah Siddham Corporation Logo"
+                    className="h-12 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-heading font-black text-lg text-white tracking-wider">
+                    NAMAH SIDDHAM
+                  </span>
+                  <span className="text-[10px] font-bold text-royal-400 tracking-[0.2em] uppercase font-mono">
+                    CORPORATION PRIVATE LIMITED
+                  </span>
+                </div>
+              </div>
             </Link>
             <p className="text-xs text-gold-400 font-mono tracking-wider font-semibold">
               CIN: {settings.cin || 'U77100MP2026PTC087531'}

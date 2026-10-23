@@ -144,11 +144,19 @@ export const HomePage = () => {
                       src="/assets/namah-siddham-logo.png"
                       onError={(e) => {
                         e.target.onerror = null;
-                        e.target.src = '/assets/namah-siddham-logo.svg';
+                        e.target.src = '/assets/namah-siddham-emblem.svg';
                       }}
                       alt="Namah Siddham Brand"
-                      className="h-9 w-auto"
+                      className="h-11 w-auto object-contain"
                     />
+                    <div className="flex flex-col">
+                      <span className="font-heading font-black text-sm text-white tracking-wider">
+                        NAMAH SIDDHAM
+                      </span>
+                      <span className="text-[9px] font-bold text-royal-400 tracking-wider font-mono">
+                        CORPORATION
+                      </span>
+                    </div>
                   </div>
                   <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-gold-500/10 text-gold-400 border border-gold-500/20 uppercase tracking-widest font-mono">
                     Integrated Hub

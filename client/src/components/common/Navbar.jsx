@@ -116,17 +116,30 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo with Brand Reference */}
-          <Link to="/" className="flex items-center space-x-3 group focus:outline-none shrink-0">
-            <img
-              src="/assets/namah-siddham-logo.png"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = '/assets/logo-white.svg';
-              }}
-              alt="Namah Siddham Corporation Private Limited Logo"
-              className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
-            />
+          {/* Logo with Brand Reference (Larger & with New NS Emblem) */}
+          <Link to="/" className="flex items-center space-x-3.5 group focus:outline-none shrink-0 py-1">
+            <div className="relative flex items-center justify-center p-1.5 rounded-2xl bg-white/10 border border-white/15 shadow-sm group-hover:border-royal-400/50 group-hover:bg-white/15 transition-all">
+              <img
+                src="/assets/namah-siddham-logo.png"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = '/assets/namah-siddham-emblem.svg';
+                }}
+                alt="Namah Siddham Corporation Logo"
+                className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-heading font-black text-base sm:text-lg text-white tracking-wider leading-tight group-hover:text-royal-300 transition-colors">
+                NAMAH SIDDHAM
+              </span>
+              <span className="text-[10px] sm:text-[11px] font-bold text-royal-400 tracking-[0.22em] uppercase font-mono leading-none mt-1">
+                CORPORATION
+              </span>
+              <span className="text-[9px] text-gold-400 tracking-wider font-semibold font-mono leading-none mt-1">
+                PVT. LTD. &bull; BHOPAL
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Links */}
