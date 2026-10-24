@@ -44,11 +44,11 @@ export const EcosystemPage = () => {
         keywords="Digital Products, Online Marketplaces, Aggregator Platforms India, HomeServixo, Carrento, Jainamshree, SuperiorMart, Home Services Repair Bhopal, Car Rental Mobility, Jain Ecommerce Satvik, Namah Siddham Ecosystem"
       />
 
-      {/* Header Banner (Luminous White & Orange/Blue Theme matching Logo) */}
-      <section className="bg-gradient-to-b from-white via-orange-50/20 to-surface-100 text-slate-900 py-16 border-b border-slate-200 relative overflow-hidden">
-        <div className="absolute top-0 right-10 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Header Banner (Radiant Sky-Blue Atmosphere matching Logo) */}
+      <section className="bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 py-16 border-b border-sky-200/80 relative overflow-hidden">
+        <div className="absolute top-0 right-10 w-96 h-96 bg-orange-400/15 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white border border-orange-200 shadow-sm text-orange-700 text-xs font-semibold">
+          <div className="shiny-badge inline-flex items-center space-x-2 px-4.5 py-1.5 rounded-full text-orange-700 text-xs font-semibold">
             <Layers className="w-3.5 h-3.5 mr-1 text-orange-600" />
             <span>Vertical 2: Digital Products &amp; Aggregator Platforms</span>
           </div>
@@ -113,7 +113,7 @@ export const EcosystemPage = () => {
               return (
                 <div
                   key={platform.slug || platform._id}
-                  className="bg-white rounded-3xl p-6 border border-surface-200 shadow-soft-sm hover:shadow-soft-md transition-all flex flex-col justify-between space-y-5"
+                  className="shiny-card bg-gradient-to-br from-white via-orange-50/20 to-white rounded-3xl p-6 border-2 border-sky-100 hover:border-orange-300 shadow-md hover:shadow-xl hover:shadow-orange-500/15 transition-all flex flex-col justify-between space-y-5"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between gap-2">

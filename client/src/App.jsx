@@ -44,7 +44,7 @@ import AdminProfile from './pages/admin/AdminProfile';
 // Layout wrapper for public pages with sticky navbar and rich footer
 const PublicLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-surface-100 text-navy-800">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#F0F6FE] via-[#F4F9FF] to-[#EAF2FC] text-navy-800 relative selection:bg-sky-500 selection:text-white">
       <Navbar />
       <main className="flex-1">
         <Outlet />

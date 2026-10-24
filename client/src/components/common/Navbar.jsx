@@ -112,10 +112,11 @@ export const Navbar = () => {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md py-2.5 border-b border-slate-200/90'
-          : 'bg-white py-3 sm:py-3.5 border-b border-slate-100 shadow-sm'
+          ? 'bg-white/95 backdrop-blur-md shadow-md py-2.5 border-b border-sky-100'
+          : 'bg-white/90 backdrop-blur-md py-3 sm:py-3.5 border-b border-sky-100/80 shadow-sm shadow-sky-500/5'
       }`}
     >
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-sky-400 via-amber-400 to-orange-500" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           
@@ -151,7 +152,7 @@ export const Navbar = () => {
                 NAMAH SIDDHAM
               </span>
               <div className="flex items-center space-x-1.5 mt-0.5">
-                <span className="text-[10px] sm:text-[11px] font-extrabold text-royal-600 tracking-[0.2em] uppercase font-mono">
+                <span className="text-[10px] sm:text-[11px] font-extrabold text-sky-600 tracking-[0.2em] uppercase font-mono">
                   CORPORATION
                 </span>
                 <span className="text-[8px] sm:text-[9px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200/80 font-mono tracking-wider">
@@ -162,15 +163,15 @@ export const Navbar = () => {
           </Link>
 
           {/* ========================================================= */}
-          {/* 2. DESKTOP NAVIGATION LINKS (Exact 9 Prompt Links)         */}
+          {/* 2. DESKTOP NAVIGATION LINKS (Interactive Shiny Keys)       */}
           {/* ========================================================= */}
-          <nav className="hidden xl:flex items-center space-x-1">
+          <nav className="hidden xl:flex items-center space-x-1 p-1 rounded-full bg-sky-50/80 border border-sky-100 shadow-inner">
             <Link
               to="/"
-              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                 isActive('/') && location.pathname === '/'
-                  ? 'text-royal-600 bg-royal-50 font-bold shadow-xs'
-                  : 'text-slate-600 hover:text-royal-600 hover:bg-slate-50'
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
               }`}
             >
               Home
@@ -178,10 +179,10 @@ export const Navbar = () => {
 
             <Link
               to="/about"
-              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                 isActive('/about')
-                  ? 'text-royal-600 bg-royal-50 font-bold shadow-xs'
-                  : 'text-slate-600 hover:text-royal-600 hover:bg-slate-50'
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
               }`}
             >
               About Us
@@ -200,20 +201,21 @@ export const Navbar = () => {
             >
               <Link
                 to="/services"
-                className={`inline-flex items-center px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
+                className={`inline-flex items-center px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                   isActive('/services')
-                    ? 'text-royal-600 bg-royal-50 font-bold shadow-xs'
-                    : 'text-slate-600 hover:text-royal-600 hover:bg-slate-50'
+                    ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                    : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
                 }`}
               >
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-500 mr-1.5 animate-pulse" />
                 <span>IT Services</span>
-                <ChevronDown className="w-3.5 h-3.5 ml-1 text-royal-500" />
+                <ChevronDown className="w-3.5 h-3.5 ml-1 text-sky-500" />
               </Link>
 
               {servicesDropdown && (
-                <div className="absolute top-full left-0 w-84 bg-white rounded-2xl shadow-2xl border border-slate-200 py-3 px-2 z-50 text-slate-900 mt-1 animate-in fade-in slide-in-from-top-2">
-                  <div className="px-3 py-1.5 border-b border-slate-100 mb-2 flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-royal-600 font-mono">
+                <div className="absolute top-full left-0 w-84 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-sky-100 py-3 px-2 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2">
+                  <div className="px-3 py-1.5 border-b border-sky-100 mb-2 flex items-center justify-between">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-sky-600 font-mono">
                       Vertical 1: IT Solutions
                     </span>
                     <span className="text-[9px] text-slate-400">4 Core Capabilities</span>
@@ -224,13 +226,13 @@ export const Navbar = () => {
                       <Link
                         key={item.name}
                         to={item.path}
-                        className="flex items-start space-x-3 p-2.5 rounded-xl hover:bg-royal-50/80 transition-colors group"
+                        className="flex items-start space-x-3 p-2.5 rounded-xl hover:bg-sky-50/80 transition-colors group"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-royal-100 text-royal-600 flex items-center justify-center shrink-0 group-hover:bg-royal-600 group-hover:text-white transition-colors">
+                        <div className="w-8 h-8 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors">
                           <Icon className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="text-xs font-bold text-slate-900 group-hover:text-royal-600">
+                          <div className="text-xs font-bold text-slate-900 group-hover:text-sky-600">
                             {item.name}
                           </div>
                           <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug">
@@ -240,10 +242,10 @@ export const Navbar = () => {
                       </Link>
                     );
                   })}
-                  <div className="pt-2 px-2 border-t border-slate-100 mt-1">
+                  <div className="pt-2 px-2 border-t border-sky-100 mt-1">
                     <Link
                       to="/services"
-                      className="text-xs font-bold text-royal-600 hover:underline flex items-center justify-between p-1.5"
+                      className="text-xs font-bold text-sky-600 hover:underline flex items-center justify-between p-1.5"
                     >
                       <span>Explore All IT Services</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -266,19 +268,20 @@ export const Navbar = () => {
             >
               <Link
                 to="/products"
-                className={`inline-flex items-center px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
+                className={`inline-flex items-center px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                   isActive('/products') || isActive('/ecosystem')
-                    ? 'text-orange-600 bg-orange-50 font-bold shadow-xs'
-                    : 'text-slate-600 hover:text-orange-600 hover:bg-slate-50'
+                    ? 'text-orange-700 bg-white shadow-xs font-bold border border-orange-200/90 ring-1 ring-orange-400/20'
+                    : 'text-slate-600 hover:text-orange-600 hover:bg-white/70'
                 }`}
               >
+                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 mr-1.5 animate-pulse" />
                 <span>Our Products</span>
                 <ChevronDown className="w-3.5 h-3.5 ml-1 text-orange-500" />
               </Link>
 
               {productsDropdown && (
-                <div className="absolute top-full left-0 w-88 bg-white rounded-2xl shadow-2xl border border-slate-200 py-3 px-2 z-50 text-slate-900 mt-1 animate-in fade-in slide-in-from-top-2">
-                  <div className="px-3 py-1.5 border-b border-slate-100 mb-2 flex items-center justify-between">
+                <div className="absolute top-full left-0 w-88 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-orange-100 py-3 px-2 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2">
+                  <div className="px-3 py-1.5 border-b border-orange-100 mb-2 flex items-center justify-between">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600 font-mono">
                       Vertical 2: Digital Marketplaces
                     </span>
@@ -301,7 +304,7 @@ export const Navbar = () => {
                       </span>
                     </Link>
                   ))}
-                  <div className="pt-2 px-2 border-t border-slate-100 mt-1">
+                  <div className="pt-2 px-2 border-t border-orange-100 mt-1">
                     <Link
                       to="/products"
                       className="text-xs font-bold text-orange-600 hover:underline flex items-center justify-between p-1.5"
@@ -316,10 +319,10 @@ export const Navbar = () => {
 
             <Link
               to="/portfolio"
-              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                 isActive('/portfolio')
-                  ? 'text-royal-600 bg-royal-50 font-bold shadow-xs'
-                  : 'text-slate-600 hover:text-royal-600 hover:bg-slate-50'
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
               }`}
             >
               Portfolio
@@ -327,10 +330,10 @@ export const Navbar = () => {
 
             <Link
               to="/business-model"
-              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                 isActive('/business-model')
-                  ? 'text-royal-600 bg-royal-50 font-bold shadow-xs'
-                  : 'text-slate-600 hover:text-royal-600 hover:bg-slate-50'
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
               }`}
             >
               Business Model
@@ -338,10 +341,10 @@ export const Navbar = () => {
 
             <Link
               to="/partners"
-              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                 isActive('/partners')
-                  ? 'text-royal-600 bg-royal-50 font-bold shadow-xs'
-                  : 'text-slate-600 hover:text-royal-600 hover:bg-slate-50'
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
               }`}
             >
               Partner With Us
@@ -349,10 +352,10 @@ export const Navbar = () => {
 
             <Link
               to="/careers"
-              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                 isActive('/careers')
-                  ? 'text-royal-600 bg-royal-50 font-bold shadow-xs'
-                  : 'text-slate-600 hover:text-royal-600 hover:bg-slate-50'
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
               }`}
             >
               Careers
@@ -360,10 +363,10 @@ export const Navbar = () => {
 
             <Link
               to="/contact"
-              className={`px-3 py-2 text-xs font-semibold rounded-lg transition-all ${
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                 isActive('/contact')
-                  ? 'text-royal-600 bg-royal-50 font-bold shadow-xs'
-                  : 'text-slate-600 hover:text-royal-600 hover:bg-slate-50'
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
               }`}
             >
               Contact Us
@@ -371,18 +374,18 @@ export const Navbar = () => {
           </nav>
 
           {/* ========================================================= */}
-          {/* 3. PROMINENT CALL-TO-ACTION BUTTONS (Blue & Orange)       */}
+          {/* 3. PROMINENT CALL-TO-ACTION BUTTONS (Shiny Blue & Orange) */}
           {/* ========================================================= */}
           <div className="hidden xl:flex items-center space-x-2.5 shrink-0">
             <Link
               to="/products"
-              className="inline-flex items-center px-3.5 py-2 text-xs font-bold rounded-xl text-orange-600 border-2 border-orange-500/80 hover:bg-orange-500 hover:text-white transition-all transform hover:-translate-y-0.5 shadow-xs"
+              className="shiny-btn inline-flex items-center px-4 py-2 text-xs font-bold rounded-full text-orange-600 bg-orange-50/80 border border-orange-300 hover:bg-orange-500 hover:text-white transition-all transform hover:-translate-y-0.5 shadow-xs"
             >
               Explore Products
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center px-4.5 py-2.5 text-xs font-extrabold rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-md shadow-sky-500/30 transition-all transform hover:-translate-y-0.5"
+              className="shiny-btn inline-flex items-center px-5 py-2.5 text-xs font-extrabold rounded-full bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-lg shadow-sky-500/35 hover:shadow-sky-400/50 transition-all transform hover:-translate-y-0.5 border border-sky-300/40"
             >
               <span>Let's Discuss Your Project</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1.5" />

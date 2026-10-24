@@ -68,9 +68,9 @@ export const PortfolioDetailPage = () => {
         description={project.seoDescription || project.shortDescription}
       />
 
-      {/* Header Banner (Luminous White & Royal Blue Theme matching Logo) */}
-      <section className="bg-gradient-to-b from-white via-royal-50/25 to-surface-100 text-slate-900 py-14 sm:py-18 border-b border-slate-200 relative overflow-hidden">
-        <div className="absolute top-0 right-10 w-96 h-96 bg-royal-500/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Header Banner (Radiant Sky-Blue Theme matching Logo) */}
+      <section className="bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 py-14 sm:py-18 border-b border-sky-200/80 relative overflow-hidden">
+        <div className="absolute top-0 right-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
           <div className="flex items-center space-x-2 text-xs text-slate-500">
             <Link to="/" className="hover:text-royal-600">

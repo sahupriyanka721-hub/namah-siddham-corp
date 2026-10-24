@@ -55,12 +55,12 @@ export const ServicesPage = () => {
         keywords="Website Development Bhopal, Custom Software ERP CRM, Mobile App Development Android iOS, Digital Marketing SEO Agency, Namah Siddham IT Services, Corporate Software Engineering, Bhopal IT Company"
       />
 
-      {/* Header Banner (Luminous White & Royal Blue Theme matching Logo) */}
-      <section className="bg-gradient-to-b from-white via-royal-50/25 to-surface-100 text-slate-900 py-16 sm:py-20 border-b border-slate-200 relative overflow-hidden">
-        <div className="absolute top-0 right-10 w-96 h-96 bg-royal-500/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Header Banner (Radiant Sky-Blue Theme matching Logo) */}
+      <section className="bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 py-16 sm:py-20 border-b border-sky-200/80 relative overflow-hidden">
+        <div className="absolute top-0 right-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white border border-royal-200 shadow-sm text-royal-700 text-xs font-semibold">
-            <Cpu className="w-3.5 h-3.5 mr-1 text-royal-600" />
+          <div className="shiny-badge inline-flex items-center space-x-2 px-4.5 py-1.5 rounded-full text-sky-800 text-xs font-semibold">
+            <Cpu className="w-3.5 h-3.5 mr-1 text-sky-600" />
             <span>Vertical 1: IT Services and Digital Solutions</span>
           </div>
           <h1 className="font-serif font-black text-3xl sm:text-5xl text-slate-950 tracking-tight">
@@ -80,7 +80,7 @@ export const ServicesPage = () => {
             return (
               <div
                 key={service.slug || service._id}
-                className="bg-white rounded-3xl p-8 border border-surface-200 shadow-soft-sm hover:shadow-soft-md hover:border-royal-500/40 transition-all flex flex-col justify-between space-y-6"
+                className="shiny-card bg-gradient-to-br from-white via-sky-50/20 to-white rounded-3xl p-8 border-2 border-sky-100 hover:border-sky-400 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all flex flex-col justify-between space-y-6"
               >
                 <div className="space-y-5">
                   <div className="flex items-center justify-between">

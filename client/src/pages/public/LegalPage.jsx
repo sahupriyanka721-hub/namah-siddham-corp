@@ -58,12 +58,12 @@ export const LegalPage = () => {
     <div className="space-y-16 pb-20">
       <SeoMeta title={title} description={heroDesc} />
 
-      {/* Header Banner (Luminous White & Royal Blue Theme matching Logo) */}
-      <section className="bg-gradient-to-b from-white via-royal-50/25 to-surface-100 text-slate-900 py-16 border-b border-slate-200 relative overflow-hidden">
-        <div className="absolute top-0 right-10 w-96 h-96 bg-royal-500/5 rounded-full blur-3xl pointer-events-none" />
+      {/* Header Banner (Radiant Sky-Blue Theme matching Logo) */}
+      <section className="bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 py-16 border-b border-sky-200/80 relative overflow-hidden">
+        <div className="absolute top-0 right-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white border border-royal-200 shadow-sm text-royal-700 text-xs font-semibold">
-            <FileText className="w-3.5 h-3.5 mr-1 text-royal-600" />
+          <div className="shiny-badge inline-flex items-center space-x-2 px-4.5 py-1.5 rounded-full text-sky-800 text-xs font-semibold">
+            <FileText className="w-3.5 h-3.5 mr-1 text-sky-600" />
             <span>Corporate Governance &amp; Statutory Compliance</span>
           </div>
           <h1 className="font-serif font-black text-3xl sm:text-4xl text-slate-950 tracking-tight">

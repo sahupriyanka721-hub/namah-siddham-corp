@@ -79,58 +79,59 @@ export const HomePage = () => {
       />
 
       {/* ========================================================================= */}
-      {/* SECTION A: HERO BANNER (Vibrant White, Royal Blue & Solar Orange Palette) */}
+      {/* SECTION A: HERO BANNER (Radiant Sky-Blue Atmosphere & Shiny Elements)    */}
       {/* ========================================================================= */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-royal-50/20 to-surface-100 text-slate-900 pt-16 pb-28 sm:pb-36 border-b border-slate-200/80">
-        {/* Soft atmospheric glow matching Logo's Electric Blue & Sunburst Gold */}
-        <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-royal-500/8 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute top-20 right-10 w-[450px] h-[450px] bg-gold-500/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#0066FF_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 pt-16 pb-28 sm:pb-36 border-b border-sky-200/80">
+        {/* Soft atmospheric glowing ambient orbs */}
+        <div className="absolute -top-20 left-1/4 w-[600px] h-[600px] bg-sky-400/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-blue-400/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-10 left-1/3 w-[400px] h-[400px] bg-amber-400/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#0284C7_1.5px,transparent_1.5px)] [background-size:26px_26px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left: Headline, Description & CTAs */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-white border border-royal-200 shadow-sm text-royal-700 text-xs font-semibold tracking-wide">
-                <span className="w-2 h-2 rounded-full bg-royal-600 animate-pulse" />
+              <div className="shiny-badge inline-flex items-center space-x-2.5 px-4.5 py-1.5 rounded-full text-sky-800 text-xs font-semibold tracking-wide">
+                <span className="w-2.5 h-2.5 rounded-full bg-sky-500 animate-pulse shadow-sm shadow-sky-500" />
                 <span>CIN: {settings.cin || 'U77100MP2026PTC087531'} • Bhopal, MP, India</span>
               </div>
 
               <h1 className="font-serif font-black text-3xl sm:text-5xl lg:text-6xl text-slate-950 tracking-tight leading-tight">
                 Technology That Builds Businesses and{' '}
-                <span className="bg-gradient-to-r from-royal-600 via-royal-500 to-orange-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-sky-600 via-blue-600 to-orange-500 bg-clip-text text-transparent">
                   Connects Opportunities
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
                 Namah Siddham Corporation Private Limited combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.
               </p>
 
-              {/* CTAs matching Logo Palette */}
+              {/* Shiny CTAs matching Logo Palette */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-sky-500/25 transition-all transform hover:-translate-y-0.5"
+                  className="shiny-btn inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-sky-500/30 hover:shadow-sky-400/50 transition-all transform hover:-translate-y-0.5 border border-sky-300/40"
                 >
                   <span>Explore Our IT Services</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
                 <Link
                   to="/products"
-                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-white hover:bg-orange-500 text-orange-600 hover:text-white border-2 border-orange-500 font-bold text-sm sm:text-base transition-all transform hover:-translate-y-0.5 shadow-sm"
+                  className="shiny-btn inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-white/95 hover:bg-orange-500 text-orange-600 hover:text-white border-2 border-orange-400/80 font-bold text-sm sm:text-base transition-all transform hover:-translate-y-0.5 shadow-md shadow-orange-500/10"
                 >
                   <span>Discover Our Products</span>
                 </Link>
               </div>
 
               {/* Corporate Identity Tag */}
-              <div className="pt-6 border-t border-slate-200 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-500 font-mono">
+              <div className="pt-6 border-t border-sky-200/80 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-600 font-mono">
                 <div>
-                  <span className="text-royal-600 font-bold">Entity:</span> Private Limited Company
+                  <span className="text-sky-600 font-bold">Entity:</span> Private Limited Company
                 </div>
                 <div>
-                  <span className="text-royal-600 font-bold">Location:</span> Bhopal, Madhya Pradesh
+                  <span className="text-sky-600 font-bold">Location:</span> Bhopal, Madhya Pradesh
                 </div>
                 <div>
                   <span className="text-orange-600 font-bold">Two Verticals:</span> Services &amp; Platforms
@@ -140,11 +141,11 @@ export const HomePage = () => {
 
             {/* Right: Visually engaging technology and digital ecosystem composition */}
             <div className="lg:col-span-5 relative">
-              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-xl space-y-6 relative overflow-hidden">
+              <div className="shiny-glass p-6 sm:p-8 rounded-3xl border border-sky-200 shadow-2xl shadow-sky-500/10 space-y-6 relative overflow-hidden">
                 {/* Subtle top accent bar in Logo Gradient */}
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-royal-600 via-gold-500 to-orange-500" />
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-sky-500 via-gold-400 to-orange-500" />
 
-                <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                <div className="flex items-center justify-between border-b border-sky-100 pb-4">
                   <div className="flex items-center space-x-3">
                     <img
                       src="/assets/namah-siddham-logo.jpg"
@@ -159,24 +160,24 @@ export const HomePage = () => {
                       <span className="font-heading font-black text-sm text-slate-900 tracking-wider">
                         NAMAH SIDDHAM
                       </span>
-                      <span className="text-[9px] font-bold text-royal-600 tracking-wider font-mono">
+                      <span className="text-[9px] font-bold text-sky-600 tracking-wider font-mono">
                         CORPORATION
                       </span>
                     </div>
                   </div>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-gold-50 text-gold-700 border border-gold-200 uppercase tracking-widest font-mono">
+                  <span className="shiny-badge text-[10px] font-bold px-2.5 py-1 rounded-full text-sky-700 uppercase tracking-widest font-mono">
                     Integrated Hub
                   </span>
                 </div>
 
                 {/* Vertical 1 Card */}
-                <div className="bg-gradient-to-r from-royal-50/70 to-white border-2 border-royal-200 rounded-2xl p-4 space-y-2 hover:border-royal-400 transition-colors">
+                <div className="bg-gradient-to-r from-sky-100/70 via-sky-50/80 to-white border-2 border-sky-200/90 rounded-2xl p-4 space-y-2 hover:border-sky-400 hover:shadow-md transition-all">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-bold text-royal-700 uppercase tracking-wider font-serif flex items-center">
-                      <Code2 className="w-3.5 h-3.5 mr-1.5 text-royal-600" />
+                    <span className="font-bold text-sky-800 uppercase tracking-wider font-serif flex items-center">
+                      <Code2 className="w-3.5 h-3.5 mr-1.5 text-sky-600" />
                       Vertical 1: IT Solutions
                     </span>
-                    <span className="text-[10px] text-royal-600 font-semibold bg-royal-100/70 px-2 py-0.5 rounded">Client Delivery</span>
+                    <span className="text-[10px] text-sky-700 font-semibold bg-sky-200/60 px-2 py-0.5 rounded-full">Client Delivery</span>
                   </div>
                   <div className="text-xs text-slate-600">
                     Custom web architecture, mobile solutions, tailored ERP/CRM systems, and SEO visibility.
@@ -184,30 +185,30 @@ export const HomePage = () => {
                 </div>
 
                 {/* Vertical 2 Card */}
-                <div className="bg-gradient-to-r from-orange-50/70 to-white border-2 border-orange-200 rounded-2xl p-4 space-y-2 hover:border-orange-400 transition-colors">
+                <div className="bg-gradient-to-r from-orange-100/60 via-orange-50/70 to-white border-2 border-orange-200/90 rounded-2xl p-4 space-y-2 hover:border-orange-400 hover:shadow-md transition-all">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-bold text-orange-700 uppercase tracking-wider font-serif flex items-center">
+                    <span className="font-bold text-orange-800 uppercase tracking-wider font-serif flex items-center">
                       <Layers className="w-3.5 h-3.5 mr-1.5 text-orange-600" />
                       Vertical 2: Digital Marketplaces
                     </span>
-                    <span className="text-[10px] text-orange-700 bg-orange-100 font-bold px-2 py-0.5 rounded">
+                    <span className="text-[10px] text-orange-700 bg-orange-200/60 font-bold px-2 py-0.5 rounded-full">
                       4 Platforms
                     </span>
                   </div>
                   <div className="grid grid-cols-2 gap-2 pt-1 text-[11px] text-slate-700 font-medium">
-                    <div className="p-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-xs">
+                    <div className="p-2 rounded-xl bg-white border border-sky-100 flex items-center justify-between shadow-xs">
                       <span>HomeServixo</span>
                       <span className="text-[9px] text-orange-600 font-bold">Repair</span>
                     </div>
-                    <div className="p-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-xs">
+                    <div className="p-2 rounded-xl bg-white border border-sky-100 flex items-center justify-between shadow-xs">
                       <span>Carrento</span>
-                      <span className="text-[9px] text-royal-600 font-bold">Mobility</span>
+                      <span className="text-[9px] text-sky-600 font-bold">Mobility</span>
                     </div>
-                    <div className="p-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-xs">
+                    <div className="p-2 rounded-xl bg-white border border-sky-100 flex items-center justify-between shadow-xs">
                       <span>Jainamshree</span>
                       <span className="text-[9px] text-gold-600 font-bold">Satvik</span>
                     </div>
-                    <div className="p-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-xs">
+                    <div className="p-2 rounded-xl bg-white border border-sky-100 flex items-center justify-between shadow-xs">
                       <span>SuperiorMart</span>
                       <span className="text-[9px] text-orange-600 font-bold">Retail</span>
                     </div>
@@ -223,38 +224,38 @@ export const HomePage = () => {
       {/* SECTION B: COMPANY INTRODUCTION */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-20 relative z-20">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-surface-200 shadow-soft-xl space-y-8">
+        <div className="shiny-glass rounded-3xl p-8 sm:p-12 border border-sky-200/90 shadow-2xl shadow-sky-500/10 space-y-8">
           <div className="max-w-3xl space-y-3">
-            <span className="text-xs font-bold text-royal-600 uppercase tracking-widest font-serif">
+            <span className="shiny-badge inline-block text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
               Corporate Overview
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-navy-900">
+            <h2 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
               One Company. Two Digital Growth Verticals.
             </h2>
-            <p className="text-sm sm:text-base text-surface-500 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
               Namah Siddham Corporation Private Limited operates across two complementary business domains. We combine engineering excellence for custom digital solutions with the strategic development of focused online marketplaces and aggregator networks.
             </p>
           </div>
 
           {/* Two Professional Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
-            {/* Card 1: IT Services (Electric Royal Blue Theme) */}
-            <div className="bg-gradient-to-br from-white to-royal-50/40 rounded-3xl p-8 border-2 border-royal-100 hover:border-royal-500 hover:shadow-xl hover:shadow-royal-500/10 transition-all space-y-4 flex flex-col justify-between group">
+            {/* Card 1: IT Services (Electric Sky Blue Theme) */}
+            <div className="shiny-card bg-gradient-to-br from-white via-sky-50/50 to-sky-100/30 rounded-3xl p-8 border-2 border-sky-200/80 hover:border-sky-400 hover:shadow-2xl hover:shadow-sky-500/20 transition-all space-y-4 flex flex-col justify-between group">
               <div className="space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-royal-500 to-royal-600 text-white shadow-md shadow-royal-500/30 flex items-center justify-center transform group-hover:scale-105 transition-transform">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-400 via-sky-500 to-blue-600 text-white shadow-lg shadow-sky-500/35 flex items-center justify-center transform group-hover:scale-110 transition-transform">
                   <Code2 className="w-7 h-7" />
                 </div>
-                <h3 className="font-serif font-bold text-2xl text-navy-900 group-hover:text-royal-600 transition-colors">
+                <h3 className="font-serif font-bold text-2xl text-slate-900 group-hover:text-sky-600 transition-colors">
                   1. IT Services and Digital Solutions
                 </h3>
-                <p className="text-xs sm:text-sm text-surface-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Tailored corporate websites, business management systems, custom software, ERP, mobile apps, and search marketing built for business efficiency and modern digital visibility.
                 </p>
               </div>
-              <div className="pt-4 border-t border-surface-200">
+              <div className="pt-4 border-t border-sky-100">
                 <Link
                   to="/services"
-                  className="inline-flex items-center text-sm font-bold text-royal-600 hover:text-royal-700 group"
+                  className="inline-flex items-center text-sm font-bold text-sky-600 hover:text-sky-700 group"
                 >
                   <span>Explore IT Services &amp; Capabilities</span>
                   <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
@@ -263,19 +264,19 @@ export const HomePage = () => {
             </div>
 
             {/* Card 2: Digital Products & Aggregators (Solar Orange Theme) */}
-            <div className="bg-gradient-to-br from-white to-orange-50/40 rounded-3xl p-8 border-2 border-orange-100 hover:border-orange-500 hover:shadow-xl hover:shadow-orange-500/10 transition-all space-y-4 flex flex-col justify-between group">
+            <div className="shiny-card bg-gradient-to-br from-white via-orange-50/50 to-orange-100/30 rounded-3xl p-8 border-2 border-orange-200/80 hover:border-orange-400 hover:shadow-2xl hover:shadow-orange-500/20 transition-all space-y-4 flex flex-col justify-between group">
               <div className="space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold-500 via-orange-500 to-orange-600 text-white shadow-md shadow-orange-500/30 flex items-center justify-center transform group-hover:scale-105 transition-transform">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/35 flex items-center justify-center transform group-hover:scale-110 transition-transform">
                   <Layers className="w-7 h-7" />
                 </div>
-                <h3 className="font-serif font-bold text-2xl text-navy-900 group-hover:text-orange-600 transition-colors">
+                <h3 className="font-serif font-bold text-2xl text-slate-900 group-hover:text-orange-600 transition-colors">
                   2. Digital Products and Aggregator Platforms
                 </h3>
-                <p className="text-xs sm:text-sm text-surface-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Specialized multi-sided platforms connecting consumers with vetted home technicians, mobility fleet hosts, authentic satvik merchants, and multi-category e-commerce sellers.
                 </p>
               </div>
-              <div className="pt-4 border-t border-surface-200">
+              <div className="pt-4 border-t border-orange-100">
                 <Link
                   to="/products"
                   className="inline-flex items-center text-sm font-bold text-orange-600 hover:text-orange-700 group"
@@ -295,19 +296,19 @@ export const HomePage = () => {
       <section id="services" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
-            <span className="text-xs font-bold text-royal-600 uppercase tracking-widest font-serif">
+            <span className="shiny-badge inline-block text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
               Vertical 1: IT Services
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-navy-900">
+            <h2 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
               IT Services and Digital Solutions
             </h2>
-            <p className="text-sm sm:text-base text-surface-500 max-w-2xl">
+            <p className="text-sm sm:text-base text-slate-600 max-w-2xl">
               Engineered with modern full-stack architectures to solve real business operational requirements.
             </p>
           </div>
           <Link
             to="/services"
-            className="inline-flex items-center text-xs sm:text-sm font-bold text-royal-600 hover:text-royal-700"
+            className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-sky-700 hover:text-sky-800 px-4 py-2 rounded-full"
           >
             <span>View All Services</span>
             <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -320,24 +321,24 @@ export const HomePage = () => {
             return (
               <div
                 key={service.slug || service._id}
-                className="bg-white rounded-2xl p-7 border border-surface-200 shadow-soft-sm hover:shadow-soft-md hover:border-royal-500/40 transition-all flex flex-col justify-between space-y-6 group"
+                className="shiny-card bg-gradient-to-br from-white via-sky-50/30 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-400 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all flex flex-col justify-between space-y-6 group"
               >
                 <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center group-hover:bg-royal-500 group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white shadow-md shadow-sky-500/25 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="font-serif font-bold text-lg text-navy-900 group-hover:text-royal-600 transition-colors">
+                  <h3 className="font-serif font-bold text-lg text-slate-900 group-hover:text-sky-600 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-surface-500 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {service.shortDescription}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-surface-200">
+                <div className="pt-4 border-t border-sky-100">
                   <Link
                     to={`/services/${service.slug}`}
-                    className="inline-flex items-center text-xs font-bold text-royal-600 hover:text-royal-700 group-hover:translate-x-1 transition-transform"
+                    className="inline-flex items-center text-xs font-bold text-sky-600 hover:text-sky-700 group-hover:translate-x-1 transition-transform"
                   >
                     <span>Learn More</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1" />
@@ -355,19 +356,19 @@ export const HomePage = () => {
       <section id="products" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
-            <span className="text-xs font-bold text-orange-600 uppercase tracking-widest font-serif">
+            <span className="shiny-badge inline-block text-xs font-bold text-orange-600 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
               Vertical 2: Digital Marketplaces
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-navy-900">
+            <h2 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
               Our Digital Products &amp; Aggregator Platforms
             </h2>
-            <p className="text-sm sm:text-base text-surface-500 max-w-2xl">
+            <p className="text-sm sm:text-base text-slate-600 max-w-2xl">
               Specialized platforms in home repair, mobility, community commerce, and consumer marketplaces.
             </p>
           </div>
           <Link
             to="/products"
-            className="inline-flex items-center text-xs sm:text-sm font-bold text-orange-600 hover:text-orange-700"
+            className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-orange-600 hover:text-orange-700 px-4 py-2 rounded-full"
           >
             <span>View All Platforms</span>
             <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -383,34 +384,34 @@ export const HomePage = () => {
             return (
               <div
                 key={platform.slug || platform._id}
-                className="bg-white rounded-2xl p-6 border border-surface-200 shadow-soft-sm hover:shadow-soft-md transition-all flex flex-col justify-between space-y-5"
+                className="shiny-card bg-gradient-to-br from-white via-orange-50/20 to-white rounded-2xl p-6 border-2 border-sky-100 hover:border-orange-300 shadow-md hover:shadow-xl hover:shadow-orange-500/15 transition-all flex flex-col justify-between space-y-5 group"
               >
                 <div className="space-y-4">
                   {/* Category & Status Badge */}
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-[10px] font-bold text-surface-500 uppercase tracking-wider truncate">
+                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider truncate">
                       {platform.category}
                     </span>
                     <span
-                      className={`text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0 font-mono ${
+                      className={`text-[9px] font-bold px-2.5 py-0.5 rounded-full shrink-0 font-mono ${
                         isLive
-                          ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                          ? 'bg-emerald-100 text-emerald-800 border border-emerald-300 shadow-xs'
                           : isUnderDev
-                          ? 'bg-amber-100 text-amber-900 border border-amber-300'
-                          : 'bg-blue-100 text-blue-900 border border-blue-300'
+                          ? 'bg-amber-100 text-amber-900 border border-amber-300 shadow-xs'
+                          : 'bg-sky-100 text-sky-900 border border-sky-300 shadow-xs'
                       }`}
                     >
                       {platform.status}
                     </span>
                   </div>
 
-                  <h3 className="font-serif font-bold text-xl text-navy-900">
-                    <Link to={`/products/${platform.slug}`} className="hover:text-royal-600 transition-colors">
+                  <h3 className="font-serif font-bold text-xl text-slate-900 group-hover:text-orange-600 transition-colors">
+                    <Link to={`/products/${platform.slug}`}>
                       {platform.name}
                     </Link>
                   </h3>
 
-                  <p className="text-xs text-surface-500 line-clamp-3 leading-relaxed">
+                  <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
                     {platform.shortDescription}
                   </p>
 
@@ -418,8 +419,8 @@ export const HomePage = () => {
                   {platform.keyFeatures && platform.keyFeatures.length > 0 && (
                     <div className="space-y-1.5 pt-1">
                       {platform.keyFeatures.slice(0, 3).map((feat, idx) => (
-                        <div key={idx} className="flex items-start text-[11px] text-navy-800">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-royal-500 mr-1.5 mt-0.5 shrink-0" />
+                        <div key={idx} className="flex items-start text-[11px] text-slate-700">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-sky-500 mr-1.5 mt-0.5 shrink-0" />
                           <span className="line-clamp-1">{feat}</span>
                         </div>
                       ))}
@@ -428,10 +429,10 @@ export const HomePage = () => {
                 </div>
 
                 {/* Actions */}
-                <div className="pt-4 border-t border-surface-200 flex items-center justify-between gap-2">
+                <div className="pt-4 border-t border-sky-100 flex items-center justify-between gap-2">
                   <Link
                     to={`/products/${platform.slug}`}
-                    className="text-xs font-bold text-navy-900 hover:text-royal-600"
+                    className="text-xs font-bold text-slate-800 hover:text-orange-600"
                   >
                     View Details
                   </Link>
@@ -441,10 +442,10 @@ export const HomePage = () => {
                       href={platform.websiteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex items-center text-xs font-bold px-3 py-1.5 rounded-lg transition-colors ${
+                      className={`shiny-btn inline-flex items-center text-xs font-bold px-3.5 py-1.5 rounded-xl transition-all ${
                         isLive
-                          ? 'bg-royal-500 hover:bg-royal-600 text-white'
-                          : 'bg-surface-200 hover:bg-surface-300 text-navy-800'
+                          ? 'bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-sm'
+                          : 'bg-orange-500 hover:bg-orange-600 text-white shadow-sm'
                       }`}
                     >
                       <span>Visit Website</span>
@@ -463,75 +464,75 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-xs font-bold text-royal-600 uppercase tracking-widest font-serif">
+          <span className="shiny-badge inline-block text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
             Our Approach &amp; Capabilities
           </span>
-          <h2 className="font-serif font-black text-2xl sm:text-4xl text-navy-900">
+          <h2 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
             Why Choose Us
           </h2>
-          <p className="text-sm sm:text-base text-surface-500">
+          <p className="text-sm sm:text-base text-slate-600">
             A structured, engineering-first methodology focused on technical scalability, partner viability, and dependable operational standards.
           </p>
         </div>
 
-        {/* Six Benefit Cards */}
+        {/* Six Benefit Cards with Shiny Hover Effects */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white rounded-2xl p-7 border border-surface-200 shadow-soft-sm space-y-3 hover:shadow-soft-md transition-shadow">
-            <div className="w-10 h-10 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center">
+          <div className="shiny-card bg-gradient-to-br from-white via-sky-50/40 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all space-y-3">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25">
               <Cpu className="w-5 h-5" />
             </div>
-            <h3 className="font-serif font-bold text-lg text-navy-900">Technology-Driven Approach</h3>
-            <p className="text-xs sm:text-sm text-surface-500 leading-relaxed">
+            <h3 className="font-serif font-bold text-lg text-slate-900">Technology-Driven Approach</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               We leverage modern frameworks (React, Node.js, MongoDB, microservices) to ensure responsive performance, clean code architecture, and high data reliability.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-7 border border-surface-200 shadow-soft-sm space-y-3 hover:shadow-soft-md transition-shadow">
-            <div className="w-10 h-10 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center">
+          <div className="shiny-card bg-gradient-to-br from-white via-sky-50/40 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all space-y-3">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25">
               <Building2 className="w-5 h-5" />
             </div>
-            <h3 className="font-serif font-bold text-lg text-navy-900">Business-Focused Solutions</h3>
-            <p className="text-xs sm:text-sm text-surface-500 leading-relaxed">
+            <h3 className="font-serif font-bold text-lg text-slate-900">Business-Focused Solutions</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Every system is engineered to solve concrete operational requirements, eliminate manual errors, streamline booking workflows, and improve commercial turnaround.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-7 border border-surface-200 shadow-soft-sm space-y-3 hover:shadow-soft-md transition-shadow">
-            <div className="w-10 h-10 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center">
+          <div className="shiny-card bg-gradient-to-br from-white via-sky-50/40 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all space-y-3">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25">
               <Code2 className="w-5 h-5" />
             </div>
-            <h3 className="font-serif font-bold text-lg text-navy-900">Custom Development Capabilities</h3>
-            <p className="text-xs sm:text-sm text-surface-500 leading-relaxed">
+            <h3 className="font-serif font-bold text-lg text-slate-900">Custom Development Capabilities</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               From tailored administrative management dashboards to multi-sided aggregator engines, we build bespoke software fitted to exact business specifications.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-7 border border-surface-200 shadow-soft-sm space-y-3 hover:shadow-soft-md transition-shadow">
-            <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center">
+          <div className="shiny-card bg-gradient-to-br from-white via-orange-50/40 to-white rounded-2xl p-7 border-2 border-orange-100 hover:border-orange-300 shadow-md hover:shadow-xl hover:shadow-orange-500/15 transition-all space-y-3">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-400 to-orange-600 text-white flex items-center justify-center shadow-md shadow-orange-500/25">
               <Layers className="w-5 h-5" />
             </div>
-            <h3 className="font-serif font-bold text-lg text-navy-900">Multiple Digital Business Verticals</h3>
-            <p className="text-xs sm:text-sm text-surface-500 leading-relaxed">
+            <h3 className="font-serif font-bold text-lg text-slate-900">Multiple Digital Business Verticals</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Operating both client software engineering and dedicated digital marketplaces provides real-world domain insights into customer journeys and vendor management.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-7 border border-surface-200 shadow-soft-sm space-y-3 hover:shadow-soft-md transition-shadow">
-            <div className="w-10 h-10 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center">
+          <div className="shiny-card bg-gradient-to-br from-white via-sky-50/40 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all space-y-3">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25">
               <Workflow className="w-5 h-5" />
             </div>
-            <h3 className="font-serif font-bold text-lg text-navy-900">Scalable Platform Architecture</h3>
-            <p className="text-xs sm:text-sm text-surface-500 leading-relaxed">
+            <h3 className="font-serif font-bold text-lg text-slate-900">Scalable Platform Architecture</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Our platforms are built with modular schemas, secure REST APIs, role-based authorization, and indexed databases ready to accommodate growing catalog and booking volumes.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-7 border border-surface-200 shadow-soft-sm space-y-3 hover:shadow-soft-md transition-shadow">
-            <div className="w-10 h-10 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center">
+          <div className="shiny-card bg-gradient-to-br from-white via-sky-50/40 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all space-y-3">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25">
               <Handshake className="w-5 h-5" />
             </div>
-            <h3 className="font-serif font-bold text-lg text-navy-900">Focus on Customer and Partner Experience</h3>
-            <p className="text-xs sm:text-sm text-surface-500 leading-relaxed">
+            <h3 className="font-serif font-bold text-lg text-slate-900">Focus on Customer and Partner Experience</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               We design transparent onboarding, upfront service guidelines, verified merchant relationships, and clear communication channels across every user touchpoint.
             </p>
           </div>
@@ -634,19 +635,19 @@ export const HomePage = () => {
       <section id="portfolio" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
-            <span className="text-xs font-bold text-royal-600 uppercase tracking-widest font-serif">
+            <span className="shiny-badge inline-block text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
               Engineering Showcase
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-navy-900">
+            <h2 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
               Selected Projects &amp; Case Studies
             </h2>
-            <p className="text-sm sm:text-base text-surface-500 max-w-2xl">
+            <p className="text-sm sm:text-base text-slate-600 max-w-2xl">
               Completed software architectures, digital platform demonstrations, and internal technology implementations.
             </p>
           </div>
           <Link
             to="/portfolio"
-            className="inline-flex items-center text-xs sm:text-sm font-bold text-royal-600 hover:text-royal-700"
+            className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-sky-700 hover:text-sky-800 px-4 py-2 rounded-full"
           >
             <span>View Full Portfolio</span>
             <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -657,23 +658,23 @@ export const HomePage = () => {
           {portfolio.map((proj) => (
             <div
               key={proj.slug || proj._id}
-              className="bg-white rounded-2xl overflow-hidden border border-surface-200 shadow-soft-sm hover:shadow-soft-md transition-all flex flex-col justify-between"
+              className="shiny-card bg-gradient-to-br from-white via-sky-50/20 to-white rounded-2xl overflow-hidden border-2 border-sky-100 hover:border-sky-400 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all flex flex-col justify-between"
             >
               <div className="p-6 space-y-4">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="text-[10px] font-bold text-royal-600 uppercase tracking-wider font-mono">
+                  <span className="text-[10px] font-bold text-sky-700 uppercase tracking-wider font-mono">
                     {proj.industry}
                   </span>
-                  <span className="text-[9px] font-semibold px-2 py-0.5 rounded-full bg-surface-200 text-surface-600 font-mono">
+                  <span className="text-[9px] font-semibold px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800 font-mono">
                     {proj.projectType}
                   </span>
                 </div>
 
-                <h3 className="font-serif font-bold text-lg text-navy-900 hover:text-royal-600 transition-colors">
+                <h3 className="font-serif font-bold text-lg text-slate-900 hover:text-sky-600 transition-colors">
                   <Link to={`/portfolio/${proj.slug}`}>{proj.name}</Link>
                 </h3>
 
-                <p className="text-xs text-surface-500 line-clamp-3 leading-relaxed">
+                <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
                   {proj.shortDescription}
                 </p>
 
@@ -683,7 +684,7 @@ export const HomePage = () => {
                     {proj.technologies.slice(0, 4).map((tech, idx) => (
                       <span
                         key={idx}
-                        className="text-[10px] px-2 py-0.5 rounded bg-surface-100 text-surface-600 border border-surface-200"
+                        className="text-[10px] px-2 py-0.5 rounded-md bg-sky-50 text-sky-700 border border-sky-200"
                       >
                         {tech}
                       </span>
@@ -692,10 +693,10 @@ export const HomePage = () => {
                 )}
               </div>
 
-              <div className="px-6 py-3.5 bg-surface-50 border-t border-surface-200 flex items-center justify-between text-xs">
+              <div className="px-6 py-3.5 bg-sky-50/50 border-t border-sky-100 flex items-center justify-between text-xs">
                 <Link
                   to={`/portfolio/${proj.slug}`}
-                  className="font-bold text-royal-600 hover:underline flex items-center"
+                  className="font-bold text-sky-600 hover:underline flex items-center"
                 >
                   <span>Case Study</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-1" />
@@ -706,7 +707,7 @@ export const HomePage = () => {
                     href={proj.projectUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-surface-500 hover:text-navy-900 inline-flex items-center"
+                    className="text-slate-500 hover:text-slate-900 inline-flex items-center font-medium"
                   >
                     <span>Visit Link</span>
                     <ExternalLink className="w-3 h-3 ml-1" />
@@ -722,7 +723,7 @@ export const HomePage = () => {
       {/* SECTION H: PARTNER WITH US (Vibrant Light Electric Blue Theme) */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-8 sm:p-14 text-white border border-sky-400/30 shadow-xl shadow-sky-500/20 space-y-8 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-8 sm:p-14 text-white border border-sky-300/40 shadow-2xl shadow-sky-500/25 space-y-8 relative overflow-hidden">
           {/* Subtle Ambient Glow */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -768,7 +769,7 @@ export const HomePage = () => {
           <div className="pt-2 relative z-10">
             <Link
               to="/partners"
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-white hover:bg-sky-50 text-sky-700 font-extrabold text-sm shadow-lg transition-all transform hover:-translate-y-0.5"
+              className="shiny-btn inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-white hover:bg-sky-50 text-sky-700 font-extrabold text-sm shadow-xl shadow-sky-950/20 transition-all transform hover:-translate-y-0.5"
             >
               <span>Become a Partner</span>
               <ArrowRight className="w-4 h-4 ml-2 text-sky-700" />
@@ -781,29 +782,29 @@ export const HomePage = () => {
       {/* SECTION I: COMPANY VISION AND MISSION */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-8 sm:p-14 border border-surface-200 shadow-soft-sm grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div className="space-y-4 border-b lg:border-b-0 lg:border-r border-surface-200 pb-8 lg:pb-0 lg:pr-8">
-            <span className="text-xs font-bold text-royal-600 uppercase tracking-widest font-serif flex items-center">
+        <div className="shiny-glass rounded-3xl p-8 sm:p-14 border-2 border-sky-100 shadow-xl shadow-sky-500/5 grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div className="space-y-4 border-b lg:border-b-0 lg:border-r border-sky-100 pb-8 lg:pb-0 lg:pr-8">
+            <span className="shiny-badge inline-flex items-center text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
               <Compass className="w-4 h-4 mr-1.5" />
               Company Vision
             </span>
-            <h3 className="font-serif font-bold text-2xl text-navy-900">
+            <h3 className="font-serif font-bold text-2xl text-slate-900">
               Accessible Digital Opportunity
             </h3>
-            <p className="text-sm sm:text-base text-surface-600 leading-relaxed font-light italic">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light italic">
               "To build accessible and scalable digital platforms that simplify everyday needs and create opportunities for people and businesses."
             </p>
           </div>
 
           <div className="space-y-4 lg:pl-4">
-            <span className="text-xs font-bold text-orange-600 uppercase tracking-widest font-serif flex items-center">
+            <span className="shiny-badge inline-flex items-center text-xs font-bold text-orange-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
               <Sparkles className="w-4 h-4 mr-1.5" />
               Company Mission
             </span>
-            <h3 className="font-serif font-bold text-2xl text-navy-900">
+            <h3 className="font-serif font-bold text-2xl text-slate-900">
               Technology &amp; Specialized Platforms
             </h3>
-            <p className="text-sm sm:text-base text-surface-600 leading-relaxed font-light italic">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light italic">
               "To combine technology, practical business solutions, and specialized online platforms to improve digital access, convenience, and collaboration."
             </p>
           </div>
@@ -817,16 +818,16 @@ export const HomePage = () => {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex items-center justify-between">
             <div className="space-y-1">
-              <span className="text-xs font-bold text-royal-600 uppercase tracking-widest font-serif">
+              <span className="shiny-badge inline-block text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
                 Corporate Communications
               </span>
-              <h2 className="font-serif font-black text-2xl sm:text-3xl text-navy-900">
+              <h2 className="font-serif font-black text-2xl sm:text-3xl text-slate-950">
                 Latest Updates &amp; Announcements
               </h2>
             </div>
             <Link
               to="/news"
-              className="text-xs sm:text-sm font-bold text-royal-600 hover:text-royal-700"
+              className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-sky-700 hover:text-sky-800 px-3.5 py-1.5 rounded-full"
             >
               All Updates →
             </Link>
@@ -836,23 +837,23 @@ export const HomePage = () => {
             {news.map((item) => (
               <div
                 key={item._id}
-                className="bg-white rounded-2xl p-6 border border-surface-200 shadow-soft-sm flex flex-col justify-between space-y-4 hover:shadow-soft-md transition-all"
+                className="shiny-card bg-gradient-to-br from-white via-sky-50/25 to-white rounded-2xl p-6 border-2 border-sky-100 hover:border-sky-400 shadow-md hover:shadow-xl hover:shadow-sky-500/15 flex flex-col justify-between space-y-4 transition-all"
               >
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs text-surface-400">
-                    <span className="font-semibold text-royal-600">{item.category}</span>
+                  <div className="flex items-center justify-between text-xs text-slate-400">
+                    <span className="font-semibold text-sky-600">{item.category}</span>
                     <span>{new Date(item.publishedAt).toLocaleDateString()}</span>
                   </div>
-                  <h3 className="font-serif font-bold text-base text-navy-900 hover:text-royal-600 transition-colors">
+                  <h3 className="font-serif font-bold text-base text-slate-900 hover:text-sky-600 transition-colors">
                     <Link to={`/news/${item.slug}`}>{item.title}</Link>
                   </h3>
-                  <p className="text-xs text-surface-500 line-clamp-3 leading-relaxed">
+                  <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
                     {item.summary}
                   </p>
                 </div>
                 <Link
                   to={`/news/${item.slug}`}
-                  className="text-xs font-bold text-royal-600 inline-flex items-center group pt-2"
+                  className="text-xs font-bold text-sky-600 inline-flex items-center group pt-2"
                 >
                   <span>Read Announcement</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
@@ -867,7 +868,7 @@ export const HomePage = () => {
       {/* SECTION K: FINAL CTA (Vibrant Light Electric Blue Theme) */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-8 sm:p-14 text-white border border-sky-400/30 shadow-2xl shadow-sky-500/25 flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
+        <div className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-8 sm:p-14 text-white border border-sky-300/40 shadow-2xl shadow-sky-500/25 flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
           {/* Subtle atmospheric glow */}
           <div className="absolute top-0 right-1/4 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 right-10 w-64 h-64 bg-gold-400/20 rounded-full blur-3xl pointer-events-none" />
@@ -886,13 +887,13 @@ export const HomePage = () => {
           <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full lg:w-auto relative z-10">
             <Link
               to="/contact"
-              className="px-7 py-3.5 rounded-xl bg-white hover:bg-sky-50 text-sky-700 font-extrabold text-sm text-center shadow-lg transition-all transform hover:-translate-y-0.5"
+              className="shiny-btn px-7 py-3.5 rounded-2xl bg-white hover:bg-sky-50 text-sky-700 font-extrabold text-sm text-center shadow-xl shadow-sky-950/20 transition-all transform hover:-translate-y-0.5"
             >
               Discuss Your Project
             </Link>
             <Link
               to="/contact"
-              className="px-7 py-3.5 rounded-xl border-2 border-white hover:bg-white/15 text-white font-bold text-sm text-center transition-all shadow-sm"
+              className="shiny-btn px-7 py-3.5 rounded-2xl border-2 border-white hover:bg-white/15 text-white font-bold text-sm text-center transition-all shadow-sm"
             >
               Contact Us
             </Link>
