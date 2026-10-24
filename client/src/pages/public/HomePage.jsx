@@ -97,14 +97,14 @@ export const HomePage = () => {
                 <span>CIN: {settings.cin || 'U77100MP2026PTC087531'} • Bhopal, MP, India</span>
               </div>
 
-              <h1 className="font-serif font-black text-3xl sm:text-5xl lg:text-6xl text-slate-950 tracking-tight leading-tight">
+              <h1 className="font-sans font-extrabold text-2xl sm:text-4xl lg:text-[42px] xl:text-[46px] text-slate-900 tracking-tight leading-[1.22] sm:leading-[1.18]">
                 Technology That Builds Businesses and{' '}
                 <span className="bg-gradient-to-r from-sky-600 via-blue-600 to-orange-500 bg-clip-text text-transparent">
                   Connects Opportunities
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+              <p className="text-sm sm:text-base lg:text-[17px] text-slate-600 leading-relaxed font-normal max-w-2xl">
                 Namah Siddham Corporation Private Limited combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.
               </p>
 
