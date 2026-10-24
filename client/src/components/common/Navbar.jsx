@@ -382,7 +382,7 @@ export const Navbar = () => {
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center px-4.5 py-2.5 text-xs font-extrabold rounded-xl bg-gradient-to-r from-royal-600 to-royal-500 hover:from-royal-700 hover:to-royal-600 text-white shadow-md shadow-royal-500/25 transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center px-4.5 py-2.5 text-xs font-extrabold rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-md shadow-sky-500/30 transition-all transform hover:-translate-y-0.5"
             >
               <span>Let's Discuss Your Project</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
@@ -395,7 +395,7 @@ export const Navbar = () => {
           <div className="hidden lg:flex xl:hidden items-center space-x-2">
             <Link
               to="/contact"
-              className="inline-flex items-center px-4 py-2 text-xs font-extrabold rounded-xl bg-royal-600 hover:bg-royal-700 text-white shadow-sm"
+              className="inline-flex items-center px-4 py-2 text-xs font-extrabold rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-sm"
             >
               <span>Discuss Project</span>
               <ArrowRight className="w-3 h-3 ml-1" />
@@ -540,7 +540,7 @@ export const Navbar = () => {
           <div className="pt-4 border-t border-slate-200 flex flex-col space-y-2.5">
             <Link
               to="/contact"
-              className="flex items-center justify-center w-full px-5 py-3 rounded-xl bg-gradient-to-r from-royal-600 to-royal-500 text-white font-extrabold text-sm text-center shadow-md shadow-royal-500/25"
+              className="flex items-center justify-center w-full px-5 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-extrabold text-sm text-center shadow-md shadow-sky-500/25"
             >
               <span>Let's Discuss Your Project</span>
               <ArrowRight className="w-4 h-4 ml-2" />

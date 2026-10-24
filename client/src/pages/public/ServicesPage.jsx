@@ -142,22 +142,22 @@ export const ServicesPage = () => {
 
       {/* Engineering Philosophy */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-navy-950 rounded-3xl p-8 sm:p-12 text-white border border-navy-800 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50/60 rounded-3xl p-8 sm:p-12 text-slate-800 border-2 border-sky-100 shadow-sm grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="space-y-2">
-            <h3 className="font-serif font-bold text-xl text-white">Full-Stack Capability</h3>
-            <p className="text-xs sm:text-sm text-surface-400 leading-relaxed">
+            <h3 className="font-serif font-bold text-xl text-slate-950">Full-Stack Capability</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               We own the full stack — from componentized React frontends and Tailwind styling to robust Node.js APIs and optimized MongoDB database schemas.
             </p>
           </div>
           <div className="space-y-2">
-            <h3 className="font-serif font-bold text-xl text-white">Data Security &amp; RBAC</h3>
-            <p className="text-xs sm:text-sm text-surface-400 leading-relaxed">
+            <h3 className="font-serif font-bold text-xl text-slate-950">Data Security &amp; RBAC</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Strict server-side validation, role-based authorization, bcrypt encryption, and sanitized inputs ensure confidentiality of sensitive business records.
             </p>
           </div>
           <div className="space-y-2">
-            <h3 className="font-serif font-bold text-xl text-white">Production Deliverables</h3>
-            <p className="text-xs sm:text-sm text-surface-400 leading-relaxed">
+            <h3 className="font-serif font-bold text-xl text-slate-950">Production Deliverables</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Every deliverable includes clean documentation, source repository handover, responsive testing on multiple viewports, and administrative training.
             </p>
           </div>
@@ -176,7 +176,7 @@ export const ServicesPage = () => {
           <div className="pt-2">
             <Link
               to="/contact"
-              className="inline-flex items-center px-6 py-3 rounded-xl bg-royal-500 hover:bg-royal-600 text-white font-bold text-xs sm:text-sm shadow-md transition-all"
+              className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-sky-500/20 transition-all"
             >
               <span>Submit Project Requirements</span>
               <ArrowRight className="w-4 h-4 ml-2" />

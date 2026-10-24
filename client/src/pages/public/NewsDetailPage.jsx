@@ -63,32 +63,33 @@ export const NewsDetailPage = () => {
         description={article.seoDescription || article.summary}
       />
 
-      {/* Top Banner */}
-      <section className="bg-forest-950 text-white py-14 border-b border-forest-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      {/* Top Banner (Luminous White & Royal Blue Theme matching Logo) */}
+      <section className="bg-gradient-to-b from-white via-royal-50/25 to-surface-100 text-slate-900 py-14 sm:py-18 border-b border-slate-200 relative overflow-hidden">
+        <div className="absolute top-0 right-10 w-96 h-96 bg-royal-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
           <Link
             to="/news"
-            className="inline-flex items-center text-xs text-sage-300 hover:text-gold-300 transition-colors"
+            className="inline-flex items-center text-xs text-slate-500 hover:text-royal-600 transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5 mr-1" />
             Back to Announcements
           </Link>
 
-          <div className="flex items-center space-x-3 text-xs text-gold-400 font-semibold uppercase tracking-wider">
+          <div className="flex items-center space-x-3 text-xs text-gold-600 font-semibold uppercase tracking-wider">
             <span>{article.category}</span>
             <span>•</span>
-            <span className="flex items-center text-sage-300">
-              <Calendar className="w-3.5 h-3.5 mr-1" />
+            <span className="flex items-center text-slate-500">
+              <Calendar className="w-3.5 h-3.5 mr-1 text-royal-500" />
               {new Date(article.publishedAt).toLocaleDateString()}
             </span>
           </div>
 
-          <h1 className="font-serif font-black text-2xl sm:text-4xl text-white tracking-tight leading-tight">
+          <h1 className="font-serif font-black text-2xl sm:text-4xl text-slate-950 tracking-tight leading-tight">
             {article.title}
           </h1>
 
-          <div className="flex items-center space-x-2 text-xs text-sage-300 pt-2">
-            <User className="w-3.5 h-3.5 text-gold-400" />
+          <div className="flex items-center space-x-2 text-xs text-slate-500 pt-2">
+            <User className="w-3.5 h-3.5 text-royal-600" />
             <span>Authored by: {article.author}</span>
           </div>
         </div>

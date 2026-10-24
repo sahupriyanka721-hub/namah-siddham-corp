@@ -56,12 +56,17 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
         {/* Brand Header */}
         <div className="p-4 border-b border-navy-800 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="p-1 rounded-xl bg-white/10 border border-white/15">
+            <div className="p-1 rounded-xl bg-white shadow-xs">
               <img
-                src="/assets/namah-siddham-logo.png"
+                src="/assets/namah-siddham-logo.jpg"
                 onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = '/assets/namah-siddham-emblem.svg';
+                  if (!e.target.dataset.triedPng) {
+                    e.target.dataset.triedPng = 'true';
+                    e.target.src = '/assets/namah-siddham-logo.png';
+                  } else {
+                    e.target.onerror = null;
+                    e.target.src = '/assets/namah-siddham-emblem.svg';
+                  }
                 }}
                 alt="Namah Siddham Logo"
                 className="h-10 w-auto object-contain"
@@ -71,7 +76,7 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
               <span className="font-heading font-black text-sm text-white tracking-wider leading-tight">
                 NAMAH SIDDHAM
               </span>
-              <span className="text-[9px] font-bold text-royal-400 tracking-widest uppercase font-mono">
+              <span className="text-[9px] font-bold text-sky-400 tracking-widest uppercase font-mono">
                 ADMIN PORTAL
               </span>
             </div>

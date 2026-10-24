@@ -34,7 +34,7 @@ export const Footer = () => {
                   <span className="font-heading font-black text-lg text-white tracking-wider">
                     NAMAH SIDDHAM
                   </span>
-                  <span className="text-[10px] font-bold text-royal-400 tracking-[0.2em] uppercase font-mono">
+                  <span className="text-[10px] font-bold text-sky-400 tracking-[0.2em] uppercase font-mono">
                     CORPORATION PRIVATE LIMITED
                   </span>
                 </div>
@@ -48,8 +48,8 @@ export const Footer = () => {
                 'Namah Siddham Corporation Private Limited combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.'}
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-surface-400">
-              <span className="inline-flex items-center text-royal-300 font-semibold">
-                <ShieldCheck className="w-4 h-4 mr-1 text-royal-400" />
+              <span className="inline-flex items-center text-sky-300 font-semibold">
+                <ShieldCheck className="w-4 h-4 mr-1 text-sky-400" />
                 {settings.companyType || 'Private Limited Company'}
               </span>
               <span>•</span>
@@ -60,7 +60,7 @@ export const Footer = () => {
           {/* Column 2: IT Services Links */}
           <div className="space-y-4">
             <h4 className="text-white text-xs font-bold tracking-wider uppercase font-serif border-b border-navy-800 pb-2 flex items-center">
-              <span className="w-1.5 h-1.5 rounded-full bg-royal-400 mr-2" />
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mr-2" />
               IT Services
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm">
@@ -96,7 +96,7 @@ export const Footer = () => {
               <li className="pt-2">
                 <Link
                   to="/services"
-                  className="text-xs text-royal-400 font-bold hover:underline inline-flex items-center"
+                  className="text-xs text-sky-400 font-bold hover:underline inline-flex items-center"
                 >
                   <span>All IT Services</span>
                   <ArrowUpRight className="w-3 h-3 ml-0.5" />

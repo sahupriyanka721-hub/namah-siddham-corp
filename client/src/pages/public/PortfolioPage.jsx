@@ -188,7 +188,7 @@ export const PortfolioPage = () => {
           </div>
           <Link
             to="/contact"
-            className="px-6 py-3 rounded-xl bg-royal-500 hover:bg-royal-600 text-white font-bold text-xs sm:text-sm shrink-0 shadow-md transition-all"
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold text-xs sm:text-sm shrink-0 shadow-md shadow-sky-500/20 transition-all"
           >
             <span>Discuss Your Project</span>
           </Link>

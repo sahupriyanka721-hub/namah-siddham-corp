@@ -46,12 +46,17 @@ export const AdminLogin = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center space-y-4">
         {/* Brand Logo & Corporate Heading */}
         <div className="flex flex-col items-center justify-center space-y-3">
-          <div className="p-3 rounded-3xl bg-white/10 border border-white/15 shadow-2xl backdrop-blur-md">
+          <div className="p-3 rounded-3xl bg-white shadow-2xl border border-slate-100">
             <img
-              src="/assets/namah-siddham-logo.png"
+              src="/assets/namah-siddham-logo.jpg"
               onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = '/assets/namah-siddham-emblem.svg';
+                if (!e.target.dataset.triedPng) {
+                  e.target.dataset.triedPng = 'true';
+                  e.target.src = '/assets/namah-siddham-logo.png';
+                } else {
+                  e.target.onerror = null;
+                  e.target.src = '/assets/namah-siddham-emblem.svg';
+                }
               }}
               alt="Namah Siddham Corporation Logo"
               className="h-20 w-auto object-contain mx-auto"
@@ -60,7 +65,7 @@ export const AdminLogin = () => {
           <h2 className="font-heading font-black text-2xl text-white tracking-wider">
             NAMAH SIDDHAM
           </h2>
-          <p className="text-[11px] font-bold text-royal-400 tracking-[0.25em] uppercase font-mono">
+          <p className="text-[11px] font-bold text-sky-400 tracking-[0.25em] uppercase font-mono">
             Corporation Private Limited
           </p>
         </div>

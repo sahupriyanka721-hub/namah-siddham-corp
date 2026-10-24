@@ -112,7 +112,7 @@ export const PortfolioDetailPage = () => {
                 href={project.projectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-5 py-2.5 rounded-xl bg-royal-600 hover:bg-royal-700 text-white font-bold text-xs sm:text-sm shadow-md transition-all"
+                className="inline-flex items-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-sky-500/20 transition-all"
               >
                 <span>Visit Project URL</span>
                 <ExternalLink className="w-4 h-4 ml-1.5" />
@@ -192,7 +192,7 @@ export const PortfolioDetailPage = () => {
               <div className="pt-3 border-t border-surface-200">
                 <Link
                   to="/contact"
-                  className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-royal-500 hover:bg-royal-600 text-white font-bold text-xs shadow-sm transition-all"
+                  className="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold text-xs shadow-md shadow-sky-500/20 transition-all"
                 >
                   <span>Inquire Regarding Similar Project</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1.5" />

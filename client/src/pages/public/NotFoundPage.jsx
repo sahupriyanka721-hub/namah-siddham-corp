@@ -22,14 +22,14 @@ export const NotFoundPage = () => {
         <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             to="/"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-royal-500 text-white font-bold text-xs hover:bg-royal-600 shadow-sm"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 text-white font-bold text-xs hover:from-sky-600 hover:to-blue-700 shadow-md shadow-sky-500/20"
           >
             <Home className="w-4 h-4 mr-1.5" />
             <span>Return to Home</span>
           </Link>
           <Link
             to="/services"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl border border-navy-800 text-navy-900 font-semibold text-xs hover:bg-surface-100"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl border border-sky-500 text-sky-700 font-semibold text-xs hover:bg-sky-50"
           >
             <span>Explore IT Services</span>
           </Link>

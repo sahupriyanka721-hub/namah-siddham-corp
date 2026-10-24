@@ -64,7 +64,7 @@ export const Preloader = () => {
           <h2 className="font-heading font-black text-xl sm:text-2xl text-white tracking-tight">
             NAMAH SIDDHAM
           </h2>
-          <p className="text-[11px] font-bold text-royal-400 tracking-[0.25em] uppercase font-mono">
+          <p className="text-[11px] font-bold text-sky-400 tracking-[0.25em] uppercase font-mono">
             Corporation Private Limited
           </p>
           <p className="text-[10px] text-surface-400 font-medium">

@@ -194,20 +194,20 @@ export const EcosystemPage = () => {
 
       {/* Corporate Ecosystem Note */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-navy-950 rounded-3xl p-8 sm:p-12 text-white border border-navy-800 text-center space-y-3">
+        <div className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-8 sm:p-12 text-white border border-sky-400/30 text-center space-y-3 shadow-xl shadow-sky-500/20">
           <h3 className="font-serif font-bold text-xl sm:text-2xl text-white">
             Are you a service vendor or digital merchant?
           </h3>
-          <p className="text-xs sm:text-sm text-surface-300 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-xs sm:text-sm text-sky-100 max-w-2xl mx-auto font-normal leading-relaxed">
             Each platform in our ecosystem is powered by certified independent professionals and merchants. Register your interest to partner with our growing marketplace network.
           </p>
           <div className="pt-2">
             <Link
               to="/partners"
-              className="inline-flex items-center px-6 py-3 rounded-xl bg-royal-500 hover:bg-royal-600 text-white text-xs font-bold shadow-sm"
+              className="inline-flex items-center px-6 py-3 rounded-xl bg-white hover:bg-sky-50 text-sky-700 text-xs font-extrabold shadow-md transition-all"
             >
               <span>Explore Partnership Opportunities</span>
-              <ArrowUpRight className="w-4 h-4 ml-1.5" />
+              <ArrowUpRight className="w-4 h-4 ml-1.5 text-sky-700" />
             </Link>
           </div>
         </div>

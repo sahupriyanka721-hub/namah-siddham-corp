@@ -158,17 +158,17 @@ export const AboutPage = () => {
       {/* Vision & Mission Cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-navy-900 rounded-3xl p-8 sm:p-10 text-white border border-navy-800 shadow-soft-md space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-navy-800 flex items-center justify-center text-gold-400">
+          <div className="bg-gradient-to-br from-sky-50 to-white rounded-3xl p-8 sm:p-10 text-slate-800 border-2 border-sky-200 shadow-soft-md space-y-4">
+            <div className="w-12 h-12 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600">
               <Compass className="w-6 h-6" />
             </div>
-            <span className="text-xs font-bold text-gold-400 uppercase tracking-widest font-serif">
+            <span className="text-xs font-bold text-sky-600 uppercase tracking-widest font-serif">
               Corporate Vision
             </span>
-            <h3 className="font-serif font-bold text-2xl text-white">
+            <h3 className="font-serif font-bold text-2xl text-slate-950">
               Accessible Digital Opportunity
             </h3>
-            <p className="text-sm sm:text-base text-surface-300 leading-relaxed font-light italic">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light italic">
               "{visionText}"
             </p>
           </div>
@@ -256,13 +256,13 @@ export const AboutPage = () => {
           <div className="pt-2 flex justify-center gap-4">
             <Link
               to="/services"
-              className="px-6 py-2.5 rounded-xl bg-royal-500 text-white font-bold text-xs sm:text-sm hover:bg-royal-600 shadow-sm"
+              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 text-white font-bold text-xs sm:text-sm hover:from-sky-600 hover:to-blue-700 shadow-md shadow-sky-500/20"
             >
               Explore IT Services
             </Link>
             <Link
               to="/partners"
-              className="px-6 py-2.5 rounded-xl border border-navy-800 text-navy-900 font-bold text-xs sm:text-sm hover:bg-white"
+              className="px-6 py-2.5 rounded-xl border border-sky-500 text-sky-700 font-bold text-xs sm:text-sm hover:bg-sky-50"
             >
               Partner With Us
             </Link>

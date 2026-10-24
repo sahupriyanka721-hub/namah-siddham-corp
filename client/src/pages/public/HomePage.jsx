@@ -111,7 +111,7 @@ export const HomePage = () => {
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-gradient-to-r from-royal-600 to-royal-500 hover:from-royal-700 hover:to-royal-600 text-white font-bold text-sm sm:text-base shadow-lg shadow-royal-500/25 transition-all transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-sky-500/25 transition-all transform hover:-translate-y-0.5"
                 >
                   <span>Explore Our IT Services</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -539,22 +539,22 @@ export const HomePage = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION F: HOW OUR BUSINESS MODEL WORKS */}
+      {/* SECTION F: HOW OUR BUSINESS MODEL WORKS (Luminous Light Blue Theme) */}
       {/* ========================================================================= */}
-      <section className="bg-gradient-to-br from-royal-950 via-slate-900 to-navy-950 text-white py-20 border-y border-royal-900/80 relative overflow-hidden">
-        {/* Subtle glowing ambient lights matching Logo */}
-        <div className="absolute top-1/2 left-10 -translate-y-1/2 w-96 h-96 bg-royal-500/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute top-1/2 right-10 -translate-y-1/2 w-96 h-96 bg-gold-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <section className="bg-gradient-to-b from-sky-50/80 via-white to-sky-50/50 text-slate-800 py-20 border-y border-sky-100 relative overflow-hidden">
+        {/* Soft atmospheric ambient glow */}
+        <div className="absolute top-1/2 left-10 -translate-y-1/2 w-96 h-96 bg-sky-400/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 right-10 -translate-y-1/2 w-96 h-96 bg-gold-400/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold text-gold-400 uppercase tracking-widest font-serif">
+            <span className="text-xs font-bold text-sky-600 uppercase tracking-widest font-serif">
               Operational Framework
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-white">
+            <h2 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
               How Our Business Model Works
             </h2>
-            <p className="text-xs sm:text-sm text-surface-300">
+            <p className="text-xs sm:text-sm text-slate-600">
               A structured digital flow connecting everyday needs with specialized platform solutions and verified providers.
             </p>
           </div>
@@ -562,66 +562,66 @@ export const HomePage = () => {
           {/* Visual Step-by-Step Flow */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
             {/* Step 1 */}
-            <div className="bg-royal-900/50 backdrop-blur-md border border-royal-700/60 rounded-2xl p-5 space-y-2 text-center relative hover:border-royal-400 transition-colors">
-              <div className="w-8 h-8 rounded-full bg-royal-500/30 border border-royal-400 text-royal-200 font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
+            <div className="bg-white border-2 border-sky-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/10 transition-all">
+              <div className="w-8 h-8 rounded-full bg-sky-500 text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 1
               </div>
-              <h4 className="font-bold text-sm text-white">Customer Need</h4>
-              <p className="text-[11px] text-surface-300">
+              <h4 className="font-bold text-sm text-slate-900">Customer Need</h4>
+              <p className="text-[11px] text-slate-600">
                 A customer identifies a requirement for home appliance repair, mobility rental, satvik groceries, or retail products.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-royal-900/50 backdrop-blur-md border border-royal-700/60 rounded-2xl p-5 space-y-2 text-center relative hover:border-royal-400 transition-colors">
-              <div className="w-8 h-8 rounded-full bg-royal-500/30 border border-royal-400 text-royal-200 font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
+            <div className="bg-white border-2 border-sky-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/10 transition-all">
+              <div className="w-8 h-8 rounded-full bg-sky-500 text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 2
               </div>
-              <h4 className="font-bold text-sm text-white">Specialized Digital Platform</h4>
-              <p className="text-[11px] text-surface-300">
+              <h4 className="font-bold text-sm text-slate-900">Specialized Digital Platform</h4>
+              <p className="text-[11px] text-slate-600">
                 Access through dedicated platform properties (HomeServixo, Carrento, Jainamshree, SuperiorMart).
               </p>
             </div>
 
             {/* Step 3 */}
-            <div className="bg-royal-900/50 backdrop-blur-md border border-royal-700/60 rounded-2xl p-5 space-y-2 text-center relative hover:border-royal-400 transition-colors">
-              <div className="w-8 h-8 rounded-full bg-royal-500/30 border border-royal-400 text-royal-200 font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
+            <div className="bg-white border-2 border-sky-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/10 transition-all">
+              <div className="w-8 h-8 rounded-full bg-sky-500 text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 3
               </div>
-              <h4 className="font-bold text-sm text-white">Discovery, Booking or Ordering</h4>
-              <p className="text-[11px] text-surface-300">
+              <h4 className="font-bold text-sm text-slate-900">Discovery, Booking or Ordering</h4>
+              <p className="text-[11px] text-slate-600">
                 Intuitive search, transparent pricing estimates, schedule selection, or digital cart checkout.
               </p>
             </div>
 
             {/* Step 4 */}
-            <div className="bg-royal-900/50 backdrop-blur-md border border-royal-700/60 rounded-2xl p-5 space-y-2 text-center relative hover:border-royal-400 transition-colors">
-              <div className="w-8 h-8 rounded-full bg-royal-500/30 border border-royal-400 text-royal-200 font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
+            <div className="bg-white border-2 border-sky-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/10 transition-all">
+              <div className="w-8 h-8 rounded-full bg-sky-500 text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 4
               </div>
-              <h4 className="font-bold text-sm text-white">Relevant Seller or Partner</h4>
-              <p className="text-[11px] text-surface-300">
+              <h4 className="font-bold text-sm text-slate-900">Relevant Seller or Partner</h4>
+              <p className="text-[11px] text-slate-600">
                 Matched with verified local technicians, car fleet hosts, or verified retail vendor partners.
               </p>
             </div>
 
-            {/* Step 5 (Gold highlight) */}
-            <div className="bg-orange-950/40 backdrop-blur-md border border-orange-500/50 rounded-2xl p-5 space-y-2 text-center relative hover:border-gold-400 transition-colors">
-              <div className="w-8 h-8 rounded-full bg-gold-500/30 border border-gold-400 text-gold-300 font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
+            {/* Step 5 (Gold/Orange highlight) */}
+            <div className="bg-white border-2 border-orange-200 rounded-2xl p-5 space-y-2 text-center relative hover:border-orange-400 hover:shadow-lg hover:shadow-orange-500/10 transition-all">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-gold-500 to-orange-500 text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 5
               </div>
-              <h4 className="font-bold text-sm text-white">Fulfillment &amp; Support</h4>
-              <p className="text-[11px] text-surface-300">
+              <h4 className="font-bold text-sm text-slate-900">Fulfillment &amp; Support</h4>
+              <p className="text-[11px] text-slate-600">
                 Service fulfilled according to the platform’s distinct operating guidelines and partner arrangements.
               </p>
             </div>
           </div>
 
           {/* Operational Clarity Disclosure */}
-          <div className="bg-royal-950/80 border border-royal-800/80 rounded-2xl p-6 text-xs text-surface-300 space-y-2 max-w-4xl mx-auto flex items-start space-x-3">
-            <Info className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
+          <div className="bg-white border border-sky-200 rounded-2xl p-6 text-xs text-slate-700 space-y-2 max-w-4xl mx-auto flex items-start space-x-3 shadow-sm">
+            <Info className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
             <div>
-              <span className="font-bold text-white block mb-1">Operational Model Notice:</span>
+              <span className="font-bold text-slate-900 block mb-1">Operational Model Notice:</span>
               Individual platforms utilize different transaction, payment, fulfillment, and customer support arrangements based on industry sector. Namah Siddham Corporation Private Limited provides the holding, technological, and architectural framework; payments and fulfillment follow each platform’s documented operating agreement.
             </div>
           </div>
@@ -719,59 +719,59 @@ export const HomePage = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION H: PARTNER WITH US */}
+      {/* SECTION H: PARTNER WITH US (Vibrant Light Electric Blue Theme) */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-royal-900 via-royal-950 to-navy-950 rounded-3xl p-8 sm:p-14 text-white border-2 border-royal-800 shadow-xl space-y-8 relative overflow-hidden">
-          {/* Ambient Glows */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-gradient-to-br from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-8 sm:p-14 text-white border border-sky-400/30 shadow-xl shadow-sky-500/20 space-y-8 relative overflow-hidden">
+          {/* Subtle Ambient Glow */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-3xl space-y-3 relative z-10">
-            <span className="text-xs font-bold text-gold-400 uppercase tracking-widest font-serif">
+            <span className="text-xs font-bold text-gold-300 uppercase tracking-widest font-serif">
               Collaboration &amp; Network
             </span>
             <h2 className="font-serif font-black text-2xl sm:text-4xl text-white">
               Partner With Us
             </h2>
-            <p className="text-sm sm:text-base text-surface-300 leading-relaxed font-light">
+            <p className="text-sm sm:text-base text-sky-100 leading-relaxed font-normal">
               We invite certified professionals, vehicle owners, retail distributors, and business enterprises to join our digital growth initiatives.
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2 text-xs relative z-10">
-            <div className="bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
+            <div className="bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
               <span className="font-bold text-white block">Home Service Pros</span>
-              <span className="text-[10px] text-surface-300">Technicians &amp; HVAC</span>
+              <span className="text-[10px] text-sky-100">Technicians &amp; HVAC</span>
             </div>
-            <div className="bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
+            <div className="bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
               <span className="font-bold text-white block">Car Owners</span>
-              <span className="text-[10px] text-surface-300">Fleet Hosts &amp; Rentals</span>
+              <span className="text-[10px] text-sky-100">Fleet Hosts &amp; Rentals</span>
             </div>
-            <div className="bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
+            <div className="bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
               <span className="font-bold text-white block">E-commerce Vendors</span>
-              <span className="text-[10px] text-surface-300">Retail &amp; Utilities</span>
+              <span className="text-[10px] text-sky-100">Retail &amp; Utilities</span>
             </div>
-            <div className="bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
+            <div className="bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
               <span className="font-bold text-white block">Product Sellers</span>
-              <span className="text-[10px] text-surface-300">Satvik Goods &amp; Puja</span>
+              <span className="text-[10px] text-sky-100">Satvik Goods &amp; Puja</span>
             </div>
-            <div className="bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
+            <div className="bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
               <span className="font-bold text-white block">Technology Partners</span>
-              <span className="text-[10px] text-surface-300">API &amp; Cloud Infra</span>
+              <span className="text-[10px] text-sky-100">API &amp; Cloud Infra</span>
             </div>
-            <div className="bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
+            <div className="bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
               <span className="font-bold text-white block">Business Partners</span>
-              <span className="text-[10px] text-surface-300">Regional Outreach</span>
+              <span className="text-[10px] text-sky-100">Regional Outreach</span>
             </div>
           </div>
 
           <div className="pt-2 relative z-10">
             <Link
               to="/partners"
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-gradient-to-r from-royal-500 to-royal-600 hover:from-royal-600 hover:to-royal-700 text-white font-extrabold text-sm shadow-lg shadow-royal-500/30 transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-white hover:bg-sky-50 text-sky-700 font-extrabold text-sm shadow-lg transition-all transform hover:-translate-y-0.5"
             >
               <span>Become a Partner</span>
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight className="w-4 h-4 ml-2 text-sky-700" />
             </Link>
           </div>
         </div>
@@ -864,35 +864,35 @@ export const HomePage = () => {
       )}
 
       {/* ========================================================================= */}
-      {/* SECTION K: FINAL CTA */}
+      {/* SECTION K: FINAL CTA (Vibrant Light Electric Blue Theme) */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-royal-900 via-royal-950 to-navy-950 rounded-3xl p-8 sm:p-14 text-white border-2 border-royal-700/60 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
-          {/* Subtle logo colored glow */}
-          <div className="absolute top-0 right-1/4 w-80 h-80 bg-royal-500/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 right-10 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-8 sm:p-14 text-white border border-sky-400/30 shadow-2xl shadow-sky-500/25 flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
+          {/* Subtle atmospheric glow */}
+          <div className="absolute top-0 right-1/4 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 right-10 w-64 h-64 bg-gold-400/20 rounded-full blur-3xl pointer-events-none" />
 
           <div className="space-y-3 max-w-2xl relative z-10">
-            <span className="text-xs font-bold text-gold-400 uppercase tracking-widest font-serif">
+            <span className="text-xs font-bold text-gold-300 uppercase tracking-widest font-serif">
               Get Started
             </span>
             <h2 className="font-serif font-black text-2xl sm:text-4xl text-white">
               Have a Digital Idea? Let's Build It Together.
             </h2>
-            <p className="text-xs sm:text-base text-surface-300 leading-relaxed font-light">
+            <p className="text-xs sm:text-base text-sky-100 leading-relaxed font-normal">
               Connect with our team to discuss software development, mobile applications, digital marketing, or opportunities across our digital platforms.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full lg:w-auto relative z-10">
             <Link
               to="/contact"
-              className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-royal-500 to-royal-600 hover:from-royal-600 hover:to-royal-700 text-white font-extrabold text-sm text-center shadow-lg shadow-royal-500/30 transition-all transform hover:-translate-y-0.5"
+              className="px-7 py-3.5 rounded-xl bg-white hover:bg-sky-50 text-sky-700 font-extrabold text-sm text-center shadow-lg transition-all transform hover:-translate-y-0.5"
             >
               Discuss Your Project
             </Link>
             <Link
               to="/contact"
-              className="px-7 py-3.5 rounded-xl border-2 border-orange-400/80 hover:bg-orange-500 text-orange-300 hover:text-white font-bold text-sm text-center transition-all shadow-sm"
+              className="px-7 py-3.5 rounded-xl border-2 border-white hover:bg-white/15 text-white font-bold text-sm text-center transition-all shadow-sm"
             >
               Contact Us
             </Link>

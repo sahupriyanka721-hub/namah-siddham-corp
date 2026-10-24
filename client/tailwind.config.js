@@ -7,19 +7,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Corporate Brand Palette (Exact "NS" Monogram: Electric Royal Blue & Sunburst Orange)
+        // Corporate Brand Palette (Logo 'N': Vibrant Light Electric Blue & Sunburst Orange)
         royal: {
-          50: '#F0F6FF',
-          100: '#E0EFFF',
-          200: '#B8DBFF',
-          300: '#75B5FF',
-          400: '#3385FF',
-          500: '#0066FF', // Logo 'N' Primary Electric Royal Blue
-          600: '#0052D4',
-          700: '#003EAA',
-          800: '#052D75',
-          900: '#0A192F', // Deep Midnight Sapphire
-          950: '#050E1C',
+          50: '#F0F9FF',
+          100: '#E0F2FE',
+          200: '#BAE6FD',
+          300: '#7DD3FC',
+          400: '#38BDF8', // Bright Sky Blue
+          500: '#0EA5E9', // Logo 'N' Primary Light Electric Blue
+          600: '#0284C7', // Vibrant Light Blue
+          700: '#0369A1',
+          800: '#075985',
+          900: '#0C4A6E',
+          950: '#082F49',
+        },
+        sky: {
+          50: '#F0F9FF',
+          100: '#E0F2FE',
+          200: '#BAE6FD',
+          300: '#7DD3FC',
+          400: '#38BDF8',
+          500: '#0EA5E9',
+          600: '#0284C7',
+          700: '#0369A1',
+          800: '#075985',
+          900: '#0C4A6E',
         },
         navy: {
           50: '#F4F6F8',

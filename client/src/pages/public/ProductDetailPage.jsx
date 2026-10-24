@@ -218,7 +218,7 @@ export const ProductDetailPage = () => {
                   rel="noopener noreferrer"
                   className={`inline-flex items-center px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all ${
                     isLive
-                      ? 'bg-royal-600 hover:bg-royal-700 text-white'
+                      ? 'bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white'
                       : 'bg-orange-500 hover:bg-orange-600 text-white'
                   }`}
                 >
@@ -226,22 +226,11 @@ export const ProductDetailPage = () => {
                   <ExternalLink className="w-4 h-4 ml-2" />
                 </a>
               )}
-            </div>
-          </div>
-        </div>
-      </section>
-                      : 'bg-navy-800 hover:bg-navy-700 text-surface-200 border border-navy-700'
-                  }`}
-                >
-                  <span>Visit Official Website</span>
-                  <ExternalLink className="w-4 h-4 ml-1.5" />
-                </a>
-              )}
 
               {isUnderDev && (
                 <button
                   onClick={() => setPartnerModalOpen(true)}
-                  className="inline-flex items-center px-4 py-2.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs shadow-md transition-all"
+                  className="inline-flex items-center px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold text-xs shadow-md transition-all"
                 >
                   <span>Partner Inquiry</span>
                   <ArrowRight className="w-3.5 h-3.5 ml-1" />

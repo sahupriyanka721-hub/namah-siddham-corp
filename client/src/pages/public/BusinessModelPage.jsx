@@ -197,20 +197,20 @@ export const BusinessModelPage = () => {
 
       {/* Bottom CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="bg-navy-950 rounded-3xl p-10 text-white space-y-4 border border-navy-800">
+        <div className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-10 text-white space-y-4 shadow-xl shadow-sky-500/20 border border-sky-400/30">
           <h3 className="font-serif font-bold text-2xl text-white">
             Interested in Joining as an Aggregator Partner?
           </h3>
-          <p className="text-xs sm:text-sm text-surface-400 max-w-xl mx-auto font-light">
+          <p className="text-xs sm:text-sm text-sky-100 max-w-xl mx-auto font-normal">
             We onboard verified service professionals, car rental fleets, and e-commerce vendors across our digital network.
           </p>
           <div className="pt-2">
             <Link
               to="/partners"
-              className="inline-flex items-center px-6 py-3 rounded-xl bg-royal-500 hover:bg-royal-600 text-white font-bold text-xs sm:text-sm shadow-md"
+              className="inline-flex items-center px-6 py-3 rounded-xl bg-white hover:bg-sky-50 text-sky-700 font-extrabold text-xs sm:text-sm shadow-md transition-all"
             >
               <span>Submit Partnership Application</span>
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight className="w-4 h-4 ml-2 text-sky-700" />
             </Link>
           </div>
         </div>
