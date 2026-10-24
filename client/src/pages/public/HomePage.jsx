@@ -92,21 +92,50 @@ export const HomePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left: Headline, Description & CTAs */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="shiny-badge inline-flex items-center space-x-2.5 px-4.5 py-1.5 rounded-full text-sky-800 text-xs font-semibold tracking-wide">
-                <span className="w-2.5 h-2.5 rounded-full bg-sky-500 animate-pulse shadow-sm shadow-sky-500" />
-                <span>CIN: {settings.cin || 'U77100MP2026PTC087531'} • Bhopal, MP, India</span>
+              {/* Creative Status Badge */}
+              <div className="inline-flex items-center gap-2.5 p-1 pr-4 rounded-full bg-white/90 border border-sky-200/90 shadow-sm backdrop-blur-md">
+                <span className="px-3 py-1 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 text-white text-[11px] font-bold tracking-wide uppercase shadow-xs flex items-center gap-1">
+                  <Sparkles className="w-3 h-3" />
+                  Two Growth Verticals
+                </span>
+                <span className="text-xs font-semibold text-slate-700 flex items-center gap-1.5 font-mono">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  CIN: {settings.cin || 'U77100MP2026PTC087531'} • Bhopal, MP
+                </span>
               </div>
 
-              <h1 className="font-sans font-extrabold text-2xl sm:text-4xl lg:text-[42px] xl:text-[46px] text-slate-900 tracking-tight leading-[1.22] sm:leading-[1.18]">
-                Technology That Builds Businesses and{' '}
-                <span className="bg-gradient-to-r from-sky-600 via-blue-600 to-orange-500 bg-clip-text text-transparent">
-                  Connects Opportunities
+              {/* Dynamic Impact Headline */}
+              <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-[46px] xl:text-[52px] text-slate-950 tracking-[-0.03em] leading-[1.18]">
+                Technology That{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-sky-500 to-blue-600">
+                  Builds Businesses
+                </span>{' '}
+                <br className="hidden sm:inline" />
+                and{' '}
+                <span className="relative inline-block mt-1 sm:mt-0">
+                  <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-blue-600 to-orange-500">
+                    Connects Opportunities
+                  </span>
+                  <span className="absolute bottom-1 left-0 right-0 h-3 bg-gradient-to-r from-sky-200/70 via-blue-200/50 to-orange-200/50 rounded-full -z-0 blur-[1px]" />
                 </span>
               </h1>
 
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-600 leading-relaxed font-normal max-w-2xl">
-                Namah Siddham Corporation Private Limited combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.
-              </p>
+              {/* Enhanced Description with Executive Left-Border Accent */}
+              <div className="relative pl-4 sm:pl-5 border-l-4 border-sky-400 space-y-3 max-w-2xl">
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+                  <strong className="font-semibold text-slate-900">Namah Siddham Corporation Private Limited</strong> combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.
+                </p>
+                <div className="flex flex-wrap gap-2 pt-1 text-xs">
+                  <span className="inline-flex items-center px-3 py-1 rounded-lg bg-sky-50 border border-sky-200/80 text-sky-800 font-semibold shadow-xs">
+                    <Code2 className="w-3.5 h-3.5 mr-1.5 text-sky-600" />
+                    Vertical 1: IT Services
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1 rounded-lg bg-orange-50 border border-orange-200/80 text-orange-800 font-semibold shadow-xs">
+                    <Layers className="w-3.5 h-3.5 mr-1.5 text-orange-600" />
+                    Vertical 2: 4 Digital Platforms
+                  </span>
+                </div>
+              </div>
 
               {/* Shiny CTAs matching Logo Palette */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
