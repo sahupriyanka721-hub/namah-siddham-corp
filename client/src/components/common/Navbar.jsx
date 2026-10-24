@@ -322,15 +322,6 @@ export const Navbar = () => {
             >
               Partner With Us
             </Link>
-
-            {/* Primary Action Key: Contact Us (Radiant Button Anchor) */}
-            <Link
-              to="/contact"
-              className="shiny-btn inline-flex items-center px-5 py-2 text-sm font-extrabold rounded-full bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-md shadow-sky-500/25 hover:shadow-sky-400/40 transition-all transform hover:-translate-y-0.5 border border-sky-300/40 ml-1.5"
-            >
-              <span>Contact Us</span>
-              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-            </Link>
           </nav>
 
           {/* ========================================================= */}
@@ -424,16 +415,6 @@ export const Navbar = () => {
               }`}
             >
               Partner With Us
-            </Link>
-            <Link
-              to="/contact"
-              className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
-                isActive('/contact')
-                  ? 'bg-royal-50 text-royal-600 font-bold'
-                  : 'text-slate-700 hover:bg-slate-50'
-              }`}
-            >
-              Contact Us
             </Link>
           </div>
 

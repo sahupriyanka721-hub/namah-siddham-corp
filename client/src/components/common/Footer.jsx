@@ -218,6 +218,13 @@ export const Footer = () => {
               <Link to="/partners" className="text-gold-400 font-semibold hover:underline">
                 Partner Inquiries
               </Link>
+              <Link
+                to="/contact"
+                className="text-sky-400 font-bold hover:text-white hover:underline inline-flex items-center ml-auto"
+              >
+                <span>Contact Us</span>
+                <ArrowUpRight className="w-3.5 h-3.5 ml-0.5" />
+              </Link>
             </div>
           </div>
         </div>
@@ -225,6 +232,22 @@ export const Footer = () => {
         {/* Legal Links & Copyright Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-surface-400 space-y-4 md:space-y-0">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <Link to="/contact" className="text-white font-bold hover:text-gold-400 transition-colors">
+              Contact Us
+            </Link>
+            <span>•</span>
+            <Link to="/portfolio" className="hover:text-gold-400 transition-colors">
+              Portfolio
+            </Link>
+            <span>•</span>
+            <Link to="/business-model" className="hover:text-gold-400 transition-colors">
+              Business Model
+            </Link>
+            <span>•</span>
+            <Link to="/careers" className="hover:text-gold-400 transition-colors">
+              Careers
+            </Link>
+            <span>•</span>
             <Link to="/privacy-policy" className="hover:text-gold-400 transition-colors">
               Privacy Policy
             </Link>
@@ -239,18 +262,6 @@ export const Footer = () => {
             <span>•</span>
             <Link to="/grievance" className="hover:text-gold-400 transition-colors">
               Grievance Contact
-            </Link>
-            <span>•</span>
-            <Link to="/portfolio" className="hover:text-gold-400 transition-colors">
-              Portfolio
-            </Link>
-            <span>•</span>
-            <Link to="/business-model" className="hover:text-gold-400 transition-colors">
-              Business Model
-            </Link>
-            <span>•</span>
-            <Link to="/careers" className="hover:text-gold-400 transition-colors">
-              Careers
             </Link>
           </div>
 
