@@ -158,15 +158,15 @@ export const Navbar = () => {
           </Link>
 
           {/* ========================================================= */}
-          {/* 2. DESKTOP NAVIGATION LINKS (Interactive Shiny Keys)       */}
+          {/* 2. DESKTOP & LAPTOP NAVIGATION (Balanced Glass Pill)      */}
           {/* ========================================================= */}
-          <nav className="hidden xl:flex items-center space-x-1 p-1 rounded-full bg-sky-50/80 border border-sky-100 shadow-inner">
+          <nav className="hidden lg:flex items-center space-x-1.5 p-1.5 rounded-full bg-white/85 backdrop-blur-md border border-sky-200/90 shadow-md shadow-sky-500/5">
             <Link
               to="/"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+              className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
                 isActive('/') && location.pathname === '/'
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+                  ? 'text-sky-700 bg-sky-100/70 shadow-xs font-bold border border-sky-200 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-sky-50/70'
               }`}
             >
               Home
@@ -174,10 +174,10 @@ export const Navbar = () => {
 
             <Link
               to="/about"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+              className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
                 isActive('/about')
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+                  ? 'text-sky-700 bg-sky-100/70 shadow-xs font-bold border border-sky-200 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-sky-50/70'
               }`}
             >
               About Us
@@ -196,13 +196,13 @@ export const Navbar = () => {
             >
               <Link
                 to="/services"
-                className={`inline-flex items-center px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+                className={`inline-flex items-center px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
                   isActive('/services')
-                    ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                    : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+                    ? 'text-sky-700 bg-sky-100/70 shadow-xs font-bold border border-sky-200 ring-1 ring-sky-400/20'
+                    : 'text-slate-600 hover:text-sky-600 hover:bg-sky-50/70'
                 }`}
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-sky-500 mr-1.5 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-sky-500 mr-2 animate-pulse shadow-xs shadow-sky-500" />
                 <span>IT Services</span>
                 <ChevronDown className="w-3.5 h-3.5 ml-1 text-sky-500" />
               </Link>
@@ -263,13 +263,13 @@ export const Navbar = () => {
             >
               <Link
                 to="/products"
-                className={`inline-flex items-center px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+                className={`inline-flex items-center px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
                   isActive('/products') || isActive('/ecosystem')
-                    ? 'text-orange-700 bg-white shadow-xs font-bold border border-orange-200/90 ring-1 ring-orange-400/20'
-                    : 'text-slate-600 hover:text-orange-600 hover:bg-white/70'
+                    ? 'text-orange-700 bg-orange-100/70 shadow-xs font-bold border border-orange-200 ring-1 ring-orange-400/20'
+                    : 'text-slate-600 hover:text-orange-600 hover:bg-orange-50/70'
                 }`}
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 mr-1.5 animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-orange-500 mr-2 animate-pulse shadow-xs shadow-orange-500" />
                 <span>Our Products</span>
                 <ChevronDown className="w-3.5 h-3.5 ml-1 text-orange-500" />
               </Link>
@@ -314,33 +314,29 @@ export const Navbar = () => {
 
             <Link
               to="/partners"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+              className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
                 isActive('/partners')
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+                  ? 'text-sky-700 bg-sky-100/70 shadow-xs font-bold border border-sky-200 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-sky-50/70'
               }`}
             >
               Partner With Us
             </Link>
 
+            {/* Primary Action Key: Contact Us (Radiant Button Anchor) */}
             <Link
               to="/contact"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
-                isActive('/contact')
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
-              }`}
+              className="shiny-btn inline-flex items-center px-5 py-2 text-sm font-extrabold rounded-full bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-md shadow-sky-500/25 hover:shadow-sky-400/40 transition-all transform hover:-translate-y-0.5 border border-sky-300/40 ml-1.5"
             >
-              Contact Us
+              <span>Contact Us</span>
+              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
             </Link>
           </nav>
 
-
-
           {/* ========================================================= */}
-          {/* 5. MOBILE MENU HAMBURGER BUTTON                           */}
+          {/* 3. MOBILE MENU HAMBURGER BUTTON                           */}
           {/* ========================================================= */}
-          <div className="flex xl:hidden items-center">
+          <div className="flex lg:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl text-slate-700 hover:text-royal-600 hover:bg-slate-100 border border-slate-200 focus:outline-none"
@@ -353,10 +349,10 @@ export const Navbar = () => {
       </div>
 
       {/* ========================================================= */}
-      {/* 6. MOBILE DRAWER MENU (Clean White Theme)                 */}
+      {/* 4. MOBILE DRAWER MENU (Clean White Theme)                 */}
       {/* ========================================================= */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-5 pt-4 pb-8 space-y-3 max-h-[85vh] overflow-y-auto shadow-2xl">
+        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-5 pt-4 pb-8 space-y-3 max-h-[85vh] overflow-y-auto shadow-2xl">
           {/* Mobile Navigation List */}
           <div className="space-y-1">
             <Link
