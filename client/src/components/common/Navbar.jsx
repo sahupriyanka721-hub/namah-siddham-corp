@@ -335,37 +335,7 @@ export const Navbar = () => {
             </Link>
           </nav>
 
-          {/* ========================================================= */}
-          {/* 3. PROMINENT CALL-TO-ACTION BUTTONS (Shiny Blue & Orange) */}
-          {/* ========================================================= */}
-          <div className="hidden xl:flex items-center space-x-2.5 shrink-0">
-            <Link
-              to="/products"
-              className="shiny-btn inline-flex items-center px-4 py-2 text-xs font-bold rounded-full text-orange-600 bg-orange-50/80 border border-orange-300 hover:bg-orange-500 hover:text-white transition-all transform hover:-translate-y-0.5 shadow-xs"
-            >
-              Explore Products
-            </Link>
-            <Link
-              to="/contact"
-              className="shiny-btn inline-flex items-center px-5 py-2.5 text-xs font-extrabold rounded-full bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-lg shadow-sky-500/35 hover:shadow-sky-400/50 transition-all transform hover:-translate-y-0.5 border border-sky-300/40"
-            >
-              <span>Let's Discuss Your Project</span>
-              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-            </Link>
-          </div>
 
-          {/* ========================================================= */}
-          {/* 4. TABLET QUICK CTA (1024px - 1279px)                     */}
-          {/* ========================================================= */}
-          <div className="hidden lg:flex xl:hidden items-center space-x-2">
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-4 py-2 text-xs font-extrabold rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-sm"
-            >
-              <span>Discuss Project</span>
-              <ArrowRight className="w-3 h-3 ml-1" />
-            </Link>
-          </div>
 
           {/* ========================================================= */}
           {/* 5. MOBILE MENU HAMBURGER BUTTON                           */}
