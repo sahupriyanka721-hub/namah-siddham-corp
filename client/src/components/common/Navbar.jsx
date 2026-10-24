@@ -151,14 +151,9 @@ export const Navbar = () => {
               <span className="font-heading font-black text-base sm:text-lg text-slate-900 tracking-wide leading-tight group-hover:text-royal-600 transition-colors">
                 NAMAH SIDDHAM
               </span>
-              <div className="flex items-center space-x-1.5 mt-0.5">
-                <span className="text-[10px] sm:text-[11px] font-extrabold text-sky-600 tracking-[0.2em] uppercase font-mono">
-                  CORPORATION
-                </span>
-                <span className="text-[8px] sm:text-[9px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200/80 font-mono tracking-wider">
-                  BHOPAL, MP
-                </span>
-              </div>
+              <span className="text-[10px] sm:text-[11px] font-extrabold text-sky-600 tracking-[0.2em] uppercase font-mono mt-0.5">
+                CORPORATION
+              </span>
             </div>
           </Link>
 
@@ -536,8 +531,7 @@ export const Navbar = () => {
           </div>
 
           {/* Quick Contact Line in Mobile Drawer */}
-          <div className="pt-3 text-[11px] text-slate-500 flex items-center justify-between border-t border-slate-100">
-            <span>Bhopal, MP, India</span>
+          <div className="pt-3 text-[11px] text-slate-500 flex items-center justify-center border-t border-slate-100">
             <span className="font-mono text-royal-600 font-semibold">CIN: U77100MP2026PTC087531</span>
           </div>
         </div>
