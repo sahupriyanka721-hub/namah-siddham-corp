@@ -245,6 +245,10 @@ export const Footer = () => {
               Portfolio
             </Link>
             <span>•</span>
+            <Link to="/business-model" className="hover:text-gold-400 transition-colors">
+              Business Model
+            </Link>
+            <span>•</span>
             <Link to="/careers" className="hover:text-gold-400 transition-colors">
               Careers
             </Link>

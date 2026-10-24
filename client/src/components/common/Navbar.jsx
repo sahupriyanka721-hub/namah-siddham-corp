@@ -313,28 +313,6 @@ export const Navbar = () => {
             </div>
 
             <Link
-              to="/portfolio"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
-                isActive('/portfolio')
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
-              }`}
-            >
-              Portfolio
-            </Link>
-
-            <Link
-              to="/business-model"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
-                isActive('/business-model')
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
-              }`}
-            >
-              Business Model
-            </Link>
-
-            <Link
               to="/partners"
               className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                 isActive('/partners')
@@ -471,26 +449,6 @@ export const Navbar = () => {
               </div>
             </div>
 
-            <Link
-              to="/portfolio"
-              className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
-                isActive('/portfolio')
-                  ? 'bg-royal-50 text-royal-600 font-bold'
-                  : 'text-slate-700 hover:bg-slate-50'
-              }`}
-            >
-              Portfolio &amp; Case Studies
-            </Link>
-            <Link
-              to="/business-model"
-              className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
-                isActive('/business-model')
-                  ? 'bg-royal-50 text-royal-600 font-bold'
-                  : 'text-slate-700 hover:bg-slate-50'
-              }`}
-            >
-              Business Model
-            </Link>
             <Link
               to="/partners"
               className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
