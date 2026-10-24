@@ -351,17 +351,6 @@ export const Navbar = () => {
             </Link>
 
             <Link
-              to="/careers"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
-                isActive('/careers')
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
-              }`}
-            >
-              Careers
-            </Link>
-
-            <Link
               to="/contact"
               className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                 isActive('/contact')
@@ -516,16 +505,6 @@ export const Navbar = () => {
               }`}
             >
               Partner With Us
-            </Link>
-            <Link
-              to="/careers"
-              className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
-                isActive('/careers')
-                  ? 'bg-royal-50 text-royal-600 font-bold'
-                  : 'text-slate-700 hover:bg-slate-50'
-              }`}
-            >
-              Careers
             </Link>
             <Link
               to="/contact"
