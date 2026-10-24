@@ -79,132 +79,137 @@ export const HomePage = () => {
       />
 
       {/* ========================================================================= */}
-      {/* SECTION A: HERO BANNER */}
+      {/* SECTION A: HERO BANNER (Vibrant White, Royal Blue & Solar Orange Palette) */}
       {/* ========================================================================= */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-navy-950 via-navy-900 to-navy-900 text-white pt-16 pb-28 sm:pb-36 border-b border-navy-800">
-        {/* Subtle grid pattern background */}
-        <div className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(#FFBE00_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-royal-50/20 to-surface-100 text-slate-900 pt-16 pb-28 sm:pb-36 border-b border-slate-200/80">
+        {/* Soft atmospheric glow matching Logo's Electric Blue & Sunburst Gold */}
+        <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-royal-500/8 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-20 right-10 w-[450px] h-[450px] bg-gold-500/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#0066FF_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left: Headline, Description & CTAs */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-navy-800/90 border border-royal-400/30 text-royal-200 text-xs font-semibold tracking-wide">
-                <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
+              <div className="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-white border border-royal-200 shadow-sm text-royal-700 text-xs font-semibold tracking-wide">
+                <span className="w-2 h-2 rounded-full bg-royal-600 animate-pulse" />
                 <span>CIN: {settings.cin || 'U77100MP2026PTC087531'} • Bhopal, MP, India</span>
               </div>
 
-              <h1 className="font-serif font-black text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
-                Technology That Builds Businesses and <span className="text-gradient-orange">Connects Opportunities</span>
+              <h1 className="font-serif font-black text-3xl sm:text-5xl lg:text-6xl text-slate-950 tracking-tight leading-tight">
+                Technology That Builds Businesses and{' '}
+                <span className="bg-gradient-to-r from-royal-600 via-royal-500 to-orange-500 bg-clip-text text-transparent">
+                  Connects Opportunities
+                </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-surface-300 leading-relaxed font-normal">
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
                 Namah Siddham Corporation Private Limited combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.
               </p>
 
-              {/* CTAs with Logo Color Combination */}
+              {/* CTAs matching Logo Palette */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-gradient-to-r from-royal-500 to-royal-600 hover:from-royal-600 hover:to-royal-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-royal-500/30 transition-all transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-gradient-to-r from-royal-600 to-royal-500 hover:from-royal-700 hover:to-royal-600 text-white font-bold text-sm sm:text-base shadow-lg shadow-royal-500/25 transition-all transform hover:-translate-y-0.5"
                 >
                   <span>Explore Our IT Services</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
                 <Link
                   to="/products"
-                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-navy-800/90 hover:bg-orange-500/10 text-orange-400 border border-orange-500/40 font-bold text-sm sm:text-base transition-all transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-white hover:bg-orange-500 text-orange-600 hover:text-white border-2 border-orange-500 font-bold text-sm sm:text-base transition-all transform hover:-translate-y-0.5 shadow-sm"
                 >
                   <span>Discover Our Products</span>
                 </Link>
               </div>
 
               {/* Corporate Identity Tag */}
-              <div className="pt-6 border-t border-navy-800/80 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-surface-400 font-mono">
+              <div className="pt-6 border-t border-slate-200 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-500 font-mono">
                 <div>
-                  <span className="text-gold-400 font-bold">Entity:</span> Private Limited Company
+                  <span className="text-royal-600 font-bold">Entity:</span> Private Limited Company
                 </div>
                 <div>
-                  <span className="text-gold-400 font-bold">Location:</span> Bhopal, Madhya Pradesh
+                  <span className="text-royal-600 font-bold">Location:</span> Bhopal, Madhya Pradesh
                 </div>
                 <div>
-                  <span className="text-gold-400 font-bold">Two Verticals:</span> Services &amp; Platforms
+                  <span className="text-orange-600 font-bold">Two Verticals:</span> Services &amp; Platforms
                 </div>
               </div>
             </div>
 
             {/* Right: Visually engaging technology and digital ecosystem composition */}
             <div className="lg:col-span-5 relative">
-              <div className="bg-gradient-to-br from-navy-900 to-navy-950 p-6 sm:p-8 rounded-3xl border border-navy-700/80 shadow-soft-xl space-y-6 relative overflow-hidden">
-                {/* Decorative glow */}
-                <div className="absolute top-0 right-0 w-48 h-48 bg-royal-500/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/90 shadow-xl space-y-6 relative overflow-hidden">
+                {/* Subtle top accent bar in Logo Gradient */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-royal-600 via-gold-500 to-orange-500" />
 
-                <div className="flex items-center justify-between border-b border-navy-800 pb-4">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                   <div className="flex items-center space-x-3">
                     <img
-                      src="/assets/namah-siddham-logo.png"
+                      src="/assets/namah-siddham-logo.jpg"
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = '/assets/namah-siddham-emblem.svg';
                       }}
                       alt="Namah Siddham Brand"
-                      className="h-11 w-auto object-contain"
+                      className="h-11 w-auto object-contain rounded-lg"
                     />
                     <div className="flex flex-col">
-                      <span className="font-heading font-black text-sm text-white tracking-wider">
+                      <span className="font-heading font-black text-sm text-slate-900 tracking-wider">
                         NAMAH SIDDHAM
                       </span>
-                      <span className="text-[9px] font-bold text-royal-400 tracking-wider font-mono">
+                      <span className="text-[9px] font-bold text-royal-600 tracking-wider font-mono">
                         CORPORATION
                       </span>
                     </div>
                   </div>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-gold-500/10 text-gold-400 border border-gold-500/20 uppercase tracking-widest font-mono">
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-gold-50 text-gold-700 border border-gold-200 uppercase tracking-widest font-mono">
                     Integrated Hub
                   </span>
                 </div>
 
                 {/* Vertical 1 Card */}
-                <div className="bg-navy-800/80 border border-navy-700 rounded-2xl p-4 space-y-2 hover:border-royal-500/50 transition-colors">
+                <div className="bg-gradient-to-r from-royal-50/70 to-white border-2 border-royal-200 rounded-2xl p-4 space-y-2 hover:border-royal-400 transition-colors">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-bold text-royal-400 uppercase tracking-wider font-serif flex items-center">
-                      <Code2 className="w-3.5 h-3.5 mr-1.5" />
+                    <span className="font-bold text-royal-700 uppercase tracking-wider font-serif flex items-center">
+                      <Code2 className="w-3.5 h-3.5 mr-1.5 text-royal-600" />
                       Vertical 1: IT Solutions
                     </span>
-                    <span className="text-[10px] text-surface-400">Client Delivery</span>
+                    <span className="text-[10px] text-royal-600 font-semibold bg-royal-100/70 px-2 py-0.5 rounded">Client Delivery</span>
                   </div>
-                  <div className="text-xs text-surface-300">
+                  <div className="text-xs text-slate-600">
                     Custom web architecture, mobile solutions, tailored ERP/CRM systems, and SEO visibility.
                   </div>
                 </div>
 
                 {/* Vertical 2 Card */}
-                <div className="bg-navy-800/80 border border-navy-700 rounded-2xl p-4 space-y-2 hover:border-orange-500/50 transition-colors">
+                <div className="bg-gradient-to-r from-orange-50/70 to-white border-2 border-orange-200 rounded-2xl p-4 space-y-2 hover:border-orange-400 transition-colors">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-bold text-orange-400 uppercase tracking-wider font-serif flex items-center">
-                      <Layers className="w-3.5 h-3.5 mr-1.5" />
+                    <span className="font-bold text-orange-700 uppercase tracking-wider font-serif flex items-center">
+                      <Layers className="w-3.5 h-3.5 mr-1.5 text-orange-600" />
                       Vertical 2: Digital Marketplaces
                     </span>
-                    <span className="text-[10px] text-orange-400 bg-orange-950/60 px-2 py-0.5 rounded border border-orange-800/40">
+                    <span className="text-[10px] text-orange-700 bg-orange-100 font-bold px-2 py-0.5 rounded">
                       4 Platforms
                     </span>
                   </div>
-                  <div className="grid grid-cols-2 gap-2 pt-1 text-[11px] text-surface-300">
-                    <div className="p-1.5 rounded-lg bg-navy-900 border border-navy-800 flex items-center justify-between">
+                  <div className="grid grid-cols-2 gap-2 pt-1 text-[11px] text-slate-700 font-medium">
+                    <div className="p-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-xs">
                       <span>HomeServixo</span>
-                      <span className="text-[9px] text-surface-500">Repair</span>
+                      <span className="text-[9px] text-orange-600 font-bold">Repair</span>
                     </div>
-                    <div className="p-1.5 rounded-lg bg-navy-900 border border-navy-800 flex items-center justify-between">
+                    <div className="p-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-xs">
                       <span>Carrento</span>
-                      <span className="text-[9px] text-surface-500">Mobility</span>
+                      <span className="text-[9px] text-royal-600 font-bold">Mobility</span>
                     </div>
-                    <div className="p-1.5 rounded-lg bg-navy-900 border border-navy-800 flex items-center justify-between">
+                    <div className="p-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-xs">
                       <span>Jainamshree</span>
-                      <span className="text-[9px] text-surface-500">Satvik</span>
+                      <span className="text-[9px] text-gold-600 font-bold">Satvik</span>
                     </div>
-                    <div className="p-1.5 rounded-lg bg-navy-900 border border-navy-800 flex items-center justify-between">
+                    <div className="p-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-xs">
                       <span>SuperiorMart</span>
-                      <span className="text-[9px] text-surface-500">Retail</span>
+                      <span className="text-[9px] text-orange-600 font-bold">Retail</span>
                     </div>
                   </div>
                 </div>
@@ -536,8 +541,12 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       {/* SECTION F: HOW OUR BUSINESS MODEL WORKS */}
       {/* ========================================================================= */}
-      <section className="bg-navy-950 text-white py-20 border-y border-navy-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="bg-gradient-to-br from-royal-950 via-slate-900 to-navy-950 text-white py-20 border-y border-royal-900/80 relative overflow-hidden">
+        {/* Subtle glowing ambient lights matching Logo */}
+        <div className="absolute top-1/2 left-10 -translate-y-1/2 w-96 h-96 bg-royal-500/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 right-10 -translate-y-1/2 w-96 h-96 bg-gold-500/10 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-bold text-gold-400 uppercase tracking-widest font-serif">
               Operational Framework
@@ -553,63 +562,63 @@ export const HomePage = () => {
           {/* Visual Step-by-Step Flow */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
             {/* Step 1 */}
-            <div className="bg-navy-900/90 border border-navy-800 rounded-2xl p-5 space-y-2 text-center relative">
-              <div className="w-8 h-8 rounded-full bg-royal-500/20 border border-royal-400 text-royal-300 font-bold text-xs mx-auto flex items-center justify-center">
+            <div className="bg-royal-900/50 backdrop-blur-md border border-royal-700/60 rounded-2xl p-5 space-y-2 text-center relative hover:border-royal-400 transition-colors">
+              <div className="w-8 h-8 rounded-full bg-royal-500/30 border border-royal-400 text-royal-200 font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 1
               </div>
               <h4 className="font-bold text-sm text-white">Customer Need</h4>
-              <p className="text-[11px] text-surface-400">
+              <p className="text-[11px] text-surface-300">
                 A customer identifies a requirement for home appliance repair, mobility rental, satvik groceries, or retail products.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-navy-900/90 border border-navy-800 rounded-2xl p-5 space-y-2 text-center relative">
-              <div className="w-8 h-8 rounded-full bg-royal-500/20 border border-royal-400 text-royal-300 font-bold text-xs mx-auto flex items-center justify-center">
+            <div className="bg-royal-900/50 backdrop-blur-md border border-royal-700/60 rounded-2xl p-5 space-y-2 text-center relative hover:border-royal-400 transition-colors">
+              <div className="w-8 h-8 rounded-full bg-royal-500/30 border border-royal-400 text-royal-200 font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 2
               </div>
               <h4 className="font-bold text-sm text-white">Specialized Digital Platform</h4>
-              <p className="text-[11px] text-surface-400">
+              <p className="text-[11px] text-surface-300">
                 Access through dedicated platform properties (HomeServixo, Carrento, Jainamshree, SuperiorMart).
               </p>
             </div>
 
             {/* Step 3 */}
-            <div className="bg-navy-900/90 border border-navy-800 rounded-2xl p-5 space-y-2 text-center relative">
-              <div className="w-8 h-8 rounded-full bg-royal-500/20 border border-royal-400 text-royal-300 font-bold text-xs mx-auto flex items-center justify-center">
+            <div className="bg-royal-900/50 backdrop-blur-md border border-royal-700/60 rounded-2xl p-5 space-y-2 text-center relative hover:border-royal-400 transition-colors">
+              <div className="w-8 h-8 rounded-full bg-royal-500/30 border border-royal-400 text-royal-200 font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 3
               </div>
               <h4 className="font-bold text-sm text-white">Discovery, Booking or Ordering</h4>
-              <p className="text-[11px] text-surface-400">
+              <p className="text-[11px] text-surface-300">
                 Intuitive search, transparent pricing estimates, schedule selection, or digital cart checkout.
               </p>
             </div>
 
             {/* Step 4 */}
-            <div className="bg-navy-900/90 border border-navy-800 rounded-2xl p-5 space-y-2 text-center relative">
-              <div className="w-8 h-8 rounded-full bg-royal-500/20 border border-royal-400 text-royal-300 font-bold text-xs mx-auto flex items-center justify-center">
+            <div className="bg-royal-900/50 backdrop-blur-md border border-royal-700/60 rounded-2xl p-5 space-y-2 text-center relative hover:border-royal-400 transition-colors">
+              <div className="w-8 h-8 rounded-full bg-royal-500/30 border border-royal-400 text-royal-200 font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 4
               </div>
               <h4 className="font-bold text-sm text-white">Relevant Seller or Partner</h4>
-              <p className="text-[11px] text-surface-400">
+              <p className="text-[11px] text-surface-300">
                 Matched with verified local technicians, car fleet hosts, or verified retail vendor partners.
               </p>
             </div>
 
-            {/* Step 5 */}
-            <div className="bg-navy-900/90 border border-navy-800 rounded-2xl p-5 space-y-2 text-center relative">
-              <div className="w-8 h-8 rounded-full bg-gold-500/20 border border-gold-400 text-gold-300 font-bold text-xs mx-auto flex items-center justify-center">
+            {/* Step 5 (Gold highlight) */}
+            <div className="bg-orange-950/40 backdrop-blur-md border border-orange-500/50 rounded-2xl p-5 space-y-2 text-center relative hover:border-gold-400 transition-colors">
+              <div className="w-8 h-8 rounded-full bg-gold-500/30 border border-gold-400 text-gold-300 font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 5
               </div>
               <h4 className="font-bold text-sm text-white">Fulfillment &amp; Support</h4>
-              <p className="text-[11px] text-surface-400">
+              <p className="text-[11px] text-surface-300">
                 Service fulfilled according to the platform’s distinct operating guidelines and partner arrangements.
               </p>
             </div>
           </div>
 
           {/* Operational Clarity Disclosure */}
-          <div className="bg-navy-900 border border-navy-800 rounded-2xl p-6 text-xs text-surface-300 space-y-2 max-w-4xl mx-auto flex items-start space-x-3">
+          <div className="bg-royal-950/80 border border-royal-800/80 rounded-2xl p-6 text-xs text-surface-300 space-y-2 max-w-4xl mx-auto flex items-start space-x-3">
             <Info className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
             <div>
               <span className="font-bold text-white block mb-1">Operational Model Notice:</span>
@@ -713,8 +722,11 @@ export const HomePage = () => {
       {/* SECTION H: PARTNER WITH US */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-navy-900 to-navy-950 rounded-3xl p-8 sm:p-14 text-white border border-navy-800 shadow-soft-xl space-y-8">
-          <div className="max-w-3xl space-y-3">
+        <div className="bg-gradient-to-br from-royal-900 via-royal-950 to-navy-950 rounded-3xl p-8 sm:p-14 text-white border-2 border-royal-800 shadow-xl space-y-8 relative overflow-hidden">
+          {/* Ambient Glows */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="max-w-3xl space-y-3 relative z-10">
             <span className="text-xs font-bold text-gold-400 uppercase tracking-widest font-serif">
               Collaboration &amp; Network
             </span>
@@ -726,37 +738,37 @@ export const HomePage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2 text-xs">
-            <div className="bg-navy-900/90 border border-navy-800 rounded-xl p-3.5 text-center space-y-1">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-2 text-xs relative z-10">
+            <div className="bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
               <span className="font-bold text-white block">Home Service Pros</span>
-              <span className="text-[10px] text-surface-400">Technicians &amp; HVAC</span>
+              <span className="text-[10px] text-surface-300">Technicians &amp; HVAC</span>
             </div>
-            <div className="bg-navy-900/90 border border-navy-800 rounded-xl p-3.5 text-center space-y-1">
+            <div className="bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
               <span className="font-bold text-white block">Car Owners</span>
-              <span className="text-[10px] text-surface-400">Fleet Hosts &amp; Rentals</span>
+              <span className="text-[10px] text-surface-300">Fleet Hosts &amp; Rentals</span>
             </div>
-            <div className="bg-navy-900/90 border border-navy-800 rounded-xl p-3.5 text-center space-y-1">
+            <div className="bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
               <span className="font-bold text-white block">E-commerce Vendors</span>
-              <span className="text-[10px] text-surface-400">Retail &amp; Utilities</span>
+              <span className="text-[10px] text-surface-300">Retail &amp; Utilities</span>
             </div>
-            <div className="bg-navy-900/90 border border-navy-800 rounded-xl p-3.5 text-center space-y-1">
+            <div className="bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
               <span className="font-bold text-white block">Product Sellers</span>
-              <span className="text-[10px] text-surface-400">Satvik Goods &amp; Puja</span>
+              <span className="text-[10px] text-surface-300">Satvik Goods &amp; Puja</span>
             </div>
-            <div className="bg-navy-900/90 border border-navy-800 rounded-xl p-3.5 text-center space-y-1">
+            <div className="bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
               <span className="font-bold text-white block">Technology Partners</span>
-              <span className="text-[10px] text-surface-400">API &amp; Cloud Infra</span>
+              <span className="text-[10px] text-surface-300">API &amp; Cloud Infra</span>
             </div>
-            <div className="bg-navy-900/90 border border-navy-800 rounded-xl p-3.5 text-center space-y-1">
+            <div className="bg-white/10 hover:bg-white/15 border border-white/15 backdrop-blur-md rounded-xl p-3.5 text-center space-y-1 transition-colors">
               <span className="font-bold text-white block">Business Partners</span>
-              <span className="text-[10px] text-surface-400">Regional Outreach</span>
+              <span className="text-[10px] text-surface-300">Regional Outreach</span>
             </div>
           </div>
 
-          <div className="pt-2">
+          <div className="pt-2 relative z-10">
             <Link
               to="/partners"
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-royal-500 hover:bg-royal-600 text-white font-bold text-sm shadow-md transition-all"
+              className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-gradient-to-r from-royal-500 to-royal-600 hover:from-royal-600 hover:to-royal-700 text-white font-extrabold text-sm shadow-lg shadow-royal-500/30 transition-all transform hover:-translate-y-0.5"
             >
               <span>Become a Partner</span>
               <ArrowRight className="w-4 h-4 ml-2" />
@@ -855,8 +867,12 @@ export const HomePage = () => {
       {/* SECTION K: FINAL CTA */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-navy-950 via-navy-900 to-navy-900 rounded-3xl p-8 sm:p-14 text-white border border-navy-800 shadow-soft-xl flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="space-y-3 max-w-2xl">
+        <div className="bg-gradient-to-r from-royal-900 via-royal-950 to-navy-950 rounded-3xl p-8 sm:p-14 text-white border-2 border-royal-700/60 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
+          {/* Subtle logo colored glow */}
+          <div className="absolute top-0 right-1/4 w-80 h-80 bg-royal-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 right-10 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="space-y-3 max-w-2xl relative z-10">
             <span className="text-xs font-bold text-gold-400 uppercase tracking-widest font-serif">
               Get Started
             </span>
@@ -867,16 +883,16 @@ export const HomePage = () => {
               Connect with our team to discuss software development, mobile applications, digital marketing, or opportunities across our digital platforms.
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full lg:w-auto">
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full lg:w-auto relative z-10">
             <Link
               to="/contact"
-              className="px-7 py-3.5 rounded-xl bg-royal-500 hover:bg-royal-600 text-white font-bold text-sm text-center shadow-md transition-all"
+              className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-royal-500 to-royal-600 hover:from-royal-600 hover:to-royal-700 text-white font-extrabold text-sm text-center shadow-lg shadow-royal-500/30 transition-all transform hover:-translate-y-0.5"
             >
               Discuss Your Project
             </Link>
             <Link
               to="/contact"
-              className="px-7 py-3.5 rounded-xl border border-navy-700 hover:bg-navy-800 text-surface-200 font-semibold text-sm text-center transition-colors"
+              className="px-7 py-3.5 rounded-xl border-2 border-orange-400/80 hover:bg-orange-500 text-orange-300 hover:text-white font-bold text-sm text-center transition-all shadow-sm"
             >
               Contact Us
             </Link>

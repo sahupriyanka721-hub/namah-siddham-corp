@@ -68,40 +68,41 @@ export const PortfolioDetailPage = () => {
         description={project.seoDescription || project.shortDescription}
       />
 
-      {/* Header Banner */}
-      <section className="bg-gradient-to-b from-navy-950 via-navy-900 to-navy-900 text-white py-14 sm:py-18 border-b border-navy-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-          <div className="flex items-center space-x-2 text-xs text-surface-400">
-            <Link to="/" className="hover:text-white">
+      {/* Header Banner (Luminous White & Royal Blue Theme matching Logo) */}
+      <section className="bg-gradient-to-b from-white via-royal-50/25 to-surface-100 text-slate-900 py-14 sm:py-18 border-b border-slate-200 relative overflow-hidden">
+        <div className="absolute top-0 right-10 w-96 h-96 bg-royal-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
+          <div className="flex items-center space-x-2 text-xs text-slate-500">
+            <Link to="/" className="hover:text-royal-600">
               Home
             </Link>
             <span>/</span>
-            <Link to="/portfolio" className="hover:text-white">
+            <Link to="/portfolio" className="hover:text-royal-600">
               Portfolio
             </Link>
             <span>/</span>
-            <span className="text-gold-400 font-semibold">{project.name}</span>
+            <span className="text-royal-600 font-semibold">{project.name}</span>
           </div>
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-2">
             <div className="space-y-2">
               <div className="flex items-center space-x-3">
-                <h1 className="font-serif font-black text-2xl sm:text-4xl text-white">
+                <h1 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
                   {project.name}
                 </h1>
                 <span
                   className={`text-[9px] font-bold px-2.5 py-0.5 rounded-full font-mono ${
                     project.projectType === 'Client Project'
-                      ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                      ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
                       : project.projectType === 'Internal Product'
-                      ? 'bg-orange-500/20 text-orange-300 border border-orange-500/40'
-                      : 'bg-blue-500/20 text-blue-300 border border-blue-500/40'
+                      ? 'bg-orange-100 text-orange-800 border border-orange-300'
+                      : 'bg-blue-100 text-blue-800 border border-blue-300'
                   }`}
                 >
                   {project.projectType}
                 </span>
               </div>
-              <p className="text-xs sm:text-sm font-semibold text-gold-400 uppercase tracking-wider font-mono">
+              <p className="text-xs sm:text-sm font-semibold text-royal-600 uppercase tracking-wider font-mono">
                 {project.industry} • {project.category}
               </p>
             </div>
@@ -111,7 +112,7 @@ export const PortfolioDetailPage = () => {
                 href={project.projectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-5 py-2.5 rounded-xl bg-royal-500 hover:bg-royal-600 text-white font-bold text-xs sm:text-sm shadow-md transition-all"
+                className="inline-flex items-center px-5 py-2.5 rounded-xl bg-royal-600 hover:bg-royal-700 text-white font-bold text-xs sm:text-sm shadow-md transition-all"
               >
                 <span>Visit Project URL</span>
                 <ExternalLink className="w-4 h-4 ml-1.5" />
