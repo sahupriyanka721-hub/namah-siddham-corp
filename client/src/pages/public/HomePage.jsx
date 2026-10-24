@@ -92,12 +92,6 @@ export const HomePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left: Headline, Description & CTAs */}
             <div className="lg:col-span-7 space-y-6">
-              {/* Creative Category Badge */}
-              <div className="shiny-badge inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-sky-800 text-xs font-bold tracking-wide">
-                <Sparkles className="w-3.5 h-3.5 text-sky-600" />
-                <span>Enterprise IT Solutions &amp; Digital Platforms</span>
-              </div>
-
               {/* Dynamic Impact Headline */}
               <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-[46px] xl:text-[52px] text-slate-950 tracking-[-0.03em] leading-[1.18]">
                 Technology That{' '}
