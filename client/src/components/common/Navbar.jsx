@@ -158,15 +158,15 @@ export const Navbar = () => {
           </Link>
 
           {/* ========================================================= */}
-          {/* 2. DESKTOP NAVIGATION LINKS (Interactive Shiny Keys)       */}
+          {/* 2. DESKTOP NAVIGATION LINKS (Clean, Spacious Corporate Nav) */}
           {/* ========================================================= */}
-          <nav className="hidden xl:flex items-center space-x-1 p-1 rounded-full bg-sky-50/80 border border-sky-100 shadow-inner">
+          <nav className="hidden xl:flex items-center space-x-0.5 2xl:space-x-1">
             <Link
               to="/"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+              className={`px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                 isActive('/') && location.pathname === '/'
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+                  ? 'text-brand-blue font-bold bg-sky-50/90'
+                  : 'text-slate-700 hover:text-brand-blue hover:bg-sky-50/60'
               }`}
             >
               Home
@@ -174,10 +174,10 @@ export const Navbar = () => {
 
             <Link
               to="/about"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+              className={`px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                 isActive('/about')
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+                  ? 'text-brand-blue font-bold bg-sky-50/90'
+                  : 'text-slate-700 hover:text-brand-blue hover:bg-sky-50/60'
               }`}
             >
               About Us
@@ -196,13 +196,12 @@ export const Navbar = () => {
             >
               <Link
                 to="/services"
-                className={`inline-flex items-center px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+                className={`inline-flex items-center px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                   isActive('/services')
-                    ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                    : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+                    ? 'text-brand-blue font-bold bg-sky-50/90'
+                    : 'text-slate-700 hover:text-brand-blue hover:bg-sky-50/60'
                 }`}
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-sky-500 mr-1.5 animate-pulse" />
                 <span>IT Services</span>
                 <ChevronDown className="w-3.5 h-3.5 ml-1 text-sky-500" />
               </Link>
@@ -210,7 +209,7 @@ export const Navbar = () => {
               {servicesDropdown && (
                 <div className="absolute top-full left-0 w-84 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-sky-100 py-3 px-2 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2">
                   <div className="px-3 py-1.5 border-b border-sky-100 mb-2 flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-sky-600 font-mono">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-brand-blue font-mono">
                       Vertical 1: IT Solutions
                     </span>
                     <span className="text-[9px] text-slate-400">4 Core Capabilities</span>
@@ -223,11 +222,11 @@ export const Navbar = () => {
                         to={item.path}
                         className="flex items-start space-x-3 p-2.5 rounded-xl hover:bg-sky-50/80 transition-colors group"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+                        <div className="w-8 h-8 rounded-lg bg-sky-100 text-brand-blue flex items-center justify-center shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors">
                           <Icon className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="text-xs font-bold text-slate-900 group-hover:text-sky-600">
+                          <div className="text-xs font-bold text-slate-900 group-hover:text-brand-blue">
                             {item.name}
                           </div>
                           <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug">
@@ -240,7 +239,7 @@ export const Navbar = () => {
                   <div className="pt-2 px-2 border-t border-sky-100 mt-1">
                     <Link
                       to="/services"
-                      className="text-xs font-bold text-sky-600 hover:underline flex items-center justify-between p-1.5"
+                      className="text-xs font-bold text-brand-blue hover:underline flex items-center justify-between p-1.5"
                     >
                       <span>Explore All IT Services</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -263,13 +262,12 @@ export const Navbar = () => {
             >
               <Link
                 to="/products"
-                className={`inline-flex items-center px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+                className={`inline-flex items-center px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                   isActive('/products') || isActive('/ecosystem')
-                    ? 'text-orange-700 bg-white shadow-xs font-bold border border-orange-200/90 ring-1 ring-orange-400/20'
-                    : 'text-slate-600 hover:text-orange-600 hover:bg-white/70'
+                    ? 'text-brand-orange font-bold bg-orange-50/90'
+                    : 'text-slate-700 hover:text-brand-orange hover:bg-orange-50/60'
                 }`}
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 mr-1.5 animate-pulse" />
                 <span>Our Products</span>
                 <ChevronDown className="w-3.5 h-3.5 ml-1 text-orange-500" />
               </Link>
@@ -277,7 +275,7 @@ export const Navbar = () => {
               {productsDropdown && (
                 <div className="absolute top-full left-0 w-88 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-orange-100 py-3 px-2 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2">
                   <div className="px-3 py-1.5 border-b border-orange-100 mb-2 flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600 font-mono">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange font-mono">
                       Vertical 2: Digital Marketplaces
                     </span>
                     <span className="text-[9px] text-slate-400">4 Platforms</span>
@@ -289,7 +287,7 @@ export const Navbar = () => {
                       className="flex items-start justify-between p-2.5 rounded-xl hover:bg-orange-50/80 transition-colors group"
                     >
                       <div>
-                        <div className="text-xs font-bold text-slate-900 group-hover:text-orange-600">
+                        <div className="text-xs font-bold text-slate-900 group-hover:text-brand-orange">
                           {prod.name}
                         </div>
                         <div className="text-[11px] text-slate-500">{prod.category}</div>
@@ -302,7 +300,7 @@ export const Navbar = () => {
                   <div className="pt-2 px-2 border-t border-orange-100 mt-1">
                     <Link
                       to="/products"
-                      className="text-xs font-bold text-orange-600 hover:underline flex items-center justify-between p-1.5"
+                      className="text-xs font-bold text-brand-orange hover:underline flex items-center justify-between p-1.5"
                     >
                       <span>Explore Platform Ecosystem</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -314,10 +312,10 @@ export const Navbar = () => {
 
             <Link
               to="/portfolio"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+              className={`px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                 isActive('/portfolio')
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+                  ? 'text-brand-blue font-bold bg-sky-50/90'
+                  : 'text-slate-700 hover:text-brand-blue hover:bg-sky-50/60'
               }`}
             >
               Portfolio
@@ -325,10 +323,10 @@ export const Navbar = () => {
 
             <Link
               to="/business-model"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+              className={`px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                 isActive('/business-model')
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+                  ? 'text-brand-blue font-bold bg-sky-50/90'
+                  : 'text-slate-700 hover:text-brand-blue hover:bg-sky-50/60'
               }`}
             >
               Business Model
@@ -336,10 +334,10 @@ export const Navbar = () => {
 
             <Link
               to="/partners"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+              className={`px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                 isActive('/partners')
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+                  ? 'text-brand-blue font-bold bg-sky-50/90'
+                  : 'text-slate-700 hover:text-brand-blue hover:bg-sky-50/60'
               }`}
             >
               Partner With Us
@@ -347,10 +345,10 @@ export const Navbar = () => {
 
             <Link
               to="/careers"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+              className={`px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                 isActive('/careers')
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+                  ? 'text-brand-blue font-bold bg-sky-50/90'
+                  : 'text-slate-700 hover:text-brand-blue hover:bg-sky-50/60'
               }`}
             >
               Careers
@@ -358,10 +356,10 @@ export const Navbar = () => {
 
             <Link
               to="/contact"
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+              className={`px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                 isActive('/contact')
-                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+                  ? 'text-brand-blue font-bold bg-sky-50/90'
+                  : 'text-slate-700 hover:text-brand-blue hover:bg-sky-50/60'
               }`}
             >
               Contact Us
@@ -369,18 +367,18 @@ export const Navbar = () => {
           </nav>
 
           {/* ========================================================= */}
-          {/* 3. PROMINENT CALL-TO-ACTION BUTTONS (Shiny Blue & Orange) */}
+          {/* 3. PROMINENT CALL-TO-ACTION BUTTONS (Sleek, Balanced)     */}
           {/* ========================================================= */}
-          <div className="hidden xl:flex items-center space-x-2.5 shrink-0">
+          <div className="hidden xl:flex items-center space-x-2 2xl:space-x-2.5 shrink-0">
             <Link
               to="/products"
-              className="shiny-btn inline-flex items-center px-4 py-2 text-xs font-bold rounded-full text-orange-600 bg-orange-50/80 border border-orange-300 hover:bg-orange-500 hover:text-white transition-all transform hover:-translate-y-0.5 shadow-xs"
+              className="inline-flex items-center px-3.5 py-2 text-xs font-bold rounded-xl text-brand-orange bg-orange-50/80 border border-orange-200/90 hover:bg-orange-500 hover:text-white transition-all transform hover:-translate-y-0.5 shadow-2xs"
             >
               Explore Products
             </Link>
             <Link
               to="/contact"
-              className="shiny-btn inline-flex items-center px-5 py-2.5 text-xs font-extrabold rounded-full bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-lg shadow-sky-500/35 hover:shadow-sky-400/50 transition-all transform hover:-translate-y-0.5 border border-sky-300/40"
+              className="shiny-btn inline-flex items-center px-4.5 py-2 text-xs font-extrabold rounded-xl bg-gradient-to-r from-brand-blue via-sky-600 to-blue-600 hover:from-blue-700 hover:to-brand-blue text-white shadow-md shadow-brand-blue/25 hover:shadow-lg hover:shadow-brand-blue/35 transition-all transform hover:-translate-y-0.5 border border-sky-300/30"
             >
               <span>Let's Discuss Your Project</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
