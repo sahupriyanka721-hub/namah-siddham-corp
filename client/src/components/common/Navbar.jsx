@@ -151,22 +151,27 @@ export const Navbar = () => {
               <span className="font-heading font-black text-base sm:text-lg text-slate-900 tracking-wide leading-tight group-hover:text-royal-600 transition-colors">
                 NAMAH SIDDHAM
               </span>
-              <span className="text-[10px] sm:text-[11px] font-extrabold text-sky-600 tracking-[0.2em] uppercase font-mono mt-0.5">
-                CORPORATION
-              </span>
+              <div className="flex items-center space-x-1.5 mt-0.5">
+                <span className="text-[10px] sm:text-[11px] font-extrabold text-sky-600 tracking-[0.2em] uppercase font-mono">
+                  CORPORATION
+                </span>
+                <span className="text-[8px] sm:text-[9px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200/80 font-mono tracking-wider">
+                  BHOPAL, MP
+                </span>
+              </div>
             </div>
           </Link>
 
           {/* ========================================================= */}
-          {/* 2. DESKTOP & LAPTOP NAVIGATION (Balanced Glass Pill)      */}
+          {/* 2. DESKTOP NAVIGATION LINKS (Interactive Shiny Keys)       */}
           {/* ========================================================= */}
-          <nav className="hidden lg:flex items-center space-x-1.5 p-1.5 rounded-full bg-white/85 backdrop-blur-md border border-sky-200/90 shadow-md shadow-sky-500/5">
+          <nav className="hidden xl:flex items-center space-x-1 p-1 rounded-full bg-sky-50/80 border border-sky-100 shadow-inner">
             <Link
               to="/"
-              className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                 isActive('/') && location.pathname === '/'
-                  ? 'text-sky-700 bg-sky-100/70 shadow-xs font-bold border border-sky-200 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-sky-50/70'
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
               }`}
             >
               Home
@@ -174,10 +179,10 @@ export const Navbar = () => {
 
             <Link
               to="/about"
-              className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                 isActive('/about')
-                  ? 'text-sky-700 bg-sky-100/70 shadow-xs font-bold border border-sky-200 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-sky-50/70'
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
               }`}
             >
               About Us
@@ -196,13 +201,13 @@ export const Navbar = () => {
             >
               <Link
                 to="/services"
-                className={`inline-flex items-center px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
+                className={`inline-flex items-center px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                   isActive('/services')
-                    ? 'text-sky-700 bg-sky-100/70 shadow-xs font-bold border border-sky-200 ring-1 ring-sky-400/20'
-                    : 'text-slate-600 hover:text-sky-600 hover:bg-sky-50/70'
+                    ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                    : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
                 }`}
               >
-                <span className="w-2 h-2 rounded-full bg-sky-500 mr-2 animate-pulse shadow-xs shadow-sky-500" />
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-500 mr-1.5 animate-pulse" />
                 <span>IT Services</span>
                 <ChevronDown className="w-3.5 h-3.5 ml-1 text-sky-500" />
               </Link>
@@ -263,13 +268,13 @@ export const Navbar = () => {
             >
               <Link
                 to="/products"
-                className={`inline-flex items-center px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
+                className={`inline-flex items-center px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                   isActive('/products') || isActive('/ecosystem')
-                    ? 'text-orange-700 bg-orange-100/70 shadow-xs font-bold border border-orange-200 ring-1 ring-orange-400/20'
-                    : 'text-slate-600 hover:text-orange-600 hover:bg-orange-50/70'
+                    ? 'text-orange-700 bg-white shadow-xs font-bold border border-orange-200/90 ring-1 ring-orange-400/20'
+                    : 'text-slate-600 hover:text-orange-600 hover:bg-white/70'
                 }`}
               >
-                <span className="w-2 h-2 rounded-full bg-orange-500 mr-2 animate-pulse shadow-xs shadow-orange-500" />
+                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 mr-1.5 animate-pulse" />
                 <span>Our Products</span>
                 <ChevronDown className="w-3.5 h-3.5 ml-1 text-orange-500" />
               </Link>
@@ -313,21 +318,97 @@ export const Navbar = () => {
             </div>
 
             <Link
+              to="/portfolio"
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+                isActive('/portfolio')
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+              }`}
+            >
+              Portfolio
+            </Link>
+
+            <Link
+              to="/business-model"
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+                isActive('/business-model')
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+              }`}
+            >
+              Business Model
+            </Link>
+
+            <Link
               to="/partners"
-              className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 ${
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
                 isActive('/partners')
-                  ? 'text-sky-700 bg-sky-100/70 shadow-xs font-bold border border-sky-200 ring-1 ring-sky-400/20'
-                  : 'text-slate-600 hover:text-sky-600 hover:bg-sky-50/70'
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
               }`}
             >
               Partner With Us
             </Link>
+
+            <Link
+              to="/careers"
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+                isActive('/careers')
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+              }`}
+            >
+              Careers
+            </Link>
+
+            <Link
+              to="/contact"
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-200 ${
+                isActive('/contact')
+                  ? 'text-sky-700 bg-white shadow-xs font-bold border border-sky-200/90 ring-1 ring-sky-400/20'
+                  : 'text-slate-600 hover:text-sky-600 hover:bg-white/70'
+              }`}
+            >
+              Contact Us
+            </Link>
           </nav>
 
           {/* ========================================================= */}
-          {/* 3. MOBILE MENU HAMBURGER BUTTON                           */}
+          {/* 3. PROMINENT CALL-TO-ACTION BUTTONS (Shiny Blue & Orange) */}
           {/* ========================================================= */}
-          <div className="flex lg:hidden items-center">
+          <div className="hidden xl:flex items-center space-x-2.5 shrink-0">
+            <Link
+              to="/products"
+              className="shiny-btn inline-flex items-center px-4 py-2 text-xs font-bold rounded-full text-orange-600 bg-orange-50/80 border border-orange-300 hover:bg-orange-500 hover:text-white transition-all transform hover:-translate-y-0.5 shadow-xs"
+            >
+              Explore Products
+            </Link>
+            <Link
+              to="/contact"
+              className="shiny-btn inline-flex items-center px-5 py-2.5 text-xs font-extrabold rounded-full bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-lg shadow-sky-500/35 hover:shadow-sky-400/50 transition-all transform hover:-translate-y-0.5 border border-sky-300/40"
+            >
+              <span>Let's Discuss Your Project</span>
+              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+            </Link>
+          </div>
+
+          {/* ========================================================= */}
+          {/* 4. TABLET QUICK CTA (1024px - 1279px)                     */}
+          {/* ========================================================= */}
+          <div className="hidden lg:flex xl:hidden items-center space-x-2">
+            <Link
+              to="/contact"
+              className="inline-flex items-center px-4 py-2 text-xs font-extrabold rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-sm"
+            >
+              <span>Discuss Project</span>
+              <ArrowRight className="w-3.5 h-3.5 ml-1" />
+            </Link>
+          </div>
+
+          {/* ========================================================= */}
+          {/* 5. MOBILE MENU HAMBURGER BUTTON                           */}
+          {/* ========================================================= */}
+          <div className="flex xl:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl text-slate-700 hover:text-royal-600 hover:bg-slate-100 border border-slate-200 focus:outline-none"
@@ -340,10 +421,10 @@ export const Navbar = () => {
       </div>
 
       {/* ========================================================= */}
-      {/* 4. MOBILE DRAWER MENU (Clean White Theme)                 */}
+      {/* 6. MOBILE DRAWER MENU (Clean White Theme)                 */}
       {/* ========================================================= */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-5 pt-4 pb-8 space-y-3 max-h-[85vh] overflow-y-auto shadow-2xl">
+        <div className="xl:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-5 pt-4 pb-8 space-y-3 max-h-[85vh] overflow-y-auto shadow-2xl">
           {/* Mobile Navigation List */}
           <div className="space-y-1">
             <Link
@@ -407,6 +488,26 @@ export const Navbar = () => {
             </div>
 
             <Link
+              to="/portfolio"
+              className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+                isActive('/portfolio')
+                  ? 'bg-royal-50 text-royal-600 font-bold'
+                  : 'text-slate-700 hover:bg-slate-50'
+              }`}
+            >
+              Portfolio &amp; Case Studies
+            </Link>
+            <Link
+              to="/business-model"
+              className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+                isActive('/business-model')
+                  ? 'bg-royal-50 text-royal-600 font-bold'
+                  : 'text-slate-700 hover:bg-slate-50'
+              }`}
+            >
+              Business Model
+            </Link>
+            <Link
               to="/partners"
               className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
                 isActive('/partners')
@@ -415,6 +516,26 @@ export const Navbar = () => {
               }`}
             >
               Partner With Us
+            </Link>
+            <Link
+              to="/careers"
+              className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+                isActive('/careers')
+                  ? 'bg-royal-50 text-royal-600 font-bold'
+                  : 'text-slate-700 hover:bg-slate-50'
+              }`}
+            >
+              Careers
+            </Link>
+            <Link
+              to="/contact"
+              className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+                isActive('/contact')
+                  ? 'bg-royal-50 text-royal-600 font-bold'
+                  : 'text-slate-700 hover:bg-slate-50'
+              }`}
+            >
+              Contact Us
             </Link>
           </div>
 
@@ -436,7 +557,8 @@ export const Navbar = () => {
           </div>
 
           {/* Quick Contact Line in Mobile Drawer */}
-          <div className="pt-3 text-[11px] text-slate-500 flex items-center justify-center border-t border-slate-100">
+          <div className="pt-3 text-[11px] text-slate-500 flex items-center justify-between border-t border-slate-100">
+            <span>Bhopal, MP, India</span>
             <span className="font-mono text-royal-600 font-semibold">CIN: U77100MP2026PTC087531</span>
           </div>
         </div>
