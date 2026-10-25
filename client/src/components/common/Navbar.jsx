@@ -5,7 +5,7 @@ import {
   X,
   ChevronDown,
   ChevronRight,
-  Monitor,
+  Globe,
   Cpu,
   Smartphone,
   TrendingUp,
@@ -29,66 +29,27 @@ const serviceLinks = [
     name: 'Website Development',
     path: '/services/web-development',
     desc: 'Corporate sites, landing pages & dynamic web portals',
-    tag: 'Web & Portals',
-    icon: Monitor,
-    color: 'blue',
+    icon: Globe,
   },
   {
     name: 'Custom Software Development',
     path: '/services/custom-software',
-    desc: 'Business management systems, ERP, CRM & tailored software',
-    tag: 'ERP, CRM & Cloud',
+    desc: 'Business management systems, ERP, CRM & tailored platforms',
     icon: Cpu,
-    color: 'indigo',
   },
   {
     name: 'Mobile Application Development',
     path: '/services/mobile-apps',
-    desc: 'Native & cross-platform Android & iOS applications',
-    tag: 'iOS & Android',
+    desc: 'Native & cross-platform Android and iOS applications',
     icon: Smartphone,
-    color: 'emerald',
   },
   {
     name: 'Digital Marketing & SEO',
     path: '/services/digital-marketing',
-    desc: 'SEO, performance marketing, social reach & lead generation',
-    tag: 'SEO & Growth',
+    desc: 'SEO campaigns, online visibility & lead-generation solutions',
     icon: TrendingUp,
-    color: 'orange',
   },
 ];
-
-const serviceColorMap = {
-  blue: {
-    container:
-      'bg-gradient-to-br from-blue-500/10 via-sky-500/15 to-blue-600/10 text-brand-blue border-sky-200/80 group-hover:bg-gradient-to-tr group-hover:from-brand-blue group-hover:to-blue-600 group-hover:text-white group-hover:border-transparent group-hover:shadow-md group-hover:shadow-brand-blue/25',
-    mobileContainer: 'bg-sky-100 text-brand-blue border-sky-200',
-    tag: 'bg-sky-50 text-brand-blue border-sky-200/60',
-    hoverText: 'group-hover:text-brand-blue',
-  },
-  indigo: {
-    container:
-      'bg-gradient-to-br from-indigo-500/10 via-purple-500/15 to-indigo-600/10 text-indigo-600 border-indigo-200/80 group-hover:bg-gradient-to-tr group-hover:from-indigo-600 group-hover:to-purple-600 group-hover:text-white group-hover:border-transparent group-hover:shadow-md group-hover:shadow-indigo-600/25',
-    mobileContainer: 'bg-indigo-100 text-indigo-700 border-indigo-200',
-    tag: 'bg-indigo-50 text-indigo-700 border-indigo-200/60',
-    hoverText: 'group-hover:text-indigo-600',
-  },
-  emerald: {
-    container:
-      'bg-gradient-to-br from-emerald-500/10 via-teal-500/15 to-cyan-600/10 text-emerald-700 border-emerald-200/80 group-hover:bg-gradient-to-tr group-hover:from-emerald-600 group-hover:to-teal-600 group-hover:text-white group-hover:border-transparent group-hover:shadow-md group-hover:shadow-emerald-600/25',
-    mobileContainer: 'bg-emerald-100 text-emerald-700 border-emerald-200',
-    tag: 'bg-emerald-50 text-emerald-800 border-emerald-200/60',
-    hoverText: 'group-hover:text-emerald-700',
-  },
-  orange: {
-    container:
-      'bg-gradient-to-br from-amber-500/10 via-orange-500/15 to-amber-600/10 text-brand-orange border-orange-200/80 group-hover:bg-gradient-to-tr group-hover:from-brand-orange group-hover:to-amber-500 group-hover:text-white group-hover:border-transparent group-hover:shadow-md group-hover:shadow-brand-orange/25',
-    mobileContainer: 'bg-orange-100 text-brand-orange border-orange-200',
-    tag: 'bg-orange-50 text-brand-orange border-orange-200/60',
-    hoverText: 'group-hover:text-brand-orange',
-  },
-};
 
 const productLinks = [
   {
@@ -98,8 +59,6 @@ const productLinks = [
     status: 'Under Development',
     url: 'https://homeservixo.in',
     icon: Home,
-    tag: 'On-Demand Services',
-    color: 'emerald',
   },
   {
     name: 'Carrento',
@@ -108,8 +67,6 @@ const productLinks = [
     status: 'Under Development',
     url: 'https://carrento.in',
     icon: Car,
-    tag: 'Mobility & Rentals',
-    color: 'blue',
   },
   {
     name: 'Jainamshree',
@@ -118,8 +75,6 @@ const productLinks = [
     status: 'Under Development',
     url: 'https://jainamshree.online',
     icon: ShoppingBag,
-    tag: 'Community E-com',
-    color: 'orange',
   },
   {
     name: 'SuperiorMart',
@@ -128,8 +83,6 @@ const productLinks = [
     status: 'Under Development',
     url: 'https://superiormart.in',
     icon: Store,
-    tag: 'Retail & Multi-Vendor',
-    color: 'indigo',
   },
 ];
 
@@ -168,8 +121,8 @@ export const Navbar = () => {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md py-2.5 border-b border-sky-100'
-          : 'bg-white/90 backdrop-blur-md py-3 sm:py-3.5 border-b border-sky-100/80 shadow-sm shadow-sky-500/5'
+          ? 'bg-white/98 backdrop-blur-md shadow-md py-2.5 border-b border-sky-100'
+          : 'bg-white/95 backdrop-blur-md py-3 sm:py-3.5 border-b border-sky-100/80 shadow-sm shadow-sky-500/5'
       }`}
     >
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-sky-400 via-amber-400 to-orange-500" />
@@ -239,7 +192,7 @@ export const Navbar = () => {
               About Us
             </Link>
 
-            {/* IT Services Dropdown (Vertical 1: Royal Blue Accent) */}
+            {/* IT Services Mega Dropdown (Vertical 1: Royal Blue Accent) */}
             <div
               className="relative"
               onMouseEnter={() => {
@@ -247,7 +200,7 @@ export const Navbar = () => {
                 setServicesDropdown(true);
               }}
               onMouseLeave={() => {
-                servicesTimeoutRef.current = setTimeout(() => setServicesDropdown(false), 200);
+                servicesTimeoutRef.current = setTimeout(() => setServicesDropdown(false), 250);
               }}
             >
               <Link
@@ -262,76 +215,104 @@ export const Navbar = () => {
                 <ChevronDown className="w-3.5 h-3.5 ml-1 text-sky-500" />
               </Link>
 
+              {/* Invisible Hover Bridge to ensure zero cursor drops */}
               {servicesDropdown && (
-                <div className="absolute top-full left-0 w-[420px] bg-white/98 backdrop-blur-2xl rounded-2xl shadow-2xl border border-sky-100 py-3.5 px-3 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2">
-                  <div className="px-3 py-2 border-b border-sky-100/80 mb-2.5 flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-brand-blue font-mono">
-                        Vertical 1: IT Solutions
-                      </span>
-                    </div>
-                    <span className="text-[9px] font-semibold text-slate-400 font-mono">
-                      4 Core Capabilities
-                    </span>
-                  </div>
+                <div className="absolute top-full left-0 pt-2 z-50">
+                  <div className="w-[590px] bg-white rounded-3xl shadow-2xl border border-sky-100 p-4 animate-in fade-in slide-in-from-top-2 duration-150 text-slate-900">
+                    {/* Top brand accent bar */}
+                    <div className="h-1 bg-gradient-to-r from-brand-blue via-brand-gold to-brand-orange rounded-t-3xl -mx-4 -mt-4 mb-3.5" />
 
-                  <div className="space-y-1">
-                    {serviceLinks.map((item) => {
-                      const Icon = item.icon;
-                      const colorStyle = serviceColorMap[item.color] || serviceColorMap.blue;
-                      return (
-                        <Link
-                          key={item.name}
-                          to={item.path}
-                          className="flex items-center space-x-3.5 p-2.5 rounded-xl hover:bg-sky-50/70 border border-transparent hover:border-sky-100 transition-all duration-200 group"
-                        >
-                          {/* Professional Curated Icon Box */}
-                          <div
-                            className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border transition-all duration-300 ${colorStyle.container}`}
+                    <div className="grid grid-cols-12 gap-3.5">
+                      {/* Left: 4 IT Services (7 columns) */}
+                      <div className="col-span-7 space-y-1">
+                        <div className="px-2 py-1 flex items-center justify-between mb-1">
+                          <span className="text-[10px] font-extrabold uppercase tracking-widest text-brand-blue font-mono">
+                            Vertical 1: IT Solutions
+                          </span>
+                          <span className="text-[9px] font-semibold text-slate-400 font-mono">
+                            4 Core Services
+                          </span>
+                        </div>
+
+                        {serviceLinks.map((item) => {
+                          const Icon = item.icon;
+                          return (
+                            <Link
+                              key={item.name}
+                              to={item.path}
+                              className="flex items-center space-x-3 p-2.5 rounded-2xl hover:bg-sky-50/80 transition-all duration-150 group"
+                            >
+                              {/* Unified Royal Blue & Sky Icon Box */}
+                              <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200/80 text-brand-blue flex items-center justify-center shrink-0 group-hover:bg-brand-blue group-hover:text-white group-hover:border-transparent group-hover:shadow-md group-hover:shadow-brand-blue/25 group-hover:scale-105 transition-all duration-200">
+                                <Icon className="w-5 h-5" />
+                              </div>
+
+                              <div className="flex-1 min-w-0">
+                                <div className="text-xs font-bold text-slate-900 group-hover:text-brand-blue transition-colors truncate">
+                                  {item.name}
+                                </div>
+                                <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug mt-0.5">
+                                  {item.desc}
+                                </div>
+                              </div>
+
+                              <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-brand-blue group-hover:translate-x-1 transition-all shrink-0" />
+                            </Link>
+                          );
+                        })}
+                      </div>
+
+                      {/* Right: Featured Spotlight Consultation Card (5 columns) */}
+                      <div className="col-span-5 bg-gradient-to-br from-slate-50 via-sky-50/40 to-blue-50/30 rounded-2xl p-4 border border-sky-100/90 flex flex-col justify-between">
+                        <div className="space-y-2">
+                          <div className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-white border border-sky-200 shadow-2xs">
+                            <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse" />
+                            <span className="text-[9px] font-bold text-brand-blue uppercase tracking-wider font-mono">
+                              Engineering Hub
+                            </span>
+                          </div>
+
+                          <h4 className="font-heading font-black text-sm text-brand-navy leading-snug">
+                            Need Custom Architecture?
+                          </h4>
+
+                          <p className="text-[11px] text-slate-600 leading-relaxed">
+                            Connect with our solution architects for tailored corporate software, cloud systems, and native mobile apps.
+                          </p>
+                        </div>
+
+                        <div className="pt-3 border-t border-sky-100/80 mt-3 space-y-2">
+                          <Link
+                            to="/contact"
+                            className="w-full inline-flex items-center justify-center space-x-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white text-xs font-bold shadow-xs hover:shadow-md transition-all text-center"
                           >
-                            <Icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                            <span>Discuss Your Scope</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                          <div className="text-[9px] text-slate-400 font-mono text-center">
+                            Bhopal, MP • CIN: U77100MP2026PTC087531
                           </div>
+                        </div>
+                      </div>
+                    </div>
 
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center space-x-2">
-                              <span
-                                className={`text-xs font-bold text-slate-900 ${colorStyle.hoverText} transition-colors truncate`}
-                              >
-                                {item.name}
-                              </span>
-                              <span
-                                className={`text-[9px] font-bold font-mono px-1.5 py-0.5 rounded border shrink-0 ${colorStyle.tag}`}
-                              >
-                                {item.tag}
-                              </span>
-                            </div>
-                            <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug mt-0.5">
-                              {item.desc}
-                            </div>
-                          </div>
-
-                          <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-brand-blue group-hover:translate-x-1 transition-all shrink-0" />
-                        </Link>
-                      );
-                    })}
-                  </div>
-
-                  <div className="pt-2.5 px-3 border-t border-sky-100/80 mt-2 flex items-center justify-between">
-                    <Link
-                      to="/services"
-                      className="text-xs font-bold text-brand-blue hover:text-brand-orange hover:underline flex items-center space-x-1.5 transition-colors"
-                    >
-                      <span>Explore All IT Services</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                    <span className="text-[10px] text-slate-400 font-medium">Bhopal Tech Hub</span>
+                    {/* Bottom Link Bar */}
+                    <div className="pt-2.5 px-2 border-t border-sky-100 mt-2 flex items-center justify-between text-xs">
+                      <Link
+                        to="/services"
+                        className="font-bold text-brand-blue hover:text-brand-orange hover:underline inline-flex items-center space-x-1"
+                      >
+                        <span>Explore All IT Services &amp; Capabilities</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                      <span className="text-[10px] text-slate-400 font-medium">Full Stack &amp; Enterprise</span>
+                    </div>
                   </div>
                 </div>
               )}
             </div>
 
-            {/* Our Products Dropdown (Vertical 2: Sunburst Orange Accent) */}
+            {/* Our Products Mega Dropdown (Vertical 2: Sunburst Orange Accent) */}
             <div
               className="relative"
               onMouseEnter={() => {
@@ -339,7 +320,7 @@ export const Navbar = () => {
                 setProductsDropdown(true);
               }}
               onMouseLeave={() => {
-                productsTimeoutRef.current = setTimeout(() => setProductsDropdown(false), 200);
+                productsTimeoutRef.current = setTimeout(() => setProductsDropdown(false), 250);
               }}
             >
               <Link
@@ -354,67 +335,102 @@ export const Navbar = () => {
                 <ChevronDown className="w-3.5 h-3.5 ml-1 text-orange-500" />
               </Link>
 
+              {/* Invisible Hover Bridge */}
               {productsDropdown && (
-                <div className="absolute top-full left-0 w-[420px] bg-white/98 backdrop-blur-2xl rounded-2xl shadow-2xl border border-orange-100 py-3.5 px-3 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2">
-                  <div className="px-3 py-2 border-b border-orange-100/80 mb-2.5 flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse" />
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange font-mono">
-                        Vertical 2: Digital Marketplaces
-                      </span>
-                    </div>
-                    <span className="text-[9px] font-semibold text-slate-400 font-mono">
-                      4 Platforms
-                    </span>
-                  </div>
+                <div className="absolute top-full left-0 pt-2 z-50">
+                  <div className="w-[590px] bg-white rounded-3xl shadow-2xl border border-orange-100 p-4 animate-in fade-in slide-in-from-top-2 duration-150 text-slate-900">
+                    {/* Top brand accent bar */}
+                    <div className="h-1 bg-gradient-to-r from-brand-orange via-brand-gold to-brand-blue rounded-t-3xl -mx-4 -mt-4 mb-3.5" />
 
-                  <div className="space-y-1">
-                    {productLinks.map((prod) => {
-                      const Icon = prod.icon;
-                      const colorStyle = serviceColorMap[prod.color] || serviceColorMap.orange;
-                      return (
-                        <Link
-                          key={prod.name}
-                          to={prod.path}
-                          className="flex items-center space-x-3.5 p-2.5 rounded-xl hover:bg-orange-50/70 border border-transparent hover:border-orange-100 transition-all duration-200 group"
-                        >
-                          <div
-                            className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border transition-all duration-300 ${colorStyle.container}`}
-                          >
-                            <Icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
-                          </div>
-
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center space-x-2">
-                              <span className="text-xs font-bold text-slate-900 group-hover:text-brand-orange transition-colors truncate">
-                                {prod.name}
-                              </span>
-                              <span className="text-[9px] font-bold font-mono px-1.5 py-0.5 rounded border border-orange-200/60 bg-orange-50 text-brand-orange shrink-0">
-                                {prod.tag}
-                              </span>
-                            </div>
-                            <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug mt-0.5">
-                              {prod.category}
-                            </div>
-                          </div>
-
-                          <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 font-mono shrink-0">
-                            {prod.status}
+                    <div className="grid grid-cols-12 gap-3.5">
+                      {/* Left: 4 Platforms (7 columns) */}
+                      <div className="col-span-7 space-y-1">
+                        <div className="px-2 py-1 flex items-center justify-between mb-1">
+                          <span className="text-[10px] font-extrabold uppercase tracking-widest text-brand-orange font-mono">
+                            Vertical 2: Digital Marketplaces
                           </span>
-                        </Link>
-                      );
-                    })}
-                  </div>
+                          <span className="text-[9px] font-semibold text-slate-400 font-mono">
+                            4 Platforms
+                          </span>
+                        </div>
 
-                  <div className="pt-2.5 px-3 border-t border-orange-100/80 mt-2 flex items-center justify-between">
-                    <Link
-                      to="/products"
-                      className="text-xs font-bold text-brand-orange hover:underline flex items-center space-x-1.5"
-                    >
-                      <span>Explore Platform Ecosystem</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                    <span className="text-[10px] text-slate-400 font-medium">Verified Status</span>
+                        {productLinks.map((prod) => {
+                          const Icon = prod.icon;
+                          return (
+                            <Link
+                              key={prod.name}
+                              to={prod.path}
+                              className="flex items-center space-x-3 p-2.5 rounded-2xl hover:bg-orange-50/80 transition-all duration-150 group"
+                            >
+                              <div className="w-10 h-10 rounded-xl bg-orange-50 border border-orange-200/80 text-brand-orange flex items-center justify-center shrink-0 group-hover:bg-brand-orange group-hover:text-white group-hover:border-transparent group-hover:shadow-md group-hover:shadow-brand-orange/25 group-hover:scale-105 transition-all duration-200">
+                                <Icon className="w-5 h-5" />
+                              </div>
+
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center space-x-2">
+                                  <span className="text-xs font-bold text-slate-900 group-hover:text-brand-orange transition-colors truncate">
+                                    {prod.name}
+                                  </span>
+                                  <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-700 font-mono shrink-0">
+                                    {prod.status}
+                                  </span>
+                                </div>
+                                <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug mt-0.5">
+                                  {prod.category}
+                                </div>
+                              </div>
+
+                              <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-brand-orange group-hover:translate-x-1 transition-all shrink-0" />
+                            </Link>
+                          );
+                        })}
+                      </div>
+
+                      {/* Right: Featured Ecosystem Spotlight (5 columns) */}
+                      <div className="col-span-5 bg-gradient-to-br from-slate-50 via-orange-50/40 to-amber-50/30 rounded-2xl p-4 border border-orange-100/90 flex flex-col justify-between">
+                        <div className="space-y-2">
+                          <div className="inline-flex items-center space-x-1.5 px-2.5 py-0.5 rounded-full bg-white border border-orange-200 shadow-2xs">
+                            <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" />
+                            <span className="text-[9px] font-bold text-brand-orange uppercase tracking-wider font-mono">
+                              Aggregator Vertical
+                            </span>
+                          </div>
+
+                          <h4 className="font-heading font-black text-sm text-brand-navy leading-snug">
+                            Multi-Category Platforms
+                          </h4>
+
+                          <p className="text-[11px] text-slate-600 leading-relaxed">
+                            Connecting consumers with verified technicians, mobility fleets, satvik merchants, and marketplace vendors.
+                          </p>
+                        </div>
+
+                        <div className="pt-3 border-t border-orange-100/80 mt-3 space-y-2">
+                          <Link
+                            to="/products"
+                            className="w-full inline-flex items-center justify-center space-x-1.5 px-3 py-2 rounded-xl bg-gradient-to-r from-brand-orange to-amber-600 hover:from-amber-600 hover:to-brand-orange text-white text-xs font-bold shadow-xs hover:shadow-md transition-all text-center"
+                          >
+                            <span>Explore Platforms</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                          <div className="text-[9px] text-slate-400 font-mono text-center">
+                            Independent Operating Models
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom Link Bar */}
+                    <div className="pt-2.5 px-2 border-t border-orange-100 mt-2 flex items-center justify-between text-xs">
+                      <Link
+                        to="/partners"
+                        className="font-bold text-brand-orange hover:text-brand-blue hover:underline inline-flex items-center space-x-1"
+                      >
+                        <span>Partner With Our Platform Ecosystem</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                      <span className="text-[10px] text-slate-400 font-medium">Platform Growth</span>
+                    </div>
                   </div>
                 </div>
               )}
@@ -559,26 +575,25 @@ export const Navbar = () => {
                 </span>
                 <span className="text-[9px] text-slate-400 font-mono">4 Services</span>
               </div>
-              <div className="space-y-1.5 mt-2">
+              <div className="space-y-1 mt-1.5">
                 {serviceLinks.map((item) => {
                   const Icon = item.icon;
-                  const colorStyle = serviceColorMap[item.color] || serviceColorMap.blue;
                   return (
                     <Link
                       key={item.name}
                       to={item.path}
-                      className="flex items-center space-x-3 p-2 rounded-xl text-xs font-medium text-slate-700 hover:text-brand-blue hover:bg-sky-50/70 border border-transparent hover:border-sky-100 transition-colors"
+                      className="flex items-center space-x-3 p-2.5 rounded-xl hover:bg-sky-50 text-slate-700 hover:text-brand-blue transition-colors group"
                     >
-                      <div
-                        className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border ${colorStyle.mobileContainer}`}
-                      >
-                        <Icon className="w-4 h-4" />
+                      <div className="w-9 h-9 rounded-xl bg-sky-50 border border-sky-200/80 text-brand-blue flex items-center justify-center shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                        <Icon className="w-4.5 h-4.5" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="font-bold text-slate-900 truncate">{item.name}</div>
-                        <div className="text-[10px] text-slate-500 truncate">{item.tag}</div>
+                        <div className="font-bold text-xs text-slate-900 group-hover:text-brand-blue transition-colors truncate">
+                          {item.name}
+                        </div>
+                        <div className="text-[10px] text-slate-500 truncate">{item.desc}</div>
                       </div>
-                      <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+                      <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                     </Link>
                   );
                 })}
@@ -593,26 +608,25 @@ export const Navbar = () => {
                 </span>
                 <span className="text-[9px] text-slate-400 font-mono">4 Platforms</span>
               </div>
-              <div className="space-y-1.5 mt-2">
+              <div className="space-y-1 mt-1.5">
                 {productLinks.map((prod) => {
                   const Icon = prod.icon;
-                  const colorStyle = serviceColorMap[prod.color] || serviceColorMap.orange;
                   return (
                     <Link
                       key={prod.name}
                       to={prod.path}
-                      className="flex items-center space-x-3 p-2 rounded-xl text-xs font-medium text-slate-700 hover:text-brand-orange hover:bg-orange-50/70 border border-transparent hover:border-orange-100 transition-colors"
+                      className="flex items-center space-x-3 p-2.5 rounded-xl hover:bg-orange-50 text-slate-700 hover:text-brand-orange transition-colors group"
                     >
-                      <div
-                        className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border ${colorStyle.mobileContainer}`}
-                      >
-                        <Icon className="w-4 h-4" />
+                      <div className="w-9 h-9 rounded-xl bg-orange-50 border border-orange-200/80 text-brand-orange flex items-center justify-center shrink-0 group-hover:bg-brand-orange group-hover:text-white transition-colors">
+                        <Icon className="w-4.5 h-4.5" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="font-bold text-slate-900 truncate">{prod.name}</div>
+                        <div className="font-bold text-xs text-slate-900 group-hover:text-brand-orange transition-colors truncate">
+                          {prod.name}
+                        </div>
                         <div className="text-[10px] text-slate-500 truncate">{prod.category}</div>
                       </div>
-                      <span className="text-[9px] px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 border border-orange-200 font-mono shrink-0">
+                      <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-700 border border-orange-200 font-mono shrink-0">
                         {prod.status}
                       </span>
                     </Link>
