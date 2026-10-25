@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {
   Globe,
+  Monitor,
   Code2,
+  Cpu,
   Smartphone,
   TrendingUp,
   ArrowRight,
@@ -25,14 +27,16 @@ import { Button } from '../../components/common/Button';
 const getServiceIcon = (icon) => {
   switch (icon) {
     case 'Code2':
-      return Code2;
+    case 'Cpu':
+      return Cpu;
     case 'Smartphone':
       return Smartphone;
     case 'TrendingUp':
       return TrendingUp;
     case 'Globe':
+    case 'Monitor':
     default:
-      return Globe;
+      return Monitor;
   }
 };
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Globe,
+  Monitor,
   Code2,
   Smartphone,
   TrendingUp,
@@ -29,14 +30,16 @@ import { SeoMeta } from '../../components/public/SeoMeta';
 const getServiceIcon = (iconName) => {
   switch (iconName) {
     case 'Code2':
-      return Code2;
+    case 'Cpu':
+      return Cpu;
     case 'Smartphone':
       return Smartphone;
     case 'TrendingUp':
       return TrendingUp;
     case 'Globe':
+    case 'Monitor':
     default:
-      return Globe;
+      return Monitor;
   }
 };
 
