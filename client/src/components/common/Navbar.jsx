@@ -14,6 +14,10 @@ import {
   Building2,
   Sparkles,
   Layers,
+  Home,
+  Car,
+  ShoppingBag,
+  Store,
   Phone,
   Mail,
 } from 'lucide-react';
@@ -65,6 +69,10 @@ const productLinks = [
     category: 'Home Services & Appliance Repair',
     status: 'Under Development',
     url: 'https://homeservixo.in',
+    icon: Home,
+    iconBox: 'bg-sky-50 text-brand-blue border-sky-200 group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue',
+    hoverText: 'group-hover:text-brand-blue',
+    hoverBg: 'hover:bg-sky-50/70',
   },
   {
     name: 'Carrento',
@@ -72,6 +80,10 @@ const productLinks = [
     category: 'Mobility & Car Rental Platform',
     status: 'Under Development',
     url: 'https://carrento.in',
+    icon: Car,
+    iconBox: 'bg-orange-50 text-brand-orange border-orange-200 group-hover:bg-brand-orange group-hover:text-white group-hover:border-brand-orange',
+    hoverText: 'group-hover:text-brand-orange',
+    hoverBg: 'hover:bg-orange-50/70',
   },
   {
     name: 'Jainamshree',
@@ -79,6 +91,10 @@ const productLinks = [
     category: 'Jain Community E-commerce Marketplace',
     status: 'Under Development',
     url: 'https://jainamshree.online',
+    icon: ShoppingBag,
+    iconBox: 'bg-amber-50 text-amber-700 border-amber-200 group-hover:bg-brand-gold group-hover:text-brand-navy group-hover:border-brand-gold',
+    hoverText: 'group-hover:text-amber-700',
+    hoverBg: 'hover:bg-amber-50/70',
   },
   {
     name: 'SuperiorMart',
@@ -86,6 +102,10 @@ const productLinks = [
     category: 'Multi-category E-commerce Marketplace',
     status: 'Under Development',
     url: 'https://superiormart.in',
+    icon: Store,
+    iconBox: 'bg-slate-100 text-brand-navy border-slate-300 group-hover:bg-brand-navy group-hover:text-brand-gold group-hover:border-brand-navy',
+    hoverText: 'group-hover:text-brand-navy',
+    hoverBg: 'hover:bg-slate-50/80',
   },
 ];
 
@@ -289,34 +309,48 @@ export const Navbar = () => {
               </Link>
 
               {productsDropdown && (
-                <div className="absolute top-full left-0 w-88 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-orange-100 py-3 px-2 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2">
+                <div className="absolute top-full left-0 w-88 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-orange-100 py-3 px-2 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2 overflow-hidden">
+                  {/* Top Logo Brand Line */}
+                  <div className="h-1 bg-gradient-to-r from-brand-orange via-brand-gold to-brand-blue -mx-2 -mt-3 mb-2" />
+
                   <div className="px-3 py-1.5 border-b border-orange-100 mb-2 flex items-center justify-between">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange font-mono">
                       Vertical 2: Digital Marketplaces
                     </span>
                     <span className="text-[9px] text-slate-400">4 Platforms</span>
                   </div>
-                  {productLinks.map((prod) => (
-                    <Link
-                      key={prod.name}
-                      to={prod.path}
-                      className="flex items-start justify-between p-2.5 rounded-xl hover:bg-orange-50/80 transition-colors group"
-                    >
-                      <div>
-                        <div className="text-xs font-bold text-slate-900 group-hover:text-brand-orange transition-colors">
-                          {prod.name}
+                  {productLinks.map((prod) => {
+                    const Icon = prod.icon;
+                    return (
+                      <Link
+                        key={prod.name}
+                        to={prod.path}
+                        className={`flex items-center space-x-3 p-2.5 rounded-xl ${prod.hoverBg} transition-colors group`}
+                      >
+                        {/* Logo Color Aligned Icon Box */}
+                        <div className={`w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 transition-all shadow-xs ${prod.iconBox}`}>
+                          <Icon className="w-4.5 h-4.5" />
                         </div>
-                        <div className="text-[11px] text-slate-500">{prod.category}</div>
-                      </div>
-                      <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 font-mono">
-                        {prod.status}
-                      </span>
-                    </Link>
-                  ))}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center space-x-2">
+                            <span className={`text-xs font-bold text-brand-navy ${prod.hoverText} transition-colors truncate`}>
+                              {prod.name}
+                            </span>
+                            <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-700 font-mono shrink-0">
+                              {prod.status}
+                            </span>
+                          </div>
+                          <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug">
+                            {prod.category}
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
                   <div className="pt-2 px-2 border-t border-orange-100 mt-1">
                     <Link
                       to="/products"
-                      className="text-xs font-bold text-brand-orange hover:underline flex items-center justify-between p-1.5"
+                      className="text-xs font-bold text-brand-orange hover:text-brand-blue hover:underline flex items-center justify-between p-1.5 transition-colors"
                     >
                       <span>Explore Platform Ecosystem</span>
                       <ArrowRight className="w-3.5 h-3.5" />
