@@ -17,17 +17,17 @@ export default {
           dark: '#0B132B', // Deep Corporate Contrast
         },
         royal: {
-          50: '#F0F9FF',
-          100: '#E0F2FE',
-          200: '#BAE6FD',
-          300: '#7DD3FC',
-          400: '#38BDF8', // Bright Sky Blue
-          500: '#0EA5E9', // Logo 'N' Primary Light Electric Blue
-          600: '#0284C7', // Vibrant Light Blue
-          700: '#0369A1',
-          800: '#075985',
-          900: '#0C4A6E',
-          950: '#082F49',
+          50: '#F0F7FF',
+          100: '#E0EFFF',
+          200: '#B9DCFF',
+          300: '#7CB9FF',
+          400: '#3895FF',
+          500: '#0062E3', // Logo 'N' Royal Electric Blue
+          600: '#0052C2',
+          700: '#0043A1',
+          800: '#003582',
+          900: '#00255C',
+          950: '#001438',
         },
         sky: {
           50: '#F0F9FF',
@@ -35,24 +35,24 @@ export default {
           200: '#BAE6FD',
           300: '#7DD3FC',
           400: '#38BDF8',
-          500: '#0EA5E9',
-          600: '#0284C7',
-          700: '#0369A1',
-          800: '#075985',
-          900: '#0C4A6E',
+          500: '#0284C7',
+          600: '#0369A1',
+          700: '#075985',
+          800: '#0C4A6E',
+          900: '#082F49',
         },
         navy: {
-          50: '#F4F6F8',
-          100: '#E8ECF0',
-          200: '#C7D1DC',
-          300: '#A4B5C6',
-          400: '#647D9B',
-          500: '#3E5775',
-          600: '#2F435C',
-          700: '#253549',
-          800: '#1A2536',
-          900: '#0F1826', // High contrast dark navy
-          950: '#070D16',
+          50: '#F4F7FB',
+          100: '#E7EEF7',
+          200: '#CBDCEE',
+          300: '#9FBFE0',
+          400: '#5C8CBE',
+          500: '#34669A',
+          600: '#254E78',
+          700: '#1B3A5C',
+          800: '#142C47',
+          900: '#1B2A4A', // Corporate Wordmark Dark Navy
+          950: '#0B132B', // Deep Corporate Midnight
         },
         gold: {
           50: '#FFFDF0',

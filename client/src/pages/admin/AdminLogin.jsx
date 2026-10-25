@@ -42,11 +42,11 @@ export const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-[#0B132B] via-[#101D3A] to-[#0B132B] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center space-y-4">
         {/* Brand Logo & Corporate Heading */}
         <div className="flex flex-col items-center justify-center space-y-3">
-          <div className="p-3.5 rounded-3xl bg-navy-900/90 backdrop-blur-xl border border-sky-500/30 shadow-2xl shadow-sky-950/80 ring-1 ring-amber-400/25">
+          <div className="p-3.5 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl ring-1 ring-brand-gold/30">
             <img
               src="/assets/namah-siddham-emblem.svg"
               onError={(e) => {
@@ -60,22 +60,22 @@ export const AdminLogin = () => {
           <h2 className="font-heading font-black text-2xl text-white tracking-wider">
             NAMAH SIDDHAM
           </h2>
-          <p className="text-[11px] font-bold text-sky-400 tracking-[0.25em] uppercase font-mono">
+          <p className="text-[11px] font-bold text-brand-gold tracking-[0.25em] uppercase font-mono">
             Corporation Private Limited
           </p>
         </div>
 
         <div>
-          <p className="text-xs text-gold-400 font-mono tracking-widest uppercase mt-1">
+          <p className="text-xs text-sky-300 font-mono tracking-widest uppercase mt-1">
             Secure Administrative Management Portal
           </p>
         </div>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4 sm:px-0">
-        <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-surface-200 space-y-6">
+        <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-2xl border border-sky-100 space-y-6">
           <div className="space-y-1">
-            <h3 className="font-serif font-bold text-lg text-navy-900">
+            <h3 className="font-heading font-black text-xl text-brand-navy">
               Authorized Personnel Login
             </h3>
             <p className="text-xs text-surface-500">
@@ -93,7 +93,7 @@ export const AdminLogin = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Email */}
             <div className="space-y-1.5">
-              <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Admin Email Identifier
               </label>
               <div className="relative">
@@ -104,14 +104,14 @@ export const AdminLogin = () => {
                   placeholder="admin@namahsiddham.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2.5 text-xs sm:text-sm bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                  className="w-full pl-9 pr-4 py-2.5 text-xs sm:text-sm bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                 />
               </div>
             </div>
 
             {/* Password */}
             <div className="space-y-1.5">
-              <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Secret Password
               </label>
               <div className="relative">
@@ -122,12 +122,12 @@ export const AdminLogin = () => {
                   placeholder="••••••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-9 pr-10 py-2.5 text-xs sm:text-sm bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                  className="w-full pl-9 pr-10 py-2.5 text-xs sm:text-sm bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-surface-400 hover:text-navy-900 p-1"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-surface-400 hover:text-brand-navy p-1"
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
@@ -139,7 +139,7 @@ export const AdminLogin = () => {
                 type="submit"
                 variant="primary"
                 loading={loading}
-                className="w-full py-3 text-xs sm:text-sm font-bold shadow-md bg-royal-500 hover:bg-royal-600 text-white rounded-xl"
+                className="w-full py-3 text-xs sm:text-sm font-bold shadow-md bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-700 hover:to-brand-blue text-white rounded-xl"
               >
                 Authenticate &amp; Access Dashboard
               </Button>
@@ -148,7 +148,7 @@ export const AdminLogin = () => {
 
           {/* Security Notice */}
           <div className="pt-4 border-t border-surface-200 text-center space-y-2">
-            <div className="inline-flex items-center text-[11px] text-navy-900 font-semibold">
+            <div className="inline-flex items-center text-[11px] text-brand-navy font-semibold">
               <ShieldCheck className="w-3.5 h-3.5 mr-1 text-emerald-600" />
               <span>TLS Encrypted Session &amp; Rate-Limited Authentication</span>
             </div>
@@ -161,7 +161,7 @@ export const AdminLogin = () => {
         <div className="mt-6 text-center">
           <Link
             to="/"
-            className="text-xs text-surface-400 hover:text-gold-400 transition-colors inline-flex items-center"
+            className="text-xs text-slate-300 hover:text-brand-gold transition-colors inline-flex items-center"
           >
             <span>← Return to Public Corporate Website</span>
           </Link>

@@ -18,19 +18,19 @@ export const Button = ({
 
   const variants = {
     primary:
-      'bg-gradient-to-r from-royal-500 to-royal-600 text-white hover:from-royal-600 hover:to-royal-700 focus:ring-royal-400 shadow-md shadow-royal-500/20 font-bold',
+      'bg-gradient-to-r from-brand-blue to-blue-600 text-white hover:from-blue-700 hover:to-brand-blue focus:ring-brand-blue shadow-md shadow-brand-blue/25 font-bold',
     gold:
-      'bg-gradient-to-r from-gold-500 to-orange-500 text-white font-bold hover:from-gold-400 hover:to-orange-400 focus:ring-orange-400 shadow-md shadow-orange-500/20',
+      'bg-gradient-to-r from-brand-gold to-brand-orange text-white font-bold hover:from-amber-400 hover:to-orange-500 focus:ring-brand-orange shadow-md shadow-brand-orange/20',
     orange:
-      'bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold hover:from-orange-600 hover:to-orange-700 focus:ring-orange-400 shadow-md shadow-orange-500/20',
+      'bg-gradient-to-r from-brand-orange to-orange-600 text-white font-bold hover:from-orange-600 hover:to-orange-700 focus:ring-brand-orange shadow-md shadow-brand-orange/20',
     secondary:
-      'bg-royal-50 text-royal-700 hover:bg-royal-100 border border-royal-200 focus:ring-royal-500 font-semibold',
+      'bg-sky-50 text-brand-blue hover:bg-sky-100 border border-sky-200 focus:ring-brand-blue font-semibold',
     outline:
-      'border-2 border-royal-500 text-royal-600 hover:bg-royal-50 focus:ring-royal-500 font-bold',
+      'border-2 border-brand-blue text-brand-blue hover:bg-sky-50 focus:ring-brand-blue font-bold',
     danger:
       'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-soft-sm font-bold',
     ghost:
-      'text-navy-800 hover:bg-royal-50 hover:text-royal-600 font-semibold',
+      'text-brand-navy hover:bg-sky-50 hover:text-brand-blue font-semibold',
   };
 
   const sizes = {

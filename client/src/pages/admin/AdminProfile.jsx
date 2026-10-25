@@ -46,10 +46,10 @@ export const AdminProfile = () => {
   return (
     <div className="space-y-6 max-w-4xl">
       <div>
-        <h1 className="font-serif font-bold text-2xl text-forest-950">
+        <h1 className="font-heading font-black text-2xl text-brand-navy tracking-tight">
           Admin Profile & Security
         </h1>
-        <p className="text-xs text-charcoal-500">
+        <p className="text-xs text-slate-500 mt-1">
           Review authenticated credentials and manage password security.
         </p>
       </div>
@@ -72,27 +72,27 @@ export const AdminProfile = () => {
       )}
 
       {/* Account Info */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-sage-200 shadow-soft-sm space-y-4">
-        <h3 className="font-serif font-bold text-base text-forest-950 border-b border-sage-200 pb-2">
+      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+        <h3 className="font-heading font-bold text-base text-brand-navy border-b border-slate-200 pb-2">
           Administrator Information
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
           <div>
-            <span className="font-bold text-forest-950 block">Name:</span>
-            <span className="text-charcoal-700">{admin?.name || 'Administrator'}</span>
+            <span className="font-bold text-brand-navy block">Name:</span>
+            <span className="text-slate-700">{admin?.name || 'Administrator'}</span>
           </div>
           <div>
-            <span className="font-bold text-forest-950 block">Email Identifier:</span>
-            <span className="text-charcoal-700 font-mono">{admin?.email}</span>
+            <span className="font-bold text-brand-navy block">Email Identifier:</span>
+            <span className="text-slate-700 font-mono">{admin?.email}</span>
           </div>
           <div>
-            <span className="font-bold text-forest-950 block">Role:</span>
-            <span className="capitalize font-semibold text-gold-700">{admin?.role || 'Admin'}</span>
+            <span className="font-bold text-brand-navy block">Role:</span>
+            <span className="capitalize font-semibold text-brand-gold">{admin?.role || 'Admin'}</span>
           </div>
           <div>
-            <span className="font-bold text-forest-950 block">Last Login:</span>
-            <span className="text-charcoal-500">
+            <span className="font-bold text-brand-navy block">Last Login:</span>
+            <span className="text-slate-500">
               {admin?.lastLogin ? new Date(admin.lastLogin).toLocaleString() : 'Active Session'}
             </span>
           </div>
@@ -100,14 +100,14 @@ export const AdminProfile = () => {
       </div>
 
       {/* Change Password Form */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-sage-200 shadow-soft-sm space-y-4">
-        <h3 className="font-serif font-bold text-base text-forest-950 border-b border-sage-200 pb-2">
+      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+        <h3 className="font-heading font-bold text-base text-brand-navy border-b border-slate-200 pb-2">
           Change Secret Password
         </h3>
 
         <form onSubmit={handlePasswordChange} className="space-y-4 max-w-md">
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+            <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
               Current Password <span className="text-red-500">*</span>
             </label>
             <input
@@ -115,12 +115,12 @@ export const AdminProfile = () => {
               required
               value={currentPassword}
               onChange={(e) => setCurrentPassword(e.target.value)}
-              className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+              className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
             />
           </div>
 
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+            <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
               New Password (Min 8 characters) <span className="text-red-500">*</span>
             </label>
             <input
@@ -128,12 +128,12 @@ export const AdminProfile = () => {
               required
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
-              className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+              className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
             />
           </div>
 
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+            <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
               Confirm New Password <span className="text-red-500">*</span>
             </label>
             <input
@@ -141,7 +141,7 @@ export const AdminProfile = () => {
               required
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+              className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
             />
           </div>
 

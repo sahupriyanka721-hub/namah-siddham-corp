@@ -49,14 +49,14 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
 
       {/* Sidebar container */}
       <aside
-        className={`fixed top-0 bottom-0 left-0 z-50 w-64 bg-navy-950 text-surface-300 border-r border-navy-800 flex flex-col transition-transform duration-300 lg:translate-x-0 ${
+        className={`fixed top-0 bottom-0 left-0 z-50 w-64 bg-[#0B132B] text-slate-300 border-r border-[#1B2A4A] flex flex-col transition-transform duration-300 lg:translate-x-0 ${
           mobileOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* Brand Header */}
-        <div className="p-4 border-b border-navy-800 flex items-center justify-between">
+        <div className="p-4 border-b border-[#1B2A4A] flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="p-1.5 rounded-xl bg-navy-900/90 border border-sky-500/30 shadow-xs ring-1 ring-amber-400/20">
+            <div className="p-1.5 rounded-xl bg-white/10 border border-white/15 shadow-xs ring-1 ring-brand-gold/30 backdrop-blur-md">
               <img
                 src="/assets/namah-siddham-emblem.svg"
                 onError={(e) => {
@@ -71,14 +71,14 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
               <span className="font-heading font-black text-sm text-white tracking-wider leading-tight">
                 NAMAH SIDDHAM
               </span>
-              <span className="text-[9px] font-bold text-sky-400 tracking-widest uppercase font-mono">
+              <span className="text-[9px] font-bold text-brand-gold tracking-widest uppercase font-mono">
                 ADMIN PORTAL
               </span>
             </div>
           </div>
           <button
             onClick={() => setMobileOpen(false)}
-            className="lg:hidden text-surface-400 hover:text-white p-1"
+            className="lg:hidden text-slate-400 hover:text-white p-1"
           >
             <X className="w-5 h-5" />
           </button>
@@ -94,10 +94,10 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
                 to={item.path}
                 onClick={() => setMobileOpen(false)}
                 className={({ isActive }) =>
-                  `flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-colors ${
+                  `flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all duration-150 ${
                     isActive
-                      ? 'bg-royal-500 text-white font-bold shadow-soft-sm'
-                      : 'text-surface-300 hover:bg-navy-900 hover:text-white'
+                      ? 'bg-gradient-to-r from-brand-blue to-blue-600 text-white font-bold shadow-md shadow-brand-blue/30 ring-1 ring-sky-400/30'
+                      : 'text-slate-300 hover:bg-[#1B2A4A]/60 hover:text-white'
                   }`
                 }
               >
@@ -109,12 +109,12 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
         </div>
 
         {/* Bottom Link to Public Website */}
-        <div className="p-4 border-t border-navy-800 bg-navy-950">
+        <div className="p-4 border-t border-[#1B2A4A] bg-[#080E21]">
           <a
             href="/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-2.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-gold-400 text-xs font-semibold transition-colors border border-navy-800"
+            className="flex items-center justify-between p-2.5 rounded-xl bg-[#13203C] hover:bg-brand-blue/20 text-brand-gold hover:text-white text-xs font-semibold transition-colors border border-[#1B2A4A]"
           >
             <span>View Public Website</span>
             <ExternalLink className="w-3.5 h-3.5" />

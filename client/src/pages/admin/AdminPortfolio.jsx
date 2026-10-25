@@ -165,8 +165,8 @@ export const AdminPortfolio = () => {
       {/* Header Bar */}
       <div className="bg-white rounded-3xl p-6 border border-surface-200 shadow-soft-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="font-serif font-black text-2xl text-navy-900 flex items-center">
-            <FolderGit2 className="w-6 h-6 mr-2 text-royal-600" />
+          <h1 className="font-heading font-black text-2xl text-brand-navy flex items-center">
+            <FolderGit2 className="w-6 h-6 mr-2 text-brand-blue" />
             <span>Portfolio &amp; Case Studies Management</span>
           </h1>
           <p className="text-xs text-surface-500 mt-1">
@@ -178,7 +178,7 @@ export const AdminPortfolio = () => {
           onClick={openCreateModal}
           variant="primary"
           icon={Plus}
-          className="text-xs font-bold px-4 py-2.5 rounded-xl bg-royal-500 hover:bg-royal-600 text-white"
+          className="text-xs font-bold px-4 py-2.5 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-700 hover:to-brand-blue text-white shadow-xs"
         >
           Add Portfolio Project
         </Button>
@@ -202,7 +202,7 @@ export const AdminPortfolio = () => {
             placeholder="Search project name..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 text-xs bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+            className="w-full pl-9 pr-4 py-2 text-xs bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
           />
         </form>
 
@@ -210,7 +210,7 @@ export const AdminPortfolio = () => {
           <select
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
-            className="px-3 py-1.5 rounded-xl border border-surface-200 text-xs font-medium bg-surface-50 text-navy-900 focus:outline-none"
+            className="px-3 py-1.5 rounded-xl border border-surface-200 text-xs font-medium bg-surface-50 text-brand-navy focus:outline-none"
           >
             <option value="all">All Project Types</option>
             <option value="Client Project">Client Project</option>
@@ -221,7 +221,7 @@ export const AdminPortfolio = () => {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-3 py-1.5 rounded-xl border border-surface-200 text-xs font-medium bg-surface-50 text-navy-900 focus:outline-none"
+            className="px-3 py-1.5 rounded-xl border border-surface-200 text-xs font-medium bg-surface-50 text-brand-navy focus:outline-none"
           >
             <option value="all">All Statuses</option>
             <option value="Published">Published</option>
@@ -255,34 +255,34 @@ export const AdminPortfolio = () => {
               ) : projects.length > 0 ? (
                 projects.map((p) => (
                   <tr key={p._id} className="hover:bg-surface-50/70 transition-colors">
-                    <td className="py-4 px-6 font-bold text-navy-900">
+                    <td className="py-4 px-6 font-bold text-brand-navy">
                       <div>{p.name}</div>
                       <div className="text-[11px] text-surface-400 font-normal line-clamp-1">
                         {p.shortDescription}
                       </div>
                     </td>
-                    <td className="py-4 px-4 font-mono text-royal-600">{p.industry}</td>
+                    <td className="py-4 px-4 font-mono text-brand-blue font-bold">{p.industry}</td>
                     <td className="py-4 px-4">
                       <span
                         className={`text-[9px] font-bold px-2 py-0.5 rounded-full font-mono ${
                           p.projectType === 'Client Project'
                             ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
                             : p.projectType === 'Internal Product'
-                            ? 'bg-orange-100 text-orange-800 border border-orange-300'
-                            : 'bg-blue-100 text-blue-800 border border-blue-300'
+                            ? 'bg-amber-100 text-brand-orange border border-amber-300'
+                            : 'bg-sky-100 text-brand-blue border border-sky-300'
                         }`}
                       >
                         {p.projectType}
                       </span>
                     </td>
                     <td className="py-4 px-4">
-                      <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-surface-100 text-navy-900">
+                      <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-surface-100 text-brand-navy">
                         {p.status}
                       </span>
                     </td>
                     <td className="py-4 px-4">
                       {p.isFeatured ? (
-                        <span className="text-[10px] font-bold text-royal-600">Yes</span>
+                        <span className="text-[10px] font-bold text-brand-blue">Yes</span>
                       ) : (
                         <span className="text-[10px] text-surface-400">No</span>
                       )}
@@ -292,14 +292,14 @@ export const AdminPortfolio = () => {
                         href={`/portfolio/${p.slug}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-1.5 rounded-lg text-surface-400 hover:text-navy-900 inline-block"
+                        className="p-1.5 rounded-lg text-surface-400 hover:text-brand-navy inline-block"
                         title="Preview Case Study"
                       >
                         <Eye className="w-4 h-4" />
                       </a>
                       <button
                         onClick={() => openEditModal(p)}
-                        className="p-1.5 rounded-lg text-royal-600 hover:bg-royal-50 inline-block"
+                        className="p-1.5 rounded-lg text-brand-blue hover:bg-sky-50 inline-block"
                         title="Edit Project"
                       >
                         <Edit2 className="w-4 h-4" />
@@ -354,15 +354,15 @@ export const AdminPortfolio = () => {
 
       {/* Create / Edit Modal */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 bg-navy-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-[#0B132B]/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto space-y-5 border border-surface-200 shadow-soft-xl">
             <div className="flex items-center justify-between border-b border-surface-200 pb-3">
-              <h3 className="font-serif font-bold text-lg text-navy-900">
+              <h3 className="font-heading font-black text-lg text-brand-navy">
                 {editingId ? 'Edit Portfolio Project' : 'Add New Portfolio Project'}
               </h3>
               <button
                 onClick={() => setModalOpen(false)}
-                className="text-surface-400 hover:text-navy-900 p-1 text-sm font-bold"
+                className="text-surface-400 hover:text-brand-navy p-1 text-sm font-bold"
               >
                 ✕
               </button>
@@ -371,47 +371,47 @@ export const AdminPortfolio = () => {
             <form onSubmit={handleSave} className="space-y-4 text-xs">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">Project Name *</label>
+                  <label className="block font-bold text-brand-navy mb-1">Project Name *</label>
                   <input
                     type="text"
                     required
                     value={form.name}
                     onChange={handleNameChange}
                     placeholder="e.g. Multi-Vendor Marketplace"
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">Slug *</label>
+                  <label className="block font-bold text-brand-navy mb-1">Slug *</label>
                   <input
                     type="text"
                     required
                     value={form.slug}
                     onChange={(e) => setForm({ ...form, slug: e.target.value })}
                     placeholder="multi-vendor-marketplace"
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">Industry *</label>
+                  <label className="block font-bold text-brand-navy mb-1">Industry *</label>
                   <input
                     type="text"
                     required
                     value={form.industry}
                     onChange={(e) => setForm({ ...form, industry: e.target.value })}
                     placeholder="e.g. E-commerce & Retail"
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">Project Classification *</label>
+                  <label className="block font-bold text-brand-navy mb-1">Project Classification *</label>
                   <select
                     value={form.projectType}
                     onChange={(e) => setForm({ ...form, projectType: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 font-medium"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue font-medium text-brand-navy"
                   >
                     <option value="Demonstration Project">Demonstration Project</option>
                     <option value="Internal Product">Internal Product</option>
@@ -419,11 +419,11 @@ export const AdminPortfolio = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">Status</label>
+                  <label className="block font-bold text-brand-navy mb-1">Status</label>
                   <select
                     value={form.status}
                     onChange={(e) => setForm({ ...form, status: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 font-medium"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue font-medium text-brand-navy"
                   >
                     <option value="Published">Published</option>
                     <option value="Draft">Draft</option>
@@ -433,60 +433,60 @@ export const AdminPortfolio = () => {
               </div>
 
               <div>
-                <label className="block font-bold text-navy-900 mb-1">Technologies (Comma separated)</label>
+                <label className="block font-bold text-brand-navy mb-1">Technologies (Comma separated)</label>
                 <input
                   type="text"
                   value={form.technologiesText}
                   onChange={(e) => setForm({ ...form, technologiesText: e.target.value })}
                   placeholder="React.js, Node.js, Express, MongoDB, Tailwind CSS"
-                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-navy-900 mb-1">Short Description *</label>
+                <label className="block font-bold text-brand-navy mb-1">Short Description *</label>
                 <textarea
                   rows={2}
                   required
                   value={form.shortDescription}
                   onChange={(e) => setForm({ ...form, shortDescription: e.target.value })}
                   placeholder="Brief summary for cards..."
-                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-navy-900 mb-1">Detailed Case Study Description *</label>
+                <label className="block font-bold text-brand-navy mb-1">Detailed Case Study Description *</label>
                 <textarea
                   rows={4}
                   required
                   value={form.detailedDescription}
                   onChange={(e) => setForm({ ...form, detailedDescription: e.target.value })}
                   placeholder="In-depth architecture description and specifications..."
-                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">Project / Live Demo URL (Optional)</label>
+                  <label className="block font-bold text-brand-navy mb-1">Project / Live Demo URL (Optional)</label>
                   <input
                     type="url"
                     value={form.projectUrl}
                     onChange={(e) => setForm({ ...form, projectUrl: e.target.value })}
                     placeholder="https://..."
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 font-mono"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue font-mono text-brand-navy"
                   />
                 </div>
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">Display Order</label>
+                  <label className="block font-bold text-brand-navy mb-1">Display Order</label>
                   <input
                     type="number"
                     value={form.displayOrder}
                     onChange={(e) =>
                       setForm({ ...form, displayOrder: parseInt(e.target.value) || 0 })
                     }
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
               </div>
@@ -497,9 +497,9 @@ export const AdminPortfolio = () => {
                   id="isFeaturedPortfolio"
                   checked={form.isFeatured}
                   onChange={(e) => setForm({ ...form, isFeatured: e.target.checked })}
-                  className="rounded text-royal-600 focus:ring-royal-500"
+                  className="rounded text-brand-blue focus:ring-brand-blue"
                 />
-                <label htmlFor="isFeaturedPortfolio" className="text-xs font-semibold text-navy-900">
+                <label htmlFor="isFeaturedPortfolio" className="text-xs font-semibold text-brand-navy">
                   Feature on Homepage Showcase
                 </label>
               </div>
@@ -508,13 +508,13 @@ export const AdminPortfolio = () => {
                 <button
                   type="button"
                   onClick={() => setModalOpen(false)}
-                  className="px-4 py-2 rounded-xl bg-surface-200 text-surface-700 text-xs font-semibold"
+                  className="px-4 py-2 rounded-xl bg-surface-200 text-surface-700 text-xs font-semibold hover:bg-surface-300 transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-xl bg-royal-500 hover:bg-royal-600 text-white text-xs font-bold"
+                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-700 hover:to-brand-blue text-white text-xs font-bold shadow-xs"
                 >
                   Save Project
                 </button>

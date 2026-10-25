@@ -49,11 +49,11 @@ export const AdminSettings = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="font-heading font-black text-2xl text-navy-900 tracking-tight flex items-center">
-            <Settings className="w-6 h-6 mr-2.5 text-royal-500" />
+          <h1 className="font-heading font-black text-2xl text-brand-navy tracking-tight flex items-center">
+            <Settings className="w-6 h-6 mr-2.5 text-brand-blue" />
             Company & Identity Settings
           </h1>
-          <p className="text-xs text-navy-600 mt-1">
+          <p className="text-xs text-slate-500 mt-1">
             Manage legal disclosures, Bhopal registered office address, official emails, CTA buttons, and global meta settings.
           </p>
         </div>
@@ -83,14 +83,14 @@ export const AdminSettings = () => {
           <form onSubmit={handleSave} className="space-y-8">
             {/* Section 1: Corporate Legal Identity */}
             <div className="space-y-4">
-              <h3 className="font-heading font-bold text-base text-navy-900 border-b border-slate-200 pb-2 flex items-center">
-                <Building2 className="w-4 h-4 mr-2 text-royal-500" />
+              <h3 className="font-heading font-bold text-base text-brand-navy border-b border-slate-200 pb-2 flex items-center">
+                <Building2 className="w-4 h-4 mr-2 text-brand-blue" />
                 Legal Entity Identifiers
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Company Legal Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -98,12 +98,12 @@ export const AdminSettings = () => {
                     required
                     value={formData?.companyName || ''}
                     onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 font-medium text-navy-900"
+                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue font-medium text-brand-navy"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Corporate Identification Number (CIN) <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -111,33 +111,33 @@ export const AdminSettings = () => {
                     required
                     value={formData?.cin || ''}
                     onChange={(e) => setFormData({ ...formData, cin: e.target.value })}
-                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 font-mono text-navy-900 font-semibold"
+                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue font-mono text-brand-navy font-semibold"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Company Type
                   </label>
                   <input
                     type="text"
                     value={formData?.companyType || ''}
                     onChange={(e) => setFormData({ ...formData, companyType: e.target.value })}
-                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Business Positioning Statement
                   </label>
                   <input
                     type="text"
                     value={formData?.businessPositioning || ''}
                     onChange={(e) => setFormData({ ...formData, businessPositioning: e.target.value })}
-                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
               </div>
@@ -145,14 +145,14 @@ export const AdminSettings = () => {
 
             {/* Section 2: Contact & Registered Office */}
             <div className="space-y-4 pt-4 border-t border-slate-200">
-              <h3 className="font-heading font-bold text-base text-navy-900 border-b border-slate-200 pb-2 flex items-center">
-                <PhoneCall className="w-4 h-4 mr-2 text-royal-500" />
+              <h3 className="font-heading font-bold text-base text-brand-navy border-b border-slate-200 pb-2 flex items-center">
+                <PhoneCall className="w-4 h-4 mr-2 text-brand-blue" />
                 Official Communication & Registered Office
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Official Corporate Email <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -160,37 +160,37 @@ export const AdminSettings = () => {
                     required
                     value={formData?.officialEmail || ''}
                     onChange={(e) => setFormData({ ...formData, officialEmail: e.target.value })}
-                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Grievance Officer Email
                   </label>
                   <input
                     type="email"
                     value={formData?.grievanceEmail || ''}
                     onChange={(e) => setFormData({ ...formData, grievanceEmail: e.target.value })}
-                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Official Phone Number
                   </label>
                   <input
                     type="text"
                     value={formData?.officialPhone || ''}
                     onChange={(e) => setFormData({ ...formData, officialPhone: e.target.value })}
-                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                   Full Registered Office Address (Bhopal, MP) <span className="text-red-500">*</span>
                 </label>
                 <textarea
@@ -202,12 +202,12 @@ export const AdminSettings = () => {
                       registeredOffice: { ...formData.registeredOffice, fullAddress: e.target.value },
                     })
                   }
-                  className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900 font-medium"
+                  className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy font-medium"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                   Google Map Embed URL
                 </label>
                 <input
@@ -215,21 +215,21 @@ export const AdminSettings = () => {
                   value={formData?.mapEmbedUrl || ''}
                   onChange={(e) => setFormData({ ...formData, mapEmbedUrl: e.target.value })}
                   placeholder="https://www.google.com/maps/embed?..."
-                  className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 font-mono text-navy-900 text-xs"
+                  className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue font-mono text-brand-navy text-xs"
                 />
               </div>
             </div>
 
             {/* Section 3: Call-To-Action (CTA) Config */}
             <div className="space-y-4 pt-4 border-t border-slate-200">
-              <h3 className="font-heading font-bold text-base text-navy-900 border-b border-slate-200 pb-2 flex items-center">
-                <Sparkles className="w-4 h-4 mr-2 text-gold-500" />
+              <h3 className="font-heading font-bold text-base text-brand-navy border-b border-slate-200 pb-2 flex items-center">
+                <Sparkles className="w-4 h-4 mr-2 text-brand-gold" />
                 Global Call-To-Action (CTA) Configuration
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     CTA Section Headline
                   </label>
                   <input
@@ -241,12 +241,12 @@ export const AdminSettings = () => {
                         ctaSettings: { ...formData?.ctaSettings, title: e.target.value },
                       })
                     }
-                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900 font-semibold"
+                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy font-semibold"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     CTA Section Subtitle
                   </label>
                   <input
@@ -258,14 +258,14 @@ export const AdminSettings = () => {
                         ctaSettings: { ...formData?.ctaSettings, subtitle: e.target.value },
                       })
                     }
-                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Primary Button Text
                   </label>
                   <input
@@ -277,12 +277,12 @@ export const AdminSettings = () => {
                         ctaSettings: { ...formData?.ctaSettings, primaryButtonText: e.target.value },
                       })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Primary Button Link
                   </label>
                   <input
@@ -294,12 +294,12 @@ export const AdminSettings = () => {
                         ctaSettings: { ...formData?.ctaSettings, primaryButtonLink: e.target.value },
                       })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue font-mono text-brand-navy"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Secondary Button Text
                   </label>
                   <input
@@ -311,12 +311,12 @@ export const AdminSettings = () => {
                         ctaSettings: { ...formData?.ctaSettings, secondaryButtonText: e.target.value },
                       })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Secondary Button Link
                   </label>
                   <input
@@ -328,7 +328,7 @@ export const AdminSettings = () => {
                         ctaSettings: { ...formData?.ctaSettings, secondaryButtonLink: e.target.value },
                       })
                     }
-                    className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 font-mono"
+                    className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue font-mono text-brand-navy"
                   />
                 </div>
               </div>
@@ -336,14 +336,14 @@ export const AdminSettings = () => {
 
             {/* Section 4: Social Links */}
             <div className="space-y-4 pt-4 border-t border-slate-200">
-              <h3 className="font-heading font-bold text-base text-navy-900 border-b border-slate-200 pb-2 flex items-center">
-                <Globe className="w-4 h-4 mr-2 text-royal-500" />
+              <h3 className="font-heading font-bold text-base text-brand-navy border-b border-slate-200 pb-2 flex items-center">
+                <Globe className="w-4 h-4 mr-2 text-brand-blue" />
                 Social Media Profiles
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     LinkedIn URL
                   </label>
                   <input
@@ -355,12 +355,12 @@ export const AdminSettings = () => {
                         socialLinks: { ...formData?.socialLinks, linkedin: e.target.value },
                       })
                     }
-                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 font-mono"
+                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue font-mono text-brand-navy"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Twitter / X Profile URL
                   </label>
                   <input
@@ -372,7 +372,7 @@ export const AdminSettings = () => {
                         socialLinks: { ...formData?.socialLinks, twitter: e.target.value },
                       })
                     }
-                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 font-mono"
+                    className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue font-mono text-brand-navy"
                   />
                 </div>
               </div>
@@ -380,12 +380,12 @@ export const AdminSettings = () => {
 
             {/* Section 5: Footer & SEO */}
             <div className="space-y-4 pt-4 border-t border-slate-200">
-              <h3 className="font-heading font-bold text-base text-navy-900 border-b border-slate-200 pb-2">
+              <h3 className="font-heading font-bold text-base text-brand-navy border-b border-slate-200 pb-2">
                 Footer Disclosures & SEO Defaults
               </h3>
 
               <div className="space-y-1">
-                <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                   Footer Summary Text
                 </label>
                 <textarea
@@ -397,12 +397,12 @@ export const AdminSettings = () => {
                       footerContent: { ...formData?.footerContent, aboutText: e.target.value },
                     })
                   }
-                  className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                  className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                   Footer Copyright Line
                 </label>
                 <input
@@ -414,7 +414,7 @@ export const AdminSettings = () => {
                       footerContent: { ...formData?.footerContent, copyrightText: e.target.value },
                     })
                   }
-                  className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900 font-mono"
+                  className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy font-mono"
                 />
               </div>
             </div>

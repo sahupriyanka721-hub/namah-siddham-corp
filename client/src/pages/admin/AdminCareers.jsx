@@ -111,10 +111,10 @@ export const AdminCareers = () => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="font-serif font-bold text-2xl text-forest-950">
+          <h1 className="font-heading font-black text-2xl text-brand-navy tracking-tight">
             Job Openings Management
           </h1>
-          <p className="text-xs text-charcoal-500">
+          <p className="text-xs text-slate-500 mt-1">
             Publish authentic positions and review applicant response rates.
           </p>
         </div>
@@ -124,14 +124,14 @@ export const AdminCareers = () => {
         </Button>
       </div>
 
-      <div className="bg-white rounded-2xl border border-sage-200 shadow-soft-sm overflow-hidden">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         {loading ? (
-          <div className="py-20 text-center text-xs text-charcoal-500">Loading vacancies...</div>
+          <div className="py-20 text-center text-xs text-slate-400">Loading vacancies...</div>
         ) : jobs.length > 0 ? (
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-sage-50 text-[11px] font-bold text-forest-950 uppercase tracking-wider border-b border-sage-200">
+                <tr className="bg-slate-50 text-[11px] font-bold text-brand-navy uppercase tracking-wider border-b border-slate-200">
                   <th className="py-3.5 px-4">Position</th>
                   <th className="py-3.5 px-4">Department</th>
                   <th className="py-3.5 px-4">Type & Location</th>
@@ -140,24 +140,24 @@ export const AdminCareers = () => {
                   <th className="py-3.5 px-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-sage-100 text-xs">
+              <tbody className="divide-y divide-slate-100 text-xs">
                 {jobs.map((j) => (
-                  <tr key={j._id} className="hover:bg-sage-50/60 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-forest-950">{j.title}</td>
-                    <td className="py-3.5 px-4 text-charcoal-600 font-medium">{j.department}</td>
-                    <td className="py-3.5 px-4 text-charcoal-500">
+                  <tr key={j._id} className="hover:bg-slate-50/70 transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-brand-navy">{j.title}</td>
+                    <td className="py-3.5 px-4 text-slate-600 font-medium">{j.department}</td>
+                    <td className="py-3.5 px-4 text-slate-500">
                       {j.jobType} • {j.location}
                     </td>
                     <td className="py-3.5 px-4">
                       <Badge status={j.status}>{j.status}</Badge>
                     </td>
-                    <td className="py-3.5 px-4 font-bold text-forest-900">
+                    <td className="py-3.5 px-4 font-bold text-brand-blue">
                       {j.applicationCount || 0}
                     </td>
                     <td className="py-3.5 px-4 text-right space-x-2">
                       <button
                         onClick={() => openEditModal(j)}
-                        className="p-1.5 rounded-lg text-forest-900 hover:bg-forest-50 inline-block font-semibold"
+                        className="p-1.5 rounded-lg text-brand-blue hover:bg-sky-50 inline-block font-semibold"
                       >
                         <Edit className="w-4 h-4" />
                       </button>
@@ -174,7 +174,7 @@ export const AdminCareers = () => {
             </table>
           </div>
         ) : (
-          <div className="py-16 text-center text-xs text-charcoal-400">
+          <div className="py-16 text-center text-xs text-slate-400">
             No vacancies posted yet.
           </div>
         )}
@@ -195,7 +195,7 @@ export const AdminCareers = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Job Title <span className="text-red-500">*</span>
               </label>
               <input
@@ -203,12 +203,12 @@ export const AdminCareers = () => {
                 required
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+                className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
               />
             </div>
 
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Department <span className="text-red-500">*</span>
               </label>
               <input
@@ -216,20 +216,20 @@ export const AdminCareers = () => {
                 required
                 value={formData.department}
                 onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-                className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+                className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Employment Type
               </label>
               <select
                 value={formData.jobType}
                 onChange={(e) => setFormData({ ...formData, jobType: e.target.value })}
-                className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+                className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
               >
                 <option value="Full-time">Full-time</option>
                 <option value="Part-time">Part-time</option>
@@ -240,7 +240,7 @@ export const AdminCareers = () => {
             </div>
 
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Location <span className="text-red-500">*</span>
               </label>
               <input
@@ -249,12 +249,12 @@ export const AdminCareers = () => {
                 value={formData.location}
                 onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                 placeholder="Indore / Hybrid"
-                className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+                className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
               />
             </div>
 
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Experience Req <span className="text-red-500">*</span>
               </label>
               <input
@@ -263,13 +263,13 @@ export const AdminCareers = () => {
                 value={formData.experience}
                 onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
                 placeholder="2-4 Years"
-                className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+                className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
               />
             </div>
           </div>
 
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+            <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
               Description <span className="text-red-500">*</span>
             </label>
             <textarea
@@ -277,51 +277,51 @@ export const AdminCareers = () => {
               required
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-              className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+              className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Responsibilities (One per line)
               </label>
               <textarea
                 rows={3}
                 value={formData.responsibilitiesText}
                 onChange={(e) => setFormData({ ...formData, responsibilitiesText: e.target.value })}
-                className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+                className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
               />
             </div>
 
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Requirements (One per line)
               </label>
               <textarea
                 rows={3}
                 value={formData.requirementsText}
                 onChange={(e) => setFormData({ ...formData, requirementsText: e.target.value })}
-                className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+                className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
               />
             </div>
           </div>
 
           <div className="pt-2">
-            <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider mb-1">
+            <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider mb-1">
               Publication Status
             </label>
             <select
               value={formData.status}
               onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-              className="px-3 py-2 text-xs bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+              className="px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
             >
               <option value="Published">Published</option>
               <option value="Closed">Closed</option>
             </select>
           </div>
 
-          <div className="pt-4 border-t border-sage-200 flex justify-end space-x-3">
+          <div className="pt-4 border-t border-slate-200 flex justify-end space-x-3">
             <Button type="button" variant="ghost" size="sm" onClick={() => setIsModalOpen(false)}>
               Cancel
             </Button>

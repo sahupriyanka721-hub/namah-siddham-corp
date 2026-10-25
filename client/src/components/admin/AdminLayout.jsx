@@ -28,8 +28,8 @@ export const AdminLayout = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-sage-50 flex items-center justify-center">
-        <div className="w-10 h-10 border-4 border-forest-900 border-t-gold-500 rounded-full animate-spin" />
+      <div className="min-h-screen bg-[#F5F7FB] flex items-center justify-center">
+        <div className="w-10 h-10 border-4 border-brand-blue border-t-brand-orange rounded-full animate-spin" />
       </div>
     );
   }
@@ -41,7 +41,7 @@ export const AdminLayout = () => {
   const currentTitle = routeTitles[location.pathname] || 'Administration Portal';
 
   return (
-    <div className="min-h-screen bg-[#F5F7FB] flex text-navy-900">
+    <div className="min-h-screen bg-[#F5F7FB] flex text-brand-navy">
       <AdminSidebar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
 
       <div className="flex-1 flex flex-col min-w-0 lg:pl-64">

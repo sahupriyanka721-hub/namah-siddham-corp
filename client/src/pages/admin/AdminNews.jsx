@@ -97,10 +97,10 @@ export const AdminNews = () => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="font-serif font-bold text-2xl text-forest-950">
+          <h1 className="font-heading font-black text-2xl text-brand-navy tracking-tight">
             News & Announcements
           </h1>
-          <p className="text-xs text-charcoal-500">
+          <p className="text-xs text-slate-500 mt-1">
             Publish official corporate releases, expansion notices, and product updates.
           </p>
         </div>
@@ -110,14 +110,14 @@ export const AdminNews = () => {
         </Button>
       </div>
 
-      <div className="bg-white rounded-2xl border border-sage-200 shadow-soft-sm overflow-hidden">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         {loading ? (
-          <div className="py-20 text-center text-xs text-charcoal-500">Loading articles...</div>
+          <div className="py-20 text-center text-xs text-slate-400">Loading articles...</div>
         ) : news.length > 0 ? (
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-sage-50 text-[11px] font-bold text-forest-950 uppercase tracking-wider border-b border-sage-200">
+                <tr className="bg-slate-50 text-[11px] font-bold text-brand-navy uppercase tracking-wider border-b border-slate-200">
                   <th className="py-3.5 px-4">Date</th>
                   <th className="py-3.5 px-4">Title & Slug</th>
                   <th className="py-3.5 px-4">Category</th>
@@ -125,17 +125,17 @@ export const AdminNews = () => {
                   <th className="py-3.5 px-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-sage-100 text-xs">
+              <tbody className="divide-y divide-slate-100 text-xs">
                 {news.map((a) => (
-                  <tr key={a._id} className="hover:bg-sage-50/60 transition-colors">
-                    <td className="py-3.5 px-4 text-charcoal-500">
+                  <tr key={a._id} className="hover:bg-slate-50/70 transition-colors">
+                    <td className="py-3.5 px-4 text-slate-500">
                       {new Date(a.publishedAt).toLocaleDateString()}
                     </td>
                     <td className="py-3.5 px-4">
-                      <div className="font-serif font-bold text-sm text-forest-950">{a.title}</div>
-                      <div className="text-[11px] text-charcoal-400 font-mono">/news/{a.slug}</div>
+                      <div className="font-heading font-bold text-sm text-brand-navy">{a.title}</div>
+                      <div className="text-[11px] text-slate-500 font-mono">/news/{a.slug}</div>
                     </td>
-                    <td className="py-3.5 px-4 font-semibold text-gold-700">{a.category}</td>
+                    <td className="py-3.5 px-4 font-semibold text-brand-gold">{a.category}</td>
                     <td className="py-3.5 px-4">
                       <span
                         className={`inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold ${
@@ -148,7 +148,7 @@ export const AdminNews = () => {
                     <td className="py-3.5 px-4 text-right space-x-2">
                       <button
                         onClick={() => openEditModal(a)}
-                        className="p-1.5 rounded-lg text-forest-900 hover:bg-forest-50 inline-block font-semibold"
+                        className="p-1.5 rounded-lg text-brand-blue hover:bg-sky-50 inline-block font-semibold"
                       >
                         <Edit className="w-4 h-4" />
                       </button>
@@ -165,7 +165,7 @@ export const AdminNews = () => {
             </table>
           </div>
         ) : (
-          <div className="py-16 text-center text-xs text-charcoal-400">
+          <div className="py-16 text-center text-xs text-slate-400">
             No news articles published yet.
           </div>
         )}
@@ -186,7 +186,7 @@ export const AdminNews = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Article Title <span className="text-red-500">*</span>
               </label>
               <input
@@ -194,12 +194,12 @@ export const AdminNews = () => {
                 required
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+                className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
               />
             </div>
 
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Slug (URL Identifier)
               </label>
               <input
@@ -207,39 +207,39 @@ export const AdminNews = () => {
                 value={formData.slug}
                 onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
                 placeholder="Leave blank to auto-generate from title"
-                className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600 font-mono"
+                className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue font-mono text-brand-navy"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Category
               </label>
               <input
                 type="text"
                 value={formData.category}
                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+                className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
               />
             </div>
 
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Author
               </label>
               <input
                 type="text"
                 value={formData.author}
                 onChange={(e) => setFormData({ ...formData, author: e.target.value })}
-                className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+                className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
               />
             </div>
           </div>
 
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+            <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
               Summary Lead <span className="text-red-500">*</span>
             </label>
             <textarea
@@ -247,12 +247,12 @@ export const AdminNews = () => {
               required
               value={formData.summary}
               onChange={(e) => setFormData({ ...formData, summary: e.target.value })}
-              className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+              className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
             />
           </div>
 
           <div className="space-y-1">
-            <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+            <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
               Article Content <span className="text-red-500">*</span>
             </label>
             <textarea
@@ -260,7 +260,7 @@ export const AdminNews = () => {
               required
               value={formData.content}
               onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-              className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+              className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
             />
           </div>
 
@@ -270,14 +270,14 @@ export const AdminNews = () => {
               id="newsPublish"
               checked={formData.isPublished}
               onChange={(e) => setFormData({ ...formData, isPublished: e.target.checked })}
-              className="h-4 w-4 rounded text-forest-900 border-sage-300 focus:ring-forest-600"
+              className="h-4 w-4 rounded text-brand-blue border-slate-300 focus:ring-brand-blue"
             />
-            <label htmlFor="newsPublish" className="text-xs font-semibold text-forest-950 cursor-pointer">
+            <label htmlFor="newsPublish" className="text-xs font-semibold text-brand-navy cursor-pointer">
               Publish publicly on corporate news page
             </label>
           </div>
 
-          <div className="pt-4 border-t border-sage-200 flex justify-end space-x-3">
+          <div className="pt-4 border-t border-slate-200 flex justify-end space-x-3">
             <Button type="button" variant="ghost" size="sm" onClick={() => setIsModalOpen(false)}>
               Cancel
             </Button>

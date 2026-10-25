@@ -42,7 +42,7 @@ export const AdminDashboard = () => {
   if (loading) {
     return (
       <div className="py-20 text-center space-y-3">
-        <div className="w-10 h-10 border-4 border-royal-500 border-t-transparent rounded-full animate-spin mx-auto" />
+        <div className="w-10 h-10 border-4 border-brand-blue border-t-brand-orange rounded-full animate-spin mx-auto" />
         <p className="text-xs text-surface-500">Querying real database statistics...</p>
       </div>
     );
@@ -57,7 +57,7 @@ export const AdminDashboard = () => {
       {/* Top Welcome Bar & Database Status */}
       <div className="bg-white rounded-3xl p-6 border border-surface-200 shadow-soft-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="font-serif font-black text-2xl text-navy-900">
+          <h1 className="font-heading font-black text-2xl text-brand-navy">
             Welcome to Portal Management
           </h1>
           <p className="text-xs text-surface-500 mt-0.5">
@@ -75,7 +75,7 @@ export const AdminDashboard = () => {
 
           <Link
             to="/admin/services"
-            className="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-royal-500 text-white text-xs font-bold hover:bg-royal-600 shadow-sm"
+            className="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 text-white text-xs font-bold hover:from-blue-700 hover:to-brand-blue shadow-sm"
           >
             <PlusCircle className="w-3.5 h-3.5 mr-1.5" />
             <span>Manage IT Services</span>
@@ -83,7 +83,7 @@ export const AdminDashboard = () => {
 
           <Link
             to="/admin/platforms"
-            className="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-navy-900 text-white text-xs font-bold hover:bg-navy-800 shadow-sm"
+            className="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-brand-navy text-white text-xs font-bold hover:bg-brand-dark shadow-sm"
           >
             <PlusCircle className="w-3.5 h-3.5 mr-1.5" />
             <span>Manage Platforms</span>
@@ -168,50 +168,50 @@ export const AdminDashboard = () => {
 
       {/* Quick Actions Panel */}
       <div className="bg-white rounded-3xl p-6 border border-surface-200 shadow-soft-sm space-y-4">
-        <h3 className="font-serif font-bold text-sm text-navy-900 uppercase tracking-wider">
+        <h3 className="font-heading font-black text-sm text-brand-navy uppercase tracking-wider">
           Quick Actions &amp; Administration Shortcuts
         </h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 text-xs">
           <Link
             to="/admin/services"
-            className="p-3.5 rounded-2xl bg-surface-50 border border-surface-200 hover:border-royal-500 hover:bg-surface-100 transition-colors text-center font-bold text-navy-900"
+            className="p-3.5 rounded-2xl bg-surface-50 border border-surface-200 hover:border-brand-blue hover:text-brand-blue transition-colors text-center font-bold text-brand-navy"
           >
-            <Code2 className="w-5 h-5 mx-auto mb-1 text-royal-600" />
+            <Code2 className="w-5 h-5 mx-auto mb-1 text-brand-blue" />
             <span>Add Service</span>
           </Link>
           <Link
             to="/admin/platforms"
-            className="p-3.5 rounded-2xl bg-surface-50 border border-surface-200 hover:border-orange-500 hover:bg-surface-100 transition-colors text-center font-bold text-navy-900"
+            className="p-3.5 rounded-2xl bg-surface-50 border border-surface-200 hover:border-brand-orange hover:text-brand-orange transition-colors text-center font-bold text-brand-navy"
           >
-            <Layers className="w-5 h-5 mx-auto mb-1 text-orange-600" />
+            <Layers className="w-5 h-5 mx-auto mb-1 text-brand-orange" />
             <span>Add Platform</span>
           </Link>
           <Link
             to="/admin/portfolio"
-            className="p-3.5 rounded-2xl bg-surface-50 border border-surface-200 hover:border-royal-500 hover:bg-surface-100 transition-colors text-center font-bold text-navy-900"
+            className="p-3.5 rounded-2xl bg-surface-50 border border-surface-200 hover:border-brand-blue hover:text-brand-blue transition-colors text-center font-bold text-brand-navy"
           >
-            <FolderGit2 className="w-5 h-5 mx-auto mb-1 text-royal-600" />
+            <FolderGit2 className="w-5 h-5 mx-auto mb-1 text-brand-blue" />
             <span>Add Case Study</span>
           </Link>
           <Link
             to="/admin/inquiries"
-            className="p-3.5 rounded-2xl bg-surface-50 border border-surface-200 hover:border-royal-500 hover:bg-surface-100 transition-colors text-center font-bold text-navy-900"
+            className="p-3.5 rounded-2xl bg-surface-50 border border-surface-200 hover:border-brand-blue hover:text-brand-blue transition-colors text-center font-bold text-brand-navy"
           >
-            <Mail className="w-5 h-5 mx-auto mb-1 text-royal-600" />
+            <Mail className="w-5 h-5 mx-auto mb-1 text-brand-blue" />
             <span>View Inquiries</span>
           </Link>
           <Link
             to="/admin/partner-inquiries"
-            className="p-3.5 rounded-2xl bg-surface-50 border border-surface-200 hover:border-gold-500 hover:bg-surface-100 transition-colors text-center font-bold text-navy-900"
+            className="p-3.5 rounded-2xl bg-surface-50 border border-surface-200 hover:border-brand-gold hover:text-brand-gold transition-colors text-center font-bold text-brand-navy"
           >
-            <Handshake className="w-5 h-5 mx-auto mb-1 text-gold-600" />
+            <Handshake className="w-5 h-5 mx-auto mb-1 text-brand-gold" />
             <span>View Partners</span>
           </Link>
           <Link
             to="/admin/settings"
-            className="p-3.5 rounded-2xl bg-surface-50 border border-surface-200 hover:border-royal-500 hover:bg-surface-100 transition-colors text-center font-bold text-navy-900"
+            className="p-3.5 rounded-2xl bg-surface-50 border border-surface-200 hover:border-brand-navy hover:text-brand-navy transition-colors text-center font-bold text-brand-navy"
           >
-            <ShieldCheck className="w-5 h-5 mx-auto mb-1 text-royal-600" />
+            <ShieldCheck className="w-5 h-5 mx-auto mb-1 text-brand-blue" />
             <span>Company Settings</span>
           </Link>
         </div>
@@ -223,14 +223,14 @@ export const AdminDashboard = () => {
         <div className="bg-white rounded-3xl border border-surface-200 shadow-soft-sm overflow-hidden flex flex-col justify-between">
           <div className="p-5 border-b border-surface-200 flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Handshake className="w-5 h-5 text-gold-600" />
-              <h3 className="font-serif font-bold text-base text-navy-900">
+              <Handshake className="w-5 h-5 text-brand-gold" />
+              <h3 className="font-heading font-black text-base text-brand-navy">
                 Recent Partner Inquiries
               </h3>
             </div>
             <Link
               to="/admin/partner-inquiries"
-              className="text-xs font-bold text-royal-600 hover:underline"
+              className="text-xs font-bold text-brand-blue hover:underline"
             >
               View All ({stats.totalPartnerInquiries || 0}) →
             </Link>
@@ -241,14 +241,14 @@ export const AdminDashboard = () => {
               recent.partners.map((item) => (
                 <div key={item._id} className="p-4 flex items-center justify-between hover:bg-surface-50">
                   <div className="space-y-0.5">
-                    <div className="font-bold text-xs text-navy-900">{item.name}</div>
+                    <div className="font-bold text-xs text-brand-navy">{item.name}</div>
                     <div className="text-[11px] text-surface-500">
                       {item.businessName} • {item.city}, {item.state}
                     </div>
-                    <div className="text-[10px] text-royal-600 font-semibold">{item.category}</div>
+                    <div className="text-[10px] text-brand-blue font-semibold">{item.category}</div>
                   </div>
                   <div className="text-right space-y-1">
-                    <span className="text-[9px] px-2 py-0.5 rounded-full font-mono bg-surface-100 font-bold text-navy-900">
+                    <span className="text-[9px] px-2 py-0.5 rounded-full font-mono bg-surface-100 font-bold text-brand-navy">
                       {item.status || 'New'}
                     </span>
                     <div className="text-[10px] text-surface-400">
@@ -269,14 +269,14 @@ export const AdminDashboard = () => {
         <div className="bg-white rounded-3xl border border-surface-200 shadow-soft-sm overflow-hidden flex flex-col justify-between">
           <div className="p-5 border-b border-surface-200 flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Mail className="w-5 h-5 text-royal-600" />
-              <h3 className="font-serif font-bold text-base text-navy-900">
+              <Mail className="w-5 h-5 text-brand-blue" />
+              <h3 className="font-heading font-black text-base text-brand-navy">
                 Recent Contact Messages
               </h3>
             </div>
             <Link
               to="/admin/inquiries"
-              className="text-xs font-bold text-royal-600 hover:underline"
+              className="text-xs font-bold text-brand-blue hover:underline"
             >
               View All ({stats.totalContactInquiries || 0}) →
             </Link>
@@ -287,12 +287,12 @@ export const AdminDashboard = () => {
               recent.contacts.map((item) => (
                 <div key={item._id} className="p-4 flex items-center justify-between hover:bg-surface-50">
                   <div className="space-y-0.5">
-                    <div className="font-bold text-xs text-navy-900">{item.name}</div>
+                    <div className="font-bold text-xs text-brand-navy">{item.name}</div>
                     <div className="text-[11px] text-surface-500 truncate max-w-xs">{item.serviceRequired || item.subject}</div>
                     <div className="text-[10px] text-surface-400">{item.city}</div>
                   </div>
                   <div className="text-right space-y-1">
-                    <span className="text-[9px] px-2 py-0.5 rounded-full font-mono bg-surface-100 font-bold text-navy-900">
+                    <span className="text-[9px] px-2 py-0.5 rounded-full font-mono bg-surface-100 font-bold text-brand-navy">
                       {item.status || 'New'}
                     </span>
                     <div className="text-[10px] text-surface-400">

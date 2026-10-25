@@ -175,8 +175,8 @@ export const AdminServices = () => {
       {/* Header Bar */}
       <div className="bg-white rounded-3xl p-6 border border-surface-200 shadow-soft-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="font-serif font-black text-2xl text-navy-900 flex items-center">
-            <Code2 className="w-6 h-6 mr-2 text-royal-600" />
+          <h1 className="font-heading font-black text-2xl text-brand-navy flex items-center">
+            <Code2 className="w-6 h-6 mr-2 text-brand-blue" />
             <span>IT Services Management</span>
           </h1>
           <p className="text-xs text-surface-500 mt-1">
@@ -188,7 +188,7 @@ export const AdminServices = () => {
           onClick={openCreateModal}
           variant="primary"
           icon={Plus}
-          className="text-xs font-bold px-4 py-2.5 rounded-xl bg-royal-500 hover:bg-royal-600 text-white"
+          className="text-xs font-bold px-4 py-2.5 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-700 hover:to-brand-blue text-white shadow-xs"
         >
           Add New IT Service
         </Button>
@@ -212,7 +212,7 @@ export const AdminServices = () => {
             placeholder="Search service title..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 text-xs bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+            className="w-full pl-9 pr-4 py-2 text-xs bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
           />
         </form>
 
@@ -221,7 +221,7 @@ export const AdminServices = () => {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-3 py-1.5 rounded-xl border border-surface-200 text-xs font-medium bg-surface-50 text-navy-900 focus:outline-none"
+            className="px-3 py-1.5 rounded-xl border border-surface-200 text-xs font-medium bg-surface-50 text-brand-navy focus:outline-none"
           >
             <option value="all">All Statuses</option>
             <option value="Published">Published</option>
@@ -255,13 +255,13 @@ export const AdminServices = () => {
               ) : services.length > 0 ? (
                 services.map((s) => (
                   <tr key={s._id} className="hover:bg-surface-50/70 transition-colors">
-                    <td className="py-4 px-6 font-bold text-navy-900">
+                    <td className="py-4 px-6 font-bold text-brand-navy">
                       <div>{s.title}</div>
                       <div className="text-[11px] text-surface-400 font-normal line-clamp-1">
                         {s.shortDescription}
                       </div>
                     </td>
-                    <td className="py-4 px-4 font-mono text-royal-600">{s.slug}</td>
+                    <td className="py-4 px-4 font-mono text-brand-blue font-bold">{s.slug}</td>
                     <td className="py-4 px-4 text-surface-500 font-mono">{s.icon || 'Globe'}</td>
                     <td className="py-4 px-4">
                       <button
@@ -278,7 +278,7 @@ export const AdminServices = () => {
                     </td>
                     <td className="py-4 px-4">
                       {s.isFeatured ? (
-                        <span className="text-[10px] font-bold text-royal-600">Yes</span>
+                        <span className="text-[10px] font-bold text-brand-blue">Yes</span>
                       ) : (
                         <span className="text-[10px] text-surface-400">No</span>
                       )}
@@ -288,14 +288,14 @@ export const AdminServices = () => {
                         href={`/services/${s.slug}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-1.5 rounded-lg text-surface-400 hover:text-navy-900 inline-block"
+                        className="p-1.5 rounded-lg text-surface-400 hover:text-brand-navy inline-block"
                         title="Preview Public Page"
                       >
                         <Eye className="w-4 h-4" />
                       </a>
                       <button
                         onClick={() => openEditModal(s)}
-                        className="p-1.5 rounded-lg text-royal-600 hover:bg-royal-50 inline-block"
+                        className="p-1.5 rounded-lg text-brand-blue hover:bg-sky-50 inline-block"
                         title="Edit Service"
                       >
                         <Edit2 className="w-4 h-4" />
@@ -350,15 +350,15 @@ export const AdminServices = () => {
 
       {/* Create / Edit Service Modal */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 bg-navy-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-[#0B132B]/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto space-y-5 border border-surface-200 shadow-soft-xl">
             <div className="flex items-center justify-between border-b border-surface-200 pb-3">
-              <h3 className="font-serif font-bold text-lg text-navy-900">
+              <h3 className="font-heading font-black text-lg text-brand-navy">
                 {editingId ? 'Edit IT Service' : 'Add New IT Service'}
               </h3>
               <button
                 onClick={() => setModalOpen(false)}
-                className="text-surface-400 hover:text-navy-900 p-1 text-sm font-bold"
+                className="text-surface-400 hover:text-brand-navy p-1 text-sm font-bold"
               >
                 ✕
               </button>
@@ -367,36 +367,36 @@ export const AdminServices = () => {
             <form onSubmit={handleSave} className="space-y-4 text-xs">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">Service Title *</label>
+                  <label className="block font-bold text-brand-navy mb-1">Service Title *</label>
                   <input
                     type="text"
                     required
                     value={form.title}
                     onChange={handleTitleChange}
                     placeholder="e.g. Website Development"
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">Slug *</label>
+                  <label className="block font-bold text-brand-navy mb-1">Slug *</label>
                   <input
                     type="text"
                     required
                     value={form.slug}
                     onChange={(e) => setForm({ ...form, slug: e.target.value })}
                     placeholder="web-development"
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl font-mono focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">Icon</label>
+                  <label className="block font-bold text-brand-navy mb-1">Icon</label>
                   <select
                     value={form.icon}
                     onChange={(e) => setForm({ ...form, icon: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   >
                     <option value="Globe">Globe (Web Development)</option>
                     <option value="Code2">Code2 (Software / ERP)</option>
@@ -405,11 +405,11 @@ export const AdminServices = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">Status</label>
+                  <label className="block font-bold text-brand-navy mb-1">Status</label>
                   <select
                     value={form.status}
                     onChange={(e) => setForm({ ...form, status: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   >
                     <option value="Published">Published</option>
                     <option value="Draft">Draft</option>
@@ -417,44 +417,44 @@ export const AdminServices = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">Display Order</label>
+                  <label className="block font-bold text-brand-navy mb-1">Display Order</label>
                   <input
                     type="number"
                     value={form.displayOrder}
                     onChange={(e) =>
                       setForm({ ...form, displayOrder: parseInt(e.target.value) || 0 })
                     }
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block font-bold text-navy-900 mb-1">Short Description *</label>
+                <label className="block font-bold text-brand-navy mb-1">Short Description *</label>
                 <textarea
                   rows={2}
                   required
                   value={form.shortDescription}
                   onChange={(e) => setForm({ ...form, shortDescription: e.target.value })}
                   placeholder="Summary for cards and preview..."
-                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-navy-900 mb-1">Detailed Description *</label>
+                <label className="block font-bold text-brand-navy mb-1">Detailed Description *</label>
                 <textarea
                   rows={4}
                   required
                   value={form.detailedDescription}
                   onChange={(e) => setForm({ ...form, detailedDescription: e.target.value })}
                   placeholder="Full scope of service for detail page..."
-                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-navy-900 mb-1">
+                <label className="block font-bold text-brand-navy mb-1">
                   Key Features (One per line)
                 </label>
                 <textarea
@@ -462,12 +462,12 @@ export const AdminServices = () => {
                   value={form.keyFeaturesText}
                   onChange={(e) => setForm({ ...form, keyFeaturesText: e.target.value })}
                   placeholder="Feature 1&#10;Feature 2&#10;Feature 3"
-                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 font-mono"
+                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue font-mono text-brand-navy"
                 />
               </div>
 
               <div>
-                <label className="block font-bold text-navy-900 mb-1">
+                <label className="block font-bold text-brand-navy mb-1">
                   Typical Deliverables (One per line)
                 </label>
                 <textarea
@@ -475,29 +475,29 @@ export const AdminServices = () => {
                   value={form.deliverablesText}
                   onChange={(e) => setForm({ ...form, deliverablesText: e.target.value })}
                   placeholder="Deliverable 1&#10;Deliverable 2"
-                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 font-mono"
+                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue font-mono text-brand-navy"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">SEO Title</label>
+                  <label className="block font-bold text-brand-navy mb-1">SEO Title</label>
                   <input
                     type="text"
                     value={form.seoTitle}
                     onChange={(e) => setForm({ ...form, seoTitle: e.target.value })}
                     placeholder="Custom meta title"
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
                 <div>
-                  <label className="block font-bold text-navy-900 mb-1">SEO Description</label>
+                  <label className="block font-bold text-brand-navy mb-1">SEO Description</label>
                   <input
                     type="text"
                     value={form.seoDescription}
                     onChange={(e) => setForm({ ...form, seoDescription: e.target.value })}
                     placeholder="Custom meta description"
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500"
+                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
               </div>
@@ -508,9 +508,9 @@ export const AdminServices = () => {
                   id="isFeatured"
                   checked={form.isFeatured}
                   onChange={(e) => setForm({ ...form, isFeatured: e.target.checked })}
-                  className="rounded text-royal-600 focus:ring-royal-500"
+                  className="rounded text-brand-blue focus:ring-brand-blue"
                 />
-                <label htmlFor="isFeatured" className="text-xs font-semibold text-navy-900">
+                <label htmlFor="isFeatured" className="text-xs font-semibold text-brand-navy">
                   Feature on Homepage and Services Highlights
                 </label>
               </div>
@@ -519,13 +519,13 @@ export const AdminServices = () => {
                 <button
                   type="button"
                   onClick={() => setModalOpen(false)}
-                  className="px-4 py-2 rounded-xl bg-surface-200 text-surface-700 text-xs font-semibold"
+                  className="px-4 py-2 rounded-xl bg-surface-200 text-surface-700 text-xs font-semibold hover:bg-surface-300 transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-xl bg-royal-500 hover:bg-royal-600 text-white text-xs font-bold"
+                  className="px-5 py-2 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-700 hover:to-brand-blue text-white text-xs font-bold shadow-xs"
                 >
                   Save Service
                 </button>

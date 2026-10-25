@@ -111,11 +111,11 @@ export const AdminPartnerInquiries = () => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="font-heading font-black text-2xl text-navy-900 tracking-tight flex items-center">
-            <Handshake className="w-6 h-6 mr-2.5 text-royal-500" />
+          <h1 className="font-heading font-black text-2xl text-brand-navy tracking-tight flex items-center">
+            <Handshake className="w-6 h-6 mr-2.5 text-brand-gold" />
             Partnership Applications
           </h1>
-          <p className="text-xs text-navy-600 mt-1">
+          <p className="text-xs text-slate-500 mt-1">
             Review service professionals, rental fleet hosts, and vendor partnership submissions across ecosystem platforms.
           </p>
         </div>
@@ -134,17 +134,17 @@ export const AdminPartnerInquiries = () => {
             placeholder="Search by business, contact, city..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500"
+            className="w-full pl-9 pr-4 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
           />
         </div>
 
         <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto">
           <div className="flex items-center space-x-1.5">
-            <span className="text-xs text-navy-600 font-semibold">Category:</span>
+            <span className="text-xs text-brand-navy font-semibold">Category:</span>
             <select
               value={categoryFilter}
               onChange={(e) => setCategoryFilter(e.target.value)}
-              className="px-2.5 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 font-medium text-navy-800"
+              className="px-2.5 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue font-medium text-brand-navy"
             >
               {partnershipCategories.map((c) => (
                 <option key={c} value={c}>
@@ -155,11 +155,11 @@ export const AdminPartnerInquiries = () => {
           </div>
 
           <div className="flex items-center space-x-1.5">
-            <span className="text-xs text-navy-600 font-semibold">Status:</span>
+            <span className="text-xs text-brand-navy font-semibold">Status:</span>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-2.5 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 font-medium text-navy-800"
+              className="px-2.5 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue font-medium text-brand-navy"
             >
               <option value="all">All Statuses</option>
               <option value="New">New</option>
@@ -180,7 +180,7 @@ export const AdminPartnerInquiries = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-slate-50 text-[11px] font-bold text-navy-900 uppercase tracking-wider border-b border-slate-200">
+                <tr className="bg-slate-50 text-[11px] font-bold text-brand-navy uppercase tracking-wider border-b border-slate-200">
                   <th className="py-3.5 px-4">Ref ID</th>
                   <th className="py-3.5 px-4">Contact / Enterprise</th>
                   <th className="py-3.5 px-4">Category</th>
@@ -193,17 +193,17 @@ export const AdminPartnerInquiries = () => {
               <tbody className="divide-y divide-slate-100 text-xs">
                 {inquiries.map((item) => (
                   <tr key={item._id} className="hover:bg-slate-50/70 transition-colors">
-                    <td className="py-3.5 px-4 font-mono font-bold text-royal-600">
+                    <td className="py-3.5 px-4 font-mono font-bold text-brand-blue">
                       {item.referenceId}
                     </td>
                     <td className="py-3.5 px-4">
-                      <div className="font-bold text-navy-900">{item.businessName}</div>
+                      <div className="font-bold text-brand-navy">{item.businessName}</div>
                       <div className="text-[11px] text-slate-500">
                         {item.name} • {item.mobile}
                       </div>
                     </td>
-                    <td className="py-3.5 px-4 font-semibold text-gold-700">{item.category}</td>
-                    <td className="py-3.5 px-4 text-royal-700 font-semibold">{item.platform}</td>
+                    <td className="py-3.5 px-4 font-semibold text-brand-gold">{item.category}</td>
+                    <td className="py-3.5 px-4 text-brand-blue font-semibold">{item.platform}</td>
                     <td className="py-3.5 px-4 text-slate-600">
                       {item.city}, {item.state}
                     </td>
@@ -213,7 +213,7 @@ export const AdminPartnerInquiries = () => {
                     <td className="py-3.5 px-4 text-right">
                       <button
                         onClick={() => openDetailModal(item)}
-                        className="px-3 py-1.5 rounded-lg bg-royal-50 hover:bg-royal-100 text-royal-700 text-xs font-bold inline-flex items-center transition-colors"
+                        className="px-3 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 text-brand-blue text-xs font-bold inline-flex items-center transition-colors"
                       >
                         <Eye className="w-3.5 h-3.5 mr-1" />
                         <span>Inspect</span>
@@ -242,56 +242,56 @@ export const AdminPartnerInquiries = () => {
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-4 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
               <div>
-                <span className="font-bold text-navy-900 block">Business Entity:</span>
-                <span className="text-navy-700 font-semibold">{selectedInquiry.businessName}</span>
+                <span className="font-bold text-brand-navy block">Business Entity:</span>
+                <span className="text-slate-700 font-semibold">{selectedInquiry.businessName}</span>
               </div>
               <div>
-                <span className="font-bold text-navy-900 block">Contact Person:</span>
-                <span className="text-navy-700">{selectedInquiry.name}</span>
+                <span className="font-bold text-brand-navy block">Contact Person:</span>
+                <span className="text-slate-700">{selectedInquiry.name}</span>
               </div>
               <div>
-                <span className="font-bold text-navy-900 block">Email Address:</span>
-                <a href={`mailto:${selectedInquiry.email}`} className="text-royal-600 underline">
+                <span className="font-bold text-brand-navy block">Email Address:</span>
+                <a href={`mailto:${selectedInquiry.email}`} className="text-brand-blue underline">
                   {selectedInquiry.email}
                 </a>
               </div>
               <div>
-                <span className="font-bold text-navy-900 block">Mobile Number:</span>
-                <span className="text-navy-700">{selectedInquiry.mobile}</span>
+                <span className="font-bold text-brand-navy block">Mobile Number:</span>
+                <span className="text-slate-700">{selectedInquiry.mobile}</span>
               </div>
               <div>
-                <span className="font-bold text-navy-900 block">Category:</span>
-                <span className="text-gold-700 font-bold">{selectedInquiry.category}</span>
+                <span className="font-bold text-brand-navy block">Category:</span>
+                <span className="text-brand-gold font-bold">{selectedInquiry.category}</span>
               </div>
               <div>
-                <span className="font-bold text-navy-900 block">Target Platform:</span>
-                <span className="text-royal-700 font-bold">{selectedInquiry.platform}</span>
+                <span className="font-bold text-brand-navy block">Target Platform:</span>
+                <span className="text-brand-blue font-bold">{selectedInquiry.platform}</span>
               </div>
               <div>
-                <span className="font-bold text-navy-900 block">City & State:</span>
-                <span className="text-navy-700">
+                <span className="font-bold text-brand-navy block">City & State:</span>
+                <span className="text-slate-700">
                   {selectedInquiry.city}, {selectedInquiry.state} {selectedInquiry.pincode ? `(${selectedInquiry.pincode})` : ''}
                 </span>
               </div>
               <div>
-                <span className="font-bold text-navy-900 block">Experience / Scale:</span>
-                <span className="text-navy-700">{selectedInquiry.experienceYears || 'Not specified'}</span>
+                <span className="font-bold text-brand-navy block">Experience / Scale:</span>
+                <span className="text-slate-700">{selectedInquiry.experienceYears || 'Not specified'}</span>
               </div>
             </div>
 
             <div className="space-y-1">
-              <span className="text-xs font-bold text-navy-900 uppercase tracking-wider block">
+              <span className="text-xs font-bold text-brand-navy uppercase tracking-wider block">
                 Operation Details & Capabilities:
               </span>
-              <div className="bg-white p-4 rounded-xl border border-slate-200 text-xs sm:text-sm text-navy-800 leading-relaxed whitespace-pre-line shadow-sm">
+              <div className="bg-white p-4 rounded-xl border border-slate-200 text-xs sm:text-sm text-slate-800 leading-relaxed whitespace-pre-line shadow-sm">
                 {selectedInquiry.details || 'No additional details provided.'}
               </div>
             </div>
 
             {/* Internal Notes History */}
             <div className="space-y-2 pt-2 border-t border-slate-200">
-              <span className="text-xs font-bold text-navy-900 uppercase tracking-wider flex items-center">
-                <MessageSquare className="w-3.5 h-3.5 mr-1 text-royal-600" />
+              <span className="text-xs font-bold text-brand-navy uppercase tracking-wider flex items-center">
+                <MessageSquare className="w-3.5 h-3.5 mr-1 text-brand-blue" />
                 Internal Verification Notes
               </span>
               <div className="space-y-2 max-h-32 overflow-y-auto">
@@ -299,10 +299,10 @@ export const AdminPartnerInquiries = () => {
                   selectedInquiry.internalNotes.map((note, idx) => (
                     <div key={idx} className="bg-slate-50 p-2.5 rounded-lg border border-slate-200 text-xs">
                       <div className="flex items-center justify-between text-[10px] text-slate-500 mb-1">
-                        <span className="font-semibold text-navy-900">By: {note.author}</span>
+                        <span className="font-semibold text-brand-navy">By: {note.author}</span>
                         <span>{new Date(note.createdAt).toLocaleString()}</span>
                       </div>
-                      <p className="text-navy-700">{note.note}</p>
+                      <p className="text-slate-700">{note.note}</p>
                     </div>
                   ))
                 ) : (
@@ -315,13 +315,13 @@ export const AdminPartnerInquiries = () => {
             <form onSubmit={handleUpdateStatus} className="pt-4 border-t border-slate-200 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Application Status
                   </label>
                   <select
                     value={newStatus}
                     onChange={(e) => setNewStatus(e.target.value)}
-                    className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 font-medium text-navy-800"
+                    className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue font-medium text-brand-navy"
                   >
                     <option value="New">New</option>
                     <option value="In Progress">In Progress</option>
@@ -332,7 +332,7 @@ export const AdminPartnerInquiries = () => {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="block text-xs font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                     Add Verification Note
                   </label>
                   <input
@@ -340,7 +340,7 @@ export const AdminPartnerInquiries = () => {
                     value={newNote}
                     onChange={(e) => setNewNote(e.target.value)}
                     placeholder="e.g. KYC verified, onboarding call scheduled"
-                    className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                    className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                   />
                 </div>
               </div>

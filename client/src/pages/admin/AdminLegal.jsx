@@ -62,10 +62,10 @@ export const AdminLegal = () => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="font-serif font-bold text-2xl text-forest-950">
+          <h1 className="font-heading font-black text-2xl text-brand-navy tracking-tight">
             Legal & Compliance CMS
           </h1>
-          <p className="text-xs text-charcoal-500">
+          <p className="text-xs text-slate-500 mt-1">
             Edit statutory terms, privacy disclosures, and grievance officer notices.
           </p>
         </div>
@@ -75,7 +75,7 @@ export const AdminLegal = () => {
             href={activeDoc.path}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-sage-100 hover:bg-sage-200 text-forest-950 text-xs font-semibold"
+            className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-brand-navy text-xs font-semibold"
           >
             <Eye className="w-3.5 h-3.5 mr-1.5" />
             <span>Preview Public Legal Page</span>
@@ -84,15 +84,15 @@ export const AdminLegal = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex flex-wrap gap-2 border-b border-sage-200 pb-3">
+      <div className="flex flex-wrap gap-2 border-b border-slate-200 pb-3">
         {legalDocs.map((doc) => (
           <button
             key={doc.slug}
             onClick={() => setSelectedSlug(doc.slug)}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
               selectedSlug === doc.slug
-                ? 'bg-forest-900 text-gold-300 shadow-sm'
-                : 'bg-white text-charcoal-600 hover:bg-sage-50 border border-sage-200'
+                ? 'bg-gradient-to-r from-brand-blue to-blue-600 text-white shadow-sm'
+                : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'
             }`}
           >
             {doc.title}
@@ -107,7 +107,7 @@ export const AdminLegal = () => {
         </p>
       </div>
 
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-sage-200 shadow-soft-sm">
+      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
         {statusMessage && (
           <div
             className={`p-4 rounded-xl text-xs flex items-center space-x-2.5 mb-6 ${
@@ -126,12 +126,12 @@ export const AdminLegal = () => {
         )}
 
         {loading ? (
-          <div className="py-20 text-center text-xs text-charcoal-500">Loading legal document...</div>
+          <div className="py-20 text-center text-xs text-slate-400">Loading legal document...</div>
         ) : (
           <form onSubmit={handleSave} className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="space-y-1 sm:col-span-2">
-                <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+                <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                   Document Title
                 </label>
                 <input
@@ -139,18 +139,18 @@ export const AdminLegal = () => {
                   required
                   value={pageData?.title || ''}
                   onChange={(e) => setPageData({ ...pageData, title: e.target.value })}
-                  className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+                  className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+                <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                   Publication Status
                 </label>
                 <select
                   value={pageData?.status || 'Published'}
                   onChange={(e) => setPageData({ ...pageData, status: e.target.value })}
-                  className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600 font-medium"
+                  className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue font-medium text-brand-navy"
                 >
                   <option value="Published">Published</option>
                   <option value="Draft">Draft (Internal Review)</option>
@@ -159,30 +159,30 @@ export const AdminLegal = () => {
             </div>
 
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Hero Headline
               </label>
               <input
                 type="text"
                 value={pageData?.heroHeadline || ''}
                 onChange={(e) => setPageData({ ...pageData, heroHeadline: e.target.value })}
-                className="w-full px-3 py-2 text-xs sm:text-sm bg-sage-50 border border-sage-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-forest-600"
+                className="w-full px-3 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy"
               />
             </div>
 
             <div className="space-y-1">
-              <label className="block text-xs font-bold text-forest-950 uppercase tracking-wider">
+              <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                 Document Body Content (Markdown Supported)
               </label>
               <textarea
                 rows={16}
                 value={pageData?.bodyContent || ''}
                 onChange={(e) => setPageData({ ...pageData, bodyContent: e.target.value })}
-                className="w-full p-4 text-xs sm:text-sm font-mono bg-sage-50 border border-sage-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-forest-600 leading-relaxed"
+                className="w-full p-4 text-xs sm:text-sm font-mono bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-brand-navy leading-relaxed"
               />
             </div>
 
-            <div className="pt-4 border-t border-sage-200 flex justify-end">
+            <div className="pt-4 border-t border-slate-200 flex justify-end">
               <Button type="submit" variant="primary" loading={saving} icon={Save}>
                 Save Legal Document
               </Button>
