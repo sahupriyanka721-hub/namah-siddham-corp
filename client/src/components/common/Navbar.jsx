@@ -220,11 +220,11 @@ export const Navbar = () => {
                       <Link
                         key={item.name}
                         to={item.path}
-                        className="flex items-start space-x-3 p-2.5 rounded-xl hover:bg-sky-50/80 transition-colors group"
+                        className="flex items-center space-x-3 p-2.5 rounded-xl hover:bg-sky-50 transition-colors group"
                       >
                         {/* Clean Professional Icon Box */}
-                        <div className="w-8 h-8 rounded-lg bg-sky-50 border border-sky-200/80 text-brand-blue flex items-center justify-center shrink-0 group-hover:bg-brand-blue group-hover:text-white group-hover:border-transparent transition-all shadow-xs">
-                          <Icon className="w-4 h-4" />
+                        <div className="w-9 h-9 rounded-xl bg-sky-50 border border-sky-200 text-brand-blue flex items-center justify-center shrink-0 group-hover:bg-brand-blue group-hover:text-white transition-all shadow-xs">
+                          <Icon className="w-4.5 h-4.5" />
                         </div>
                         <div>
                           <div className="text-xs font-bold text-slate-900 group-hover:text-brand-blue transition-colors">
