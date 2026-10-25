@@ -30,7 +30,7 @@ const serviceLinks = [
     name: 'Custom Software Development',
     path: '/services/custom-software',
     desc: 'Business management systems, ERP, CRM & tailored software',
-    icon: Code2,
+    icon: Layers,
   },
   {
     name: 'Mobile Application Development',
