@@ -144,15 +144,17 @@ export const HomePage = () => {
 
                 <div className="flex items-center justify-between border-b border-sky-100 pb-4">
                   <div className="flex items-center space-x-3">
-                    <img
-                      src="/assets/namah-siddham-logo.jpg"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = '/assets/namah-siddham-emblem.svg';
-                      }}
-                      alt="Namah Siddham Brand"
-                      className="h-11 w-auto object-contain rounded-lg"
-                    />
+                    <div className="p-1.5 rounded-2xl bg-gradient-to-br from-sky-500/10 via-sky-400/5 to-amber-500/10 border border-sky-200/70 shadow-xs">
+                      <img
+                        src="/assets/namah-siddham-emblem.svg"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = '/assets/namah-siddham-logo.svg';
+                        }}
+                        alt="Namah Siddham Brand"
+                        className="h-10 w-auto object-contain filter drop-shadow-xs"
+                      />
+                    </div>
                     <div className="flex flex-col">
                       <span className="font-heading font-black text-sm text-slate-900 tracking-wider">
                         NAMAH SIDDHAM

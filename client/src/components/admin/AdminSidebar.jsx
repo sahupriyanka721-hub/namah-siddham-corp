@@ -56,20 +56,15 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
         {/* Brand Header */}
         <div className="p-4 border-b border-navy-800 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="p-1 rounded-xl bg-white shadow-xs">
+            <div className="p-1.5 rounded-xl bg-navy-900/90 border border-sky-500/30 shadow-xs ring-1 ring-amber-400/20">
               <img
-                src="/assets/namah-siddham-logo.jpg"
+                src="/assets/namah-siddham-emblem.svg"
                 onError={(e) => {
-                  if (!e.target.dataset.triedPng) {
-                    e.target.dataset.triedPng = 'true';
-                    e.target.src = '/assets/namah-siddham-logo.png';
-                  } else {
-                    e.target.onerror = null;
-                    e.target.src = '/assets/namah-siddham-emblem.svg';
-                  }
+                  e.target.onerror = null;
+                  e.target.src = '/assets/namah-siddham-logo.svg';
                 }}
                 alt="Namah Siddham Logo"
-                className="h-10 w-auto object-contain"
+                className="h-10 w-auto object-contain filter drop-shadow-sm"
               />
             </div>
             <div className="flex flex-col">

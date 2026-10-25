@@ -128,21 +128,16 @@ export const Navbar = () => {
             className="flex items-center space-x-3 sm:space-x-3.5 group focus:outline-none shrink-0"
             title="Namah Siddham Corporation Private Limited"
           >
-            {/* Logo Image directly on pure white header for 100% natural blend */}
-            <div className="relative flex items-center justify-center p-0.5 rounded-xl group-hover:scale-105 transition-all">
+            {/* Elegant Logo Container (No harsh white box; subtle radiant brand-accent glass) */}
+            <div className="relative flex items-center justify-center p-1.5 rounded-2xl bg-gradient-to-br from-sky-500/10 via-sky-400/5 to-amber-500/10 border border-sky-200/70 shadow-xs shadow-sky-500/10 group-hover:scale-105 group-hover:border-sky-300 group-hover:shadow-md transition-all">
               <img
-                src="/assets/namah-siddham-logo.jpg"
+                src="/assets/namah-siddham-emblem.svg"
                 onError={(e) => {
-                  if (!e.target.dataset.triedPng) {
-                    e.target.dataset.triedPng = 'true';
-                    e.target.src = '/assets/namah-siddham-logo.png';
-                  } else {
-                    e.target.onerror = null;
-                    e.target.src = '/assets/namah-siddham-emblem.svg';
-                  }
+                  e.target.onerror = null;
+                  e.target.src = '/assets/namah-siddham-logo.svg';
                 }}
                 alt="Namah Siddham Corporation Logo"
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain rounded-lg"
+                className="h-11 sm:h-12 md:h-13 w-auto object-contain filter drop-shadow-xs"
               />
             </div>
 

@@ -46,20 +46,15 @@ export const AdminLogin = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center space-y-4">
         {/* Brand Logo & Corporate Heading */}
         <div className="flex flex-col items-center justify-center space-y-3">
-          <div className="p-3 rounded-3xl bg-white shadow-2xl border border-slate-100">
+          <div className="p-3.5 rounded-3xl bg-navy-900/90 backdrop-blur-xl border border-sky-500/30 shadow-2xl shadow-sky-950/80 ring-1 ring-amber-400/25">
             <img
-              src="/assets/namah-siddham-logo.jpg"
+              src="/assets/namah-siddham-emblem.svg"
               onError={(e) => {
-                if (!e.target.dataset.triedPng) {
-                  e.target.dataset.triedPng = 'true';
-                  e.target.src = '/assets/namah-siddham-logo.png';
-                } else {
-                  e.target.onerror = null;
-                  e.target.src = '/assets/namah-siddham-emblem.svg';
-                }
+                e.target.onerror = null;
+                e.target.src = '/assets/namah-siddham-logo.svg';
               }}
               alt="Namah Siddham Corporation Logo"
-              className="h-20 w-auto object-contain mx-auto"
+              className="h-20 w-auto object-contain mx-auto filter drop-shadow-lg"
             />
           </div>
           <h2 className="font-heading font-black text-2xl text-white tracking-wider">

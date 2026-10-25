@@ -14,11 +14,11 @@ const defaultSettings = {
   officialPhone: '+91 731 0000000',
   registeredOffice: {
     addressLine1: 'Corporate Tower, Main Road',
-    city: 'Indore',
+    city: 'Bhopal',
     state: 'Madhya Pradesh',
     country: 'India',
-    pincode: '452001',
-    fullAddress: 'Registered Office: Indore, Madhya Pradesh, India. CIN: U77100MP2026PTC087531',
+    pincode: '462001',
+    fullAddress: 'Registered Office: Bhopal, Madhya Pradesh, India. CIN: U77100MP2026PTC087531',
   },
   socialLinks: {
     linkedin: 'https://linkedin.com/company/namahsiddham',

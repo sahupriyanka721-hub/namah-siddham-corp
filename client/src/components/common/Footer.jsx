@@ -14,20 +14,16 @@ export const Footer = () => {
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="inline-block focus:outline-none">
               <div className="flex items-center space-x-3.5">
-                <div className="p-2 rounded-2xl bg-white shadow-lg border border-slate-100">
+                {/* Premium Dark Glass Logo Container (No harsh white box; rich dark glass & subtle rim) */}
+                <div className="p-2.5 rounded-2xl bg-navy-900/90 backdrop-blur-md border border-sky-500/30 shadow-xl shadow-sky-950/60 ring-1 ring-amber-400/20 group-hover:border-sky-400/60 transition-all">
                   <img
-                    src="/assets/namah-siddham-logo.jpg"
+                    src="/assets/namah-siddham-emblem.svg"
                     onError={(e) => {
-                      if (!e.target.dataset.triedPng) {
-                        e.target.dataset.triedPng = 'true';
-                        e.target.src = '/assets/namah-siddham-logo.png';
-                      } else {
-                        e.target.onerror = null;
-                        e.target.src = '/assets/namah-siddham-emblem.svg';
-                      }
+                      e.target.onerror = null;
+                      e.target.src = '/assets/namah-siddham-logo.svg';
                     }}
                     alt="Namah Siddham Corporation Logo"
-                    className="h-14 sm:h-16 w-auto object-contain rounded-xl"
+                    className="h-12 sm:h-14 w-auto object-contain filter drop-shadow-md"
                   />
                 </div>
                 <div className="flex flex-col">

@@ -51,8 +51,6 @@
     </filter>
   </defs>
 
-  <!-- Crisp Pure White Background all around -->
-  <rect width="100%" height="100%" fill="#FFFFFF" rx="32" />
 
   <g id="ns-logo-mark" filter="url(#softShadow)">
     <!-- ========================================== -->
