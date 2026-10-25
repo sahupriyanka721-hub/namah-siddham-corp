@@ -72,8 +72,8 @@ export const BusinessModelPage = () => {
             <Workflow className="w-3.5 h-3.5 mr-1 text-sky-600" />
             <span>Operational Architecture &amp; Platform Workflows</span>
           </div>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-slate-950 tracking-tight">
-            How Our Business Model Works
+          <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
+            How Our Business Model <span className="text-gradient-ns">Creates Value</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
             Namah Siddham Corporation operates a multi-platform marketplace framework engineered to connect consumer demand with certified independent service providers, vehicle fleet operators, and specialized retail sellers.

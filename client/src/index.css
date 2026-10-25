@@ -7,9 +7,12 @@
     scroll-behavior: smooth;
   }
   body {
-    color: #0F172A;
+    color: #1E293B; /* Deep Slate-Navy high readability body text */
     background-color: #F0F6FE; /* Soft luminous sky-blue ambient background */
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #1B2A4A; /* Exact Corporate Navy from Namah Siddham Brand Wordmark */
   }
 }
 
@@ -33,15 +36,47 @@
   background: linear-gradient(180deg, #7DD3FC 0%, #38BDF8 50%, #FFB800 100%);
 }
 
-/* Utility Logo Gradients matching 'N' (Vibrant Light Blue) and 'S' (Sunburst Orange) */
+/* Utility Logo Gradients matching 'N' (Royal Electric Blue) and 'S' (Sunburst Orange) */
 .text-gradient-ns {
-  background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 40%, #F57C00 100%);
+  background: linear-gradient(135deg, #0062E3 0%, #0284C7 45%, #F57C00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.text-brand-navy {
+  color: #1B2A4A;
+}
+
+.text-brand-blue {
+  color: #0062E3;
+}
+
+.text-brand-orange {
+  color: #F57C00;
+}
+
+.text-brand-gold {
+  color: #FFB800;
+}
+
+.bg-brand-blue {
+  background-color: #0062E3;
+}
+
+.bg-brand-orange {
+  background-color: #F57C00;
+}
+
+.border-brand-blue {
+  border-color: #0062E3;
+}
+
+.border-brand-orange {
+  border-color: #F57C00;
+}
+
 .text-gradient-blue {
-  background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 50%, #38BDF8 100%);
+  background: linear-gradient(135deg, #0062E3 0%, #0284C7 50%, #38BDF8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -53,11 +88,11 @@
 }
 
 .bg-gradient-ns {
-  background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 50%, #F57C00 100%);
+  background: linear-gradient(135deg, #0062E3 0%, #0284C7 50%, #F57C00 100%);
 }
 
 .border-gradient-ns {
-  border-image: linear-gradient(135deg, #38BDF8 0%, #FFB800 100%) 1;
+  border-image: linear-gradient(135deg, #0062E3 0%, #FFB800 100%) 1;
 }
 
 /* Glowing effects matching logo */

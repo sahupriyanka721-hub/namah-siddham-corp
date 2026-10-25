@@ -36,8 +36,8 @@ export const TeamPage = () => {
             <Users2 className="w-3.5 h-3.5 mr-1 text-sky-600" />
             <span>Corporate Governance</span>
           </div>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-slate-950 tracking-tight">
-            Leadership &amp; Board of Directors
+          <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
+            Leadership &amp; <span className="text-gradient-ns">Board of Directors</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
             Namah Siddham Corporation Private Limited is guided by corporate leadership committed to building sustainable, ethical, and technology-driven digital platforms.

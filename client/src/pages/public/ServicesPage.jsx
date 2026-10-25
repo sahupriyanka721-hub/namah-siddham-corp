@@ -63,8 +63,8 @@ export const ServicesPage = () => {
             <Cpu className="w-3.5 h-3.5 mr-1 text-sky-600" />
             <span>Vertical 1: IT Services and Digital Solutions</span>
           </div>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-slate-950 tracking-tight">
-            IT Services &amp; Digital Solutions
+          <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
+            IT Services &amp; <span className="text-gradient-blue">Digital Solutions</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
             We engineer high-performance web applications, tailored ERP software, mobile apps, and search marketing architectures designed to solve business bottlenecks.

@@ -109,8 +109,8 @@ export const ContactPage = () => {
             <Building2 className="w-3.5 h-3.5 mr-1 text-sky-600" />
             <span>Corporate Communications &amp; Project Inquiries</span>
           </div>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-slate-950 tracking-tight">
-            Contact Namah Siddham Corporation
+          <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
+            Contact <span className="text-gradient-ns">Namah Siddham Corporation</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
             Connect directly with our engineering team, management, or partnership representatives in Bhopal, Madhya Pradesh, India.

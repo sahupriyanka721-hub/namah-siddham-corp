@@ -7,7 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Corporate Brand Palette (Logo 'N': Vibrant Light Electric Blue & Sunburst Orange)
+        // Corporate Brand Palette strictly matching the Logo
+        brand: {
+          navy: '#1B2A4A', // Corporate Wordmark Dark Navy
+          blue: '#0062E3', // Logo 'N' Royal Electric Blue
+          sky: '#0284C7', // Logo Ribbon Sky Blue
+          orange: '#F57C00', // Logo 'S' Solar Sunburst Orange
+          gold: '#FFB800', // Logo Ahimsa Gold
+          dark: '#0B132B', // Deep Corporate Contrast
+        },
         royal: {
           50: '#F0F9FF',
           100: '#E0F2FE',

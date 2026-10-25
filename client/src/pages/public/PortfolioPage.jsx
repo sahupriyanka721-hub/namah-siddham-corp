@@ -54,8 +54,8 @@ export const PortfolioPage = () => {
             <FolderGit2 className="w-3.5 h-3.5 mr-1 text-sky-600" />
             <span>Engineering Showcase &amp; Implementations</span>
           </div>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-slate-950 tracking-tight">
-            Portfolio &amp; Case Studies
+          <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
+            Portfolio &amp; <span className="text-gradient-blue">Case Studies</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
             A transparent overview of our completed software systems, multi-vendor aggregator architectures, and internal digital platforms.

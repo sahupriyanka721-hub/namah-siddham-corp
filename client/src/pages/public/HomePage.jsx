@@ -92,17 +92,17 @@ export const HomePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left: Headline, Description & CTAs */}
             <div className="lg:col-span-7 space-y-6">
-              {/* Clean, Elegant Headline (Lightweight & High-Contrast) */}
-              <h1 className="font-sans font-bold text-2xl sm:text-4xl lg:text-[40px] xl:text-[44px] text-slate-900 tracking-tight leading-[1.25]">
+              {/* Clean, Elegant Headline in Brand Navy & Logo Gradient */}
+              <h1 className="font-sans font-black text-2xl sm:text-4xl lg:text-[40px] xl:text-[44px] text-brand-navy tracking-tight leading-[1.25]">
                 Technology That Builds Businesses and{' '}
-                <span className="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">
+                <span className="text-gradient-ns">
                   Connects Opportunities
                 </span>
               </h1>
 
-              {/* Clean, Lightweight Description */}
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl">
-                Namah Siddham Corporation Private Limited combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.
+              {/* Clean, Lightweight Description with Brand Highlights */}
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal max-w-2xl">
+                <span className="font-bold text-brand-navy">Namah Siddham Corporation Private Limited</span> combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.
               </p>
 
               {/* Shiny CTAs matching Logo Palette */}
@@ -225,14 +225,15 @@ export const HomePage = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-20 relative z-20">
         <div className="shiny-glass rounded-3xl p-8 sm:p-12 border border-sky-200/90 shadow-2xl shadow-sky-500/10 space-y-8">
           <div className="max-w-3xl space-y-3">
-            <span className="shiny-badge inline-block text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
+            <span className="shiny-badge inline-block text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
               Corporate Overview
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
-              One Company. Two Digital Growth Verticals.
+            <h2 className="font-serif font-black text-2xl sm:text-4xl text-brand-navy">
+              One Company.{' '}
+              <span className="text-gradient-ns">Two Digital Growth Verticals.</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Namah Siddham Corporation Private Limited operates across two complementary business domains. We combine engineering excellence for custom digital solutions with the strategic development of focused online marketplaces and aggregator networks.
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              <strong className="text-brand-navy">Namah Siddham Corporation Private Limited</strong> operates across two complementary business domains. We combine engineering excellence for custom digital solutions with the strategic development of focused online marketplaces and aggregator networks.
             </p>
           </div>
 
@@ -295,13 +296,14 @@ export const HomePage = () => {
       <section id="services" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
-            <span className="shiny-badge inline-block text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
+            <span className="shiny-badge inline-block text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
               Vertical 1: IT Services
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
-              IT Services and Digital Solutions
+            <h2 className="font-serif font-black text-2xl sm:text-4xl text-brand-navy">
+              IT Services and{' '}
+              <span className="text-gradient-blue">Digital Solutions</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 max-w-2xl">
+            <p className="text-sm sm:text-base text-slate-700 max-w-2xl">
               Engineered with modern full-stack architectures to solve real business operational requirements.
             </p>
           </div>
@@ -355,13 +357,14 @@ export const HomePage = () => {
       <section id="products" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
-            <span className="shiny-badge inline-block text-xs font-bold text-orange-600 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
+            <span className="shiny-badge inline-block text-xs font-bold text-brand-orange uppercase tracking-widest font-mono px-3 py-1 rounded-full">
               Vertical 2: Digital Marketplaces
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
-              Our Digital Products &amp; Aggregator Platforms
+            <h2 className="font-serif font-black text-2xl sm:text-4xl text-brand-navy">
+              Our Digital Products &amp;{' '}
+              <span className="text-gradient-orange">Aggregator Platforms</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 max-w-2xl">
+            <p className="text-sm sm:text-base text-slate-700 max-w-2xl">
               Specialized platforms in home repair, mobility, community commerce, and consumer marketplaces.
             </p>
           </div>
@@ -463,13 +466,13 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="shiny-badge inline-block text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
+          <span className="shiny-badge inline-block text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
             Our Approach &amp; Capabilities
           </span>
-          <h2 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
-            Why Choose Us
+          <h2 className="font-serif font-black text-2xl sm:text-4xl text-brand-navy">
+            Why Choose <span className="text-gradient-ns">Namah Siddham</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-600">
+          <p className="text-sm sm:text-base text-slate-700">
             A structured, engineering-first methodology focused on technical scalability, partner viability, and dependable operational standards.
           </p>
         </div>
@@ -548,69 +551,69 @@ export const HomePage = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold text-sky-600 uppercase tracking-widest font-serif">
+            <span className="text-xs font-bold text-brand-blue uppercase tracking-widest font-mono">
               Operational Framework
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
-              How Our Business Model Works
+            <h2 className="font-serif font-black text-2xl sm:text-4xl text-brand-navy">
+              How Our Business Model <span className="text-gradient-ns">Creates Value</span>
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="text-xs sm:text-sm text-slate-700">
               A structured digital flow connecting everyday needs with specialized platform solutions and verified providers.
             </p>
           </div>
 
           {/* Visual Step-by-Step Flow */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
-            {/* Step 1 */}
+            {/* Step 1: Royal Blue (Letter N) */}
             <div className="bg-white border-2 border-sky-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/10 transition-all">
-              <div className="w-8 h-8 rounded-full bg-sky-500 text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
+              <div className="w-8 h-8 rounded-full bg-brand-blue text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 1
               </div>
-              <h4 className="font-bold text-sm text-slate-900">Customer Need</h4>
+              <h4 className="font-bold text-sm text-brand-navy">Customer Need</h4>
               <p className="text-[11px] text-slate-600">
                 A customer identifies a requirement for home appliance repair, mobility rental, satvik groceries, or retail products.
               </p>
             </div>
 
-            {/* Step 2 */}
+            {/* Step 2: Sky Blue (Arrow Ribbon) */}
             <div className="bg-white border-2 border-sky-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/10 transition-all">
-              <div className="w-8 h-8 rounded-full bg-sky-500 text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
+              <div className="w-8 h-8 rounded-full bg-brand-sky text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 2
               </div>
-              <h4 className="font-bold text-sm text-slate-900">Specialized Digital Platform</h4>
+              <h4 className="font-bold text-sm text-brand-navy">Specialized Platform</h4>
               <p className="text-[11px] text-slate-600">
                 Access through dedicated platform properties (HomeServixo, Carrento, Jainamshree, SuperiorMart).
               </p>
             </div>
 
-            {/* Step 3 */}
-            <div className="bg-white border-2 border-sky-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/10 transition-all">
-              <div className="w-8 h-8 rounded-full bg-sky-500 text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
+            {/* Step 3: Ahimsa Gold */}
+            <div className="bg-white border-2 border-amber-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-amber-400 hover:shadow-lg hover:shadow-amber-500/10 transition-all">
+              <div className="w-8 h-8 rounded-full bg-brand-gold text-slate-900 font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 3
               </div>
-              <h4 className="font-bold text-sm text-slate-900">Discovery, Booking or Ordering</h4>
+              <h4 className="font-bold text-sm text-brand-navy">Discovery &amp; Booking</h4>
               <p className="text-[11px] text-slate-600">
                 Intuitive search, transparent pricing estimates, schedule selection, or digital cart checkout.
               </p>
             </div>
 
-            {/* Step 4 */}
-            <div className="bg-white border-2 border-sky-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/10 transition-all">
-              <div className="w-8 h-8 rounded-full bg-sky-500 text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
+            {/* Step 4: Sunburst Orange (Letter S) */}
+            <div className="bg-white border-2 border-orange-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-orange-400 hover:shadow-lg hover:shadow-orange-500/10 transition-all">
+              <div className="w-8 h-8 rounded-full bg-brand-orange text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 4
               </div>
-              <h4 className="font-bold text-sm text-slate-900">Relevant Seller or Partner</h4>
+              <h4 className="font-bold text-sm text-brand-navy">Verified Partner</h4>
               <p className="text-[11px] text-slate-600">
                 Matched with verified local technicians, car fleet hosts, or verified retail vendor partners.
               </p>
             </div>
 
-            {/* Step 5 (Gold/Orange highlight) */}
+            {/* Step 5: Full Brand Gradient */}
             <div className="bg-white border-2 border-orange-200 rounded-2xl p-5 space-y-2 text-center relative hover:border-orange-400 hover:shadow-lg hover:shadow-orange-500/10 transition-all">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-gold-500 to-orange-500 text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-brand-blue via-brand-gold to-brand-orange text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
                 5
               </div>
-              <h4 className="font-bold text-sm text-slate-900">Fulfillment &amp; Support</h4>
+              <h4 className="font-bold text-sm text-brand-navy">Fulfillment &amp; Trust</h4>
               <p className="text-[11px] text-slate-600">
                 Service fulfilled according to the platform’s distinct operating guidelines and partner arrangements.
               </p>
@@ -634,13 +637,14 @@ export const HomePage = () => {
       <section id="portfolio" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
-            <span className="shiny-badge inline-block text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
+            <span className="shiny-badge inline-block text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
               Engineering Showcase
             </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-slate-950">
-              Selected Projects &amp; Case Studies
+            <h2 className="font-serif font-black text-2xl sm:text-4xl text-brand-navy">
+              Selected Projects &amp;{' '}
+              <span className="text-gradient-blue">Case Studies</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 max-w-2xl">
+            <p className="text-sm sm:text-base text-slate-700 max-w-2xl">
               Completed software architectures, digital platform demonstrations, and internal technology implementations.
             </p>
           </div>

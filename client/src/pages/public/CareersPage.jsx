@@ -131,8 +131,8 @@ export const CareersPage = () => {
             <Briefcase className="w-3.5 h-3.5 mr-1 text-sky-600" />
             <span>Join Our Team</span>
           </div>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-slate-950 tracking-tight">
-            Careers at Namah Siddham
+          <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
+            Careers at <span className="text-gradient-ns">Namah Siddham</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
             Build and scale digital platforms that connect millions of households with dependable services and regional commerce.

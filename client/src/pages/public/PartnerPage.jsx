@@ -131,8 +131,8 @@ export const PartnerPage = () => {
             <Handshake className="w-3.5 h-3.5 mr-1 text-sky-600" />
             <span>Commercial Partnerships &amp; Platform Alliances</span>
           </div>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-slate-950 tracking-tight">
-            Partner With Us
+          <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
+            Partner With <span className="text-gradient-ns">Namah Siddham</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
             Grow your business, expand client reach, and collaborate through our digital platforms and enterprise technology capabilities.

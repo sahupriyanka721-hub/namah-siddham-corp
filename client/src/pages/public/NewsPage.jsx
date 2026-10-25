@@ -45,8 +45,8 @@ export const NewsPage = () => {
             <Newspaper className="w-3.5 h-3.5 mr-1 text-sky-600" />
             <span>Official Communications</span>
           </div>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-slate-950 tracking-tight">
-            News &amp; Announcements
+          <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
+            News &amp; <span className="text-gradient-blue">Announcements</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
             Stay updated on new platform rollouts, business milestones, partner initiatives, and corporate announcements.

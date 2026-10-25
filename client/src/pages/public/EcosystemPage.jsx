@@ -52,8 +52,8 @@ export const EcosystemPage = () => {
             <Layers className="w-3.5 h-3.5 mr-1 text-orange-600" />
             <span>Vertical 2: Digital Products &amp; Aggregator Platforms</span>
           </div>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-slate-950 tracking-tight">
-            Our Digital Products &amp; Platforms
+          <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
+            Our Digital Products &amp; <span className="text-gradient-orange">Platforms</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
             Namah Siddham Corporation Private Limited builds and operates specialized digital marketplaces designed to streamline discovery, booking, and fulfillment across essential everyday sectors.
