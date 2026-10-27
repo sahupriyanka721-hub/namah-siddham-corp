@@ -91,131 +91,48 @@ export const HomePage = () => {
         <div className="absolute bottom-10 left-1/3 w-[400px] h-[400px] bg-amber-400/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#0284C7_1.5px,transparent_1.5px)] [background-size:26px_26px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left: Headline, Description & CTAs */}
-            <div className="lg:col-span-7 space-y-6">
-              {/* Clean, Elegant Headline in Brand Navy & Logo Gradient */}
-              <h1 className="font-sans font-black text-2xl sm:text-4xl lg:text-[40px] xl:text-[44px] text-brand-navy tracking-tight leading-[1.25]">
-                Technology That Builds Businesses and{' '}
-                <span className="text-gradient-ns">
-                  Connects Opportunities
-                </span>
-              </h1>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <div className="space-y-6 max-w-4xl mx-auto">
+            {/* Clean, Elegant Headline in Brand Navy & Logo Gradient */}
+            <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-[46px] xl:text-[50px] text-brand-navy tracking-tight leading-[1.25]">
+              Technology That Builds Businesses and{' '}
+              <span className="text-gradient-ns">
+                Connects Opportunities
+              </span>
+            </h1>
 
-              {/* Clean, Lightweight Description with Brand Highlights */}
-              <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal max-w-2xl">
-                <span className="font-bold text-brand-navy">Namah Siddham Corporation Private Limited</span> combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.
-              </p>
+            {/* Clean, Lightweight Description with Brand Highlights */}
+            <p className="text-base sm:text-lg lg:text-xl text-slate-700 leading-relaxed font-normal max-w-3xl mx-auto">
+              <span className="font-bold text-brand-navy">Namah Siddham Corporation Private Limited</span> combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.
+            </p>
 
-              {/* Shiny CTAs matching Logo Palette */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
-                <Link
-                  to="/services"
-                  className="shiny-btn inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-sky-500/30 hover:shadow-sky-400/50 transition-all transform hover:-translate-y-0.5 border border-sky-300/40"
-                >
-                  <span>Explore Our IT Services</span>
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-                <Link
-                  to="/products"
-                  className="shiny-btn inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-white/95 hover:bg-orange-500 text-orange-600 hover:text-white border-2 border-orange-400/80 font-bold text-sm sm:text-base transition-all transform hover:-translate-y-0.5 shadow-md shadow-orange-500/10"
-                >
-                  <span>Discover Our Products</span>
-                </Link>
-              </div>
-
-              {/* Corporate Identity Tag */}
-              <div className="pt-6 border-t border-sky-200/80 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-600 font-mono">
-                <div>
-                  <span className="text-sky-600 font-bold">Entity:</span> Private Limited Company
-                </div>
-                <div>
-                  <span className="text-sky-600 font-bold">Location:</span> Bhopal, Madhya Pradesh
-                </div>
-                <div>
-                  <span className="text-orange-600 font-bold">Two Verticals:</span> Services &amp; Platforms
-                </div>
-              </div>
+            {/* Shiny CTAs matching Logo Palette */}
+            <div className="pt-3 flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+              <Link
+                to="/services"
+                className="shiny-btn inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-sky-500/30 hover:shadow-sky-400/50 transition-all transform hover:-translate-y-0.5 border border-sky-300/40"
+              >
+                <span>Explore Our IT Services</span>
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+              <Link
+                to="/products"
+                className="shiny-btn inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-white/95 hover:bg-orange-500 text-orange-600 hover:text-white border-2 border-orange-400/80 font-bold text-sm sm:text-base transition-all transform hover:-translate-y-0.5 shadow-md shadow-orange-500/10"
+              >
+                <span>Discover Our Products</span>
+              </Link>
             </div>
 
-            {/* Right: Visually engaging technology and digital ecosystem composition */}
-            <div className="lg:col-span-5 relative">
-              <div className="shiny-glass p-6 sm:p-8 rounded-3xl border border-sky-200 shadow-2xl shadow-sky-500/10 space-y-6 relative overflow-hidden">
-                {/* Subtle top accent bar in Logo Gradient */}
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-sky-500 via-gold-400 to-orange-500" />
-
-                <div className="flex items-center justify-between border-b border-sky-100 pb-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="p-1.5 rounded-2xl bg-gradient-to-br from-sky-500/10 via-sky-400/5 to-amber-500/10 border border-sky-200/70 shadow-xs">
-                      <img
-                        src="/assets/namah-siddham-emblem.svg"
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = '/assets/namah-siddham-logo.svg';
-                        }}
-                        alt="Namah Siddham Brand"
-                        className="h-10 w-auto object-contain filter drop-shadow-xs"
-                      />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-heading font-black text-sm text-slate-900 tracking-wider">
-                        NAMAH SIDDHAM
-                      </span>
-                      <span className="text-[9px] font-bold text-sky-600 tracking-wider font-mono">
-                        CORPORATION
-                      </span>
-                    </div>
-                  </div>
-                  <span className="shiny-badge text-[10px] font-bold px-2.5 py-1 rounded-full text-sky-700 uppercase tracking-widest font-mono">
-                    Integrated Hub
-                  </span>
-                </div>
-
-                {/* Vertical 1 Card */}
-                <div className="bg-gradient-to-r from-sky-100/70 via-sky-50/80 to-white border-2 border-sky-200/90 rounded-2xl p-4 space-y-2 hover:border-sky-400 hover:shadow-md transition-all">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="font-bold text-sky-800 uppercase tracking-wider font-serif flex items-center">
-                      <Code2 className="w-3.5 h-3.5 mr-1.5 text-sky-600" />
-                      Vertical 1: IT Solutions
-                    </span>
-                    <span className="text-[10px] text-sky-700 font-semibold bg-sky-200/60 px-2 py-0.5 rounded-full">Client Delivery</span>
-                  </div>
-                  <div className="text-xs text-slate-600">
-                    Custom web architecture, mobile solutions, tailored ERP/CRM systems, and SEO visibility.
-                  </div>
-                </div>
-
-                {/* Vertical 2 Card */}
-                <div className="bg-gradient-to-r from-orange-100/60 via-orange-50/70 to-white border-2 border-orange-200/90 rounded-2xl p-4 space-y-2 hover:border-orange-400 hover:shadow-md transition-all">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="font-bold text-orange-800 uppercase tracking-wider font-serif flex items-center">
-                      <Layers className="w-3.5 h-3.5 mr-1.5 text-orange-600" />
-                      Vertical 2: Digital Marketplaces
-                    </span>
-                    <span className="text-[10px] text-orange-700 bg-orange-200/60 font-bold px-2 py-0.5 rounded-full">
-                      4 Platforms
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2 pt-1 text-[11px] text-slate-700 font-medium">
-                    <div className="p-2 rounded-xl bg-white border border-sky-100 flex items-center justify-between shadow-xs">
-                      <span>HomeServixo</span>
-                      <span className="text-[9px] text-orange-600 font-bold">Repair</span>
-                    </div>
-                    <div className="p-2 rounded-xl bg-white border border-sky-100 flex items-center justify-between shadow-xs">
-                      <span>Carrento</span>
-                      <span className="text-[9px] text-sky-600 font-bold">Mobility</span>
-                    </div>
-                    <div className="p-2 rounded-xl bg-white border border-sky-100 flex items-center justify-between shadow-xs">
-                      <span>Jainamshree</span>
-                      <span className="text-[9px] text-gold-600 font-bold">Satvik</span>
-                    </div>
-                    <div className="p-2 rounded-xl bg-white border border-sky-100 flex items-center justify-between shadow-xs">
-                      <span>SuperiorMart</span>
-                      <span className="text-[9px] text-orange-600 font-bold">Retail</span>
-                    </div>
-                  </div>
-                </div>
+            {/* Corporate Identity Tag */}
+            <div className="pt-6 border-t border-sky-200/80 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-slate-600 font-mono">
+              <div>
+                <span className="text-sky-600 font-bold">Entity:</span> Private Limited Company
+              </div>
+              <div>
+                <span className="text-sky-600 font-bold">Location:</span> Bhopal, Madhya Pradesh
+              </div>
+              <div>
+                <span className="text-orange-600 font-bold">Two Verticals:</span> Services &amp; Platforms
               </div>
             </div>
           </div>
