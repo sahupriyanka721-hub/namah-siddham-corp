@@ -74,7 +74,7 @@ export const HomePage = () => {
   }, []);
 
   return (
-    <div className="space-y-24 pb-20">
+    <div className="space-y-14 sm:space-y-16 pb-20">
       <SeoMeta
         title="Home"
         description="Namah Siddham Corporation Private Limited combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners."
@@ -84,7 +84,7 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       {/* SECTION A: HERO BANNER (Radiant Sky-Blue Atmosphere & Shiny Elements)    */}
       {/* ========================================================================= */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 pt-16 pb-28 sm:pb-36 border-b border-sky-200/80">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 pt-10 sm:pt-14 pb-12 sm:pb-14 border-b border-sky-200/80">
         {/* Soft atmospheric glowing ambient orbs */}
         <div className="absolute -top-20 left-1/4 w-[600px] h-[600px] bg-sky-400/20 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-blue-400/15 rounded-full blur-[120px] pointer-events-none" />
@@ -92,7 +92,7 @@ export const HomePage = () => {
         <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#0284C7_1.5px,transparent_1.5px)] [background-size:26px_26px] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="space-y-6 max-w-4xl mx-auto">
+          <div className="space-y-5 max-w-4xl mx-auto">
             {/* Clean, Elegant Headline in Brand Navy & Logo Gradient */}
             <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-[46px] xl:text-[50px] text-brand-navy tracking-tight leading-[1.25]">
               Technology That Builds Businesses and{' '}
@@ -107,7 +107,7 @@ export const HomePage = () => {
             </p>
 
             {/* Shiny CTAs matching Logo Palette */}
-            <div className="pt-3 flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
               <Link
                 to="/services"
                 className="shiny-btn inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-sky-500/30 hover:shadow-sky-400/50 transition-all transform hover:-translate-y-0.5 border border-sky-300/40"
@@ -124,7 +124,7 @@ export const HomePage = () => {
             </div>
 
             {/* Corporate Identity Tag */}
-            <div className="pt-6 border-t border-sky-200/80 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-slate-600 font-mono">
+            <div className="pt-5 border-t border-sky-200/80 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-slate-600 font-mono">
               <div>
                 <span className="text-sky-600 font-bold">Entity:</span> Private Limited Company
               </div>
@@ -142,9 +142,9 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       {/* SECTION B: COMPANY INTRODUCTION */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-20 relative z-20">
-        <div className="shiny-glass rounded-3xl p-8 sm:p-12 border border-sky-200/90 shadow-2xl shadow-sky-500/10 space-y-8">
-          <div className="max-w-3xl space-y-3">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="shiny-glass rounded-3xl p-6 sm:p-10 border border-sky-200/90 shadow-xl shadow-sky-500/10 space-y-6">
+          <div className="max-w-3xl space-y-2.5">
             <span className="shiny-badge inline-block text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
               Corporate Overview
             </span>
@@ -158,10 +158,10 @@ export const HomePage = () => {
           </div>
 
           {/* Two Professional Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-1">
             {/* Card 1: IT Services (Electric Sky Blue Theme) */}
-            <div className="shiny-card bg-gradient-to-br from-white via-sky-50/50 to-sky-100/30 rounded-3xl p-8 border-2 border-sky-200/80 hover:border-sky-400 hover:shadow-2xl hover:shadow-sky-500/20 transition-all space-y-4 flex flex-col justify-between group">
-              <div className="space-y-4">
+            <div className="shiny-card bg-gradient-to-br from-white via-sky-50/50 to-sky-100/30 rounded-3xl p-7 border-2 border-sky-200/80 hover:border-sky-400 hover:shadow-xl hover:shadow-sky-500/15 transition-all space-y-4 flex flex-col justify-between group">
+              <div className="space-y-3">
                 <span className="inline-block text-xs font-bold text-sky-700 bg-sky-100 border border-sky-200 px-3 py-1 rounded-full uppercase tracking-wider font-mono">
                   Vertical 01
                 </span>
@@ -184,13 +184,13 @@ export const HomePage = () => {
             </div>
 
             {/* Card 2: Digital Products & Aggregators (Solar Orange Theme) */}
-            <div className="shiny-card bg-gradient-to-br from-white via-orange-50/50 to-orange-100/30 rounded-3xl p-8 border-2 border-orange-200/80 hover:border-orange-400 hover:shadow-2xl hover:shadow-orange-500/20 transition-all space-y-4 flex flex-col justify-between group">
-              <div className="space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-orange-600 text-white shadow-lg shadow-orange-500/35 flex items-center justify-center transform group-hover:scale-110 transition-transform">
-                  <Layers className="w-7 h-7" />
-                </div>
+            <div className="shiny-card bg-gradient-to-br from-white via-orange-50/50 to-orange-100/30 rounded-3xl p-7 border-2 border-orange-200/80 hover:border-orange-400 hover:shadow-xl hover:shadow-orange-500/15 transition-all space-y-4 flex flex-col justify-between group">
+              <div className="space-y-3">
+                <span className="inline-block text-xs font-bold text-orange-700 bg-orange-100 border border-orange-200 px-3 py-1 rounded-full uppercase tracking-wider font-mono">
+                  Vertical 02
+                </span>
                 <h3 className="font-serif font-bold text-2xl text-slate-900 group-hover:text-orange-600 transition-colors">
-                  2. Digital Products and Aggregator Platforms
+                  Digital Products and Aggregator Platforms
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Specialized multi-sided platforms connecting consumers with vetted home technicians, mobility fleet hosts, authentic satvik merchants, and multi-category e-commerce sellers.
@@ -213,7 +213,7 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       {/* SECTION C: IT SERVICES (Database-driven) */}
       {/* ========================================================================= */}
-      <section id="services" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <section id="services" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
             <span className="shiny-badge inline-block text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
@@ -278,7 +278,7 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       {/* SECTION D: OUR DIGITAL PRODUCTS (Database-driven) */}
       {/* ========================================================================= */}
-      <section id="products" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <section id="products" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
             <span className="shiny-badge inline-block text-xs font-bold text-brand-orange uppercase tracking-widest font-mono px-3 py-1 rounded-full">
@@ -388,7 +388,7 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       {/* SECTION E: WHY CHOOSE US */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="shiny-badge inline-block text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
             Our Approach &amp; Capabilities
@@ -468,7 +468,7 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       {/* SECTION F: HOW OUR BUSINESS MODEL WORKS (Luminous Light Blue Theme) */}
       {/* ========================================================================= */}
-      <section className="bg-gradient-to-b from-sky-50/80 via-white to-sky-50/50 text-slate-800 py-20 border-y border-sky-100 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-sky-50/80 via-white to-sky-50/50 text-slate-800 py-14 sm:py-16 border-y border-sky-100 relative overflow-hidden">
         {/* Soft atmospheric ambient glow */}
         <div className="absolute top-1/2 left-10 -translate-y-1/2 w-96 h-96 bg-sky-400/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute top-1/2 right-10 -translate-y-1/2 w-96 h-96 bg-gold-400/10 rounded-full blur-[100px] pointer-events-none" />
