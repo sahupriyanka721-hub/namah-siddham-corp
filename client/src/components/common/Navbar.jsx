@@ -4,11 +4,7 @@ import {
   Menu,
   X,
   ChevronDown,
-  Globe,
-  Smartphone,
-  TrendingUp,
   ArrowRight,
-  Layers,
   Home,
   Car,
   ShoppingBag,
@@ -20,8 +16,6 @@ const serviceLinks = [
     name: 'Website Development',
     path: '/services/web-development',
     desc: 'Corporate sites, landing pages & dynamic web applications',
-    icon: Globe,
-    iconBox: 'bg-sky-50 text-brand-blue border-sky-200 group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue',
     hoverText: 'group-hover:text-brand-blue',
     hoverBg: 'hover:bg-sky-50/70',
   },
@@ -29,8 +23,6 @@ const serviceLinks = [
     name: 'Custom Software Development',
     path: '/services/custom-software',
     desc: 'Business management systems, ERP, CRM & tailored software',
-    icon: Layers,
-    iconBox: 'bg-slate-100 text-brand-navy border-slate-300 group-hover:bg-brand-navy group-hover:text-brand-gold group-hover:border-brand-navy',
     hoverText: 'group-hover:text-brand-navy',
     hoverBg: 'hover:bg-slate-50/80',
   },
@@ -38,8 +30,6 @@ const serviceLinks = [
     name: 'Mobile Application Development',
     path: '/services/mobile-apps',
     desc: 'Android & iOS customer and partner applications',
-    icon: Smartphone,
-    iconBox: 'bg-orange-50 text-brand-orange border-orange-200 group-hover:bg-brand-orange group-hover:text-white group-hover:border-brand-orange',
     hoverText: 'group-hover:text-brand-orange',
     hoverBg: 'hover:bg-orange-50/70',
   },
@@ -47,8 +37,6 @@ const serviceLinks = [
     name: 'Digital Marketing & SEO',
     path: '/services/digital-marketing',
     desc: 'SEO, digital campaigns, social visibility & lead generation',
-    icon: TrendingUp,
-    iconBox: 'bg-amber-50 text-amber-700 border-amber-200 group-hover:bg-brand-gold group-hover:text-brand-navy group-hover:border-brand-gold',
     hoverText: 'group-hover:text-amber-700',
     hoverBg: 'hover:bg-amber-50/70',
   },
@@ -240,29 +228,20 @@ export const Navbar = () => {
                     </span>
                     <span className="text-[9px] text-slate-400">4 Core Capabilities</span>
                   </div>
-                  {serviceLinks.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <Link
-                        key={item.name}
-                        to={item.path}
-                        className={`flex items-center space-x-3 p-2.5 rounded-xl ${item.hoverBg} transition-colors group`}
-                      >
-                        {/* Logo Color Aligned Icon Box */}
-                        <div className={`w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 transition-all shadow-xs ${item.iconBox}`}>
-                          <Icon className="w-4.5 h-4.5" />
-                        </div>
-                        <div>
-                          <div className={`text-xs font-bold text-brand-navy ${item.hoverText} transition-colors`}>
-                            {item.name}
-                          </div>
-                          <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug">
-                            {item.desc}
-                          </div>
-                        </div>
-                      </Link>
-                    );
-                  })}
+                  {serviceLinks.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      className={`block p-2.5 rounded-xl ${item.hoverBg} transition-colors group`}
+                    >
+                      <div className={`text-xs font-bold text-brand-navy ${item.hoverText} transition-colors`}>
+                        {item.name}
+                      </div>
+                      <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug mt-0.5">
+                        {item.desc}
+                      </div>
+                    </Link>
+                  ))}
                   <div className="pt-2 px-2 border-t border-sky-100 mt-1">
                     <Link
                       to="/services"
