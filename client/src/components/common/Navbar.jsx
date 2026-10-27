@@ -5,23 +5,15 @@ import {
   X,
   ChevronDown,
   Globe,
-  Code2,
   Smartphone,
   TrendingUp,
   ArrowRight,
-  ExternalLink,
-  ShieldCheck,
-  Building2,
-  Sparkles,
   Layers,
   Home,
   Car,
   ShoppingBag,
   Store,
-  Phone,
-  Mail,
 } from 'lucide-react';
-import { useSettings } from '../../context/SettingsContext';
 
 const serviceLinks = [
   {
@@ -115,7 +107,6 @@ export const Navbar = () => {
   const [productsDropdown, setProductsDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { settings } = useSettings();
 
   const servicesTimeoutRef = useRef(null);
   const productsTimeoutRef = useRef(null);
@@ -192,7 +183,7 @@ export const Navbar = () => {
           {/* ========================================================= */}
           {/* 2. DESKTOP NAVIGATION LINKS (Clean, Spacious Corporate Nav) */}
           {/* ========================================================= */}
-          <nav className="hidden xl:flex items-center space-x-0.5 2xl:space-x-1">
+          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-1.5 2xl:space-x-2">
             <Link
               to="/"
               className={`px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
@@ -417,41 +408,9 @@ export const Navbar = () => {
           </nav>
 
           {/* ========================================================= */}
-          {/* 3. PROMINENT CALL-TO-ACTION BUTTONS (Sleek, Balanced)     */}
+          {/* 3. MOBILE MENU HAMBURGER BUTTON                           */}
           {/* ========================================================= */}
-          <div className="hidden xl:flex items-center space-x-2 2xl:space-x-2.5 shrink-0">
-            <Link
-              to="/products"
-              className="inline-flex items-center px-3.5 py-2 text-xs font-bold rounded-xl text-brand-orange bg-orange-50/80 border border-orange-200/90 hover:bg-orange-500 hover:text-white transition-all transform hover:-translate-y-0.5 shadow-2xs"
-            >
-              Explore Products
-            </Link>
-            <Link
-              to="/contact"
-              className="shiny-btn inline-flex items-center px-4.5 py-2 text-xs font-extrabold rounded-xl bg-gradient-to-r from-brand-blue via-sky-600 to-blue-600 hover:from-blue-700 hover:to-brand-blue text-white shadow-md shadow-brand-blue/25 hover:shadow-lg hover:shadow-brand-blue/35 transition-all transform hover:-translate-y-0.5 border border-sky-300/30"
-            >
-              <span>Let's Discuss Your Project</span>
-              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-            </Link>
-          </div>
-
-          {/* ========================================================= */}
-          {/* 4. TABLET QUICK CTA (1024px - 1279px)                     */}
-          {/* ========================================================= */}
-          <div className="hidden lg:flex xl:hidden items-center space-x-2">
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-4 py-2 text-xs font-extrabold rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-sm"
-            >
-              <span>Discuss Project</span>
-              <ArrowRight className="w-3.5 h-3.5 ml-1" />
-            </Link>
-          </div>
-
-          {/* ========================================================= */}
-          {/* 5. MOBILE MENU HAMBURGER BUTTON                           */}
-          {/* ========================================================= */}
-          <div className="flex xl:hidden items-center">
+          <div className="flex lg:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl text-slate-700 hover:text-royal-600 hover:bg-slate-100 border border-slate-200 focus:outline-none"
@@ -467,7 +426,7 @@ export const Navbar = () => {
       {/* 6. MOBILE DRAWER MENU (Clean White Theme)                 */}
       {/* ========================================================= */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-5 pt-4 pb-8 space-y-3 max-h-[85vh] overflow-y-auto shadow-2xl">
+        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-5 pt-4 pb-8 space-y-3 max-h-[85vh] overflow-y-auto shadow-2xl">
           {/* Mobile Navigation List */}
           <div className="space-y-1">
             <Link
@@ -579,23 +538,6 @@ export const Navbar = () => {
               }`}
             >
               Contact Us
-            </Link>
-          </div>
-
-          {/* Mobile Drawer CTAs */}
-          <div className="pt-4 border-t border-slate-200 flex flex-col space-y-2.5">
-            <Link
-              to="/contact"
-              className="flex items-center justify-center w-full px-5 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-extrabold text-sm text-center shadow-md shadow-sky-500/25"
-            >
-              <span>Let's Discuss Your Project</span>
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Link>
-            <Link
-              to="/products"
-              className="flex items-center justify-center w-full px-4 py-2.5 rounded-xl border-2 border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white text-xs font-bold text-center"
-            >
-              Explore Our Products Ecosystem
             </Link>
           </div>
 
