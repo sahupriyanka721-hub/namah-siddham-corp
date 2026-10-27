@@ -277,7 +277,7 @@ export const Navbar = () => {
                     : 'text-slate-700 hover:text-brand-orange hover:bg-orange-50/60'
                 }`}
               >
-                <span>Our Products</span>
+                <span>Product Ecosystem</span>
                 <ChevronDown className="w-3.5 h-3.5 ml-1 text-orange-500" />
               </Link>
 
@@ -465,7 +465,7 @@ export const Navbar = () => {
             {/* Mobile Products Accordion */}
             <div className="py-2 border-b border-slate-100 mb-2">
               <div className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-orange-600 font-mono">
-                Vertical 2: Digital Marketplaces &amp; Products
+                Vertical 2: Product Ecosystem
               </div>
               <div className="space-y-1 mt-1">
                 {productLinks.map((prod) => (
