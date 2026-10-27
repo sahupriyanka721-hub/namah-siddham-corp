@@ -162,11 +162,11 @@ export const HomePage = () => {
             {/* Card 1: IT Services (Electric Sky Blue Theme) */}
             <div className="shiny-card bg-gradient-to-br from-white via-sky-50/50 to-sky-100/30 rounded-3xl p-8 border-2 border-sky-200/80 hover:border-sky-400 hover:shadow-2xl hover:shadow-sky-500/20 transition-all space-y-4 flex flex-col justify-between group">
               <div className="space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-400 via-sky-500 to-blue-600 text-white shadow-lg shadow-sky-500/35 flex items-center justify-center transform group-hover:scale-110 transition-transform">
-                  <Code2 className="w-7 h-7" />
-                </div>
+                <span className="inline-block text-xs font-bold text-sky-700 bg-sky-100 border border-sky-200 px-3 py-1 rounded-full uppercase tracking-wider font-mono">
+                  Vertical 01
+                </span>
                 <h3 className="font-serif font-bold text-2xl text-slate-900 group-hover:text-sky-600 transition-colors">
-                  1. IT Services and Digital Solutions
+                  IT Services and Digital Solutions
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Tailored corporate websites, business management systems, custom software, ERP, mobile apps, and search marketing built for business efficiency and modern digital visibility.
@@ -237,16 +237,20 @@ export const HomePage = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service) => {
-            const Icon = getServiceIcon(service.icon);
+          {services.map((service, idx) => {
             return (
               <div
                 key={service.slug || service._id}
                 className="shiny-card bg-gradient-to-br from-white via-sky-50/30 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-400 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all flex flex-col justify-between space-y-6 group"
               >
                 <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white shadow-md shadow-sky-500/25 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6" />
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-sky-600 bg-sky-50 border border-sky-200 px-2.5 py-0.5 rounded-full">
+                      0{idx + 1}
+                    </span>
+                    <span className="text-[10px] text-slate-400 uppercase tracking-wider font-mono">
+                      Service
+                    </span>
                   </div>
                   <h3 className="font-serif font-bold text-lg text-slate-900 group-hover:text-sky-600 transition-colors">
                     {service.title}

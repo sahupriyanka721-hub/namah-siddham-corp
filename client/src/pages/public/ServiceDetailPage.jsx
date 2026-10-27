@@ -157,8 +157,6 @@ export const ServiceDetailPage = () => {
     );
   }
 
-  const Icon = getServiceIcon(service.icon);
-
   return (
     <div className="space-y-16 pb-20">
       <SeoMeta
@@ -182,18 +180,16 @@ export const ServiceDetailPage = () => {
             <span className="text-royal-600 font-semibold">{service.title}</span>
           </div>
 
-          <div className="flex items-center space-x-4 pt-2">
-            <div className="w-14 h-14 rounded-2xl bg-royal-100 border border-royal-200 text-royal-600 flex items-center justify-center shrink-0 shadow-sm">
-              <Icon className="w-7 h-7" />
-            </div>
-            <div>
-              <h1 className="font-serif font-black text-2xl sm:text-4xl lg:text-5xl text-slate-950">
-                {service.title}
-              </h1>
-              <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl">
-                {service.shortDescription}
-              </p>
-            </div>
+          <div className="pt-2 space-y-2">
+            <span className="inline-block text-xs font-bold text-royal-700 bg-sky-100/80 border border-sky-200 px-3 py-1 rounded-full uppercase tracking-wider font-mono">
+              Vertical 1: IT Solutions
+            </span>
+            <h1 className="font-serif font-black text-2xl sm:text-4xl lg:text-5xl text-slate-950">
+              {service.title}
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+              {service.shortDescription}
+            </p>
           </div>
         </div>
       </section>
