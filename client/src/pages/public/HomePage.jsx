@@ -99,19 +99,6 @@ export const HomePage = () => {
                 <span>Discover Our Products</span>
               </Link>
             </div>
-
-            {/* Corporate Identity Tag */}
-            <div className="pt-5 border-t border-sky-200/80 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-slate-600 font-mono">
-              <div>
-                <span className="text-sky-600 font-bold">Entity:</span> Private Limited Company
-              </div>
-              <div>
-                <span className="text-sky-600 font-bold">Location:</span> Bhopal, Madhya Pradesh
-              </div>
-              <div>
-                <span className="text-orange-600 font-bold">Two Verticals:</span> Services &amp; Platforms
-              </div>
-            </div>
           </div>
         </div>
       </section>
