@@ -180,16 +180,16 @@ export const HomePage = () => {
       {/* SECTION C: WHY CHOOSE US (Streamlined & Attractive 4-Pillar Architecture)  */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <div className="text-center max-w-5xl mx-auto space-y-3">
-          <div className="flex flex-wrap items-center justify-center gap-3">
+        <div className="max-w-4xl space-y-3">
+          <div className="flex flex-wrap items-center gap-3">
             <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full shrink-0">
               Our Strengths
             </span>
-            <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy sm:whitespace-nowrap">
+            <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy">
               Why Choose <span className="text-gradient-ns">Namah Siddham</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-5xl mx-auto md:whitespace-nowrap">
+          <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
             A structured, engineering-first approach engineered for digital scalability, partner growth, and dependable operations.
           </p>
         </div>
@@ -287,16 +287,16 @@ export const HomePage = () => {
         <div className="absolute top-1/2 right-10 -translate-y-1/2 w-96 h-96 bg-gold-400/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
-          <div className="text-center max-w-5xl mx-auto space-y-3">
-            <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="max-w-4xl space-y-3">
+            <div className="flex flex-wrap items-center gap-3">
               <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full shrink-0">
                 Operational Framework
               </span>
-              <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy sm:whitespace-nowrap">
+              <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy">
                 How Our Business Model <span className="text-gradient-ns">Creates Value</span>
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-5xl mx-auto md:whitespace-nowrap">
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
               A streamlined 4-stage digital pipeline connecting real consumer needs with specialized platforms and verified partners.
             </p>
           </div>
@@ -385,17 +385,17 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       <section id="portfolio" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="space-y-2">
+          <div className="max-w-4xl space-y-3">
             <div className="flex flex-wrap items-center gap-3">
               <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full shrink-0">
                 Engineering Showcase
               </span>
-              <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy sm:whitespace-nowrap">
+              <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy">
                 Selected Projects &amp;{' '}
                 <span className="text-gradient-blue">Case Studies</span>
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-none md:whitespace-nowrap">
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
               Completed software architectures, digital platform demonstrations, and internal technology implementations.
             </p>
           </div>
