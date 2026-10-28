@@ -177,95 +177,115 @@ export const HomePage = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION C: WHY CHOOSE US */}
+      {/* SECTION C: WHY CHOOSE US (Streamlined & Attractive 4-Pillar Architecture)  */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="shiny-badge inline-block text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
-            Our Approach &amp; Capabilities
+            Our Strengths
           </span>
           <h2 className="font-serif font-black text-2xl sm:text-4xl text-brand-navy">
             Why Choose <span className="text-gradient-ns">Namah Siddham</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-700">
-            A structured, engineering-first methodology focused on technical scalability, partner viability, and dependable operational standards.
+          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+            A structured, engineering-first approach engineered for digital scalability, partner growth, and dependable operations.
           </p>
         </div>
 
-        {/* Six Benefit Cards with Shiny Hover Effects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="shiny-card bg-gradient-to-br from-white via-sky-50/40 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all space-y-3">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25">
-              <Cpu className="w-5 h-5" />
+        {/* 4 Sleek, High-Impact Pillar Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* Pillar 1 */}
+          <div className="shiny-card bg-gradient-to-b from-white via-sky-50/30 to-white rounded-2xl p-6 border-2 border-sky-100 hover:border-sky-300 hover:shadow-xl hover:shadow-sky-500/15 transition-all duration-300 flex flex-col justify-between space-y-4 group">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25 group-hover:scale-105 transition-transform">
+                  <Cpu className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-bold font-mono px-2 py-0.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200">
+                  Full-Stack
+                </span>
+              </div>
+              <h3 className="font-serif font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">
+                Modern Engineering
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                High-performance web, mobile, and cloud architectures built with React, Node.js, and microservices.
+              </p>
             </div>
-            <h3 className="font-serif font-bold text-lg text-slate-900">Technology-Driven Approach</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              We leverage modern frameworks (React, Node.js, MongoDB, microservices) to ensure responsive performance, clean code architecture, and high data reliability.
-            </p>
           </div>
 
-          <div className="shiny-card bg-gradient-to-br from-white via-sky-50/40 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all space-y-3">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25">
-              <Building2 className="w-5 h-5" />
+          {/* Pillar 2 */}
+          <div className="shiny-card bg-gradient-to-b from-white via-sky-50/30 to-white rounded-2xl p-6 border-2 border-sky-100 hover:border-sky-300 hover:shadow-xl hover:shadow-sky-500/15 transition-all duration-300 flex flex-col justify-between space-y-4 group">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25 group-hover:scale-105 transition-transform">
+                  <Building2 className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-bold font-mono px-2 py-0.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200">
+                  Enterprise
+                </span>
+              </div>
+              <h3 className="font-serif font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">
+                Tailored Solutions
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Custom ERP, CRM, and management software designed to solve concrete business operational needs.
+              </p>
             </div>
-            <h3 className="font-serif font-bold text-lg text-slate-900">Business-Focused Solutions</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Every system is engineered to solve concrete operational requirements, eliminate manual errors, streamline booking workflows, and improve commercial turnaround.
-            </p>
           </div>
 
-          <div className="shiny-card bg-gradient-to-br from-white via-sky-50/40 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all space-y-3">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25">
-              <Code2 className="w-5 h-5" />
+          {/* Pillar 3 */}
+          <div className="shiny-card bg-gradient-to-b from-white via-sky-50/30 to-white rounded-2xl p-6 border-2 border-sky-100 hover:border-sky-300 hover:shadow-xl hover:shadow-sky-500/15 transition-all duration-300 flex flex-col justify-between space-y-4 group">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25 group-hover:scale-105 transition-transform">
+                  <Workflow className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-bold font-mono px-2 py-0.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200">
+                  Scalable
+                </span>
+              </div>
+              <h3 className="font-serif font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">
+                Scalable Architecture
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Secure REST APIs, modular microservices, and indexed databases built to handle growing volumes.
+              </p>
             </div>
-            <h3 className="font-serif font-bold text-lg text-slate-900">Custom Development Capabilities</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              From tailored administrative management dashboards to multi-sided aggregator engines, we build bespoke software fitted to exact business specifications.
-            </p>
           </div>
 
-          <div className="shiny-card bg-gradient-to-br from-white via-orange-50/40 to-white rounded-2xl p-7 border-2 border-orange-100 hover:border-orange-300 shadow-md hover:shadow-xl hover:shadow-orange-500/15 transition-all space-y-3">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-400 to-orange-600 text-white flex items-center justify-center shadow-md shadow-orange-500/25">
-              <Layers className="w-5 h-5" />
+          {/* Pillar 4 */}
+          <div className="shiny-card bg-gradient-to-b from-white via-sky-50/30 to-white rounded-2xl p-6 border-2 border-sky-100 hover:border-sky-300 hover:shadow-xl hover:shadow-sky-500/15 transition-all duration-300 flex flex-col justify-between space-y-4 group">
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25 group-hover:scale-105 transition-transform">
+                  <Handshake className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-bold font-mono px-2 py-0.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200">
+                  Ecosystem
+                </span>
+              </div>
+              <h3 className="font-serif font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">
+                Partner-First Trust
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Transparent workflows, verified merchant networks, and dependable collaborative growth.
+              </p>
             </div>
-            <h3 className="font-serif font-bold text-lg text-slate-900">Multiple Digital Business Verticals</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Operating both client software engineering and dedicated digital marketplaces provides real-world domain insights into customer journeys and vendor management.
-            </p>
-          </div>
-
-          <div className="shiny-card bg-gradient-to-br from-white via-sky-50/40 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all space-y-3">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25">
-              <Workflow className="w-5 h-5" />
-            </div>
-            <h3 className="font-serif font-bold text-lg text-slate-900">Scalable Platform Architecture</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Our platforms are built with modular schemas, secure REST APIs, role-based authorization, and indexed databases ready to accommodate growing catalog and booking volumes.
-            </p>
-          </div>
-
-          <div className="shiny-card bg-gradient-to-br from-white via-sky-50/40 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all space-y-3">
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-sky-400 to-sky-600 text-white flex items-center justify-center shadow-md shadow-sky-500/25">
-              <Handshake className="w-5 h-5" />
-            </div>
-            <h3 className="font-serif font-bold text-lg text-slate-900">Focus on Customer and Partner Experience</h3>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              We design transparent onboarding, upfront service guidelines, verified merchant relationships, and clear communication channels across every user touchpoint.
-            </p>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION F: HOW OUR BUSINESS MODEL WORKS (Luminous Light Blue Theme) */}
+      {/* SECTION F: HOW OUR BUSINESS MODEL WORKS (Modern Connected Pipeline)        */}
       {/* ========================================================================= */}
-      <section className="bg-gradient-to-b from-sky-50/80 via-white to-sky-50/50 text-slate-800 py-14 sm:py-16 border-y border-sky-100 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-sky-50/80 via-white to-sky-50/50 text-slate-800 py-12 sm:py-16 border-y border-sky-100 relative overflow-hidden">
         {/* Soft atmospheric ambient glow */}
         <div className="absolute top-1/2 left-10 -translate-y-1/2 w-96 h-96 bg-sky-400/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute top-1/2 right-10 -translate-y-1/2 w-96 h-96 bg-gold-400/10 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
-          <div className="text-center max-w-4xl mx-auto space-y-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative z-10">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
             <div className="flex flex-wrap items-center justify-center gap-3">
               <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full shrink-0">
                 Operational Framework
@@ -274,76 +294,86 @@ export const HomePage = () => {
                 How Our Business Model <span className="text-gradient-ns">Creates Value</span>
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-slate-700 max-w-2xl mx-auto">
-              A structured digital flow connecting everyday needs with specialized platform solutions and verified providers.
+            <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+              A streamlined 4-stage digital pipeline connecting real consumer needs with specialized platforms and verified partners.
             </p>
           </div>
 
-          {/* Visual Step-by-Step Flow */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
-            {/* Step 1: Royal Blue (Letter N) */}
-            <div className="bg-white border-2 border-sky-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/10 transition-all">
-              <div className="w-8 h-8 rounded-full bg-brand-blue text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
-                1
-              </div>
-              <h4 className="font-bold text-sm text-brand-navy">Customer Need</h4>
-              <p className="text-[11px] text-slate-600">
-                A customer identifies a requirement for home appliance repair, mobility rental, satvik groceries, or retail products.
-              </p>
-            </div>
+          {/* Connected Visual Pipeline */}
+          <div className="relative">
+            {/* Desktop Connector Line */}
+            <div className="hidden lg:block absolute top-1/2 left-20 right-20 h-0.5 bg-gradient-to-r from-sky-200 via-sky-400 to-sky-200 -translate-y-6 -z-0" />
 
-            {/* Step 2: Sky Blue (Arrow Ribbon) */}
-            <div className="bg-white border-2 border-sky-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-sky-400 hover:shadow-lg hover:shadow-sky-500/10 transition-all">
-              <div className="w-8 h-8 rounded-full bg-brand-sky text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
-                2
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
+              {/* Step 1 */}
+              <div className="shiny-card bg-white/95 backdrop-blur-sm border-2 border-sky-100 hover:border-sky-300 rounded-2xl p-6 text-center space-y-3 hover:shadow-lg hover:shadow-sky-500/10 transition-all group">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 text-white font-bold text-sm mx-auto flex items-center justify-center shadow-md shadow-sky-500/20 group-hover:scale-110 transition-transform">
+                  01
+                </div>
+                <h4 className="font-serif font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">
+                  Identify Need
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Everyday consumer requirement identified in home repair, mobility, satvik essentials, or retail.
+                </p>
               </div>
-              <h4 className="font-bold text-sm text-brand-navy">Specialized Platform</h4>
-              <p className="text-[11px] text-slate-600">
-                Access through dedicated platform properties (HomeServixo, Carrento, Jainamshree, SuperiorMart).
-              </p>
-            </div>
 
-            {/* Step 3: Ahimsa Gold */}
-            <div className="bg-white border-2 border-amber-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-amber-400 hover:shadow-lg hover:shadow-amber-500/10 transition-all">
-              <div className="w-8 h-8 rounded-full bg-brand-gold text-slate-900 font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
-                3
+              {/* Step 2 */}
+              <div className="shiny-card bg-white/95 backdrop-blur-sm border-2 border-sky-100 hover:border-sky-300 rounded-2xl p-6 text-center space-y-3 hover:shadow-lg hover:shadow-sky-500/10 transition-all group">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-sky-600 text-white font-bold text-sm mx-auto flex items-center justify-center shadow-md shadow-sky-500/20 group-hover:scale-110 transition-transform">
+                  02
+                </div>
+                <h4 className="font-serif font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">
+                  Dedicated Platform
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Routed through specialized properties (HomeServixo, Carrento, Jainamshree, SuperiorMart).
+                </p>
               </div>
-              <h4 className="font-bold text-sm text-brand-navy">Discovery &amp; Booking</h4>
-              <p className="text-[11px] text-slate-600">
-                Intuitive search, transparent pricing estimates, schedule selection, or digital cart checkout.
-              </p>
-            </div>
 
-            {/* Step 4: Sunburst Orange (Letter S) */}
-            <div className="bg-white border-2 border-orange-100 rounded-2xl p-5 space-y-2 text-center relative hover:border-orange-400 hover:shadow-lg hover:shadow-orange-500/10 transition-all">
-              <div className="w-8 h-8 rounded-full bg-brand-orange text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
-                4
+              {/* Step 3 */}
+              <div className="shiny-card bg-white/95 backdrop-blur-sm border-2 border-sky-100 hover:border-sky-300 rounded-2xl p-6 text-center space-y-3 hover:shadow-lg hover:shadow-sky-500/10 transition-all group">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-bold text-sm mx-auto flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-110 transition-transform">
+                  03
+                </div>
+                <h4 className="font-serif font-bold text-base text-slate-900 group-hover:text-sky-600 transition-colors">
+                  Verified Match
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Matched with identity-vetted technicians, certified car fleet hosts, or verified retail merchants.
+                </p>
               </div>
-              <h4 className="font-bold text-sm text-brand-navy">Verified Partner</h4>
-              <p className="text-[11px] text-slate-600">
-                Matched with verified local technicians, car fleet hosts, or verified retail vendor partners.
-              </p>
-            </div>
 
-            {/* Step 5: Full Brand Gradient */}
-            <div className="bg-white border-2 border-orange-200 rounded-2xl p-5 space-y-2 text-center relative hover:border-orange-400 hover:shadow-lg hover:shadow-orange-500/10 transition-all">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-brand-blue via-brand-gold to-brand-orange text-white font-bold text-xs mx-auto flex items-center justify-center shadow-sm">
-                5
+              {/* Step 4 */}
+              <div className="shiny-card bg-white/95 backdrop-blur-sm border-2 border-sky-100 hover:border-sky-300 rounded-2xl p-6 text-center space-y-3 hover:shadow-lg hover:shadow-sky-500/10 transition-all group">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white font-bold text-sm mx-auto flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:scale-110 transition-transform">
+                  04
+                </div>
+                <h4 className="font-serif font-bold text-base text-slate-900 group-hover:text-emerald-600 transition-colors">
+                  Fulfillment &amp; Trust
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Dependable service fulfilled according to transparent pricing and verified partner standards.
+                </p>
               </div>
-              <h4 className="font-bold text-sm text-brand-navy">Fulfillment &amp; Trust</h4>
-              <p className="text-[11px] text-slate-600">
-                Service fulfilled according to the platform’s distinct operating guidelines and partner arrangements.
-              </p>
             </div>
           </div>
 
-          {/* Operational Clarity Disclosure */}
-          <div className="bg-white border border-sky-200 rounded-2xl p-6 text-xs text-slate-700 space-y-2 max-w-4xl mx-auto flex items-start space-x-3 shadow-sm">
-            <Info className="w-5 h-5 text-sky-600 shrink-0 mt-0.5" />
-            <div>
-              <span className="font-bold text-slate-900 block mb-1">Operational Model Notice:</span>
-              Individual platforms utilize different transaction, payment, fulfillment, and customer support arrangements based on industry sector. Namah Siddham Corporation Private Limited provides the holding, technological, and architectural framework; payments and fulfillment follow each platform’s documented operating agreement.
+          {/* Clean, Sleek Model Notice Bar */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/95 backdrop-blur-sm border border-sky-200/90 rounded-2xl px-6 py-4 shadow-sm max-w-4xl mx-auto">
+            <div className="flex items-center space-x-3 text-xs text-slate-600">
+              <Info className="w-4 h-4 text-sky-600 shrink-0" />
+              <span>
+                Platforms operate under specialized sector frameworks powered by Namah Siddham's holding architecture.
+              </span>
             </div>
+            <Link
+              to="/business-model"
+              className="inline-flex items-center text-xs font-bold text-sky-700 hover:text-sky-800 whitespace-nowrap group shrink-0"
+            >
+              <span>View Full Framework</span>
+              <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
       </section>
