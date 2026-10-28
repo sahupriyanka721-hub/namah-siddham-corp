@@ -162,23 +162,23 @@ export const HomePage = () => {
               </div>
             </div>
 
-            {/* Card 2: Digital Products & Aggregators (Solar Orange Theme) */}
-            <div className="shiny-card bg-gradient-to-br from-white via-orange-50/50 to-orange-100/30 rounded-3xl p-7 border-2 border-orange-200/80 hover:border-orange-400 hover:shadow-xl hover:shadow-orange-500/15 transition-all space-y-4 flex flex-col justify-between group">
+            {/* Card 2: Digital Products & Aggregators (Blue Theme matching Vertical 1) */}
+            <div className="shiny-card bg-gradient-to-br from-white via-sky-50/50 to-sky-100/30 rounded-3xl p-7 border-2 border-sky-200/80 hover:border-sky-400 hover:shadow-xl hover:shadow-sky-500/15 transition-all space-y-4 flex flex-col justify-between group">
               <div className="space-y-3">
-                <span className="inline-block text-xs font-bold text-orange-700 bg-orange-100 border border-orange-200 px-3 py-1 rounded-full uppercase tracking-wider font-mono">
+                <span className="inline-block text-xs font-bold text-sky-700 bg-sky-100 border border-sky-200 px-3 py-1 rounded-full uppercase tracking-wider font-mono">
                   Vertical 02
                 </span>
-                <h3 className="font-serif font-bold text-2xl text-slate-900 group-hover:text-orange-600 transition-colors">
+                <h3 className="font-serif font-bold text-2xl text-slate-900 group-hover:text-sky-600 transition-colors">
                   Digital Products and Aggregator Platforms
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Specialized multi-sided platforms connecting consumers with vetted home technicians, mobility fleet hosts, authentic satvik merchants, and multi-category e-commerce sellers.
                 </p>
               </div>
-              <div className="pt-4 border-t border-orange-100">
+              <div className="pt-4 border-t border-sky-100">
                 <Link
                   to="/products"
-                  className="inline-flex items-center text-sm font-bold text-orange-600 hover:text-orange-700 group"
+                  className="inline-flex items-center text-sm font-bold text-sky-600 hover:text-sky-700 group"
                 >
                   <span>Explore Digital Products Ecosystem</span>
                   <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
