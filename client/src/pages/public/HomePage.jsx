@@ -386,20 +386,22 @@ export const HomePage = () => {
       <section id="portfolio" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
-            <span className="shiny-badge inline-block text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
-              Engineering Showcase
-            </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-brand-navy">
-              Selected Projects &amp;{' '}
-              <span className="text-gradient-blue">Case Studies</span>
-            </h2>
-            <p className="text-sm sm:text-base text-slate-700 max-w-2xl">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full shrink-0">
+                Engineering Showcase
+              </span>
+              <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy sm:whitespace-nowrap">
+                Selected Projects &amp;{' '}
+                <span className="text-gradient-blue">Case Studies</span>
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 max-w-none md:whitespace-nowrap">
               Completed software architectures, digital platform demonstrations, and internal technology implementations.
             </p>
           </div>
           <Link
             to="/portfolio"
-            className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-sky-700 hover:text-sky-800 px-4 py-2 rounded-full"
+            className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-sky-700 hover:text-sky-800 px-4 py-2 rounded-full shrink-0"
           >
             <span>View Full Portfolio</span>
             <ArrowRight className="w-4 h-4 ml-1.5" />
