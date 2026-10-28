@@ -26,27 +26,8 @@ import { publicApi } from '../../api/publicApi';
 import { useSettings } from '../../context/SettingsContext';
 import { SeoMeta } from '../../components/public/SeoMeta';
 
-// Icon resolver for services
-const getServiceIcon = (iconName) => {
-  switch (iconName) {
-    case 'Code2':
-    case 'Cpu':
-      return Cpu;
-    case 'Smartphone':
-      return Smartphone;
-    case 'TrendingUp':
-      return TrendingUp;
-    case 'Globe':
-    case 'Monitor':
-    default:
-      return Monitor;
-  }
-};
-
 export const HomePage = () => {
   const { settings } = useSettings();
-  const [services, setServices] = useState([]);
-  const [platforms, setPlatforms] = useState([]);
   const [portfolio, setPortfolio] = useState([]);
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -54,14 +35,10 @@ export const HomePage = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [servicesRes, platformsRes, portfolioRes, newsRes] = await Promise.all([
-          publicApi.getServices(),
-          publicApi.getPlatforms(),
+        const [portfolioRes, newsRes] = await Promise.all([
           publicApi.getPortfolio(),
           publicApi.getNews(),
         ]);
-        setServices(servicesRes.data?.data || []);
-        setPlatforms(platformsRes.data?.data || []);
         setPortfolio(portfolioRes.data?.data?.slice(0, 3) || []);
         setNews(newsRes.data?.data?.slice(0, 3) || []);
       } catch (err) {
@@ -213,182 +190,7 @@ export const HomePage = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION C: IT SERVICES (Database-driven) */}
-      {/* ========================================================================= */}
-      <section id="services" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="space-y-2">
-            <span className="shiny-badge inline-block text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
-              Vertical 1: IT Services
-            </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-brand-navy">
-              IT Services and{' '}
-              <span className="text-gradient-blue">Digital Solutions</span>
-            </h2>
-            <p className="text-sm sm:text-base text-slate-700 max-w-2xl">
-              Engineered with modern full-stack architectures to solve real business operational requirements.
-            </p>
-          </div>
-          <Link
-            to="/services"
-            className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-sky-700 hover:text-sky-800 px-4 py-2 rounded-full"
-          >
-            <span>View All Services</span>
-            <ArrowRight className="w-4 h-4 ml-1.5" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, idx) => {
-            return (
-              <div
-                key={service.slug || service._id}
-                className="shiny-card bg-gradient-to-br from-white via-sky-50/30 to-white rounded-2xl p-7 border-2 border-sky-100 hover:border-sky-400 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all flex flex-col justify-between space-y-6 group"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold text-sky-600 bg-sky-50 border border-sky-200 px-2.5 py-0.5 rounded-full">
-                      0{idx + 1}
-                    </span>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-wider font-mono">
-                      Service
-                    </span>
-                  </div>
-                  <h3 className="font-serif font-bold text-lg text-slate-900 group-hover:text-sky-600 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {service.shortDescription}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-sky-100">
-                  <Link
-                    to={`/services/${service.slug}`}
-                    className="inline-flex items-center text-xs font-bold text-sky-600 hover:text-sky-700 group-hover:translate-x-1 transition-transform"
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                  </Link>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* SECTION D: OUR DIGITAL PRODUCTS (Database-driven) */}
-      {/* ========================================================================= */}
-      <section id="products" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="space-y-2">
-            <span className="shiny-badge inline-block text-xs font-bold text-brand-orange uppercase tracking-widest font-mono px-3 py-1 rounded-full">
-              Vertical 2: Digital Marketplaces
-            </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-brand-navy">
-              Our Digital Products &amp;{' '}
-              <span className="text-gradient-orange">Aggregator Platforms</span>
-            </h2>
-            <p className="text-sm sm:text-base text-slate-700 max-w-2xl">
-              Specialized platforms in home repair, mobility, community commerce, and consumer marketplaces.
-            </p>
-          </div>
-          <Link
-            to="/products"
-            className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-orange-600 hover:text-orange-700 px-4 py-2 rounded-full"
-          >
-            <span>View All Platforms</span>
-            <ArrowRight className="w-4 h-4 ml-1.5" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {platforms.map((platform) => {
-            const isLive = platform.status === 'Live';
-            const isUnderDev = platform.status === 'Under Development';
-            const isComingSoon = platform.status === 'Coming Soon';
-
-            return (
-              <div
-                key={platform.slug || platform._id}
-                className="shiny-card bg-gradient-to-br from-white via-orange-50/20 to-white rounded-2xl p-6 border-2 border-sky-100 hover:border-orange-300 shadow-md hover:shadow-xl hover:shadow-orange-500/15 transition-all flex flex-col justify-between space-y-5 group"
-              >
-                <div className="space-y-4">
-                  {/* Category & Status Badge */}
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider truncate">
-                      {platform.category}
-                    </span>
-                    <span
-                      className={`text-[9px] font-bold px-2.5 py-0.5 rounded-full shrink-0 font-mono ${
-                        isLive
-                          ? 'bg-emerald-100 text-emerald-800 border border-emerald-300 shadow-xs'
-                          : isUnderDev
-                          ? 'bg-amber-100 text-amber-900 border border-amber-300 shadow-xs'
-                          : 'bg-sky-100 text-sky-900 border border-sky-300 shadow-xs'
-                      }`}
-                    >
-                      {platform.status}
-                    </span>
-                  </div>
-
-                  <h3 className="font-serif font-bold text-xl text-slate-900 group-hover:text-orange-600 transition-colors">
-                    <Link to={`/products/${platform.slug}`}>
-                      {platform.name}
-                    </Link>
-                  </h3>
-
-                  <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
-                    {platform.shortDescription}
-                  </p>
-
-                  {/* Key Features Pill list */}
-                  {platform.keyFeatures && platform.keyFeatures.length > 0 && (
-                    <div className="space-y-1.5 pt-1">
-                      {platform.keyFeatures.slice(0, 3).map((feat, idx) => (
-                        <div key={idx} className="flex items-start text-[11px] text-slate-700">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-sky-500 mr-1.5 mt-0.5 shrink-0" />
-                          <span className="line-clamp-1">{feat}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Actions */}
-                <div className="pt-4 border-t border-sky-100 flex items-center justify-between gap-2">
-                  <Link
-                    to={`/products/${platform.slug}`}
-                    className="text-xs font-bold text-slate-800 hover:text-orange-600"
-                  >
-                    View Details
-                  </Link>
-
-                  {platform.websiteUrl && (
-                    <a
-                      href={platform.websiteUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`shiny-btn inline-flex items-center text-xs font-bold px-3.5 py-1.5 rounded-xl transition-all ${
-                        isLive
-                          ? 'bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white shadow-sm'
-                          : 'bg-orange-500 hover:bg-orange-600 text-white shadow-sm'
-                      }`}
-                    >
-                      <span>Visit Website</span>
-                      <ExternalLink className="w-3 h-3 ml-1" />
-                    </a>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* ========================================================================= */}
-      {/* SECTION E: WHY CHOOSE US */}
+      {/* SECTION C: WHY CHOOSE US */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-3xl mx-auto space-y-3">
