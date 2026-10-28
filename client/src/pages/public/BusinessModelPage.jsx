@@ -72,7 +72,7 @@ export const BusinessModelPage = () => {
             <Workflow className="w-3.5 h-3.5 mr-1 text-sky-600" />
             <span>Operational Architecture &amp; Platform Workflows</span>
           </div>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
+          <h1 className="font-serif font-black text-3xl sm:text-4xl lg:text-5xl text-brand-navy tracking-tight sm:whitespace-nowrap">
             How Our Business Model <span className="text-gradient-ns">Creates Value</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
