@@ -51,7 +51,7 @@ export const HomePage = () => {
   }, []);
 
   return (
-    <div className="space-y-14 sm:space-y-16 pb-20">
+    <div className="space-y-10 sm:space-y-12 pb-16">
       <SeoMeta
         title="Home"
         description="Namah Siddham Corporation Private Limited combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners."
@@ -61,7 +61,7 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       {/* SECTION A: HERO BANNER (Radiant Sky-Blue Atmosphere & Shiny Elements)    */}
       {/* ========================================================================= */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 pt-10 sm:pt-14 pb-12 sm:pb-14 border-b border-sky-200/80">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 pt-8 sm:pt-12 pb-8 sm:pb-10 border-b border-sky-200/80">
         {/* Soft atmospheric glowing ambient orbs */}
         <div className="absolute -top-20 left-1/4 w-[600px] h-[600px] bg-sky-400/20 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-blue-400/15 rounded-full blur-[120px] pointer-events-none" />
@@ -107,7 +107,7 @@ export const HomePage = () => {
       {/* SECTION B: COMPANY INTRODUCTION */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="shiny-glass rounded-3xl p-6 sm:p-10 border border-sky-200/90 shadow-xl shadow-sky-500/10 space-y-6">
+        <div className="shiny-glass rounded-3xl p-6 sm:p-8 border border-sky-200/90 shadow-xl shadow-sky-500/10 space-y-5">
           <div className="max-w-4xl space-y-3">
             <div className="flex flex-wrap items-center gap-3">
               <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full shrink-0">
@@ -179,7 +179,7 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       {/* SECTION C: WHY CHOOSE US (Streamlined & Attractive 4-Pillar Architecture)  */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="text-center max-w-5xl mx-auto space-y-3">
           <div className="flex flex-wrap items-center justify-center gap-3">
             <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full shrink-0">
@@ -281,12 +281,12 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       {/* SECTION F: HOW OUR BUSINESS MODEL WORKS (Modern Connected Pipeline)        */}
       {/* ========================================================================= */}
-      <section className="bg-gradient-to-b from-sky-50/80 via-white to-sky-50/50 text-slate-800 py-12 sm:py-16 border-y border-sky-100 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-sky-50/80 via-white to-sky-50/50 text-slate-800 py-8 sm:py-10 border-y border-sky-100 relative overflow-hidden">
         {/* Soft atmospheric ambient glow */}
         <div className="absolute top-1/2 left-10 -translate-y-1/2 w-96 h-96 bg-sky-400/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute top-1/2 right-10 -translate-y-1/2 w-96 h-96 bg-gold-400/10 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
           <div className="text-center max-w-5xl mx-auto space-y-3">
             <div className="flex flex-wrap items-center justify-center gap-3">
               <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full shrink-0">
@@ -383,7 +383,7 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       {/* SECTION G: PORTFOLIO */}
       {/* ========================================================================= */}
-      <section id="portfolio" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <section id="portfolio" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-3">
@@ -477,7 +477,7 @@ export const HomePage = () => {
       {/* SECTION H: PARTNER WITH US (Vibrant Light Electric Blue Theme) */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-8 sm:p-14 text-white border border-sky-300/40 shadow-2xl shadow-sky-500/25 space-y-8 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-6 sm:p-10 text-white border border-sky-300/40 shadow-2xl shadow-sky-500/25 space-y-6 relative overflow-hidden">
           {/* Subtle Ambient Glow */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -536,7 +536,7 @@ export const HomePage = () => {
       {/* SECTION I: COMPANY VISION AND MISSION */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="shiny-glass rounded-3xl p-8 sm:p-14 border-2 border-sky-100 shadow-xl shadow-sky-500/5 grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="shiny-glass rounded-3xl p-6 sm:p-10 border-2 border-sky-100 shadow-xl shadow-sky-500/5 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-4 border-b lg:border-b-0 lg:border-r border-sky-100 pb-8 lg:pb-0 lg:pr-8">
             <span className="shiny-badge inline-flex items-center text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
               <Compass className="w-4 h-4 mr-1.5" />
@@ -569,7 +569,7 @@ export const HomePage = () => {
       {/* SECTION J: LATEST UPDATES (Database-driven) */}
       {/* ========================================================================= */}
       {news && news.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="flex items-center justify-between">
             <div className="space-y-1">
               <span className="shiny-badge inline-block text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
@@ -622,7 +622,7 @@ export const HomePage = () => {
       {/* SECTION K: FINAL CTA (Vibrant Light Electric Blue Theme) */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-8 sm:p-14 text-white border border-sky-300/40 shadow-2xl shadow-sky-500/25 flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
+        <div className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-6 sm:p-10 text-white border border-sky-300/40 shadow-2xl shadow-sky-500/25 flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden">
           {/* Subtle atmospheric glow */}
           <div className="absolute top-0 right-1/4 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 right-10 w-64 h-64 bg-gold-400/20 rounded-full blur-3xl pointer-events-none" />
