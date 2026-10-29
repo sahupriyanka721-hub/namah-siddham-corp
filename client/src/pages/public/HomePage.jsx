@@ -69,11 +69,13 @@ export const HomePage = () => {
         <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#0284C7_1.5px,transparent_1.5px)] [background-size:26px_26px] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="space-y-5 max-w-4xl mx-auto">
-            {/* Clean, Elegant Headline in Exactly 2 Lines */}
-            <h1 className="font-sans font-black text-2xl sm:text-4xl md:text-[40px] lg:text-[44px] xl:text-[48px] text-brand-navy tracking-tight leading-tight sm:leading-[1.2]">
-              <span className="block">Empowering Businesses Through Technology,</span>
-              <span className="block text-gradient-ns mt-1 sm:mt-1.5">
+          <div className="space-y-5 max-w-5xl mx-auto">
+            {/* Clean, Elegant Headline strictly in 2 Lines */}
+            <h1 className="font-sans font-black text-[18px] xs:text-[21px] sm:text-3xl md:text-[36px] lg:text-[42px] xl:text-[46px] text-brand-navy tracking-tight leading-tight sm:leading-snug">
+              <span className="block sm:whitespace-nowrap">
+                Empowering Businesses Through Technology,
+              </span>
+              <span className="block sm:whitespace-nowrap text-gradient-ns mt-1 sm:mt-1.5">
                 Innovation &amp; Digital Transformation
               </span>
             </h1>
