@@ -60,99 +60,161 @@ export const AboutPage = () => {
         description="Learn about Namah Siddham Corporation Private Limited, our mission, vision, Bhopal registered office, and two growth verticals across IT solutions and aggregator platforms."
       />
 
-      {/* Header Banner (Radiant Sky-Blue Theme matching Logo) */}
-      <section className="bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 py-16 sm:py-20 border-b border-sky-200/80 relative overflow-hidden">
+      {/* Header Banner (Radiant Sky-Blue Atmosphere matching Logo) */}
+      <section className="bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 py-14 sm:py-18 border-b border-sky-200/80 relative overflow-hidden">
         <div className="absolute top-0 right-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
-          <div className="shiny-badge inline-flex items-center space-x-2 px-4.5 py-1.5 rounded-full text-brand-blue text-xs font-semibold">
-            <span>Corporate Information • CIN: {settings.cin || 'U77100MP2026PTC087531'}</span>
+          <div className="shiny-badge inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-brand-blue text-xs font-semibold bg-white border border-sky-200 shadow-xs">
+            <span>About Namah Siddham Corporation</span>
           </div>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
-            One Company.{' '}
-            <span className="text-gradient-ns">Two Digital Growth Verticals.</span>
+          <h1 className="font-serif font-black text-2xl sm:text-4xl lg:text-[44px] text-brand-navy tracking-tight leading-[1.25]">
+            Building Digital Solutions.{' '}
+            <span className="block mt-1 sm:mt-1.5">
+              Connecting Opportunities.{' '}
+              <span className="text-gradient-ns">Empowering Growth.</span>
+            </span>
           </h1>
-          <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
-            {heroDesc}
+          <p className="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed font-normal">
+            Corporate Profile &amp; Digital Operating Philosophy • CIN: {settings.cin || 'U77100MP2026PTC087531'}
           </p>
         </div>
       </section>
 
-      {/* Company Story & Overview */}
+      {/* Main Two-Column About Us Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <span className="text-xs font-bold text-royal-600 uppercase tracking-widest font-serif">
-              Corporate Background &amp; Focus
-            </span>
-            <h2 className="font-serif font-black text-2xl sm:text-3xl text-navy-900">
-              Building Sustainable Digital Infrastructure in India
-            </h2>
-            <div className="space-y-4 text-xs sm:text-sm text-surface-600 leading-relaxed">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          
+          {/* Left Column: Full Company Introduction & Content */}
+          <div className="lg:col-span-7 space-y-5 text-slate-700 leading-relaxed text-sm sm:text-[15px]">
+            
+            <div className="space-y-4 text-slate-700 leading-relaxed">
               <p>
-                <strong>Namah Siddham Corporation Private Limited</strong> (CIN: {settings.cin || 'U77100MP2026PTC087531'}) is an Indian corporate enterprise headquartered in Bhopal, Madhya Pradesh. The company is structured across two distinct business verticals designed to foster digital growth:
+                <strong className="text-brand-navy font-bold">Namah Siddham Corporation Private Limited</strong> is an India-based company focused on technology, digital innovation, and the development of business-oriented digital platforms.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-                <div className="p-4 rounded-2xl bg-surface-50 border border-surface-200 space-y-2">
-                  <div className="flex items-center space-x-2 text-royal-600 font-bold text-xs uppercase font-serif">
-                    <Code2 className="w-4 h-4" />
-                    <span>Vertical 1: IT Services</span>
-                  </div>
-                  <p className="text-xs text-surface-500">
-                    Bespoke website development, enterprise software, custom CRM/ERP systems, mobile applications, and search engine optimization.
-                  </p>
-                </div>
-                <div className="p-4 rounded-2xl bg-surface-50 border border-surface-200 space-y-2">
-                  <div className="flex items-center space-x-2 text-orange-600 font-bold text-xs uppercase font-serif">
-                    <Layers className="w-4 h-4" />
-                    <span>Vertical 2: Digital Marketplaces</span>
-                  </div>
-                  <p className="text-xs text-surface-500">
-                    Category-specific aggregator platforms: HomeServixo (home repair), Carrento (mobility), Jainamshree (satvik commerce), and SuperiorMart (multi-category).
-                  </p>
-                </div>
+
+              <p>
+                We believe technology should do more than establish an online presence. It should help businesses operate more efficiently, connect with their customers, simplify everyday processes, and unlock new opportunities for growth.
+              </p>
+
+              <p className="font-semibold text-brand-navy">
+                Our work spans two complementary areas: IT services and digital products.
+              </p>
+
+              <p>
+                Through our IT services, we support businesses in building their digital foundations with website development, custom software solutions, mobile application development, and digital marketing. From creating a professional online presence to developing tailored business systems, our objective is to translate business requirements into practical digital solutions.
+              </p>
+
+              <p>
+                Alongside our services, we are building a portfolio of specialized digital platforms designed around real-world needs. Our ecosystem includes <strong className="text-brand-blue font-bold">HomeServixo</strong> for home services, <strong className="text-brand-orange font-bold">Carrento</strong> for car rental and mobility, <strong className="text-amber-700 font-bold">Jainamshree</strong> for Jain community-focused e-commerce, and <strong className="text-emerald-700 font-bold">SuperiorMart</strong> for multi-category online shopping. These platforms may be at different stages of development and operation.
+              </p>
+
+              <p>
+                We bring together technology, business understanding, and a customer-focused mindset to develop solutions that connect people, businesses, service providers, and marketplace participants.
+              </p>
+
+              <p>
+                At Namah Siddham, we see every digital initiative as an opportunity to make processes simpler, experiences better, and businesses more connected.
+              </p>
+
+              <p>
+                Our journey is guided by a long-term commitment to building useful digital solutions, developing scalable platforms, and creating meaningful opportunities through technology.
+              </p>
+            </div>
+
+            {/* Supporting Statement Box with Gold & Blue Accents */}
+            <div className="pt-2">
+              <div className="p-4 sm:p-5 rounded-2xl bg-amber-50/90 border-l-4 border-amber-500 border-y border-r border-amber-200/80 shadow-xs">
+                <p className="text-sm sm:text-base font-bold text-brand-navy leading-relaxed">
+                  “From a business website to a complete digital platform, we aim to turn ideas into practical digital experiences.”
+                </p>
               </div>
             </div>
 
-            <div className="pt-2 flex flex-wrap gap-4">
-              <div className="border-l-2 border-royal-500 pl-4 py-1">
-                <div className="text-xs text-surface-400 font-medium">Corporate Registration</div>
-                <div className="text-xs sm:text-sm font-bold text-navy-900 font-mono">{settings.cin || 'U77100MP2026PTC087531'}</div>
+            {/* Statutory Corporate Details Bar */}
+            <div className="pt-3 flex flex-wrap gap-4 border-t border-sky-100">
+              <div className="border-l-2 border-brand-blue pl-3 py-0.5">
+                <div className="text-[11px] text-slate-500 uppercase font-mono">Corporate Identity</div>
+                <div className="text-xs sm:text-sm font-bold text-brand-navy font-mono">{settings.cin || 'U77100MP2026PTC087531'}</div>
               </div>
-              <div className="border-l-2 border-royal-500 pl-4 py-1">
-                <div className="text-xs text-surface-400 font-medium">Headquarters</div>
-                <div className="text-xs sm:text-sm font-bold text-navy-900">Bhopal, Madhya Pradesh, India</div>
+              <div className="border-l-2 border-brand-orange pl-3 py-0.5">
+                <div className="text-[11px] text-slate-500 uppercase font-mono">Registered Office</div>
+                <div className="text-xs sm:text-sm font-bold text-brand-navy">Bhopal, Madhya Pradesh, India</div>
               </div>
-              <div className="border-l-2 border-royal-500 pl-4 py-1">
-                <div className="text-xs text-surface-400 font-medium">Structure</div>
-                <div className="text-xs sm:text-sm font-bold text-navy-900">Private Limited Company</div>
+              <div className="border-l-2 border-amber-500 pl-3 py-0.5">
+                <div className="text-[11px] text-slate-500 uppercase font-mono">Entity Type</div>
+                <div className="text-xs sm:text-sm font-bold text-brand-navy">Private Limited Company</div>
               </div>
+            </div>
+
+          </div>
+
+          {/* Right Column: Premium Visual with Blue and Gold Visual Accents & Brand Statement */}
+          <div className="lg:col-span-5 space-y-5 sticky top-24">
+            <div className="bg-white rounded-3xl p-4 sm:p-5 shadow-xl border-2 border-sky-200/90 hover:border-amber-300 transition-all duration-300 group relative">
+              
+              {/* Top Accent Line */}
+              <div className="h-1 bg-gradient-to-r from-brand-blue via-amber-400 to-brand-orange -mx-4 sm:-mx-5 -mt-4 sm:-mt-5 mb-4 rounded-t-3xl" />
+
+              {/* Brand Statement Pill: "Technology • Innovation • Opportunity" */}
+              <div className="flex items-center justify-between pb-3 border-b border-sky-100 mb-3.5">
+                <span className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-sky-50 to-amber-50 border border-sky-200 text-xs font-bold text-brand-navy font-mono shadow-xs">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-500 mr-1.5" />
+                  Technology • Innovation • Opportunity
+                </span>
+                <span className="text-[11px] font-mono font-semibold text-brand-blue">
+                  Bhopal, MP
+                </span>
+              </div>
+
+              {/* High-Resolution Visual Representation */}
+              <div className="relative overflow-hidden rounded-2xl bg-sky-50 aspect-[16/10] border border-sky-100 shadow-sm mb-4">
+                <img
+                  src="/assets/services/custom-software.jpg"
+                  alt="Namah Siddham Technology, Software Development, Digital Commerce & Connected Platforms"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = '/assets/services/web-development.jpg';
+                  }}
+                />
+              </div>
+
+              {/* Connected Business Ecosystem Grid */}
+              <div className="space-y-2.5 pt-1">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500 font-mono flex items-center justify-between">
+                  <span>Connected Digital Verticals</span>
+                  <span className="text-brand-orange">4 Platforms &amp; IT Services</span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div className="p-2.5 rounded-xl bg-sky-50 border border-sky-100 text-brand-navy font-semibold flex items-center space-x-2">
+                    <span className="w-2 h-2 rounded-full bg-brand-blue shrink-0" />
+                    <span className="truncate">IT Services &amp; ERP</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-orange-50 border border-orange-100 text-brand-navy font-semibold flex items-center space-x-2">
+                    <span className="w-2 h-2 rounded-full bg-brand-orange shrink-0" />
+                    <span className="truncate">HomeServixo &amp; Repair</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-100 text-brand-navy font-semibold flex items-center space-x-2">
+                    <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />
+                    <span className="truncate">Carrento &amp; Mobility</span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100 text-brand-navy font-semibold flex items-center space-x-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                    <span className="truncate">Jainamshree &amp; Retail</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Subtle Brand Tagline */}
+              <div className="mt-4 pt-3 border-t border-sky-100 flex items-center justify-between text-xs text-slate-500">
+                <span className="font-semibold text-brand-navy">Namah Siddham Corporation</span>
+                <span className="text-amber-600 font-bold font-mono">Est. 2026</span>
+              </div>
+
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-surface-100 border border-surface-200 rounded-3xl p-8 space-y-6">
-            <h3 className="font-serif font-bold text-xl text-navy-900 flex items-center">
-              <Building className="w-5 h-5 mr-2 text-royal-600" />
-              Corporate Identity &amp; Governance
-            </h3>
-            <ul className="space-y-3 text-xs sm:text-sm text-surface-600">
-              <li className="flex items-start">
-                <CheckCircle2 className="w-4 h-4 text-royal-500 mr-2 mt-0.5 shrink-0" />
-                <span>Incorporated under the Indian Companies Act, 2013</span>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle2 className="w-4 h-4 text-royal-500 mr-2 mt-0.5 shrink-0" />
-                <span>Registered office situated in Bhopal, Madhya Pradesh</span>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle2 className="w-4 h-4 text-royal-500 mr-2 mt-0.5 shrink-0" />
-                <span>Strict statutory data protection and consumer privacy standards</span>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle2 className="w-4 h-4 text-royal-500 mr-2 mt-0.5 shrink-0" />
-                <span>Transparent platform partner terms and documented service commitments</span>
-              </li>
-            </ul>
-          </div>
         </div>
       </section>
 
