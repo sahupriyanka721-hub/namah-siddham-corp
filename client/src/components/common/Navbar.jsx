@@ -47,8 +47,9 @@ const serviceLinks = [
 const productLinks = [
   {
     name: 'HomeServixo',
+    fullName: 'HomeServixo — Home Services & Appliance Repair',
     path: '/products/homeservixo',
-    category: 'Home Services & Appliance Repair',
+    category: 'Home Services & Appliance Repair Platform',
     status: 'Under Development',
     url: 'https://homeservixo.in',
     icon: Home,
@@ -58,6 +59,7 @@ const productLinks = [
   },
   {
     name: 'Carrento',
+    fullName: 'Carrento — Mobility & Car Rental Platform',
     path: '/products/carrento',
     category: 'Mobility & Car Rental Platform',
     status: 'Under Development',
@@ -69,6 +71,7 @@ const productLinks = [
   },
   {
     name: 'Jainamshree',
+    fullName: 'Jainamshree — Jain Community E-commerce Marketplace',
     path: '/products/jainamshree',
     category: 'Jain Community E-commerce Marketplace',
     status: 'Under Development',
@@ -80,6 +83,7 @@ const productLinks = [
   },
   {
     name: 'SuperiorMart',
+    fullName: 'SuperiorMart — Multi-category E-commerce Marketplace',
     path: '/products/superiormart',
     category: 'Multi-category E-commerce Marketplace',
     status: 'Under Development',
@@ -275,7 +279,7 @@ export const Navbar = () => {
               </Link>
 
               {productsDropdown && (
-                <div className="absolute top-full left-0 w-88 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-orange-100 py-3 px-2 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2 overflow-hidden">
+                <div className="absolute top-full left-0 w-96 bg-white/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-orange-100 py-3 px-2 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2 overflow-hidden">
                   {/* Top Logo Brand Line */}
                   <div className="h-1 bg-gradient-to-r from-brand-orange via-brand-gold to-brand-blue -mx-2 -mt-3 mb-2" />
 
@@ -291,22 +295,23 @@ export const Navbar = () => {
                       <Link
                         key={prod.name}
                         to={prod.path}
-                        className={`flex items-center space-x-3 p-2.5 rounded-xl ${prod.hoverBg} transition-colors group`}
+                        title={`${prod.fullName} (${prod.status})`}
+                        className={`flex items-center space-x-3 p-2.5 rounded-xl ${prod.hoverBg} transition-all duration-150 group`}
                       >
                         {/* Logo Color Aligned Icon Box */}
                         <div className={`w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 transition-all shadow-xs ${prod.iconBox}`}>
                           <Icon className="w-4.5 h-4.5" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center space-x-2">
-                            <span className={`text-xs font-bold text-brand-navy ${prod.hoverText} transition-colors truncate`}>
+                          <div className="flex items-center justify-between gap-1.5">
+                            <span className={`text-xs font-bold text-brand-navy ${prod.hoverText} transition-colors`}>
                               {prod.name}
                             </span>
                             <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-700 font-mono shrink-0">
                               {prod.status}
                             </span>
                           </div>
-                          <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug">
+                          <div className="text-[11px] text-slate-500 leading-snug group-hover:text-brand-navy transition-colors mt-0.5">
                             {prod.category}
                           </div>
                         </div>
@@ -454,12 +459,18 @@ export const Navbar = () => {
                   <Link
                     key={prod.name}
                     to={prod.path}
-                    className="flex items-center justify-between pl-6 pr-3 py-2 text-xs font-medium text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg"
+                    title={`${prod.fullName} (${prod.status})`}
+                    className="flex flex-col pl-6 pr-3 py-2 text-xs font-medium text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg group"
                   >
-                    <span>{prod.name}</span>
-                    <span className="text-[9px] px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 border border-orange-200 font-mono">
-                      {prod.status}
-                    </span>
+                    <div className="flex items-center justify-between">
+                      <span className="font-bold text-slate-900 group-hover:text-brand-orange transition-colors">{prod.name}</span>
+                      <span className="text-[9px] px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 border border-orange-200 font-mono">
+                        {prod.status}
+                      </span>
+                    </div>
+                    <div className="text-[11px] text-slate-500 mt-0.5">
+                      {prod.category}
+                    </div>
                   </Link>
                 ))}
               </div>

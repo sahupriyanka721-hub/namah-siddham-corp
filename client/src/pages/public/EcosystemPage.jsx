@@ -117,7 +117,7 @@ export const EcosystemPage = () => {
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-[10px] font-bold text-surface-500 uppercase tracking-wider truncate">
+                      <span className="text-[10px] font-bold text-surface-500 uppercase tracking-wider truncate" title={platform.category}>
                         {platform.category}
                       </span>
                       <span
@@ -133,20 +133,29 @@ export const EcosystemPage = () => {
                       </span>
                     </div>
 
-                    <h3 className="font-serif font-bold text-xl text-navy-900 hover:text-royal-600 transition-colors">
+                    <h3 className="font-serif font-bold text-xl text-navy-900 hover:text-royal-600 transition-colors" title={platform.name}>
                       <Link to={`/products/${platform.slug}`}>{platform.name}</Link>
                     </h3>
 
-                    <p className="text-xs text-surface-500 line-clamp-3 leading-relaxed">
+                    <p className="text-xs text-surface-500 line-clamp-3 leading-relaxed" title={platform.shortDescription}>
                       {platform.shortDescription}
                     </p>
 
                     {platform.keyFeatures && (
                       <div className="space-y-1.5 pt-1">
                         {platform.keyFeatures.slice(0, 3).map((feat, idx) => (
-                          <div key={idx} className="flex items-start text-[11px] text-navy-800">
+                          <div
+                            key={idx}
+                            title={feat}
+                            className="flex items-start text-[11px] text-navy-800 group/feat cursor-default"
+                          >
                             <CheckCircle2 className="w-3.5 h-3.5 text-royal-500 mr-1.5 mt-0.5 shrink-0" />
-                            <span className="line-clamp-1">{feat}</span>
+                            <span
+                              className="line-clamp-1 group-hover/feat:line-clamp-none transition-all"
+                              title={feat}
+                            >
+                              {feat}
+                            </span>
                           </div>
                         ))}
                       </div>
