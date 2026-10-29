@@ -240,10 +240,16 @@ export const ServiceDetailPage = () => {
                 {/* 3D Illustration Image */}
                 <div className="relative overflow-hidden rounded-2xl bg-sky-50 aspect-[4/3] flex items-center justify-center">
                   <img
-                    src={service.coverImage || serviceImageMap[service.slug] || `/assets/services/${service.slug}.jpg`}
+                    src={serviceImageMap[service?.slug] || serviceImageMap[slug] || service?.coverImage || `/assets/services/${service?.slug || slug}.jpg`}
                     alt={`${service.title} Architecture Showcase`}
                     className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
                     loading="eager"
+                    onError={(e) => {
+                      const fallback = serviceImageMap[service?.slug] || serviceImageMap[slug];
+                      if (fallback && e.target.src !== window.location.origin + fallback) {
+                        e.target.src = fallback;
+                      }
+                    }}
                   />
                   {/* Subtle bottom badge */}
                   <div className="absolute bottom-2.5 left-2.5 right-2.5 bg-white/95 px-3 py-1.5 rounded-xl border border-sky-200 shadow-xs flex items-center justify-between">

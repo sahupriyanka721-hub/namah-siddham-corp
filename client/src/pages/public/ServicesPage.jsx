@@ -97,10 +97,16 @@ export const ServicesPage = () => {
                     className="block relative overflow-hidden rounded-2xl bg-sky-50 aspect-[16/10] border border-sky-100 shadow-xs group-hover:border-sky-300 transition-all"
                   >
                     <img
-                      src={service.coverImage || serviceImageMap[service.slug] || `/assets/services/${service.slug}.jpg`}
+                      src={serviceImageMap[service?.slug] || service?.coverImage || `/assets/services/${service?.slug}.jpg`}
                       alt={service.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
+                      onError={(e) => {
+                        const fallback = serviceImageMap[service?.slug];
+                        if (fallback && e.target.src !== window.location.origin + fallback) {
+                          e.target.src = fallback;
+                        }
+                      }}
                     />
                     <div className="absolute top-3 left-3">
                       <span className="text-[11px] font-mono font-bold text-royal-700 bg-white border border-sky-200 px-3 py-1 rounded-full shadow-xs">
