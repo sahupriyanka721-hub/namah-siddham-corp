@@ -91,10 +91,10 @@ export const ServicesPage = () => {
                 className="shiny-card bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/10 transition-all flex flex-col justify-between space-y-6 group"
               >
                 <div className="space-y-5">
-                  {/* Service 3D Isometric Illustration */}
+                  {/* Service 3D Isometric Landscape Illustration */}
                   <Link
                     to={`/services/${service.slug}`}
-                    className="block relative overflow-hidden rounded-2xl bg-sky-50 aspect-[16/10] border border-sky-100 shadow-xs group-hover:border-sky-300 transition-all"
+                    className="block relative overflow-hidden rounded-2xl bg-sky-50 aspect-[16/9] border border-sky-100 shadow-xs group-hover:border-sky-300 transition-all"
                   >
                     <img
                       src={serviceImageMap[service?.slug] || service?.coverImage || `/assets/services/${service?.slug}.jpg`}

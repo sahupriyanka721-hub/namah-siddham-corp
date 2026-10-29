@@ -175,10 +175,10 @@ export const ServiceDetailPage = () => {
       <section className="bg-gradient-to-b from-[#E0F2FE]/90 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 py-12 sm:py-16 border-b border-sky-200/80 relative overflow-hidden">
         <div className="absolute top-0 right-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Left: Service Information & Metadata */}
-            <div className="lg:col-span-7 space-y-4">
+            <div className="lg:col-span-6 space-y-4">
               <div className="flex items-center space-x-2 text-xs text-slate-500">
                 <Link to="/" className="hover:text-royal-600">
                   Home
@@ -225,20 +225,20 @@ export const ServiceDetailPage = () => {
               </div>
             </div>
 
-            {/* Right: Bespoke 3D Tech Isometric Illustration Showcase Card */}
-            <div className="lg:col-span-5">
+            {/* Right: Bespoke 16:9 Widescreen Landscape 3D Tech Illustration Showcase Card */}
+            <div className="lg:col-span-6">
               <div className="bg-white rounded-3xl p-3 sm:p-4 shadow-xl border-2 border-sky-200 hover:border-sky-300 transition-all duration-300 group relative">
                 {/* Visual Label */}
-                <div className="flex items-center justify-between pb-2 px-1 text-[11px] font-mono text-slate-500 border-b border-sky-100 mb-3">
+                <div className="flex items-center justify-between pb-2 px-1 text-[11px] font-mono text-slate-500 border-b border-sky-100 mb-2.5">
                   <span className="font-bold text-brand-blue flex items-center">
                     <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse mr-1.5" />
-                    Architecture Showcase
+                    16:9 Widescreen Architecture Showcase
                   </span>
                   <span className="text-slate-400 font-semibold">Namah Siddham IT</span>
                 </div>
 
-                {/* 3D Illustration Image */}
-                <div className="relative overflow-hidden rounded-2xl bg-sky-50 aspect-[4/3] flex items-center justify-center">
+                {/* 16:9 Landscape 3D Illustration Image */}
+                <div className="relative overflow-hidden rounded-2xl bg-sky-50 aspect-[16/9] flex items-center justify-center">
                   <img
                     src={serviceImageMap[service?.slug] || serviceImageMap[slug] || service?.coverImage || `/assets/services/${service?.slug || slug}.jpg`}
                     alt={`${service.title} Architecture Showcase`}
@@ -257,7 +257,7 @@ export const ServiceDetailPage = () => {
                       {service.title}
                     </span>
                     <span className="text-[10px] font-mono font-semibold text-brand-blue uppercase shrink-0 ml-2">
-                      Live Spec
+                      16:9 Landscape
                     </span>
                   </div>
                 </div>
