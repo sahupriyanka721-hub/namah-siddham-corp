@@ -32,6 +32,13 @@ const getServiceIcon = (icon) => {
   }
 };
 
+const serviceImageMap = {
+  'web-development': '/assets/services/web-development.jpg',
+  'custom-software': '/assets/services/custom-software.jpg',
+  'mobile-apps': '/assets/services/mobile-apps.jpg',
+  'digital-marketing': '/assets/services/digital-marketing.jpg',
+};
+
 export const ServicesPage = () => {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -81,17 +88,29 @@ export const ServicesPage = () => {
             return (
               <div
                 key={service.slug || service._id}
-                className="shiny-card bg-gradient-to-br from-white via-sky-50/20 to-white rounded-3xl p-8 border-2 border-sky-100 hover:border-sky-400 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all flex flex-col justify-between space-y-6"
+                className="shiny-card bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/10 transition-all flex flex-col justify-between space-y-6 group"
               >
                 <div className="space-y-5">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold text-royal-700 bg-sky-50 border border-sky-200 px-3 py-1 rounded-full">
-                      Capability 0{index + 1}
-                    </span>
-                  </div>
+                  {/* Service 3D Isometric Illustration */}
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="block relative overflow-hidden rounded-2xl bg-sky-50 aspect-[16/10] border border-sky-100 shadow-xs group-hover:border-sky-300 transition-all"
+                  >
+                    <img
+                      src={service.coverImage || serviceImageMap[service.slug] || `/assets/services/${service.slug}.jpg`}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="text-[11px] font-mono font-bold text-royal-700 bg-white border border-sky-200 px-3 py-1 rounded-full shadow-xs">
+                        Capability 0{index + 1}
+                      </span>
+                    </div>
+                  </Link>
 
                   <div>
-                    <h2 className="font-serif font-bold text-2xl text-navy-900 hover:text-royal-600 transition-colors">
+                    <h2 className="font-serif font-bold text-2xl text-navy-900 group-hover:text-royal-600 transition-colors">
                       <Link to={`/services/${service.slug}`}>{service.title}</Link>
                     </h2>
                     <p className="text-xs sm:text-sm text-surface-500 mt-2 leading-relaxed">

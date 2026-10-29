@@ -110,7 +110,7 @@ const seedDatabase = async () => {
         title: 'Website Development',
         slug: 'web-development',
         icon: 'Globe',
-        coverImage: '/assets/services/web-dev.jpg',
+        coverImage: '/assets/services/web-development.jpg',
         shortDescription:
           'Business websites, corporate websites, landing pages, and dynamic web applications built with modern architectures.',
         detailedDescription:
@@ -162,7 +162,7 @@ const seedDatabase = async () => {
         title: 'Custom Software Development',
         slug: 'custom-software',
         icon: 'Code2',
-        coverImage: '/assets/services/software-dev.jpg',
+        coverImage: '/assets/services/custom-software.jpg',
         shortDescription:
           'Business management systems, ERP, CRM, admin dashboards, workflow software, and tailored enterprise applications.',
         detailedDescription:
@@ -214,7 +214,7 @@ const seedDatabase = async () => {
         title: 'Mobile Application Development',
         slug: 'mobile-apps',
         icon: 'Smartphone',
-        coverImage: '/assets/services/mobile-dev.jpg',
+        coverImage: '/assets/services/mobile-apps.jpg',
         shortDescription:
           'Android and iOS applications, customer apps, partner apps, and business mobility solutions.',
         detailedDescription:

@@ -10,6 +10,10 @@ import {
   Car,
   ShoppingBag,
   Store,
+  Globe,
+  Code2,
+  Smartphone,
+  TrendingUp,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
@@ -18,29 +22,37 @@ const serviceLinks = [
     name: 'Website Development',
     path: '/services/web-development',
     desc: 'Corporate sites, landing pages & dynamic web applications',
+    icon: Globe,
+    iconBox: 'bg-sky-50 text-brand-blue border-sky-200 group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue',
     hoverText: 'group-hover:text-brand-blue',
-    hoverBg: 'hover:bg-sky-50/70',
+    hoverBg: 'hover:bg-sky-50',
   },
   {
     name: 'Custom Software Development',
     path: '/services/custom-software',
     desc: 'Business management systems, ERP, CRM & tailored software',
+    icon: Code2,
+    iconBox: 'bg-slate-100 text-brand-navy border-slate-200 group-hover:bg-brand-navy group-hover:text-white group-hover:border-brand-navy',
     hoverText: 'group-hover:text-brand-navy',
-    hoverBg: 'hover:bg-slate-50/80',
+    hoverBg: 'hover:bg-slate-50',
   },
   {
     name: 'Mobile Application Development',
     path: '/services/mobile-apps',
     desc: 'Android & iOS customer and partner applications',
+    icon: Smartphone,
+    iconBox: 'bg-orange-50 text-brand-orange border-orange-200 group-hover:bg-brand-orange group-hover:text-white group-hover:border-brand-orange',
     hoverText: 'group-hover:text-brand-orange',
-    hoverBg: 'hover:bg-orange-50/70',
+    hoverBg: 'hover:bg-orange-50',
   },
   {
     name: 'Digital Marketing & SEO',
     path: '/services/digital-marketing',
     desc: 'SEO, digital campaigns, social visibility & lead generation',
+    icon: TrendingUp,
+    iconBox: 'bg-amber-50 text-amber-700 border-amber-200 group-hover:bg-amber-600 group-hover:text-white group-hover:border-amber-600',
     hoverText: 'group-hover:text-amber-700',
-    hoverBg: 'hover:bg-amber-50/70',
+    hoverBg: 'hover:bg-amber-50',
   },
 ];
 
@@ -228,20 +240,30 @@ export const Navbar = () => {
                     </span>
                     <span className="text-[9px] text-slate-400">4 Core Capabilities</span>
                   </div>
-                  {serviceLinks.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.path}
-                      className={`block p-2.5 rounded-xl ${item.hoverBg} transition-colors group`}
-                    >
-                      <div className={`text-xs font-bold text-brand-navy ${item.hoverText} transition-colors`}>
-                        {item.name}
-                      </div>
-                      <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug mt-0.5">
-                        {item.desc}
-                      </div>
-                    </Link>
-                  ))}
+                  {serviceLinks.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.name}
+                        to={item.path}
+                        className={`flex items-start space-x-3 p-2.5 rounded-xl ${item.hoverBg} transition-colors group`}
+                      >
+                        <div
+                          className={`w-8 h-8 rounded-lg flex items-center justify-center border shrink-0 transition-colors mt-0.5 ${item.iconBox}`}
+                        >
+                          <Icon className="w-4 h-4" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className={`text-xs font-bold text-brand-navy ${item.hoverText} transition-colors`}>
+                            {item.name}
+                          </div>
+                          <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug mt-0.5">
+                            {item.desc}
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
                   <div className="pt-2 px-2 border-t border-sky-100 mt-1">
                     <Link
                       to="/services"
@@ -437,15 +459,19 @@ export const Navbar = () => {
                 Vertical 1: IT Services &amp; Solutions
               </div>
               <div className="space-y-1 mt-1">
-                {serviceLinks.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className="block pl-6 pr-3 py-2 text-xs font-medium text-slate-600 hover:text-royal-600 hover:bg-royal-50 rounded-lg"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                {serviceLinks.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      className="flex items-center space-x-2.5 pl-4 pr-3 py-2 text-xs font-medium text-slate-700 hover:text-royal-600 hover:bg-royal-50 rounded-lg"
+                    >
+                      <Icon className="w-3.5 h-3.5 text-royal-600 shrink-0" />
+                      <span>{item.name}</span>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
 
