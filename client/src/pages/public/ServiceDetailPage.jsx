@@ -225,23 +225,14 @@ export const ServiceDetailPage = () => {
               </div>
             </div>
 
-            {/* Right: Bespoke 16:9 Widescreen Landscape 3D Tech Illustration Showcase Card */}
+            {/* Right: Clean Showcase Image (No Overlays / No Labels) */}
             <div className="lg:col-span-6">
-              <div className="bg-white rounded-3xl p-3 sm:p-4 shadow-xl border-2 border-sky-200 hover:border-sky-300 transition-all duration-300 group relative">
-                {/* Visual Label */}
-                <div className="flex items-center justify-between pb-2 px-1 text-[11px] font-mono text-slate-500 border-b border-sky-100 mb-2.5">
-                  <span className="font-bold text-brand-blue flex items-center">
-                    <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse mr-1.5" />
-                    16:9 Widescreen Architecture Showcase
-                  </span>
-                  <span className="text-slate-400 font-semibold">Namah Siddham IT</span>
-                </div>
-
-                {/* 16:9 Landscape 3D Illustration Image */}
+              <div className="bg-white rounded-3xl p-2 sm:p-2.5 shadow-xl border-2 border-sky-200 hover:border-sky-300 transition-all duration-300 group overflow-hidden">
+                {/* 16:9 Landscape Image */}
                 <div className="relative overflow-hidden rounded-2xl bg-sky-50 aspect-[16/9] flex items-center justify-center">
                   <img
                     src={serviceImageMap[service?.slug] || serviceImageMap[slug] || service?.coverImage || `/assets/services/${service?.slug || slug}.jpg`}
-                    alt={`${service.title} Architecture Showcase`}
+                    alt={service.title}
                     className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
                     loading="eager"
                     onError={(e) => {
@@ -251,15 +242,6 @@ export const ServiceDetailPage = () => {
                       }
                     }}
                   />
-                  {/* Subtle bottom badge */}
-                  <div className="absolute bottom-2.5 left-2.5 right-2.5 bg-white/95 px-3 py-1.5 rounded-xl border border-sky-200 shadow-xs flex items-center justify-between">
-                    <span className="text-[11px] font-bold text-brand-navy truncate">
-                      {service.title}
-                    </span>
-                    <span className="text-[10px] font-mono font-semibold text-brand-blue uppercase shrink-0 ml-2">
-                      16:9 Landscape
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
