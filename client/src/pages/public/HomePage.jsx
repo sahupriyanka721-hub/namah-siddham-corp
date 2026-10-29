@@ -304,7 +304,7 @@ export const HomePage = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
               {/* Step 1 */}
-              <div className="shiny-card bg-white/95 backdrop-blur-sm border-2 border-sky-100 hover:border-sky-300 rounded-2xl p-6 text-center space-y-3 hover:shadow-lg hover:shadow-sky-500/10 transition-all group">
+              <div className="shiny-card bg-white border-2 border-sky-100 hover:border-sky-300 rounded-2xl p-6 text-center space-y-3 hover:shadow-lg hover:shadow-sky-500/10 transition-all group">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 text-white font-bold text-sm mx-auto flex items-center justify-center shadow-md shadow-sky-500/20 group-hover:scale-110 transition-transform">
                   01
                 </div>
@@ -317,7 +317,7 @@ export const HomePage = () => {
               </div>
 
               {/* Step 2 */}
-              <div className="shiny-card bg-white/95 backdrop-blur-sm border-2 border-sky-100 hover:border-sky-300 rounded-2xl p-6 text-center space-y-3 hover:shadow-lg hover:shadow-sky-500/10 transition-all group">
+              <div className="shiny-card bg-white border-2 border-sky-100 hover:border-sky-300 rounded-2xl p-6 text-center space-y-3 hover:shadow-lg hover:shadow-sky-500/10 transition-all group">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-sky-600 text-white font-bold text-sm mx-auto flex items-center justify-center shadow-md shadow-sky-500/20 group-hover:scale-110 transition-transform">
                   02
                 </div>
@@ -330,7 +330,7 @@ export const HomePage = () => {
               </div>
 
               {/* Step 3 */}
-              <div className="shiny-card bg-white/95 backdrop-blur-sm border-2 border-sky-100 hover:border-sky-300 rounded-2xl p-6 text-center space-y-3 hover:shadow-lg hover:shadow-sky-500/10 transition-all group">
+              <div className="shiny-card bg-white border-2 border-sky-100 hover:border-sky-300 rounded-2xl p-6 text-center space-y-3 hover:shadow-lg hover:shadow-sky-500/10 transition-all group">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-bold text-sm mx-auto flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-110 transition-transform">
                   03
                 </div>
@@ -343,7 +343,7 @@ export const HomePage = () => {
               </div>
 
               {/* Step 4 */}
-              <div className="shiny-card bg-white/95 backdrop-blur-sm border-2 border-sky-100 hover:border-sky-300 rounded-2xl p-6 text-center space-y-3 hover:shadow-lg hover:shadow-sky-500/10 transition-all group">
+              <div className="shiny-card bg-white border-2 border-sky-100 hover:border-sky-300 rounded-2xl p-6 text-center space-y-3 hover:shadow-lg hover:shadow-sky-500/10 transition-all group">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white font-bold text-sm mx-auto flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:scale-110 transition-transform">
                   04
                 </div>
@@ -358,7 +358,7 @@ export const HomePage = () => {
           </div>
 
           {/* Clean, Sleek Model Notice Bar */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/95 backdrop-blur-sm border border-sky-200/90 rounded-2xl px-6 py-4 shadow-sm max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white border border-sky-200/90 rounded-2xl px-6 py-4 shadow-sm max-w-4xl mx-auto">
             <div className="flex items-center space-x-3 text-xs text-slate-600">
               <Info className="w-4 h-4 text-sky-600 shrink-0" />
               <span>

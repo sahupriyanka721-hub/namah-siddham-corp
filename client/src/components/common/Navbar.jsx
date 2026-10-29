@@ -128,10 +128,10 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-50 transition-all duration-300 bg-white ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md py-2.5 border-b border-sky-100'
-          : 'bg-white/90 backdrop-blur-md py-3 sm:py-3.5 border-b border-sky-100/80 shadow-sm shadow-sky-500/5'
+          ? 'shadow-md py-2.5 border-b border-sky-200'
+          : 'py-3 sm:py-3.5 border-b border-sky-100 shadow-xs'
       }`}
     >
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-sky-400 via-amber-400 to-orange-500" />
@@ -146,8 +146,8 @@ export const Navbar = () => {
             className="flex items-center space-x-3 sm:space-x-3.5 group focus:outline-none shrink-0"
             title="Namah Siddham Corporation Private Limited"
           >
-            {/* Elegant Logo Container */}
-            <div className="relative flex items-center justify-center p-1.5 rounded-2xl bg-gradient-to-br from-sky-500/10 via-sky-400/5 to-amber-500/10 border border-sky-200/70 shadow-xs shadow-sky-500/10 group-hover:scale-105 group-hover:border-sky-300 group-hover:shadow-md transition-all">
+            {/* Elegant Solid Logo Container (No Transparency) */}
+            <div className="relative flex items-center justify-center p-1.5 rounded-2xl bg-white border-2 border-sky-200 shadow-xs group-hover:scale-105 group-hover:border-sky-400 group-hover:shadow-md transition-all">
               <img
                 src="/assets/namah-siddham-emblem.svg"
                 onError={(e) => {
@@ -218,7 +218,7 @@ export const Navbar = () => {
               </Link>
 
               {servicesDropdown && (
-                <div className="absolute top-full left-0 w-84 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-sky-100 py-3 px-2 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2 overflow-hidden">
+                <div className="absolute top-full left-0 w-84 bg-white rounded-2xl shadow-2xl border border-sky-200 py-3 px-2 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2 overflow-hidden">
                   {/* Top Logo Brand Line */}
                   <div className="h-1 bg-gradient-to-r from-brand-blue via-brand-gold to-brand-orange -mx-2 -mt-3 mb-2" />
 
@@ -270,8 +270,8 @@ export const Navbar = () => {
                 to="/products"
                 className={`inline-flex items-center px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                   isActive('/products') || isActive('/ecosystem')
-                    ? 'text-brand-orange font-bold bg-orange-50/90'
-                    : 'text-slate-700 hover:text-brand-orange hover:bg-orange-50/60'
+                    ? 'text-brand-orange font-bold bg-orange-50'
+                    : 'text-slate-700 hover:text-brand-orange hover:bg-orange-50'
                 }`}
               >
                 <span>Product Ecosystem</span>
@@ -279,7 +279,7 @@ export const Navbar = () => {
               </Link>
 
               {productsDropdown && (
-                <div className="absolute top-full left-0 w-96 bg-white/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-orange-100 py-3 px-2 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2 overflow-hidden">
+                <div className="absolute top-full left-0 w-96 bg-white rounded-2xl shadow-2xl border border-orange-200 py-3 px-2 z-50 text-slate-900 mt-2 animate-in fade-in slide-in-from-top-2 overflow-hidden">
                   {/* Top Logo Brand Line */}
                   <div className="h-1 bg-gradient-to-r from-brand-orange via-brand-gold to-brand-blue -mx-2 -mt-3 mb-2" />
 
@@ -296,7 +296,7 @@ export const Navbar = () => {
                         key={prod.name}
                         to={prod.path}
                         title={`${prod.fullName} (${prod.status})`}
-                        className={`flex items-center space-x-3 p-2.5 rounded-xl ${prod.hoverBg} transition-all duration-150 group`}
+                        className={`flex items-center space-x-3 p-2.5 rounded-xl bg-white hover:bg-orange-50/90 border border-transparent hover:border-orange-100 transition-all duration-150 group`}
                       >
                         {/* Logo Color Aligned Icon Box */}
                         <div className={`w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 transition-all shadow-xs ${prod.iconBox}`}>
@@ -311,7 +311,7 @@ export const Navbar = () => {
                               {prod.status}
                             </span>
                           </div>
-                          <div className="text-[11px] text-slate-500 leading-snug group-hover:text-brand-navy transition-colors mt-0.5">
+                          <div className="text-[11px] text-slate-600 font-medium leading-snug group-hover:text-slate-950 transition-colors mt-0.5">
                             {prod.category}
                           </div>
                         </div>
@@ -407,7 +407,7 @@ export const Navbar = () => {
       {/* 6. MOBILE DRAWER MENU (Clean White Theme)                 */}
       {/* ========================================================= */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 px-5 pt-4 pb-8 space-y-3 max-h-[85vh] overflow-y-auto shadow-2xl">
+        <div className="lg:hidden bg-white border-b border-slate-200 px-5 pt-4 pb-8 space-y-3 max-h-[85vh] overflow-y-auto shadow-2xl">
           {/* Mobile Navigation List */}
           <div className="space-y-1">
             <Link
