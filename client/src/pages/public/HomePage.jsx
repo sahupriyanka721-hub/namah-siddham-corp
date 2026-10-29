@@ -80,10 +80,21 @@ export const HomePage = () => {
               </span>
             </h1>
 
-            {/* Clean, Lightweight Description with Brand Highlights */}
-            <p className="text-base sm:text-lg lg:text-xl text-slate-700 leading-relaxed font-normal max-w-3xl mx-auto">
-              <span className="font-bold text-brand-navy">Namah Siddham Corporation Private Limited</span> combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.
-            </p>
+            {/* Comprehensive Mission & Company Overview */}
+            <div className="space-y-3 text-sm sm:text-[15px] lg:text-base text-slate-700 leading-relaxed font-normal max-w-4xl mx-auto text-center">
+              <p>
+                At <strong className="font-bold text-brand-navy">Namah Siddham Corporation Private Limited</strong>, we believe that technology is more than just a tool — it is a powerful force for transforming ideas into opportunities and businesses into digital success stories.
+              </p>
+              <p>
+                We combine our expertise in website development, custom software solutions, mobile application development, and digital marketing with a growing ecosystem of innovative digital products designed to simplify everyday needs and connect people, businesses, and opportunities.
+              </p>
+              <p>
+                From helping businesses establish a strong online presence and streamline their operations to building specialized platforms such as <span className="font-semibold text-brand-blue">HomeServixo</span>, <span className="font-semibold text-brand-orange">Carrento</span>, <span className="font-semibold text-amber-700">Jainamshree</span>, and <span className="font-semibold text-emerald-700">SuperiorMart</span>, our vision is to create meaningful digital experiences that bring convenience, connectivity, and new possibilities to the modern world.
+              </p>
+              <p>
+                Whether you are a startup with a bold idea, an established business ready to embrace digital transformation, or a customer or partner looking to be part of an evolving digital ecosystem, Namah Siddham aims to bring the right technology, practical solutions, and forward-thinking approach to help you move ahead with confidence.
+              </p>
+            </div>
 
             {/* Shiny CTAs matching Logo Palette */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
