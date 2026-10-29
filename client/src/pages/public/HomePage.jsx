@@ -366,10 +366,10 @@ export const HomePage = () => {
               </span>
             </div>
             <Link
-              to="/business-model"
+              to="/products"
               className="inline-flex items-center text-xs font-bold text-sky-700 hover:text-sky-800 whitespace-nowrap group shrink-0"
             >
-              <span>View Full Framework</span>
+              <span>Explore Platforms</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
