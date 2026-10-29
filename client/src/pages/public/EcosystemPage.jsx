@@ -48,16 +48,38 @@ export const EcosystemPage = () => {
       <section className="bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 py-16 border-b border-sky-200/80 relative overflow-hidden">
         <div className="absolute top-0 right-10 w-96 h-96 bg-orange-400/15 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
-          <div className="shiny-badge inline-flex items-center space-x-2 px-4.5 py-1.5 rounded-full text-orange-700 text-xs font-semibold">
+          <div className="shiny-badge inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-orange-700 text-xs font-semibold bg-white border border-orange-200 shadow-xs">
             <Layers className="w-3.5 h-3.5 mr-1 text-orange-600" />
             <span>Vertical 2: Digital Products &amp; Aggregator Platforms</span>
           </div>
-          <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
-            Our Digital Products &amp; <span className="text-gradient-orange">Platforms</span>
+
+          {/* Headline in 2-3 lines with high visual hierarchy */}
+          <h1 className="font-serif font-black text-3xl sm:text-5xl lg:text-5xl text-brand-navy tracking-tight leading-[1.2]">
+            Discover Our Products
+            <span className="block text-2xl sm:text-3xl lg:text-4xl text-slate-800 font-bold mt-1.5">
+              Specialized Marketplaces &amp;{' '}
+              <span className="text-gradient-orange">Aggregator Ecosystem</span>
+            </span>
           </h1>
-          <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
-            Namah Siddham Corporation Private Limited builds and operates specialized digital marketplaces designed to streamline discovery, booking, and fulfillment across essential everyday sectors.
+
+          {/* Supporting Text with readable width */}
+          <p className="text-base sm:text-lg text-slate-700 max-w-3xl leading-relaxed font-normal">
+            We build and operate purpose-driven digital aggregator platforms designed to streamline consumer discovery, on-demand bookings, and verified partner fulfillment across essential everyday sectors.
           </p>
+
+          {/* Final Bold Statement with Golden-Yellow Accent highlighting dual strengths */}
+          <div className="pt-2 max-w-3xl">
+            <div className="p-4 rounded-2xl bg-amber-50/90 border-l-4 border-amber-400 border-y border-r border-amber-200 shadow-xs">
+              <p className="text-xs sm:text-sm text-slate-800 leading-relaxed">
+                <span className="font-bold text-amber-900 uppercase tracking-wider text-[11px] font-mono block mb-1">
+                  Strategic Corporate Model
+                </span>
+                <strong className="text-brand-navy font-bold">
+                  Namah Siddham Corporation combines bespoke client-focused IT Services &amp; Digital Solutions with the strategic development of our own proprietary online product ecosystems.
+                </strong>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
