@@ -156,18 +156,10 @@ export const Navbar = () => {
             </div>
 
             {/* Typography in exact corporate colors (Dark Navy + Royal Blue + Gold) */}
-            <div className="flex flex-col">
+            <div className="flex flex-col justify-center">
               <span className="font-heading font-black text-base sm:text-lg text-brand-navy tracking-wide leading-tight group-hover:text-brand-blue transition-colors">
                 NAMAH SIDDHAM
               </span>
-              <div className="flex items-center space-x-1.5 mt-0.5">
-                <span className="text-[10px] sm:text-[11px] font-extrabold text-brand-blue tracking-[0.2em] uppercase font-mono">
-                  CORPORATION
-                </span>
-                <span className="text-[8px] sm:text-[9px] font-bold text-brand-orange bg-amber-50/90 px-1.5 py-0.5 rounded border border-amber-200 font-mono tracking-wider">
-                  BHOPAL, MP
-                </span>
-              </div>
             </div>
           </Link>
 
