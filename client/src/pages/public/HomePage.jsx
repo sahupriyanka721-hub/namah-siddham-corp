@@ -72,9 +72,9 @@ export const HomePage = () => {
           <div className="space-y-5 max-w-4xl mx-auto">
             {/* Clean, Elegant Headline in Brand Navy & Logo Gradient */}
             <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-[46px] xl:text-[50px] text-brand-navy tracking-tight leading-[1.25]">
-              Technology That Builds Businesses and{' '}
+              Empowering Businesses Through Technology,{' '}
               <span className="text-gradient-ns">
-                Connects Opportunities
+                Innovation &amp; Digital Transformation
               </span>
             </h1>
 
