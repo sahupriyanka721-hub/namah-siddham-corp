@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, ExternalLink, ShieldCheck, Lock, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ExternalLink, ShieldCheck, ArrowUpRight } from 'lucide-react';
 import { useSettings } from '../../context/SettingsContext';
 
 export const Footer = () => {
@@ -251,13 +251,6 @@ export const Footer = () => {
               {settings.footerContent?.copyrightText ||
                 '© 2026 Namah Siddham Corporation Private Limited. All rights reserved.'}
             </p>
-            <Link
-              to="/admin/login"
-              className="text-navy-700 hover:text-gold-400 transition-colors p-1"
-              title="Admin Portal"
-            >
-              <Lock className="w-3.5 h-3.5" />
-            </Link>
           </div>
         </div>
       </div>
