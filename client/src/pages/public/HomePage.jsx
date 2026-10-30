@@ -123,17 +123,15 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="shiny-glass rounded-3xl p-6 sm:p-8 border border-sky-200/90 shadow-xl shadow-sky-500/10 space-y-5">
-          <div className="max-w-4xl space-y-3">
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full shrink-0">
-                Corporate Overview
-              </span>
-              <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy">
-                One Company.{' '}
-                <span className="text-gradient-ns">Two Digital Growth Verticals.</span>
-              </h2>
-            </div>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+          <div className="max-w-4xl mx-auto space-y-3 text-center flex flex-col items-center">
+            <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
+              Corporate Overview
+            </span>
+            <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy text-center">
+              One Company.{' '}
+              <span className="text-gradient-ns">Two Digital Growth Verticals.</span>
+            </h2>
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed text-center max-w-3xl">
               <strong className="text-brand-navy">Namah Siddham Corporation Private Limited</strong> operates across two complementary business domains. We combine engineering excellence for custom digital solutions with the strategic development of focused online marketplaces and aggregator networks.
             </p>
           </div>
@@ -195,14 +193,14 @@ export const HomePage = () => {
       {/* SECTION C: WHY CHOOSE US (Streamlined & Attractive 4-Pillar Architecture)  */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <div className="max-w-4xl space-y-2.5">
-          <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full w-fit">
+        <div className="max-w-3xl mx-auto space-y-2.5 text-center flex flex-col items-center">
+          <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
             Our Strengths
           </span>
-          <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy">
+          <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy text-center">
             Why Choose <span className="text-gradient-ns">Namah Siddham</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-700 leading-relaxed text-center">
             A structured, engineering-first approach engineered for digital scalability, partner growth, and dependable operations.
           </p>
         </div>
@@ -300,14 +298,14 @@ export const HomePage = () => {
         <div className="absolute top-1/2 right-10 -translate-y-1/2 w-96 h-96 bg-gold-400/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
-          <div className="max-w-4xl space-y-2.5">
-            <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full w-fit">
+          <div className="max-w-3xl mx-auto space-y-2.5 text-center flex flex-col items-center">
+            <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
               Operational Framework
             </span>
-            <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy">
+            <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy text-center">
               How Our Business Model <span className="text-gradient-ns">Creates Value</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed text-center">
               A streamlined 4-stage digital pipeline connecting real consumer needs with specialized platforms and verified partners.
             </p>
           </div>
@@ -395,26 +393,26 @@ export const HomePage = () => {
       {/* SECTION G: PORTFOLIO */}
       {/* ========================================================================= */}
       <section id="portfolio" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="max-w-4xl space-y-2.5">
-            <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full w-fit">
-              Engineering Showcase
-            </span>
-            <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy">
-              Selected Projects &amp;{' '}
-              <span className="text-gradient-blue">Case Studies</span>
-            </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-              Completed software architectures, digital platform demonstrations, and internal technology implementations.
-            </p>
+        <div className="max-w-3xl mx-auto space-y-2.5 text-center flex flex-col items-center">
+          <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
+            Engineering Showcase
+          </span>
+          <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy text-center">
+            Selected Projects &amp;{' '}
+            <span className="text-gradient-blue">Case Studies</span>
+          </h2>
+          <p className="text-sm sm:text-base text-slate-700 leading-relaxed text-center">
+            Completed software architectures, digital platform demonstrations, and internal technology implementations.
+          </p>
+          <div className="pt-1">
+            <Link
+              to="/portfolio"
+              className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-sky-700 hover:text-sky-800 px-4 py-2 rounded-full"
+            >
+              <span>View Full Portfolio</span>
+              <ArrowRight className="w-4 h-4 ml-1.5" />
+            </Link>
           </div>
-          <Link
-            to="/portfolio"
-            className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-sky-700 hover:text-sky-800 px-4 py-2 rounded-full shrink-0"
-          >
-            <span>View Full Portfolio</span>
-            <ArrowRight className="w-4 h-4 ml-1.5" />
-          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -579,21 +577,22 @@ export const HomePage = () => {
       {/* ========================================================================= */}
       {news && news.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="flex items-center justify-between">
-            <div className="space-y-1">
-              <span className="shiny-badge inline-block text-xs font-bold text-sky-700 uppercase tracking-widest font-serif px-3 py-1 rounded-full">
-                Corporate Communications
-              </span>
-              <h2 className="font-serif font-black text-2xl sm:text-3xl text-slate-950">
-                Latest Updates &amp; Announcements
-              </h2>
+          <div className="max-w-3xl mx-auto space-y-2 text-center flex flex-col items-center">
+            <span className="shiny-badge inline-flex items-center text-xs font-bold text-sky-700 uppercase tracking-widest font-mono px-3 py-1 rounded-full">
+              Corporate Communications
+            </span>
+            <h2 className="font-serif font-black text-2xl sm:text-3xl text-slate-950 text-center">
+              Latest Updates &amp; Announcements
+            </h2>
+            <div className="pt-1">
+              <Link
+                to="/news"
+                className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-sky-700 hover:text-sky-800 px-4 py-1.5 rounded-full"
+              >
+                <span>View All Updates</span>
+                <ArrowRight className="w-3.5 h-3.5 ml-1" />
+              </Link>
             </div>
-            <Link
-              to="/news"
-              className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-sky-700 hover:text-sky-800 px-3.5 py-1.5 rounded-full"
-            >
-              All Updates →
-            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
