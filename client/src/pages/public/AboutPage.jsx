@@ -12,7 +12,6 @@ import {
   Code2,
   Layers,
   ArrowRight,
-  Sparkles,
 } from 'lucide-react';
 import { publicApi } from '../../api/publicApi';
 import { useSettings } from '../../context/SettingsContext';
@@ -152,17 +151,6 @@ export const AboutPage = () => {
               
               {/* Top Accent Line */}
               <div className="h-1 bg-gradient-to-r from-brand-blue via-amber-400 to-brand-orange -mx-4 sm:-mx-5 -mt-4 sm:-mt-5 mb-4 rounded-t-3xl" />
-
-              {/* Brand Statement Pill: "Technology • Innovation • Opportunity" */}
-              <div className="flex items-center justify-between pb-3 border-b border-sky-100 mb-3.5">
-                <span className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-sky-50 to-amber-50 border border-sky-200 text-xs font-bold text-brand-navy font-mono shadow-xs">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-500 mr-1.5" />
-                  Technology • Innovation • Opportunity
-                </span>
-                <span className="text-[11px] font-mono font-semibold text-brand-blue">
-                  Bhopal, MP
-                </span>
-              </div>
 
               {/* High-Resolution Visual Representation */}
               <div className="relative overflow-hidden rounded-2xl bg-sky-50 aspect-[16/10] border border-sky-100 shadow-sm mb-4">
