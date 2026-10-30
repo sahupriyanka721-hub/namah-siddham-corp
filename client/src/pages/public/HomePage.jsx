@@ -80,15 +80,15 @@ export const HomePage = () => {
               </span>
             </h1>
 
-            {/* Elegantly Arranged Mission & Overview Narrative */}
-            <div className="max-w-4xl mx-auto space-y-3.5 text-center">
-              <p className="text-base sm:text-lg text-slate-800 font-medium leading-relaxed max-w-3xl mx-auto">
+            {/* Properly Center-Aligned 3-Paragraph Narrative */}
+            <div className="max-w-3xl mx-auto space-y-4 text-center">
+              <p className="text-base sm:text-lg text-slate-800 font-medium leading-relaxed text-center">
                 At <strong className="font-bold text-brand-navy">Namah Siddham Corporation Private Limited</strong>, we believe that technology is more than just a tool — it is a powerful force for transforming ideas into opportunities and businesses into digital success stories.
               </p>
-              <p className="text-sm sm:text-[15px] text-slate-600 leading-relaxed font-normal max-w-3xl mx-auto">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal text-center">
                 We combine our expertise in website development, custom software solutions, mobile application development, and digital marketing with a growing ecosystem of innovative digital products designed to simplify everyday needs and connect people, businesses, and opportunities. From helping businesses establish a strong online presence and streamline their operations to building specialized platforms such as <span className="font-semibold text-brand-blue">HomeServixo</span>, <span className="font-semibold text-brand-orange">Carrento</span>, <span className="font-semibold text-amber-700">Jainamshree</span>, and <span className="font-semibold text-emerald-700">SuperiorMart</span>, our vision is to create meaningful digital experiences that bring convenience, connectivity, and new possibilities to the modern world.
               </p>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal max-w-3xl mx-auto pt-0.5">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal text-center">
                 Whether you are a startup with a bold idea, an established business ready to embrace digital transformation, or a customer or partner looking to be part of an evolving digital ecosystem, Namah Siddham aims to bring the right technology, practical solutions, and forward-thinking approach to help you move ahead with confidence.
               </p>
             </div>
