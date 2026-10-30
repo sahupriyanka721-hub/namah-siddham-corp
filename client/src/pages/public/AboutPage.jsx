@@ -67,9 +67,10 @@ export const AboutPage = () => {
           <div className="shiny-badge inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-brand-blue text-xs font-semibold bg-white border border-sky-200 shadow-xs">
             <span>About Namah Siddham Corporation</span>
           </div>
-          <h1 className="font-serif font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[42px] text-brand-navy tracking-tight leading-tight sm:whitespace-nowrap">
-            Building Digital Solutions. Connecting Opportunities.{' '}
-            <span className="text-gradient-ns">Empowering Growth.</span>
+          <h1 className="font-sans font-black text-2xl sm:text-3xl md:text-4xl lg:text-[42px] tracking-tight leading-snug">
+            <span className="text-brand-navy">Building Digital Solutions.</span>{' '}
+            <span className="text-brand-blue">Connecting Opportunities.</span>{' '}
+            <span className="text-gradient-ns inline-block">Empowering Growth.</span>
           </h1>
           <p className="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed font-normal">
             Corporate Profile &amp; Digital Operating Philosophy • CIN: {settings.cin || 'U77100MP2026PTC087531'}
