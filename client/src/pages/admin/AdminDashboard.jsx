@@ -11,7 +11,6 @@ import {
   Newspaper,
   PlusCircle,
   ArrowRight,
-  Database,
   CheckCircle2,
   AlertCircle,
   ExternalLink,
@@ -89,17 +88,8 @@ export const AdminDashboard = () => {
             </p>
           </div>
 
-          {/* Quick status & fast actions */}
+          {/* Quick fast actions */}
           <div className="flex flex-wrap lg:flex-col xl:flex-row items-start lg:items-end gap-3 shrink-0">
-            {/* Database status pill */}
-            <div className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-2xl bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-semibold backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <Database className="w-3.5 h-3.5" />
-              <span className="font-mono">
-                MongoDB: {system.databaseStatus || 'Connected'}
-              </span>
-            </div>
-
             {/* Quick action buttons */}
             <div className="flex items-center gap-2">
               <Link
