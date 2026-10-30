@@ -67,7 +67,7 @@ export const AboutPage = () => {
           <div className="shiny-badge inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-brand-blue text-xs font-semibold bg-white border border-sky-200 shadow-xs">
             <span>About Namah Siddham Corporation</span>
           </div>
-          <h1 className="font-sans font-black text-2xl sm:text-3xl md:text-4xl lg:text-[42px] tracking-tight leading-snug">
+          <h1 className="font-sans font-black text-[13px] xs:text-[15px] sm:text-lg md:text-2xl lg:text-[28px] xl:text-[32px] tracking-tight leading-tight whitespace-nowrap">
             <span className="text-brand-navy">Building Digital Solutions.</span>{' '}
             <span className="text-brand-blue">Connecting Opportunities.</span>{' '}
             <span className="text-gradient-ns inline-block">Empowering Growth.</span>
