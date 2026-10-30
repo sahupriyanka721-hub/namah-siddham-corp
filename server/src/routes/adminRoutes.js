@@ -67,6 +67,13 @@ import {
   updateJobApplicationStatus,
   deleteJobApplication,
 } from '../controllers/inquiryController.js';
+import {
+  getAllAgreements,
+  getAgreementById,
+  createAgreement,
+  updateAgreement,
+  deleteAgreement,
+} from '../controllers/agreementController.js';
 
 const router = express.Router();
 
@@ -143,5 +150,12 @@ router.delete('/inquiries/partners/:id', deletePartnerInquiry);
 router.get('/inquiries/applications', getJobApplications);
 router.patch('/inquiries/applications/:id', updateJobApplicationStatus);
 router.delete('/inquiries/applications/:id', deleteJobApplication);
+
+// Client Agreements & Legal Contracts
+router.get('/agreements', getAllAgreements);
+router.post('/agreements', createAgreement);
+router.get('/agreements/:id', getAgreementById);
+router.put('/agreements/:id', updateAgreement);
+router.delete('/agreements/:id', deleteAgreement);
 
 export default router;

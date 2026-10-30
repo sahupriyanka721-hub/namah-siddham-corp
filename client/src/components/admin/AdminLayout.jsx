@@ -16,6 +16,7 @@ const routeTitles = {
   '/admin/inquiries': 'Corporate Contact Inquiries',
   '/admin/partner-inquiries': 'Partnership Inquiries',
   '/admin/applications': 'Recruitment Applications',
+  '/admin/agreements': 'Client Agreements & Legal Contracts',
   '/admin/legal': 'Legal Policies & Compliance CMS',
   '/admin/settings': 'Company & Identity Settings',
   '/admin/profile': 'Admin Profile & Security',

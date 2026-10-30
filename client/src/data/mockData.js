@@ -310,3 +310,120 @@ export const mockDashboardStats = {
     applications: mockApplications,
   },
 };
+
+export const mockAgreements = [
+  {
+    _id: 'agr_mansharp_qureo_2025',
+    agreementNumber: 'AGR-2025-MANSHARP-001',
+    title: 'SOFTWARE DEVELOPMENT AGREEMENT',
+    agreementDate: '30th day of October 2025',
+    effectiveDate: '30th October 2025',
+    status: 'Signed',
+    developer: {
+      companyName: 'Mansharp Technologies Private Limited',
+      registeredOffice: 'C-18, Padmanabh Nagar, Near Prabhat Petrol Pump, Bhopal, Madhya Pradesh, India',
+      role: 'Developer',
+      authorizedSignatory: 'Director / Authorized Signatory',
+      email: 'info@mansharptechnologies.com',
+      phone: '+91 9516262715',
+      jurisdictionCity: 'Bhopal, Madhya Pradesh',
+    },
+    client: {
+      companyName: 'Qureo Technologies Private Limited',
+      registeredOffice: 'H.no 95 WARD NO 10, BH. SANTOSHI MATA MANDIR, Satna Tikuria Tola, Raghurajnagar, Satna- 485001, Madhya Pradesh',
+      role: 'Client',
+      authorizedSignatory: 'Managing Director / Authorized Representative',
+      email: 'contact@qureo.in',
+      phone: '+91 7672200000',
+      jurisdictionCity: 'Satna, Madhya Pradesh',
+    },
+    projectName: 'Custom Enterprise Software & Scalable Multi-Tier Application Suite',
+    scopeSummary: 'Comprehensive end-to-end full-stack software development, architectural design, REST/GraphQL APIs, responsive cross-device UI/UX, administrative dashboard, secure database modeling, cloud server deployment, and 90-day post-launch warranty maintenance.',
+    contractValue: '₹ 4,50,000 + 18% GST',
+    paymentTerms: 'Milestone-based billing: 30% Advance on signing, 30% on Alpha architecture & UI prototypes, 30% on Beta testing & UAT approval, and 10% on final production deployment and source code handover.',
+    deliverables: [
+      {
+        milestone: 'Milestone 1: Architecture & UI/UX',
+        description: 'System requirement specification (SRS), system architecture, interactive Figma UI/UX prototypes, and database ER schemas.',
+        timeline: 'Week 1 - 2',
+        amount: '₹ 1,35,000 (30%)',
+      },
+      {
+        milestone: 'Milestone 2: Core Engineering & Alpha Release',
+        description: 'Backend microservices, secure authentication, database persistence, core API development, and working Alpha front-end integration.',
+        timeline: 'Week 3 - 6',
+        amount: '₹ 1,35,000 (30%)',
+      },
+      {
+        milestone: 'Milestone 3: Complete Integration & Beta Testing',
+        description: 'Full feature implementation, third-party payment & SMS gateways, stress/security testing, and staging environment UAT sign-off.',
+        timeline: 'Week 7 - 9',
+        amount: '₹ 1,35,000 (30%)',
+      },
+      {
+        milestone: 'Milestone 4: Cloud Deployment & Handover',
+        description: 'Production cloud server provisioning, SSL configuration, complete source code repository transfer, and administrator manuals.',
+        timeline: 'Week 10',
+        amount: '₹ 45,000 (10%)',
+      },
+    ],
+    clauses: [
+      {
+        clauseNumber: '1',
+        title: 'Definitions & Interpretation',
+        content: 'In this Agreement, unless context otherwise requires: (a) "Deliverables" means all software code, scripts, database architectures, graphics, documentation, and user manuals developed by Developer for Client; (b) "Intellectual Property Rights" means all patents, copyrights, trademarks, trade dress, trade secrets, know-how, and proprietary technical rights; (c) "Confidential Information" means all non-public technical, operational, commercial, and financial information disclosed by either party directly or indirectly.',
+      },
+      {
+        clauseNumber: '2',
+        title: 'Scope of Services & Developer Obligations',
+        content: 'The Developer agrees to design, engineer, test, and deliver the custom software application strictly in accordance with mutually approved specifications. The Developer will assign certified software engineers, adhere to modern software industry standards (OWASP compliance, responsive design, clean code practices), and submit weekly sprint progress reports to the Client.',
+      },
+      {
+        clauseNumber: '3',
+        title: 'Client Obligations, Materials & Access',
+        content: 'The Client shall provide necessary domain credentials, third-party API keys, corporate assets, and timely written reviews or approvals within five (5) business days of milestone submissions. Any delay in client feedback will automatically extend the milestone timeline proportionally without breach or penalty on the Developer.',
+      },
+      {
+        clauseNumber: '4',
+        title: 'Consideration, Fees & Invoicing',
+        content: 'In consideration of the development services rendered, the Client agrees to pay the total agreed project fees as per the Milestone Schedule. Invoices issued by the Developer shall be settled within seven (7) business days via electronic bank transfer (NEFT/RTGS/IMPS). All statutory taxes including 18% Goods and Services Tax (GST) shall be charged over and above agreed rates.',
+      },
+      {
+        clauseNumber: '5',
+        title: 'Intellectual Property Rights & Source Code Handover',
+        content: 'Subject to the full and unconditional settlement of all agreed dues and milestone invoices by the Client, Developer shall assign and transfer all exclusive copyright, title, and ownership in the custom code specifically created for the Client. Developer retains ownership of its pre-existing foundational libraries, generic utility modules, and reusable core frameworks.',
+      },
+      {
+        clauseNumber: '6',
+        title: 'Confidentiality & Non-Disclosure (NDA)',
+        content: 'Both parties agree to treat all business information, source code, user databases, commercial terms, and trade secrets as strictly confidential. Neither party shall disclose Confidential Information to any third party without prior written consent, surviving for a period of three (3) years post-termination.',
+      },
+      {
+        clauseNumber: '7',
+        title: 'Warranty & 90-Day Post-Launch Bug Fixing Period',
+        content: 'The Developer warrants that the delivered software will function substantially in accordance with the agreed specifications for a period of ninety (90) days following production deployment ("Warranty Period"). The Developer shall fix any reproducible bugs, functional anomalies, or system defects discovered during this period at no additional cost.',
+      },
+      {
+        clauseNumber: '8',
+        title: 'Term & Termination',
+        content: 'This Agreement takes effect on the Effective Date and remains valid until completion of deliverables or termination. Either party may terminate this Agreement with thirty (30) days written notice in case of a material breach uncured within fifteen (15) days. Upon termination, Client shall pay for all work completed up to the date of termination.',
+      },
+      {
+        clauseNumber: '9',
+        title: 'Limitation of Liability & Indemnification',
+        content: 'Neither party shall be liable for indirect, incidental, or consequential damages. Developer total aggregate liability arising out of or related to this Agreement shall be limited to the total fees actually received by Developer under this Agreement.',
+      },
+      {
+        clauseNumber: '10',
+        title: 'Governing Law & Bhopal Jurisdiction',
+        content: 'This Agreement shall be governed by, construed, and enforced in accordance with the substantive laws of India. Any disputes, claims, or legal proceedings arising hereunder shall be subject to the exclusive jurisdiction of the competent courts situated at Bhopal, Madhya Pradesh, India.',
+      },
+    ],
+    signedByDeveloper: true,
+    signedByClient: true,
+    notes: 'Official executed contract between Mansharp Technologies Private Limited and Qureo Technologies Private Limited.',
+    createdAt: '2025-10-30T10:00:00.000Z',
+    updatedAt: '2025-10-30T10:00:00.000Z',
+  },
+];
+

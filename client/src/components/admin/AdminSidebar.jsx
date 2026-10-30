@@ -6,6 +6,7 @@ import {
   Layers,
   FolderGit2,
   FileCode,
+  FileText,
   Users2,
   Newspaper,
   Briefcase,
@@ -55,6 +56,7 @@ const menuGroups = [
   {
     title: 'Governance & Settings',
     items: [
+      { name: 'Client Agreements', path: '/admin/agreements', icon: FileText },
       { name: 'Legal Policies CMS', path: '/admin/legal', icon: Scale },
       { name: 'Company Settings', path: '/admin/settings', icon: Settings },
       { name: 'Admin Profile', path: '/admin/profile', icon: UserCircle },

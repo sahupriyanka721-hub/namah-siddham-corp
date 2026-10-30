@@ -17,6 +17,8 @@ import PageContent from '../models/PageContent.js';
 import LeadershipMember from '../models/LeadershipMember.js';
 import NewsArticle from '../models/NewsArticle.js';
 import JobOpening from '../models/JobOpening.js';
+import Agreement from '../models/Agreement.js';
+import { defaultSeedAgreement } from '../controllers/agreementController.js';
 
 const seedDatabase = async () => {
   try {
@@ -851,6 +853,16 @@ You can adjust cookie settings through your browser. Please note that disabling 
     for (const m of leadership) {
       await LeadershipMember.findOneAndUpdate({ name: m.name }, m, { upsert: true, new: true });
       console.log(`[Seed] Leadership seeded: ${m.name}`);
+    }
+
+    // 10. Seed Default Client Agreement (Mansharp Technologies & Qureo Technologies)
+    console.log('[Seed] Seeding Software Development Agreement...');
+    const existingAgr = await Agreement.findOne({ agreementNumber: defaultSeedAgreement.agreementNumber });
+    if (!existingAgr) {
+      await Agreement.create(defaultSeedAgreement);
+      console.log(`[Seed] Client Agreement seeded: ${defaultSeedAgreement.agreementNumber}`);
+    } else {
+      console.log(`[Seed] Client Agreement already exists: ${defaultSeedAgreement.agreementNumber}`);
     }
 
     console.log('\n======================================================');

@@ -7,6 +7,7 @@ import {
   mockInquiries,
   mockPartnerInquiries,
   mockApplications,
+  mockAgreements,
 } from '../data/mockData';
 
 const withFallback = async (apiCall, getFallback) => {
@@ -31,6 +32,18 @@ const getStoredPartners = () => {
 const getStoredApplications = () => {
   const local = JSON.parse(localStorage.getItem('namah_mock_applications') || '[]');
   return [...local, ...mockApplications];
+};
+
+const getStoredAgreements = () => {
+  const local = JSON.parse(localStorage.getItem('namah_mock_agreements') || 'null');
+  if (local && Array.isArray(local) && local.length > 0) {
+    return local;
+  }
+  return mockAgreements;
+};
+
+const saveStoredAgreements = (agreements) => {
+  localStorage.setItem('namah_mock_agreements', JSON.stringify(agreements));
 };
 
 export const adminApi = {
@@ -410,5 +423,93 @@ export const adminApi = {
     withFallback(
       () => apiClient.delete(`/admin/inquiries/applications/${id}`),
       { success: true, message: 'Application removed.' }
+    ),
+
+  // Client Agreements & Legal Contracts
+  getAgreements: (params) =>
+    withFallback(
+      () => apiClient.get('/admin/agreements', { params }),
+      () => {
+        let items = getStoredAgreements();
+        if (params?.status && params.status !== 'all') {
+          items = items.filter((a) => a.status?.toLowerCase() === params.status?.toLowerCase());
+        }
+        if (params?.search) {
+          const q = params.search.toLowerCase();
+          items = items.filter(
+            (a) =>
+              a.agreementNumber?.toLowerCase().includes(q) ||
+              a.title?.toLowerCase().includes(q) ||
+              a.developer?.companyName?.toLowerCase().includes(q) ||
+              a.client?.companyName?.toLowerCase().includes(q) ||
+              a.projectName?.toLowerCase().includes(q)
+          );
+        }
+        return {
+          success: true,
+          data: items,
+          count: items.length,
+        };
+      }
+    ),
+
+  getAgreementById: (id) =>
+    withFallback(
+      () => apiClient.get(`/admin/agreements/${id}`),
+      () => {
+        const item =
+          getStoredAgreements().find((a) => a._id === id || a.agreementNumber === id) ||
+          mockAgreements[0];
+        return { success: true, data: item };
+      }
+    ),
+
+  createAgreement: (data) =>
+    withFallback(
+      () => apiClient.post('/admin/agreements', data),
+      () => {
+        const list = getStoredAgreements();
+        const newDoc = {
+          ...data,
+          _id: 'agr_' + Date.now(),
+          agreementNumber:
+            data.agreementNumber ||
+            `AGR-${new Date().getFullYear()}-${String(list.length + 1).padStart(3, '0')}`,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+        };
+        const updated = [newDoc, ...list];
+        saveStoredAgreements(updated);
+        return { success: true, message: 'Agreement created successfully.', data: newDoc };
+      }
+    ),
+
+  updateAgreement: (id, data) =>
+    withFallback(
+      () => apiClient.put(`/admin/agreements/${id}`, data),
+      () => {
+        const list = getStoredAgreements();
+        const index = list.findIndex((a) => a._id === id || a.agreementNumber === id);
+        let updatedDoc;
+        if (index !== -1) {
+          list[index] = { ...list[index], ...data, updatedAt: new Date().toISOString() };
+          updatedDoc = list[index];
+        } else {
+          updatedDoc = { ...data, _id: id, updatedAt: new Date().toISOString() };
+          list.push(updatedDoc);
+        }
+        saveStoredAgreements(list);
+        return { success: true, message: 'Agreement updated successfully.', data: updatedDoc };
+      }
+    ),
+
+  deleteAgreement: (id) =>
+    withFallback(
+      () => apiClient.delete(`/admin/agreements/${id}`),
+      () => {
+        const list = getStoredAgreements().filter((a) => a._id !== id && a.agreementNumber !== id);
+        saveStoredAgreements(list);
+        return { success: true, message: 'Agreement deleted successfully.' };
+      }
     ),
 };

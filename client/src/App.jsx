@@ -37,6 +37,7 @@ import AdminCareers from './pages/admin/AdminCareers';
 import AdminInquiries from './pages/admin/AdminInquiries';
 import AdminPartnerInquiries from './pages/admin/AdminPartnerInquiries';
 import AdminApplications from './pages/admin/AdminApplications';
+import AdminAgreements from './pages/admin/AdminAgreements';
 import AdminLegal from './pages/admin/AdminLegal';
 import AdminSettings from './pages/admin/AdminSettings';
 import AdminProfile from './pages/admin/AdminProfile';
@@ -118,6 +119,7 @@ export function App() {
         <Route path="inquiries" element={<AdminInquiries />} />
         <Route path="partner-inquiries" element={<AdminPartnerInquiries />} />
         <Route path="applications" element={<AdminApplications />} />
+        <Route path="agreements" element={<AdminAgreements />} />
         <Route path="legal" element={<AdminLegal />} />
         <Route path="settings" element={<AdminSettings />} />
         <Route path="profile" element={<AdminProfile />} />
