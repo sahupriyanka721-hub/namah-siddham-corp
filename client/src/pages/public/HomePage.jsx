@@ -80,51 +80,21 @@ export const HomePage = () => {
               </span>
             </h1>
 
-            {/* Balanced Line-by-Line Narrative without trailing words */}
-            <div className="max-w-5xl mx-auto space-y-3.5 text-center">
-              {/* Paragraph 1: Balanced 2 Lines */}
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-center">
-                <span className="block">
-                  At <strong className="font-bold text-brand-navy">Namah Siddham Corporation Private Limited</strong>, we believe that technology is more than just a tool —
-                </span>
-                <span className="block">
-                  it is a powerful force for transforming ideas into opportunities and businesses into digital success stories.
-                </span>
+            {/* Left-Aligned Corporate Narrative */}
+            <div className="max-w-4xl mx-auto space-y-4 text-left">
+              {/* Paragraph 1 */}
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-left">
+                At <strong className="font-bold text-brand-navy">Namah Siddham Corporation Private Limited</strong>, we believe that technology is more than just a tool — it is a powerful force for transforming ideas into opportunities and businesses into digital success stories.
               </p>
 
-              {/* Paragraph 2: Balanced 6 Lines */}
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-center">
-                <span className="block">
-                  We combine our expertise in website development, custom software solutions, mobile application development,
-                </span>
-                <span className="block">
-                  and digital marketing with a growing ecosystem of innovative digital products designed to simplify everyday needs
-                </span>
-                <span className="block">
-                  and connect people, businesses, and opportunities. From helping businesses establish a strong online presence
-                </span>
-                <span className="block">
-                  and streamline their operations to building specialized platforms such as <span className="font-semibold text-brand-blue">HomeServixo</span>, <span className="font-semibold text-brand-orange">Carrento</span>, <span className="font-semibold text-amber-700">Jainamshree</span>,
-                </span>
-                <span className="block">
-                  and <span className="font-semibold text-emerald-700">SuperiorMart</span>, our vision is to create meaningful digital experiences
-                </span>
-                <span className="block">
-                  that bring convenience, connectivity, and new possibilities to the modern world.
-                </span>
+              {/* Paragraph 2 */}
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-left">
+                We combine our expertise in website development, custom software solutions, mobile application development, and digital marketing with a growing ecosystem of innovative digital products designed to simplify everyday needs and connect people, businesses, and opportunities. From helping businesses establish a strong online presence and streamline their operations to building specialized platforms such as <span className="font-semibold text-brand-blue">HomeServixo</span>, <span className="font-semibold text-brand-orange">Carrento</span>, <span className="font-semibold text-amber-700">Jainamshree</span>, and <span className="font-semibold text-emerald-700">SuperiorMart</span>, our vision is to create meaningful digital experiences that bring convenience, connectivity, and new possibilities to the modern world.
               </p>
 
-              {/* Paragraph 3: Balanced 3 Lines */}
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-center">
-                <span className="block">
-                  Whether you are a startup with a bold idea, an established business ready to embrace digital transformation,
-                </span>
-                <span className="block">
-                  or a customer or partner looking to be part of an evolving digital ecosystem, Namah Siddham aims to bring
-                </span>
-                <span className="block">
-                  the right technology, practical solutions, and forward-thinking approach to help you move ahead with confidence.
-                </span>
+              {/* Paragraph 3 */}
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-left">
+                Whether you are a startup with a bold idea, an established business ready to embrace digital transformation, or a customer or partner looking to be part of an evolving digital ecosystem, Namah Siddham aims to bring the right technology, practical solutions, and forward-thinking approach to help you move ahead with confidence.
               </p>
             </div>
 
