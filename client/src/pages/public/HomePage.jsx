@@ -90,8 +90,25 @@ export const HomePage = () => {
                   it is a powerful force for transforming ideas into opportunities and businesses into digital success stories.
                 </span>
               </p>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal text-center max-w-3xl mx-auto">
-                We combine our expertise in website development, custom software solutions, mobile application development, and digital marketing with a growing ecosystem of innovative digital products designed to simplify everyday needs and connect people, businesses, and opportunities. From helping businesses establish a strong online presence and streamline their operations to building specialized platforms such as <span className="font-semibold text-brand-blue">HomeServixo</span>, <span className="font-semibold text-brand-orange">Carrento</span>, <span className="font-semibold text-amber-700">Jainamshree</span>, and <span className="font-semibold text-emerald-700">SuperiorMart</span>, our vision is to create meaningful digital experiences that bring convenience, connectivity, and new possibilities to the modern world.
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal text-center">
+                <span className="block md:whitespace-nowrap">
+                  We combine our expertise in website development, custom software solutions,
+                </span>
+                <span className="block md:whitespace-nowrap mt-0.5 sm:mt-1">
+                  mobile application development, and digital marketing with a growing ecosystem
+                </span>
+                <span className="block md:whitespace-nowrap mt-0.5 sm:mt-1">
+                  of innovative digital products designed to simplify everyday needs and connect people, businesses, and opportunities.
+                </span>
+                <span className="block md:whitespace-nowrap mt-1 sm:mt-1.5">
+                  From helping businesses establish a strong online presence and streamline their operations
+                </span>
+                <span className="block md:whitespace-nowrap mt-0.5 sm:mt-1">
+                  to building specialized platforms such as <span className="font-semibold text-brand-blue">HomeServixo</span>, <span className="font-semibold text-brand-orange">Carrento</span>, <span className="font-semibold text-amber-700">Jainamshree</span>, and <span className="font-semibold text-emerald-700">SuperiorMart</span>,
+                </span>
+                <span className="block md:whitespace-nowrap mt-0.5 sm:mt-1">
+                  our vision is to create meaningful digital experiences that bring convenience, connectivity, and new possibilities to the modern world.
+                </span>
               </p>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal text-center max-w-3xl mx-auto">
                 Whether you are a startup with a bold idea, an established business ready to embrace digital transformation, or a customer or partner looking to be part of an evolving digital ecosystem, Namah Siddham aims to bring the right technology, practical solutions, and forward-thinking approach to help you move ahead with confidence.
