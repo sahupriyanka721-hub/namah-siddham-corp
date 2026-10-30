@@ -193,17 +193,17 @@ export const ProductDetailPage = () => {
                 <h1 className="font-serif font-black text-2xl sm:text-4xl lg:text-5xl text-slate-950">
                   {name}
                 </h1>
-                <span
-                  className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full font-mono ${
-                    isLive
-                      ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
-                      : isUnderDev
-                      ? 'bg-amber-100 text-amber-900 border border-amber-300'
-                      : 'bg-blue-100 text-blue-900 border border-blue-300'
-                  }`}
-                >
-                  {status}
-                </span>
+                {status && status !== 'Under Development' && (
+                  <span
+                    className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full font-mono ${
+                      isLive
+                        ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                        : 'bg-blue-100 text-blue-900 border border-blue-300'
+                    }`}
+                  >
+                    {status}
+                  </span>
+                )}
               </div>
               <p className="text-xs sm:text-sm font-semibold text-orange-600 uppercase tracking-wider font-serif">
                 {category}
@@ -227,15 +227,13 @@ export const ProductDetailPage = () => {
                 </a>
               )}
 
-              {isUnderDev && (
-                <button
-                  onClick={() => setPartnerModalOpen(true)}
-                  className="inline-flex items-center px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold text-xs shadow-md transition-all"
-                >
-                  <span>Partner Inquiry</span>
-                  <ArrowRight className="w-3.5 h-3.5 ml-1" />
-                </button>
-              )}
+              <button
+                onClick={() => setPartnerModalOpen(true)}
+                className="inline-flex items-center px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-bold text-xs shadow-md transition-all"
+              >
+                <span>Partner Inquiry</span>
+                <ArrowRight className="w-3.5 h-3.5 ml-1" />
+              </button>
             </div>
           </div>
         </div>
@@ -246,16 +244,6 @@ export const ProductDetailPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column */}
           <div className="lg:col-span-8 space-y-10">
-            {/* Status Notice if Under Development */}
-            {isUnderDev && (
-              <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 flex items-start space-x-3 text-xs text-amber-900">
-                <Clock className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                <div>
-                  <span className="font-bold block mb-0.5">Platform Under Active Development</span>
-                  {name} is currently undergoing technical engineering and partner network onboarding. The platform is scheduled for deployment following integration milestones. Inquiries regarding pilot participation and merchant partnerships are currently welcome.
-                </div>
-              </div>
-            )}
 
             {/* Overview */}
             <div className="bg-white rounded-3xl p-8 border border-surface-200 shadow-soft-sm space-y-4">

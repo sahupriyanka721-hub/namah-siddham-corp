@@ -120,17 +120,17 @@ export const EcosystemPage = () => {
                       <span className="text-[10px] font-bold text-surface-500 uppercase tracking-wider truncate" title={platform.category}>
                         {platform.category}
                       </span>
-                      <span
-                        className={`text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0 font-mono ${
-                          isLive
-                            ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
-                            : isUnderDev
-                            ? 'bg-amber-100 text-amber-900 border border-amber-300'
-                            : 'bg-blue-100 text-blue-900 border border-blue-300'
-                        }`}
-                      >
-                        {platform.status}
-                      </span>
+                      {platform.status && platform.status !== 'Under Development' && (
+                        <span
+                          className={`text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0 font-mono ${
+                            isLive
+                              ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                              : 'bg-blue-100 text-blue-900 border border-blue-300'
+                          }`}
+                        >
+                          {platform.status}
+                        </span>
+                      )}
                     </div>
 
                     <h3 className="font-serif font-bold text-xl text-navy-900 hover:text-royal-600 transition-colors" title={platform.name}>

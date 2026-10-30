@@ -317,7 +317,7 @@ export const Navbar = () => {
                       <Link
                         key={prod.name}
                         to={prod.path}
-                        title={`${prod.fullName} (${prod.status})`}
+                        title={prod.fullName}
                         className={`flex items-center space-x-3 p-2.5 rounded-xl bg-white hover:bg-orange-50/90 border border-transparent hover:border-orange-100 transition-all duration-150 group`}
                       >
                         {/* Logo Color Aligned Icon Box */}
@@ -328,9 +328,6 @@ export const Navbar = () => {
                           <div className="flex items-center justify-between gap-1.5">
                             <span className={`text-xs font-bold text-brand-navy ${prod.hoverText} transition-colors`}>
                               {prod.name}
-                            </span>
-                            <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full bg-orange-100 text-orange-700 font-mono shrink-0">
-                              {prod.status}
                             </span>
                           </div>
                           <div className="text-[11px] text-slate-600 font-medium leading-snug group-hover:text-slate-950 transition-colors mt-0.5">
@@ -485,14 +482,11 @@ export const Navbar = () => {
                   <Link
                     key={prod.name}
                     to={prod.path}
-                    title={`${prod.fullName} (${prod.status})`}
+                    title={prod.fullName}
                     className="flex flex-col pl-6 pr-3 py-2 text-xs font-medium text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg group"
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-bold text-slate-900 group-hover:text-brand-orange transition-colors">{prod.name}</span>
-                      <span className="text-[9px] px-2 py-0.5 rounded-full bg-orange-100 text-orange-700 border border-orange-200 font-mono">
-                        {prod.status}
-                      </span>
                     </div>
                     <div className="text-[11px] text-slate-500 mt-0.5">
                       {prod.category}
