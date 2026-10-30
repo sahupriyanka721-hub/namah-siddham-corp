@@ -352,7 +352,7 @@ export const Navbar = () => {
 
             <Link
               to="/portfolio"
-              className={`px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
+              className={`px-2 xl:px-2.5 2xl:px-3 py-1.5 text-[12px] xl:text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                 isActive('/portfolio')
                   ? 'text-brand-blue font-bold bg-sky-50/90'
                   : 'text-slate-700 hover:text-brand-blue hover:bg-sky-50/60'
@@ -362,8 +362,19 @@ export const Navbar = () => {
             </Link>
 
             <Link
+              to="/careers"
+              className={`px-2 xl:px-2.5 2xl:px-3 py-1.5 text-[12px] xl:text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
+                isActive('/careers')
+                  ? 'text-brand-blue font-bold bg-sky-50/90'
+                  : 'text-slate-700 hover:text-brand-blue hover:bg-sky-50/60'
+              }`}
+            >
+              Careers
+            </Link>
+
+            <Link
               to="/partners"
-              className={`px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
+              className={`px-2 xl:px-2.5 2xl:px-3 py-1.5 text-[12px] xl:text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                 isActive('/partners')
                   ? 'text-brand-blue font-bold bg-sky-50/90'
                   : 'text-slate-700 hover:text-brand-blue hover:bg-sky-50/60'
@@ -374,7 +385,7 @@ export const Navbar = () => {
 
             <Link
               to="/contact"
-              className={`px-2.5 2xl:px-3 py-1.5 text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
+              className={`px-2 xl:px-2.5 2xl:px-3 py-1.5 text-[12px] xl:text-[12.5px] 2xl:text-[13px] font-semibold rounded-lg transition-all duration-150 ${
                 isActive('/contact')
                   ? 'text-brand-blue font-bold bg-sky-50/90'
                   : 'text-slate-700 hover:text-brand-blue hover:bg-sky-50/60'
@@ -505,6 +516,16 @@ export const Navbar = () => {
               }`}
             >
               Portfolio &amp; Case Studies
+            </Link>
+            <Link
+              to="/careers"
+              className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+                isActive('/careers')
+                  ? 'bg-royal-50 text-royal-600 font-bold'
+                  : 'text-slate-700 hover:bg-slate-50'
+              }`}
+            >
+              Careers &amp; Opportunities
             </Link>
             <Link
               to="/partners"
