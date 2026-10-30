@@ -543,34 +543,34 @@ export const HomePage = () => {
       {/* SECTION I: COMPANY VISION AND MISSION */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="shiny-glass rounded-3xl p-6 sm:p-10 border-2 border-sky-100 shadow-xl shadow-sky-500/5 space-y-8">
+        <div className="shiny-glass rounded-3xl p-6 sm:p-10 border-2 border-sky-100 shadow-xl shadow-sky-500/5 space-y-8 text-left">
           {/* Company Vision */}
-          <div className="space-y-3 max-w-4xl mx-auto text-center flex flex-col items-center">
-            <span className="shiny-badge inline-flex items-center text-xs font-bold text-sky-700 uppercase tracking-widest font-mono px-3 py-1 rounded-full">
+          <div className="space-y-3 max-w-4xl text-left flex flex-col items-start">
+            <span className="shiny-badge inline-flex items-center text-xs font-bold text-sky-700 uppercase tracking-widest font-mono px-3 py-1 rounded-full w-fit">
               <Compass className="w-4 h-4 mr-1.5" />
               Company Vision
             </span>
-            <h3 className="font-serif font-bold text-2xl text-slate-900 text-center">
+            <h3 className="font-serif font-bold text-2xl text-slate-900 text-left">
               Accessible Digital Opportunity
             </h3>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light italic text-center max-w-3xl">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light italic text-left max-w-3xl">
               "To build accessible and scalable digital platforms that simplify everyday needs and create opportunities for people and businesses."
             </p>
           </div>
 
-          {/* Elegant Center Divider */}
-          <div className="w-24 h-0.5 bg-sky-200/90 mx-auto" />
+          {/* Elegant Full-width Left Divider */}
+          <div className="border-t border-sky-100/90 w-full" />
 
           {/* Company Mission */}
-          <div className="space-y-3 max-w-4xl mx-auto text-center flex flex-col items-center">
-            <span className="shiny-badge inline-flex items-center text-xs font-bold text-orange-700 uppercase tracking-widest font-mono px-3 py-1 rounded-full">
+          <div className="space-y-3 max-w-4xl text-left flex flex-col items-start">
+            <span className="shiny-badge inline-flex items-center text-xs font-bold text-orange-700 uppercase tracking-widest font-mono px-3 py-1 rounded-full w-fit">
               <Sparkles className="w-4 h-4 mr-1.5" />
               Company Mission
             </span>
-            <h3 className="font-serif font-bold text-2xl text-slate-900 text-center">
+            <h3 className="font-serif font-bold text-2xl text-slate-900 text-left">
               Technology &amp; Specialized Platforms
             </h3>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light italic text-center max-w-3xl">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light italic text-left max-w-3xl">
               "To combine technology, practical business solutions, and specialized online platforms to improve digital access, convenience, and collaboration."
             </p>
           </div>
