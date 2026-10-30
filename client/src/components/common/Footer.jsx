@@ -114,7 +114,6 @@ export const Footer = () => {
                   className="hover:text-gold-400 transition-colors flex items-center justify-between group"
                 >
                   <span>HomeServixo</span>
-                  <span className="text-[9px] text-surface-500 group-hover:text-orange-400">Dev</span>
                 </Link>
               </li>
               <li>
@@ -123,7 +122,6 @@ export const Footer = () => {
                   className="hover:text-gold-400 transition-colors flex items-center justify-between group"
                 >
                   <span>Carrento</span>
-                  <span className="text-[9px] text-surface-500 group-hover:text-orange-400">Dev</span>
                 </Link>
               </li>
               <li>
@@ -132,7 +130,6 @@ export const Footer = () => {
                   className="hover:text-gold-400 transition-colors flex items-center justify-between group"
                 >
                   <span>Jainamshree</span>
-                  <span className="text-[9px] text-surface-500 group-hover:text-orange-400">Dev</span>
                 </Link>
               </li>
               <li>
@@ -141,7 +138,6 @@ export const Footer = () => {
                   className="hover:text-gold-400 transition-colors flex items-center justify-between group"
                 >
                   <span>SuperiorMart</span>
-                  <span className="text-[9px] text-surface-500 group-hover:text-orange-400">Dev</span>
                 </Link>
               </li>
               <li className="pt-2">
@@ -172,19 +168,19 @@ export const Footer = () => {
               <div className="flex items-center space-x-2.5">
                 <Mail className="w-4 h-4 text-gold-400 shrink-0" />
                 <a
-                  href={`mailto:${settings.officialEmail || 'contact@namahsiddham.com'}`}
+                  href={`mailto:${settings.officialEmail || 'nscpl01@gmail.com'}`}
                   className="hover:text-white transition-colors truncate"
                 >
-                  {settings.officialEmail || 'contact@namahsiddham.com'}
+                  {settings.officialEmail || 'nscpl01@gmail.com'}
                 </a>
               </div>
               <div className="flex items-center space-x-2.5">
                 <Phone className="w-4 h-4 text-gold-400 shrink-0" />
                 <a
-                  href={`tel:${settings.officialPhone || '+917550000000'}`}
+                  href={`tel:${settings.officialPhone || '9516262715'}`}
                   className="hover:text-white transition-colors"
                 >
-                  {settings.officialPhone || '+91 755 0000000'}
+                  {settings.officialPhone || '9516262715'}
                 </a>
               </div>
             </div>

@@ -12,6 +12,15 @@ import {
   Code2,
   Layers,
   ArrowRight,
+  Sparkles,
+  Network,
+  Zap,
+  RefreshCw,
+  Search,
+  PenTool,
+  MonitorCheck,
+  Smartphone,
+  TrendingUp,
 } from 'lucide-react';
 import { publicApi } from '../../api/publicApi';
 import { useSettings } from '../../context/SettingsContext';
@@ -204,116 +213,320 @@ export const AboutPage = () => {
         </div>
       </section>
 
-      {/* Vision & Mission Cards */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-gradient-to-br from-sky-50 to-white rounded-3xl p-8 sm:p-10 text-slate-800 border-2 border-sky-200 shadow-soft-md space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600">
-              <Compass className="w-6 h-6" />
+      {/* ========================================================================= */}
+      {/* SECTION 2: OUR VISION                                                     */}
+      {/* ========================================================================= */}
+      <section className="bg-gradient-to-b from-[#F0F8FF] via-white to-sky-50/50 py-16 sm:py-20 border-y border-sky-200/70 relative overflow-hidden">
+        <div className="absolute top-1/2 left-0 w-80 h-80 bg-sky-300/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            
+            {/* Vision Narrative */}
+            <div className="lg:col-span-7 space-y-5">
+              <div className="shiny-badge inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-brand-blue text-xs font-semibold bg-white border border-sky-200 shadow-xs">
+                <Compass className="w-3.5 h-3.5 text-brand-blue mr-1.5" />
+                <span>Our Vision</span>
+              </div>
+              <h2 className="font-serif font-black text-2xl sm:text-3xl lg:text-4xl text-brand-navy tracking-tight leading-tight">
+                To Create a More{' '}
+                <span className="text-brand-blue font-black underline decoration-sky-300 underline-offset-4">Connected</span>{' '}
+                and{' '}
+                <span className="text-gradient-ns font-black">Digitally</span>{' '}
+                Empowered{' '}
+                <span className="text-brand-orange font-black">Future</span>.
+              </h2>
+              <div className="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base font-normal">
+                <p>
+                  Our vision is to build a trusted ecosystem of digital solutions that helps businesses, individuals, and communities participate more effectively in an increasingly connected world.
+                </p>
+                <p>
+                  We aspire to make technology more accessible, practical, and useful by developing digital platforms that simplify everyday needs and by helping businesses embrace digital transformation.
+                </p>
+                <p>
+                  Through continuous learning, thoughtful innovation, and a focus on real-world problems, we aim to build solutions that connect opportunities with the people and businesses that need them.
+                </p>
+                <p>
+                  We envision a future where digital tools help businesses reach wider audiences, manage operations more effectively, and create better experiences for their customers.
+                </p>
+              </div>
             </div>
-            <span className="text-xs font-bold text-sky-600 uppercase tracking-widest font-serif">
-              Corporate Vision
-            </span>
-            <h3 className="font-serif font-bold text-2xl text-slate-950">
-              Accessible Digital Opportunity
-            </h3>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light italic">
-              "{visionText}"
-            </p>
-          </div>
 
-          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-surface-200 shadow-soft-md space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-royal-50 border border-royal-100 flex items-center justify-center text-royal-600">
-              <Lightbulb className="w-6 h-6" />
+            {/* Abstract Visual of Connected Digital Networks */}
+            <div className="lg:col-span-5">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-sky-200 relative overflow-hidden group">
+                <div className="h-1 bg-gradient-to-r from-brand-blue via-amber-400 to-brand-orange -mx-6 sm:-mx-8 -mt-6 sm:-mt-8 mb-6 rounded-t-3xl" />
+                <div className="space-y-6">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-brand-blue uppercase tracking-wider">
+                      Connected Digital Network
+                    </span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                  </div>
+
+                  {/* Connected Network Nodes Schematic */}
+                  <div className="relative py-4">
+                    <div className="grid grid-cols-3 gap-4 text-center">
+                      <div className="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 shadow-xs flex flex-col items-center space-y-1.5">
+                        <Network className="w-6 h-6 text-brand-blue" />
+                        <span className="text-xs font-bold text-brand-navy">Connected</span>
+                        <span className="text-[10px] text-slate-500">Ecosystem</span>
+                      </div>
+                      <div className="p-3.5 rounded-2xl bg-orange-50 border border-orange-200 shadow-xs flex flex-col items-center space-y-1.5">
+                        <Cpu className="w-6 h-6 text-brand-orange" />
+                        <span className="text-xs font-bold text-brand-navy">Digital</span>
+                        <span className="text-[10px] text-slate-500">Intelligence</span>
+                      </div>
+                      <div className="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 shadow-xs flex flex-col items-center space-y-1.5">
+                        <Zap className="w-6 h-6 text-amber-600" />
+                        <span className="text-xs font-bold text-brand-navy">Future</span>
+                        <span className="text-[10px] text-slate-500">Opportunity</span>
+                      </div>
+                    </div>
+
+                    <div className="mt-4 p-4 rounded-2xl bg-gradient-to-r from-sky-50 via-white to-amber-50 border border-sky-200 text-xs text-slate-600 leading-relaxed text-center">
+                      Bridging everyday needs and enterprise workflows through reliable, purpose-driven digital technology.
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-sky-100 flex items-center justify-between text-xs font-mono text-slate-500">
+                    <span>Central Hub: Bhopal, MP</span>
+                    <span className="text-brand-blue font-bold">Pan-India Reach</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <span className="text-xs font-bold text-royal-600 uppercase tracking-widest font-serif">
-              Corporate Mission
-            </span>
-            <h3 className="font-serif font-bold text-2xl text-navy-900">
-              Technology &amp; Practical Solutions
-            </h3>
-            <p className="text-sm sm:text-base text-surface-600 leading-relaxed font-light italic">
-              "{missionText}"
-            </p>
+
           </div>
         </div>
       </section>
 
-      {/* 4 Pillars */}
+      {/* ========================================================================= */}
+      {/* SECTION 3: OUR MISSION                                                    */}
+      {/* ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="shiny-badge inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-brand-blue text-xs font-semibold bg-white border border-sky-200 shadow-xs">
+            <Lightbulb className="w-3.5 h-3.5 text-amber-500 mr-1.5" />
+            <span>Our Mission</span>
+          </div>
+          <h2 className="font-serif font-black text-2xl sm:text-3xl lg:text-4xl text-brand-navy tracking-tight">
+            Turning Business Challenges into <span className="text-gradient-ns">Digital Opportunities</span>.
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            Our mission is to develop practical technology solutions and digital platforms that address real business needs, simplify processes, and create meaningful connections. We are committed to:
+          </p>
+        </div>
+
+        {/* 6 Mission Points in Modern Responsive Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          {/* Card 1: Enabling Digital Transformation */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/10 transition-all space-y-3.5 group">
+            <div className="w-12 h-12 rounded-2xl bg-sky-50 border border-sky-200 flex items-center justify-center text-brand-blue group-hover:scale-105 transition-transform">
+              <Code2 className="w-6 h-6" />
+            </div>
+            <h3 className="font-serif font-bold text-lg text-brand-navy group-hover:text-brand-blue transition-colors">
+              Enabling Digital Transformation
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Help businesses establish and strengthen their digital presence through websites, custom software, mobile applications, and digital marketing solutions.
+            </p>
+          </div>
+
+          {/* Card 2: Building Purpose-Driven Platforms */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-amber-300 shadow-md hover:shadow-xl hover:shadow-orange-500/10 transition-all space-y-3.5 group">
+            <div className="w-12 h-12 rounded-2xl bg-orange-50 border border-orange-200 flex items-center justify-center text-brand-orange group-hover:scale-105 transition-transform">
+              <Layers className="w-6 h-6" />
+            </div>
+            <h3 className="font-serif font-bold text-lg text-brand-navy group-hover:text-brand-orange transition-colors">
+              Building Purpose-Driven Platforms
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Develop and improve specialized digital products designed to connect customers, businesses, sellers, service providers, and partners.
+            </p>
+          </div>
+
+          {/* Card 3: Creating Better Digital Experiences */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/10 transition-all space-y-3.5 group">
+            <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 group-hover:scale-105 transition-transform">
+              <Sparkles className="w-6 h-6" />
+            </div>
+            <h3 className="font-serif font-bold text-lg text-brand-navy group-hover:text-amber-600 transition-colors">
+              Creating Better Digital Experiences
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Focus on usability, intuitive design, accessibility, and customer convenience in the solutions we build.
+            </p>
+          </div>
+
+          {/* Card 4: Supporting Business Efficiency */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/10 transition-all space-y-3.5 group">
+            <div className="w-12 h-12 rounded-2xl bg-sky-50 border border-sky-200 flex items-center justify-center text-brand-blue group-hover:scale-105 transition-transform">
+              <TrendingUp className="w-6 h-6" />
+            </div>
+            <h3 className="font-serif font-bold text-lg text-brand-navy group-hover:text-brand-blue transition-colors">
+              Supporting Business Efficiency
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Develop technology that helps organizations streamline workflows, organize information, and manage business activities more effectively.
+            </p>
+          </div>
+
+          {/* Card 5: Encouraging Collaboration */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-amber-300 shadow-md hover:shadow-xl hover:shadow-orange-500/10 transition-all space-y-3.5 group">
+            <div className="w-12 h-12 rounded-2xl bg-orange-50 border border-orange-200 flex items-center justify-center text-brand-orange group-hover:scale-105 transition-transform">
+              <Users2 className="w-6 h-6" />
+            </div>
+            <h3 className="font-serif font-bold text-lg text-brand-navy group-hover:text-brand-orange transition-colors">
+              Encouraging Collaboration
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Create opportunities for businesses and platform participants to connect, collaborate, and serve their respective audiences.
+            </p>
+          </div>
+
+          {/* Card 6: Growing Through Continuous Innovation */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-sky-300 shadow-md hover:shadow-xl hover:shadow-sky-500/10 transition-all space-y-3.5 group">
+            <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 group-hover:scale-105 transition-transform">
+              <RefreshCw className="w-6 h-6" />
+            </div>
+            <h3 className="font-serif font-bold text-lg text-brand-navy group-hover:text-amber-600 transition-colors">
+              Growing Through Continuous Innovation
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Improve our solutions through learning, feedback, responsible technology adoption, and a commitment to quality.
+            </p>
+          </div>
+
+        </div>
+
+        {/* Mission Concluding Statement */}
+        <div className="p-4 sm:p-5 rounded-2xl bg-sky-50/80 border border-sky-200 text-center max-w-3xl mx-auto shadow-xs">
+          <p className="text-xs sm:text-sm font-semibold text-brand-navy leading-relaxed">
+            “Our mission is to combine technology with practical business thinking so that every solution we build serves a clear purpose.”
+          </p>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* SECTION 4: OUR APPROACH                                                   */}
+      {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-xs font-bold text-royal-600 uppercase tracking-widest font-serif">
-            Operating Fundamentals
-          </span>
-          <h2 className="font-serif font-black text-2xl sm:text-3xl text-navy-900">
-            How We Build and Operate
+          <div className="shiny-badge inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-brand-blue text-xs font-semibold bg-white border border-sky-200 shadow-xs">
+            <span>Our Approach</span>
+          </div>
+          <h2 className="font-serif font-black text-2xl sm:text-3xl lg:text-4xl text-brand-navy tracking-tight">
+            How We Create Value
           </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            We bring business requirements and technology together through a structured, customer-focused approach.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white rounded-2xl p-6 border border-surface-200 shadow-soft-sm space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center">
-              <Cpu className="w-5 h-5" />
+        {/* 4 Process Steps (Horizontal Process on Desktop, Vertical Timeline on Mobile) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          
+          {/* Step 1: Understand */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-sky-300 shadow-sm hover:shadow-md transition-all space-y-3 group relative">
+            <div className="flex items-center justify-between">
+              <div className="w-11 h-11 rounded-2xl bg-sky-50 text-brand-blue flex items-center justify-center font-bold">
+                <Search className="w-5 h-5" />
+              </div>
+              <span className="text-xs font-mono font-bold text-sky-700 bg-sky-100 px-2.5 py-0.5 rounded-full">
+                Step 01
+              </span>
             </div>
-            <h4 className="font-serif font-bold text-base text-navy-900">Technology-Driven</h4>
-            <p className="text-xs text-surface-500 leading-relaxed">
-              We leverage cloud microservices, reactive UI frameworks, and automated matching workflows to give customers and partners dependable software.
+            <h3 className="font-serif font-bold text-xl text-brand-navy group-hover:text-brand-blue transition-colors">
+              Understand
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Understand the business, its users, challenges, and objectives.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-surface-200 shadow-soft-sm space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center">
-              <HeartHandshake className="w-5 h-5" />
+          {/* Step 2: Design */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-amber-300 shadow-sm hover:shadow-md transition-all space-y-3 group relative">
+            <div className="flex items-center justify-between">
+              <div className="w-11 h-11 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+                <PenTool className="w-5 h-5" />
+              </div>
+              <span className="text-xs font-mono font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full">
+                Step 02
+              </span>
             </div>
-            <h4 className="font-serif font-bold text-base text-navy-900">Customer Value</h4>
-            <p className="text-xs text-surface-500 leading-relaxed">
-              Eliminating friction with upfront estimates, verified technicians, and clear communication channels across every service interaction.
+            <h3 className="font-serif font-bold text-xl text-brand-navy group-hover:text-amber-600 transition-colors">
+              Design
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Plan intuitive user experiences and practical digital solutions.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-surface-200 shadow-soft-sm space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center">
-              <Users2 className="w-5 h-5" />
+          {/* Step 3: Develop */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-sky-300 shadow-sm hover:shadow-md transition-all space-y-3 group relative">
+            <div className="flex items-center justify-between">
+              <div className="w-11 h-11 rounded-2xl bg-sky-50 text-brand-blue flex items-center justify-center font-bold">
+                <MonitorCheck className="w-5 h-5" />
+              </div>
+              <span className="text-xs font-mono font-bold text-sky-700 bg-sky-100 px-2.5 py-0.5 rounded-full">
+                Step 03
+              </span>
             </div>
-            <h4 className="font-serif font-bold text-base text-navy-900">Partner Viability</h4>
-            <p className="text-xs text-surface-500 leading-relaxed">
-              Treating technicians, vehicle hosts, and retail merchants as long-term collaborators by offering transparent economics and booking demand.
+            <h3 className="font-serif font-bold text-xl text-brand-navy group-hover:text-brand-blue transition-colors">
+              Develop
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Build websites, software, applications, and platform features with a focus on quality and usability.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 border border-surface-200 shadow-soft-sm space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center">
-              <ShieldCheck className="w-5 h-5" />
+          {/* Step 4: Improve */}
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-orange-300 shadow-sm hover:shadow-md transition-all space-y-3 group relative">
+            <div className="flex items-center justify-between">
+              <div className="w-11 h-11 rounded-2xl bg-orange-50 text-brand-orange flex items-center justify-center font-bold">
+                <RefreshCw className="w-5 h-5" />
+              </div>
+              <span className="text-xs font-mono font-bold text-orange-800 bg-orange-100 px-2.5 py-0.5 rounded-full">
+                Step 04
+              </span>
             </div>
-            <h4 className="font-serif font-bold text-base text-navy-900">Responsible Governance</h4>
-            <p className="text-xs text-surface-500 leading-relaxed">
-              Committed to responsible data handling, compliance with Indian regulatory frameworks, and honest communications without misleading claims.
+            <h3 className="font-serif font-bold text-xl text-brand-navy group-hover:text-brand-orange transition-colors">
+              Improve
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Use feedback and evolving requirements to refine and enhance digital experiences.
             </p>
           </div>
+
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* ========================================================================= */}
+      {/* SECTION 6: FINAL CALL TO ACTION                                           */}
+      {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="bg-surface-100 rounded-3xl p-10 space-y-4">
-          <h3 className="font-serif font-bold text-2xl text-navy-900">
-            Collaborate With Namah Siddham Corporation
-          </h3>
-          <p className="text-xs sm:text-sm text-surface-500 max-w-xl mx-auto">
-            Connect with our corporate office in Bhopal to discuss software development, mobile solutions, or marketplace partnerships.
+        <div className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-10 sm:p-14 text-white shadow-xl shadow-sky-500/20 space-y-5 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-2xl pointer-events-none" />
+          <h2 className="font-serif font-black text-2xl sm:text-4xl text-white tracking-tight leading-tight">
+            Your Next Digital Opportunity Starts Here.
+          </h2>
+          <p className="text-sm sm:text-base text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+            Whether you are building a new business, modernizing existing operations, or exploring a digital platform idea, let's discuss how the right technology can help you move forward.
           </p>
-          <div className="pt-2 flex justify-center gap-4">
+          <div className="pt-3 flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
             <Link
-              to="/services"
-              className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 text-white font-bold text-xs sm:text-sm hover:from-sky-600 hover:to-blue-700 shadow-md shadow-sky-500/20"
+              to="/contact"
+              className="shiny-btn inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-white text-brand-navy hover:bg-orange-500 hover:text-white font-extrabold text-sm sm:text-base shadow-lg transition-all transform hover:-translate-y-0.5"
             >
-              Explore IT Services
+              <span>Discuss Your Project</span>
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
             <Link
-              to="/partners"
-              className="px-6 py-2.5 rounded-xl border border-sky-500 text-sky-700 font-bold text-xs sm:text-sm hover:bg-sky-50"
+              to="/services"
+              className="shiny-btn inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-sky-700/60 hover:bg-sky-700 text-white border border-sky-300/40 font-bold text-sm sm:text-base transition-all transform hover:-translate-y-0.5"
             >
-              Partner With Us
+              <span>Explore Our Services</span>
             </Link>
           </div>
         </div>

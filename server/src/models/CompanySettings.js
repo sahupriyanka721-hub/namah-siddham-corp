@@ -44,17 +44,17 @@ const CompanySettingsSchema = new mongoose.Schema(
     },
     officialEmail: {
       type: String,
-      default: 'contact@namahsiddham.com',
+      default: 'nscpl01@gmail.com',
       trim: true,
     },
     grievanceEmail: {
       type: String,
-      default: 'grievance@namahsiddham.com',
+      default: 'nscpl01@gmail.com',
       trim: true,
     },
     officialPhone: {
       type: String,
-      default: '+91 755 0000000',
+      default: '9516262715',
       trim: true,
     },
     socialLinks: {

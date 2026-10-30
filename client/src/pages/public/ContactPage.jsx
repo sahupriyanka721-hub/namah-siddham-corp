@@ -24,11 +24,9 @@ export const ContactPage = () => {
     businessName: '',
     email: '',
     phone: '',
-    city: '',
+    city: 'Bhopal, MP',
     serviceRequired: 'Website Development',
-    budgetRange: '',
     projectDescription: '',
-    preferredContactMethod: 'Email',
     consent: true,
   });
 
@@ -51,10 +49,9 @@ export const ContactPage = () => {
       !formData.name.trim() ||
       !formData.email.trim() ||
       !formData.phone.trim() ||
-      !formData.city.trim() ||
       !formData.projectDescription.trim()
     ) {
-      setError('Please provide your name, email, mobile number, city, and project description.');
+      setError('Please provide your name, email, mobile number, and message.');
       return;
     }
 
@@ -68,7 +65,8 @@ export const ContactPage = () => {
       const res = await publicApi.submitContact(formData);
       if (res.data?.success) {
         setSuccessData({
-          message: res.data.message || 'Inquiry submitted successfully.',
+          message:
+            'Thank you for contacting Namah Siddham Corporation. Your inquiry has been received. Our team will review your message and get in touch using the contact details you provided.',
           referenceId: res.data.referenceId,
         });
         setFormData({
@@ -76,11 +74,9 @@ export const ContactPage = () => {
           businessName: '',
           email: '',
           phone: '',
-          city: '',
+          city: 'Bhopal, MP',
           serviceRequired: 'Website Development',
-          budgetRange: '',
           projectDescription: '',
-          preferredContactMethod: 'Email',
           consent: true,
         });
       }
@@ -96,8 +92,8 @@ export const ContactPage = () => {
   return (
     <div className="space-y-16 pb-20">
       <SeoMeta
-        title="Contact Us — Corporate Inquiries"
-        description="Official contact details, registered office address in Bhopal MP, and project inquiry form for Namah Siddham Corporation Private Limited."
+        title="Contact Us — Namah Siddham Corporation"
+        description="Connect with Namah Siddham Corporation Private Limited to discuss website development, custom software, mobile applications, digital marketing, or opportunities related to our digital platforms."
         keywords="Contact Namah Siddham, Bhopal Office Address, IT Company Phone Email, Project Inquiries, CIN U77100MP2026PTC087531, Corporate Inquiry Bhopal, Partner With Us"
       />
 
@@ -105,15 +101,15 @@ export const ContactPage = () => {
       <section className="bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 py-16 border-b border-sky-200/80 relative overflow-hidden">
         <div className="absolute top-0 right-10 w-96 h-96 bg-sky-400/20 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 relative z-10">
-          <div className="shiny-badge inline-flex items-center space-x-2 px-4.5 py-1.5 rounded-full text-sky-800 text-xs font-semibold">
-            <Building2 className="w-3.5 h-3.5 mr-1 text-sky-600" />
-            <span>Corporate Communications &amp; Project Inquiries</span>
+          <div className="shiny-badge inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-brand-blue text-xs font-semibold bg-white border border-sky-200 shadow-xs">
+            <Building2 className="w-3.5 h-3.5 mr-1 text-brand-blue" />
+            <span>Contact Us</span>
           </div>
           <h1 className="font-serif font-black text-3xl sm:text-5xl text-brand-navy tracking-tight">
-            Contact <span className="text-gradient-ns">Namah Siddham Corporation</span>
+            Let's Build Something <span className="text-gradient-ns">Meaningful Together.</span>
           </h1>
-          <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed font-normal">
-            Connect directly with our engineering team, management, or partnership representatives in Bhopal, Madhya Pradesh, India.
+          <p className="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed font-normal">
+            Have a business idea, need a digital solution, or want to explore a partnership opportunity? We would be happy to hear from you. Connect with Namah Siddham Corporation Private Limited to discuss website development, custom software, mobile applications, digital marketing, or opportunities related to our digital platforms. Let's explore how technology can support your next step.
           </p>
         </div>
       </section>
@@ -121,117 +117,109 @@ export const ContactPage = () => {
       {/* Main Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left: Contact Info & Address */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="bg-white rounded-3xl p-8 border border-surface-200 shadow-soft-sm space-y-6">
-              <h3 className="font-serif font-bold text-2xl text-navy-900">
-                Registered Office
-              </h3>
-
-              <div className="space-y-5 text-sm text-surface-600">
-                <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-xs uppercase tracking-wider text-navy-900">
-                      Corporate Address
-                    </h5>
-                    <p className="text-xs sm:text-sm text-surface-500 mt-0.5 leading-relaxed">
-                      {settings.registeredOffice?.fullAddress ||
-                        'Registered Office: Bhopal, Madhya Pradesh, India. CIN: U77100MP2026PTC087531'}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-xs uppercase tracking-wider text-navy-900">
-                      Official Email
-                    </h5>
-                    <a
-                      href={`mailto:${settings.officialEmail || 'contact@namahsiddham.com'}`}
-                      className="text-xs sm:text-sm text-royal-600 font-semibold hover:underline block mt-0.5"
-                    >
-                      {settings.officialEmail || 'contact@namahsiddham.com'}
-                    </a>
-                    {settings.grievanceEmail && (
-                      <span className="text-[11px] text-surface-400 block">
-                        Grievances: {settings.grievanceEmail}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-xs uppercase tracking-wider text-navy-900">
-                      Corporate Telephone
-                    </h5>
-                    <a
-                      href={`tel:${settings.officialPhone || '+917550000000'}`}
-                      className="text-xs sm:text-sm text-royal-600 font-semibold hover:underline block mt-0.5"
-                    >
-                      {settings.officialPhone || '+91 755 0000000'}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center shrink-0">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h5 className="font-bold text-xs uppercase tracking-wider text-navy-900">
-                      Operating Hours
-                    </h5>
-                    <p className="text-xs text-surface-500 mt-0.5">
-                      Monday to Friday: 09:30 AM – 06:30 PM IST
-                    </p>
-                  </div>
-                </div>
+          
+          {/* Left: Exact Contact Cards & Company Details */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-sky-200/90 shadow-lg space-y-6">
+              <div>
+                <span className="text-xs font-mono font-bold text-brand-blue uppercase tracking-wider">
+                  Corporate Head Office
+                </span>
+                <h3 className="font-serif font-bold text-xl sm:text-2xl text-brand-navy mt-1">
+                  Namah Siddham Corporation Private Limited
+                </h3>
               </div>
 
-              {/* Corporate Legal Identity */}
-              <div className="pt-4 border-t border-surface-200 text-xs font-mono text-surface-500 space-y-1">
-                <div>Entity: {settings.companyName}</div>
-                <div>CIN: {settings.cin || 'U77100MP2026PTC087531'}</div>
-                <div>Jurisdiction: Ministry of Corporate Affairs, MP, India</div>
+              {/* 3 Contact Cards from Prompt */}
+              <div className="space-y-4">
+                
+                {/* Phone Card */}
+                <a
+                  href="tel:9516262715"
+                  className="flex items-center space-x-4 p-4 rounded-2xl bg-sky-50/80 border border-sky-200 hover:border-sky-400 hover:bg-sky-100/70 transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-sky-200 text-brand-blue flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                    <Phone className="w-5 h-5 text-brand-blue" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-mono uppercase tracking-wider font-semibold text-slate-500 block">
+                      Call Us
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-brand-navy group-hover:text-brand-blue transition-colors">
+                      9516262715
+                    </span>
+                  </div>
+                </a>
+
+                {/* Email Card */}
+                <a
+                  href="mailto:nscpl01@gmail.com"
+                  className="flex items-center space-x-4 p-4 rounded-2xl bg-amber-50/80 border border-amber-200 hover:border-amber-400 hover:bg-amber-100/70 transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-amber-200 text-amber-600 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                    <Mail className="w-5 h-5 text-amber-600" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-mono uppercase tracking-wider font-semibold text-slate-500 block">
+                      Email Us
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-brand-navy group-hover:text-amber-700 transition-colors">
+                      nscpl01@gmail.com
+                    </span>
+                  </div>
+                </a>
+
+                {/* Location Card */}
+                <div className="flex items-center space-x-4 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 text-brand-orange flex items-center justify-center shrink-0 shadow-xs">
+                    <MapPin className="w-5 h-5 text-brand-orange" />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-mono uppercase tracking-wider font-semibold text-slate-500 block">
+                      Our Location
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-brand-navy">
+                      Bhopal, Madhya Pradesh, India
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Statutory Details */}
+              <div className="pt-4 border-t border-sky-100 text-xs font-mono text-slate-500 space-y-1">
+                <div>CIN: <span className="font-bold text-brand-navy">{settings.cin || 'U77100MP2026PTC087531'}</span></div>
+                <div>Entity: Private Limited Company (Incorporated in India)</div>
+                <div>Office: Bhopal, Madhya Pradesh</div>
               </div>
             </div>
           </div>
 
           {/* Right: Contact & Project Inquiry Form */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-surface-200 shadow-soft-sm space-y-6">
+          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border-2 border-sky-200/90 shadow-xl space-y-6">
             <div>
-              <span className="text-xs font-bold text-royal-600 uppercase tracking-widest font-serif">
-                Project &amp; Corporate Inquiry
+              <span className="text-xs font-mono font-bold text-brand-blue uppercase tracking-wider">
+                Direct Communication
               </span>
-              <h3 className="font-serif font-bold text-2xl text-navy-900 mt-1">
-                Let's Discuss Your Project
+              <h3 className="font-serif font-bold text-2xl text-brand-navy mt-1">
+                Send an Inquiry
               </h3>
-              <p className="text-xs sm:text-sm text-surface-500 mt-1">
-                Please complete the form below. Your request will be directly logged into our database and reviewed by our engineering management.
+              <p className="text-xs sm:text-sm text-slate-600 mt-1">
+                Please complete the form below. Your message will be securely stored and reviewed by our corporate team.
               </p>
             </div>
 
             {/* Success Message */}
             {successData && (
-              <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 space-y-2">
+              <div className="bg-emerald-50 border border-emerald-300 rounded-2xl p-5 space-y-2">
                 <div className="flex items-center space-x-2 text-emerald-800 font-bold">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-                  <span>Inquiry Confirmed &amp; Stored Successfully</span>
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                  <span>Inquiry Received Successfully</span>
                 </div>
-                <p className="text-xs sm:text-sm text-emerald-900 leading-relaxed">
+                <p className="text-xs sm:text-sm text-emerald-900 leading-relaxed font-medium">
                   {successData.message}
                 </p>
-                <div className="pt-2 text-xs font-mono text-emerald-950">
+                <div className="pt-1 text-xs font-mono text-emerald-950">
                   Reference Tracking ID: <span className="font-bold">{successData.referenceId}</span>
                 </div>
               </div>
@@ -246,9 +234,11 @@ export const ContactPage = () => {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+              
+              {/* Full Name & Business Name */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="block font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block font-bold text-slate-800 uppercase tracking-wider">
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -257,13 +247,13 @@ export const ContactPage = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="e.g. Amit Jain"
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                    placeholder="Your Name"
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-slate-900 font-medium"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="block font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block font-bold text-slate-800 uppercase tracking-wider">
                     Business Name (Optional)
                   </label>
                   <input
@@ -271,15 +261,16 @@ export const ContactPage = () => {
                     name="businessName"
                     value={formData.businessName}
                     onChange={handleChange}
-                    placeholder="e.g. Jain Traders"
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                    placeholder="Your Business or Organization"
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-slate-900 font-medium"
                   />
                 </div>
               </div>
 
+              {/* Email Address & Mobile Number */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label className="block font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block font-bold text-slate-800 uppercase tracking-wider">
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -288,13 +279,13 @@ export const ContactPage = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="amit@company.com"
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                    placeholder="name@example.com"
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-slate-900 font-medium"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="block font-bold text-navy-900 uppercase tracking-wider">
+                  <label className="block font-bold text-slate-800 uppercase tracking-wider">
                     Mobile Number <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -303,89 +294,37 @@ export const ContactPage = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+91 98765 43210"
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                    placeholder="10-digit mobile number"
+                    className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-slate-900 font-medium"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <label className="block font-bold text-navy-900 uppercase tracking-wider">
-                    City <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    name="city"
-                    value={formData.city}
-                    onChange={handleChange}
-                    placeholder="e.g. Bhopal"
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <label className="block font-bold text-navy-900 uppercase tracking-wider">
-                    Inquiry Category / Service Required <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    name="serviceRequired"
-                    value={formData.serviceRequired}
-                    onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 font-medium text-navy-900"
-                  >
-                    <option value="Website Development">Website Development</option>
-                    <option value="Software Development">Software Development</option>
-                    <option value="Mobile Application Development">Mobile Application Development</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Product Partnership">Product Partnership</option>
-                    <option value="Vendor / Service Partner Registration">Vendor / Service Partner Registration</option>
-                    <option value="Other Business Inquiry">Other Business Inquiry</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <label className="block font-bold text-navy-900 uppercase tracking-wider">
-                    Budget Range (Optional)
-                  </label>
-                  <select
-                    name="budgetRange"
-                    value={formData.budgetRange}
-                    onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900 font-medium"
-                  >
-                    <option value="">Select Estimated Range</option>
-                    <option value="Under ₹50,000">Under ₹50,000</option>
-                    <option value="₹50,000 – ₹1,50,000">₹50,000 – ₹1,50,000</option>
-                    <option value="₹1,50,000 – ₹5,00,000">₹1,50,000 – ₹5,00,000</option>
-                    <option value="₹5,00,000+">₹5,00,000+</option>
-                    <option value="Enterprise / To be discussed">Enterprise / To be discussed</option>
-                  </select>
-                </div>
-
-                <div className="space-y-1">
-                  <label className="block font-bold text-navy-900 uppercase tracking-wider">
-                    Preferred Contact Method
-                  </label>
-                  <select
-                    name="preferredContactMethod"
-                    value={formData.preferredContactMethod}
-                    onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900 font-medium"
-                  >
-                    <option value="Email">Email</option>
-                    <option value="Phone">Phone Call</option>
-                    <option value="WhatsApp">WhatsApp</option>
-                  </select>
-                </div>
-              </div>
-
+              {/* Inquiry Type */}
               <div className="space-y-1">
-                <label className="block font-bold text-navy-900 uppercase tracking-wider">
-                  Project Description <span className="text-red-500">*</span>
+                <label className="block font-bold text-slate-800 uppercase tracking-wider">
+                  Inquiry Type <span className="text-red-500">*</span>
+                </label>
+                <select
+                  name="serviceRequired"
+                  value={formData.serviceRequired}
+                  onChange={handleChange}
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue font-semibold text-slate-900"
+                >
+                  <option value="Website Development">Website Development</option>
+                  <option value="Software Development">Software Development</option>
+                  <option value="Mobile Application Development">Mobile Application Development</option>
+                  <option value="Digital Marketing">Digital Marketing</option>
+                  <option value="Product Inquiry">Product Inquiry</option>
+                  <option value="Business Partnership">Business Partnership</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              {/* Message */}
+              <div className="space-y-1">
+                <label className="block font-bold text-slate-800 uppercase tracking-wider">
+                  Message <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   rows={4}
@@ -393,11 +332,12 @@ export const ContactPage = () => {
                   name="projectDescription"
                   value={formData.projectDescription}
                   onChange={handleChange}
-                  placeholder="Please describe your requirements, business goals, or digital project ideas..."
-                  className="w-full px-3.5 py-2.5 bg-surface-50 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-royal-500 text-navy-900"
+                  placeholder="Tell us about your requirements, ideas, or how we can collaborate..."
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-slate-900 font-medium"
                 />
               </div>
 
+              {/* Consent Checkbox */}
               <div className="flex items-start space-x-2 pt-1">
                 <input
                   type="checkbox"
@@ -405,26 +345,29 @@ export const ContactPage = () => {
                   name="consent"
                   checked={formData.consent}
                   onChange={handleChange}
-                  className="mt-1 rounded text-royal-600 focus:ring-royal-500"
+                  className="mt-1 rounded text-brand-blue focus:ring-brand-blue cursor-pointer"
                 />
-                <label htmlFor="consentMain" className="text-[11px] text-surface-500 leading-tight">
+                <label htmlFor="consentMain" className="text-[11px] text-slate-600 leading-tight cursor-pointer">
                   I agree to allow Namah Siddham Corporation Private Limited to record and process these submitted details for the purpose of communicating regarding this business inquiry.
                 </label>
               </div>
 
+              {/* Submit Button */}
               <div className="pt-2">
                 <Button
                   type="submit"
                   variant="primary"
                   loading={loading}
                   icon={Send}
-                  className="w-full sm:w-auto px-8 py-3 text-xs font-bold"
+                  className="w-full sm:w-auto px-8 py-3 rounded-2xl bg-brand-blue hover:bg-blue-700 text-white font-extrabold text-sm shadow-lg shadow-sky-500/25 transition-all"
                 >
-                  Submit Project Inquiry
+                  Send Inquiry
                 </Button>
               </div>
+
             </form>
           </div>
+
         </div>
       </section>
     </div>

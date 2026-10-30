@@ -55,9 +55,9 @@ const seedDatabase = async () => {
         'Namah Siddham Corporation Private Limited combines IT expertise with a growing portfolio of digital platforms to help businesses establish their digital presence and connect customers, service providers, sellers, and partners.',
       logoUrl: '/assets/namah-siddham-logo.png',
       faviconUrl: '/favicon.svg',
-      officialEmail: 'contact@namahsiddham.com',
-      grievanceEmail: 'grievance@namahsiddham.com',
-      officialPhone: '+91 755 0000000',
+      officialEmail: 'nscpl01@gmail.com',
+      grievanceEmail: 'nscpl01@gmail.com',
+      officialPhone: '9516262715',
       registeredOffice: {
         addressLine1: 'Bhopal, Madhya Pradesh, India',
         city: 'Bhopal',

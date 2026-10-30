@@ -308,11 +308,12 @@ export const submitContact = async (req, res, next) => {
     } = req.body;
 
     const desc = projectDescription || message;
+    const inquiryCity = city ? city.trim() : 'Bhopal, Madhya Pradesh';
 
-    if (!name || !email || !phone || !city || !desc) {
+    if (!name || !email || !phone || !desc) {
       return res.status(400).json({
         success: false,
-        message: 'Name, email, mobile number, city, and project description are required fields.',
+        message: 'Name, email, mobile number, and message are required fields.',
       });
     }
 
@@ -324,7 +325,7 @@ export const submitContact = async (req, res, next) => {
       businessName: businessName ? businessName.trim() : '',
       email: email.toLowerCase().trim(),
       phone: phone.trim(),
-      city: city.trim(),
+      city: inquiryCity,
       serviceRequired: serviceRequired || 'Website Development',
       budgetRange: budgetRange ? budgetRange.trim() : '',
       projectDescription: desc.trim(),
