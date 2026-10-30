@@ -192,14 +192,6 @@ export const ServiceDetailPage = () => {
               </div>
 
               <div className="space-y-3">
-                <div className="inline-flex items-center space-x-2">
-                  <span className="text-xs font-bold text-royal-700 bg-white border border-sky-200 px-3 py-1 rounded-full uppercase tracking-wider font-mono shadow-xs">
-                    Vertical 1: IT Solutions
-                  </span>
-                  <span className="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full font-mono">
-                    Production Architecture
-                  </span>
-                </div>
                 <h1 className="font-serif font-black text-2xl sm:text-4xl lg:text-5xl text-slate-950 tracking-tight leading-tight">
                   {service.title}
                 </h1>
