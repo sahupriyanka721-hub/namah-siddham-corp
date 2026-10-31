@@ -56,11 +56,25 @@ const PublicLayout = () => {
 };
 
 export function App() {
+  // Check if user is accessing via dedicated admin subdomain (e.g. admin.namahsiddham.in)
+  const isAdminHost =
+    typeof window !== 'undefined' &&
+    (window.location.hostname.startsWith('admin.') ||
+      window.location.hostname.includes('admin-namahsiddham'));
+
   return (
     <>
       <Preloader />
       <Routes>
-      {/* Public Pages */}
+        {/* On admin subdomain, root '/' and '/login' redirect directly to Admin Suite */}
+        {isAdminHost && (
+          <>
+            <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
+            <Route path="/login" element={<Navigate to="/admin/login" replace />} />
+          </>
+        )}
+
+        {/* Public Pages */}
       <Route element={<PublicLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />

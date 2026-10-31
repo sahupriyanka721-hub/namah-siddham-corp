@@ -29,6 +29,7 @@ const allowedOrigins = [
   ENV.CLIENT_URL,
   'https://namahsiddham.in',
   'https://www.namahsiddham.in',
+  'https://admin.namahsiddham.in',
   'https://namah-siddham-corp.vercel.app',
   'http://localhost:5173',
   'http://localhost:3000',

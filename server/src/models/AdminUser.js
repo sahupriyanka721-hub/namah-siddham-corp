@@ -15,6 +15,19 @@ const AdminUserSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
     },
+    phone: {
+      type: String,
+      trim: true,
+      default: '9516262715',
+    },
+    otp: {
+      type: String,
+      select: false,
+    },
+    otpExpiresAt: {
+      type: Date,
+      select: false,
+    },
     password: {
       type: String,
       required: [true, 'Password is required'],

@@ -49,6 +49,8 @@ const saveStoredAgreements = (agreements) => {
 export const adminApi = {
   // Auth
   login: (credentials) => apiClient.post('/auth/login', credentials),
+  sendOtp: (data) => apiClient.post('/auth/send-otp', data),
+  verifyOtp: (data) => apiClient.post('/auth/verify-otp', data),
   logout: () => apiClient.post('/auth/logout'),
   getMe: () =>
     withFallback(
