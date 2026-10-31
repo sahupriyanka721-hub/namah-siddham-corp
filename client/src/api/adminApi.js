@@ -82,6 +82,41 @@ export const adminApi = {
       () => apiClient.post('/auth/change-password', data),
       { success: true, message: 'Password updated successfully.' }
     ),
+  updateProfile: (data) =>
+    withFallback(
+      () => apiClient.put('/auth/profile', data),
+      () => {
+        const current = JSON.parse(localStorage.getItem('namah_admin_user') || '{}');
+        const updated = { ...current, ...data };
+        localStorage.setItem('namah_admin_user', JSON.stringify(updated));
+        return { success: true, message: 'Profile updated successfully.', admin: updated };
+      }
+    ),
+  uploadImage: async (formData) => {
+    try {
+      const res = await apiClient.post('/upload/image', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+      return res.data;
+    } catch (err) {
+      const file = formData.get('image');
+      if (file) {
+        return new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            resolve({
+              success: true,
+              message: 'Image loaded locally.',
+              url: reader.result,
+              filename: file.name,
+            });
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+      throw err;
+    }
+  },
 
   // Dashboard & Settings
   getDashboardStats: () =>

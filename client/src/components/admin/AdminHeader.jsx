@@ -52,9 +52,17 @@ export const AdminHeader = ({ setMobileOpen, pageTitle }) => {
         {admin && (
           <div className="flex items-center space-x-2.5 sm:pl-2 sm:border-l sm:border-surface-200">
             <div className="relative">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-blue to-blue-600 text-white flex items-center justify-center font-bold text-xs ring-2 ring-brand-gold/50 shadow-xs">
-                <User className="w-4 h-4" />
-              </div>
+              {admin.avatarUrl ? (
+                <img
+                  src={admin.avatarUrl}
+                  alt={admin.name || 'Admin'}
+                  className="w-8 h-8 rounded-full object-cover ring-2 ring-brand-gold/50 shadow-xs"
+                />
+              ) : (
+                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-blue to-blue-600 text-white flex items-center justify-center font-bold text-xs ring-2 ring-brand-gold/50 shadow-xs">
+                  <User className="w-4 h-4" />
+                </div>
+              )}
               <span
                 className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white"
                 title="Active Session"

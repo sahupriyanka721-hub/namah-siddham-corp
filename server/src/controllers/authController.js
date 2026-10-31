@@ -95,7 +95,9 @@ export const loginAdmin = async (req, res, next) => {
         id: admin._id,
         name: admin.name,
         email: admin.email,
+        phone: admin.phone || '',
         role: admin.role,
+        avatarUrl: admin.avatarUrl || '',
         lastLogin: admin.lastLogin,
       },
     });
@@ -274,6 +276,7 @@ export const verifyAdminOtp = async (req, res, next) => {
         email: admin.email,
         phone: admin.phone || cleanPhone,
         role: admin.role,
+        avatarUrl: admin.avatarUrl || '',
         lastLogin: admin.lastLogin,
       },
     });
@@ -331,6 +334,62 @@ export const changePassword = async (req, res, next) => {
     res.status(200).json({
       success: true,
       message: 'Password updated successfully.',
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const updateProfile = async (req, res, next) => {
+  try {
+    const { name, email, phone, avatarUrl } = req.body;
+    const admin = await AdminUser.findById(req.user._id);
+
+    if (!admin) {
+      return res.status(404).json({
+        success: false,
+        message: 'Administrator account not found.',
+      });
+    }
+
+    if (email && email.toLowerCase().trim() !== admin.email) {
+      const cleanEmail = email.toLowerCase().trim();
+      const existing = await AdminUser.findOne({ email: cleanEmail });
+      if (existing && existing._id.toString() !== admin._id.toString()) {
+        return res.status(400).json({
+          success: false,
+          message: 'Email address is already in use by another administrator.',
+        });
+      }
+      admin.email = cleanEmail;
+    }
+
+    if (name && name.trim()) {
+      admin.name = name.trim();
+    }
+
+    if (phone !== undefined) {
+      admin.phone = phone.trim();
+    }
+
+    if (avatarUrl !== undefined) {
+      admin.avatarUrl = avatarUrl;
+    }
+
+    await admin.save();
+
+    res.status(200).json({
+      success: true,
+      message: 'Profile updated successfully.',
+      admin: {
+        id: admin._id,
+        name: admin.name,
+        email: admin.email,
+        phone: admin.phone,
+        role: admin.role,
+        avatarUrl: admin.avatarUrl,
+        lastLogin: admin.lastLogin,
+      },
     });
   } catch (error) {
     next(error);

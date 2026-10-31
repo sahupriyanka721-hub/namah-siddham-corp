@@ -141,6 +141,14 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('namah_admin_user');
   };
 
+  const updateAdminProfile = (updatedData) => {
+    setAdmin((prev) => {
+      const merged = { ...prev, ...updatedData };
+      localStorage.setItem('namah_admin_user', JSON.stringify(merged));
+      return merged;
+    });
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -152,6 +160,7 @@ export const AuthProvider = ({ children }) => {
         sendOtp,
         verifyOtp,
         logout,
+        updateAdminProfile,
       }}
     >
       {children}

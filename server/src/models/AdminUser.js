@@ -20,6 +20,11 @@ const AdminUserSchema = new mongoose.Schema(
       trim: true,
       default: '8319955741',
     },
+    avatarUrl: {
+      type: String,
+      default: '',
+      trim: true,
+    },
     otp: {
       type: String,
       select: false,
