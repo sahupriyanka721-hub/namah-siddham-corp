@@ -9,12 +9,12 @@ export const Footer = () => {
   return (
     <footer className="bg-navy-950 text-surface-300 border-t border-navy-800 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-navy-800">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6 pb-12 border-b border-navy-800">
           {/* Column 1: Brand Logo & Introduction */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="sm:col-span-2 lg:col-span-2 space-y-4">
             <Link to="/" className="inline-block focus:outline-none">
               <div className="flex items-center space-x-3.5">
-                {/* Premium Dark Glass Logo Container (No harsh white box; rich dark glass & subtle rim) */}
+                {/* Premium Dark Glass Logo Container */}
                 <div className="p-2.5 rounded-2xl bg-navy-900/90 backdrop-blur-md border border-sky-500/30 shadow-xl shadow-sky-950/60 ring-1 ring-amber-400/20 group-hover:border-sky-400/60 transition-all">
                   <img
                     src="/assets/namah-siddham-emblem.svg"
@@ -101,7 +101,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Product Platforms */}
+          {/* Column 3: Digital Products */}
           <div className="space-y-4">
             <h4 className="text-white text-xs font-bold tracking-wider uppercase font-serif border-b border-navy-800 pb-2 flex items-center">
               <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mr-2" />
@@ -152,7 +152,66 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Registered Office & Contact */}
+          {/* Column 4: Legal & Policies (Placed right next to Digital Products) */}
+          <div className="space-y-4">
+            <h4 className="text-white text-xs font-bold tracking-wider uppercase font-serif border-b border-navy-800 pb-2 flex items-center">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mr-2" />
+              Legal &amp; Policies
+            </h4>
+            <ul className="space-y-2 text-xs sm:text-sm">
+              <li>
+                <Link
+                  to="/privacy-policy"
+                  className="hover:text-gold-400 transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/terms-of-use"
+                  className="hover:text-gold-400 transition-colors"
+                >
+                  Terms of Use
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/cookie-policy"
+                  className="hover:text-gold-400 text-sky-300 font-medium transition-colors"
+                >
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/disclaimer"
+                  className="hover:text-gold-400 transition-colors"
+                >
+                  Website Disclaimer
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/grievance"
+                  className="hover:text-gold-400 transition-colors"
+                >
+                  Grievance Contact
+                </Link>
+              </li>
+              <li className="pt-2">
+                <Link
+                  to="/privacy-policy"
+                  className="text-xs text-amber-400 font-bold hover:underline inline-flex items-center"
+                >
+                  <span>Legal Compliance</span>
+                  <ArrowUpRight className="w-3 h-3 ml-0.5" />
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 5: Registered Office & Contact */}
           <div className="space-y-4">
             <h4 className="text-white text-xs font-bold tracking-wider uppercase font-serif border-b border-navy-800 pb-2">
               Registered Office
@@ -221,39 +280,27 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Legal Links & Copyright Bar */}
+        {/* Bottom Bar: Quick Corporate Links & Copyright */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-surface-400 space-y-4 md:space-y-0">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <Link to="/privacy-policy" className="hover:text-gold-400 transition-colors">
-              Privacy Policy
-            </Link>
-            <span>•</span>
-            <Link to="/terms-of-use" className="hover:text-gold-400 transition-colors">
-              Terms of Use
-            </Link>
-            <span>•</span>
-            <Link to="/cookie-policy" className="text-sky-300 font-semibold hover:text-gold-400 transition-colors">
-              Cookie Policy
-            </Link>
-            <span>•</span>
-            <Link to="/disclaimer" className="hover:text-gold-400 transition-colors">
-              Website Disclaimer
-            </Link>
-            <span>•</span>
-            <Link to="/grievance" className="hover:text-gold-400 transition-colors">
-              Grievance Contact
-            </Link>
-            <span>•</span>
             <Link to="/team" className="hover:text-gold-400 transition-colors">
               Leadership &amp; Governance
             </Link>
             <span>•</span>
             <Link to="/portfolio" className="hover:text-gold-400 transition-colors">
-              Portfolio
+              Portfolio Projects
             </Link>
             <span>•</span>
             <Link to="/careers" className="hover:text-gold-400 transition-colors">
               Careers
+            </Link>
+            <span>•</span>
+            <Link to="/partners" className="hover:text-gold-400 transition-colors">
+              Partnership Inquiries
+            </Link>
+            <span>•</span>
+            <Link to="/contact" className="hover:text-gold-400 transition-colors">
+              Contact Us
             </Link>
           </div>
 
