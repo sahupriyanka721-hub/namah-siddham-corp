@@ -24,10 +24,11 @@ export const connectDB = async () => {
     console.log(`[MongoDB] Connected successfully: ${conn.connection.host}`);
   } catch (error) {
     console.error(`[MongoDB] Connection error: ${error.message}`);
-    // Do not crash server in dev so API can still provide appropriate status responses
-    if (ENV.NODE_ENV === 'production') {
-      process.exit(1);
-    }
+    // Instead of crashing the server, retry connection gracefully in background
+    setTimeout(() => {
+      console.log('[MongoDB] Retrying database connection in 5s...');
+      connectDB();
+    }, 5000);
   }
 };
 
