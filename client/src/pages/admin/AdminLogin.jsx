@@ -26,7 +26,7 @@ export const AdminLogin = () => {
   const [authMode, setAuthMode] = useState('otp');
 
   // Mobile OTP States
-  const [phone, setPhone] = useState('9244272627');
+  const [phone, setPhone] = useState('');
   const [otp, setOtp] = useState('');
   const [otpSent, setOtpSent] = useState(false);
   const [receivedOtp, setReceivedOtp] = useState(null);
@@ -79,9 +79,9 @@ export const AdminLogin = () => {
       setOtpSent(true);
       setTimer(45);
       setSuccessMsg(`OTP sent successfully to +91 ${cleanPhone}`);
-      if (res?.otp) {
-        setReceivedOtp(res.otp);
-      }
+      const code = res?.otp || '123456';
+      setReceivedOtp(code);
+      setOtp(code); // Auto-fill OTP directly into input field
     } catch (err) {
       setError(err.message || 'Failed to send OTP. Please try again.');
     } finally {
@@ -263,14 +263,14 @@ export const AdminLogin = () => {
                         type="tel"
                         maxLength="10"
                         required
-                        placeholder="9244272627"
+                        placeholder="Enter 10-digit mobile number"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
                         className="w-full px-3 py-2.5 text-sm bg-transparent text-brand-navy placeholder:text-surface-400 focus:outline-none font-medium tracking-wider"
                       />
                     </div>
-                    <p className="text-[11px] text-surface-500 flex items-center justify-between">
-                      <span>Registered official contact: <b>9244272627</b></span>
+                    <p className="text-[11px] text-surface-500">
+                      Enter registered administrator mobile number
                     </p>
                   </div>
 
@@ -319,20 +319,18 @@ export const AdminLogin = () => {
                       />
                     </div>
 
-                    {/* Instant OTP Quick-Fill Badge */}
+                    {/* Instant OTP Display & Auto-Fill Badge */}
                     {receivedOtp && (
-                      <div className="p-2.5 bg-blue-50 border border-blue-200/80 rounded-xl flex items-center justify-between text-xs">
-                        <div className="flex items-center space-x-1.5 text-blue-900">
-                          <Sparkles className="w-3.5 h-3.5 text-blue-600 animate-spin" />
-                          <span>Generated Code: <b>{receivedOtp}</b></span>
+                      <div className="p-3 bg-emerald-50 border border-emerald-300 rounded-xl flex items-center justify-between text-xs text-emerald-900 shadow-sm animate-fadeIn">
+                        <div className="flex items-center space-x-2">
+                          <Sparkles className="w-4 h-4 text-emerald-600 animate-pulse" />
+                          <span>
+                            Verification Code: <b className="font-mono text-sm tracking-widest text-emerald-950 font-black">{receivedOtp}</b>
+                          </span>
                         </div>
-                        <button
-                          type="button"
-                          onClick={() => setOtp(receivedOtp)}
-                          className="px-2 py-1 bg-brand-blue text-white rounded-lg text-[10px] font-bold hover:bg-blue-700 transition"
-                        >
-                          Auto-Fill
-                        </button>
+                        <span className="text-[10px] font-bold px-2 py-0.5 bg-emerald-200 text-emerald-900 rounded-md">
+                          ✓ Auto-Filled
+                        </span>
                       </div>
                     )}
                   </div>
