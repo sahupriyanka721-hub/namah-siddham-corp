@@ -26,7 +26,7 @@ export const AdminLogin = () => {
   const [authMode, setAuthMode] = useState('otp');
 
   // Mobile OTP States
-  const [phone, setPhone] = useState('9516262715');
+  const [phone, setPhone] = useState('9244272627');
   const [otp, setOtp] = useState('');
   const [otpSent, setOtpSent] = useState(false);
   const [receivedOtp, setReceivedOtp] = useState(null);
@@ -263,14 +263,14 @@ export const AdminLogin = () => {
                         type="tel"
                         maxLength="10"
                         required
-                        placeholder="9516262715"
+                        placeholder="9244272627"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
                         className="w-full px-3 py-2.5 text-sm bg-transparent text-brand-navy placeholder:text-surface-400 focus:outline-none font-medium tracking-wider"
                       />
                     </div>
                     <p className="text-[11px] text-surface-500 flex items-center justify-between">
-                      <span>Registered official contact: <b>9516262715</b></span>
+                      <span>Registered official contact: <b>9244272627</b></span>
                     </p>
                   </div>
 

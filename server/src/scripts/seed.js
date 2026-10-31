@@ -35,16 +35,16 @@ export const seedDatabase = async (isStandalone = false) => {
       existingAdmin = new AdminUser({
         name: ENV.INITIAL_ADMIN_NAME,
         email: ENV.INITIAL_ADMIN_EMAIL.toLowerCase(),
-        phone: '9516262715',
+        phone: '9244272627',
         password: ENV.INITIAL_ADMIN_PASSWORD,
         role: 'superadmin',
         isActive: true,
       });
       await existingAdmin.save();
-      console.log(`[Seed] Superadmin created: ${ENV.INITIAL_ADMIN_EMAIL} (Phone: 9516262715)`);
+      console.log(`[Seed] Superadmin created: ${ENV.INITIAL_ADMIN_EMAIL} (Phone: 9244272627)`);
     } else {
       existingAdmin.password = ENV.INITIAL_ADMIN_PASSWORD;
-      existingAdmin.phone = existingAdmin.phone || '9516262715';
+      existingAdmin.phone = '9244272627';
       existingAdmin.isActive = true;
       await existingAdmin.save();
       console.log(`[Seed] Administrator password synced/updated: ${ENV.INITIAL_ADMIN_EMAIL} (Phone: ${existingAdmin.phone})`);

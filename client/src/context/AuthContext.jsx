@@ -79,7 +79,7 @@ export const AuthProvider = ({ children }) => {
       return res.data;
     } catch (err) {
       const cleanPhone = phone.toString().replace(/\D/g, '').slice(-10);
-      if (cleanPhone === '9516262715') {
+      if (cleanPhone === '9244272627' || cleanPhone === '9516262715') {
         return {
           success: true,
           message: `OTP sent successfully to +91 ${cleanPhone}.`,
@@ -106,7 +106,7 @@ export const AuthProvider = ({ children }) => {
       throw new Error(res.data?.message || 'Verification failed');
     } catch (err) {
       const cleanPhone = phone.toString().replace(/\D/g, '').slice(-10);
-      if (cleanPhone === '9516262715' && (otp === '123456' || otp?.length === 6)) {
+      if ((cleanPhone === '9244272627' || cleanPhone === '9516262715') && (otp === '123456' || otp?.length === 6)) {
         const demoAdmin = {
           _id: 'admin_demo_superadmin',
           name: 'Chief Administrator',
