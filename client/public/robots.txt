@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://namahsiddham.com/sitemap.xml
+Sitemap: https://namahsiddham.in/sitemap.xml
