@@ -21,29 +21,45 @@ import {
   Compass,
   ArrowUpRight,
   Info,
+  Users2,
+  Linkedin,
+  User,
 } from 'lucide-react';
 import { publicApi } from '../../api/publicApi';
 import { useSettings } from '../../context/SettingsContext';
 import { SeoMeta } from '../../components/public/SeoMeta';
 import { HeroSection } from '../../components/public/HeroSection';
+import { mockTeam } from '../../data/mockData';
 
 export const HomePage = () => {
   const { settings } = useSettings();
   const [portfolio, setPortfolio] = useState([]);
   const [news, setNews] = useState([]);
+  const [team, setTeam] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [portfolioRes, newsRes] = await Promise.all([
+        const [portfolioRes, newsRes, teamRes] = await Promise.allSettled([
           publicApi.getPortfolio(),
           publicApi.getNews(),
+          publicApi.getTeam(),
         ]);
-        setPortfolio(portfolioRes.data?.data?.slice(0, 3) || []);
-        setNews(newsRes.data?.data?.slice(0, 3) || []);
+        if (portfolioRes.status === 'fulfilled') {
+          setPortfolio(portfolioRes.value?.data?.data?.slice(0, 3) || []);
+        }
+        if (newsRes.status === 'fulfilled') {
+          setNews(newsRes.value?.data?.data?.slice(0, 3) || []);
+        }
+        if (teamRes.status === 'fulfilled' && teamRes.value?.data?.data?.length > 0) {
+          setTeam(teamRes.value.data.data);
+        } else {
+          setTeam(mockTeam);
+        }
       } catch (err) {
         console.error('Failed to load homepage data:', err);
+        setTeam(mockTeam);
       } finally {
         setLoading(false);
       }
@@ -524,7 +540,100 @@ export const HomePage = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION J: LATEST UPDATES (Database-driven) */}
+      {/* SECTION J: CORPORATE LEADERSHIP & GOVERNANCE (Team)                       */}
+      {/* ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="max-w-3xl mx-auto space-y-2 text-center flex flex-col items-center">
+          <span className="shiny-badge inline-flex items-center text-xs font-bold text-sky-700 uppercase tracking-widest font-mono px-3 py-1 rounded-full">
+            <Users2 className="w-3.5 h-3.5 mr-1.5" />
+            Corporate Governance
+          </span>
+          <h2 className="font-serif font-black text-2xl sm:text-3xl text-slate-950 text-center">
+            Leadership &amp; <span className="text-gradient-ns">Board of Directors</span>
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 text-center max-w-2xl leading-relaxed">
+            Guided by dedicated corporate management committed to building sustainable, ethical, and technology-driven digital platforms.
+          </p>
+          <div className="pt-1">
+            <Link
+              to="/team"
+              className="shiny-badge inline-flex items-center text-xs sm:text-sm font-bold text-sky-700 hover:text-sky-800 px-4 py-1.5 rounded-full"
+            >
+              <span>View Full Leadership</span>
+              <ArrowRight className="w-3.5 h-3.5 ml-1" />
+            </Link>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+          {(team && team.length > 0 ? team : mockTeam).map((member, idx) => (
+            <div
+              key={member._id || idx}
+              className="shiny-card bg-white rounded-3xl p-6 sm:p-7 border-2 border-sky-100 hover:border-sky-400 shadow-md hover:shadow-xl hover:shadow-sky-500/15 transition-all flex flex-col justify-between space-y-5 group"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  {member.profileImage ? (
+                    <img
+                      src={member.profileImage}
+                      alt={member.name}
+                      className="w-14 h-14 rounded-2xl object-cover border-2 border-sky-200 group-hover:border-sky-400 transition-colors"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                  ) : null}
+                  <div
+                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-50 to-sky-100 text-brand-blue flex items-center justify-center font-bold text-xl border-2 border-sky-200 shrink-0 group-hover:scale-105 transition-transform ${
+                      member.profileImage ? 'hidden' : 'flex'
+                    }`}
+                  >
+                    <Users2 className="w-7 h-7 text-sky-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif font-bold text-lg text-slate-900 group-hover:text-brand-blue transition-colors">
+                      {member.name}
+                    </h3>
+                    <p className="text-xs font-semibold text-brand-orange uppercase tracking-wider font-mono">
+                      {member.designation || member.role || 'Corporate Management'}
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {member.biography || member.bio}
+                </p>
+              </div>
+
+              <div className="pt-3 border-t border-sky-100 flex items-center justify-between text-xs">
+                <Link
+                  to="/team"
+                  className="font-bold text-sky-700 hover:text-brand-orange transition-colors inline-flex items-center"
+                >
+                  <span>Corporate Governance</span>
+                  <ChevronRight className="w-3.5 h-3.5 ml-0.5" />
+                </Link>
+
+                {(member.linkedinUrl || member.socialLinks?.linkedin) && (
+                  <a
+                    href={member.linkedinUrl || member.socialLinks?.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-slate-500 hover:text-sky-600 transition-colors inline-flex items-center"
+                  >
+                    <Linkedin className="w-3.5 h-3.5 mr-1 text-sky-600" />
+                    <span>LinkedIn</span>
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* SECTION K: LATEST UPDATES (Database-driven) */}
       {/* ========================================================================= */}
       {news && news.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
@@ -578,7 +687,7 @@ export const HomePage = () => {
       )}
 
       {/* ========================================================================= */}
-      {/* SECTION K: FINAL CTA (Vibrant Light Electric Blue Theme) */}
+      {/* SECTION L: FINAL CTA (Vibrant Light Electric Blue Theme) */}
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-6 sm:p-10 text-white border border-sky-300/40 shadow-2xl shadow-sky-500/25 flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden">

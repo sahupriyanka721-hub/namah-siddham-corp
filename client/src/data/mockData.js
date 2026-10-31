@@ -215,8 +215,11 @@ export const mockTeam = [
     _id: 'team_1',
     name: 'Board of Directors',
     role: 'Corporate Governance & Executive Leadership',
+    designation: 'Corporate Governance & Executive Leadership',
     bio: 'Guiding Namah Siddham Corporation Private Limited with a commitment to corporate integrity, sustainable platform aggregation, and transparent stakeholder value.',
+    biography: 'Guiding Namah Siddham Corporation Private Limited with a commitment to corporate integrity, sustainable platform aggregation, and transparent stakeholder value.',
     displayOrder: 1,
+    linkedinUrl: 'https://linkedin.com/company/namahsiddham',
     socialLinks: {
       linkedin: 'https://linkedin.com/company/namahsiddham',
     },

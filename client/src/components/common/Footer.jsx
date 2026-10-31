@@ -233,6 +233,10 @@ export const Footer = () => {
               Grievance Contact
             </Link>
             <span>•</span>
+            <Link to="/team" className="hover:text-gold-400 transition-colors">
+              Leadership &amp; Governance
+            </Link>
+            <span>•</span>
             <Link to="/portfolio" className="hover:text-gold-400 transition-colors">
               Portfolio
             </Link>
