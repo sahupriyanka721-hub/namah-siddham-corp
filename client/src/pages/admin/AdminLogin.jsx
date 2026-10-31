@@ -78,7 +78,7 @@ export const AdminLogin = () => {
       const res = await sendOtp(cleanPhone);
       setOtpSent(true);
       setTimer(45);
-      setSuccessMsg(`OTP sent successfully to +91 ${cleanPhone}`);
+      setSuccessMsg('OTP sent successfully.');
       const code = res?.otp || '123456';
       setReceivedOtp(code);
       setOtp(code); // Auto-fill OTP directly into input field
@@ -253,7 +253,7 @@ export const AdminLogin = () => {
                 <form onSubmit={handleSendOtp} className="space-y-4">
                   <div className="space-y-1.5">
                     <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
-                      Admin Registered Mobile Number
+                      Mobile Number
                     </label>
                     <div className="relative flex rounded-xl border border-surface-300 focus-within:ring-2 focus-within:ring-brand-blue focus-within:border-brand-blue overflow-hidden shadow-inner bg-surface-50/80">
                       <span className="inline-flex items-center px-3.5 text-xs font-bold text-brand-navy bg-surface-100 border-r border-surface-200">
@@ -263,15 +263,12 @@ export const AdminLogin = () => {
                         type="tel"
                         maxLength="10"
                         required
-                        placeholder="8319955741"
+                        placeholder="Enter mobile number"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
                         className="w-full px-3 py-2.5 text-sm bg-transparent text-brand-navy placeholder:text-surface-400 focus:outline-none font-medium tracking-wider"
                       />
                     </div>
-                    <p className="text-[11px] text-surface-500">
-                      Enter registered administrator mobile number
-                    </p>
                   </div>
 
                   <Button
@@ -301,7 +298,7 @@ export const AdminLogin = () => {
                         }}
                         className="text-[11px] font-semibold text-brand-blue hover:underline"
                       >
-                        Change Number (+91 {phone})
+                        Change Number
                       </button>
                     </div>
 
