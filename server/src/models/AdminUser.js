@@ -18,7 +18,7 @@ const AdminUserSchema = new mongoose.Schema(
     phone: {
       type: String,
       trim: true,
-      default: '9244272627',
+      default: '8319955741',
     },
     otp: {
       type: String,

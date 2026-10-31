@@ -263,7 +263,7 @@ export const AdminLogin = () => {
                         type="tel"
                         maxLength="10"
                         required
-                        placeholder="Enter 10-digit mobile number"
+                        placeholder="8319955741"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
                         className="w-full px-3 py-2.5 text-sm bg-transparent text-brand-navy placeholder:text-surface-400 focus:outline-none font-medium tracking-wider"

