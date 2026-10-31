@@ -21,7 +21,6 @@ const serviceLinks = [
   {
     name: 'Website Development',
     path: '/services/web-development',
-    desc: 'Corporate sites, landing pages & dynamic web applications',
     icon: Globe,
     iconBox: 'bg-sky-50 text-brand-blue border-sky-200 group-hover:bg-brand-blue group-hover:text-white group-hover:border-brand-blue',
     hoverText: 'group-hover:text-brand-blue',
@@ -30,7 +29,6 @@ const serviceLinks = [
   {
     name: 'Custom Software Development',
     path: '/services/custom-software',
-    desc: 'Business management systems, ERP, CRM & tailored software',
     icon: Code2,
     iconBox: 'bg-slate-100 text-brand-navy border-slate-200 group-hover:bg-brand-navy group-hover:text-white group-hover:border-brand-navy',
     hoverText: 'group-hover:text-brand-navy',
@@ -39,7 +37,6 @@ const serviceLinks = [
   {
     name: 'Mobile Application Development',
     path: '/services/mobile-apps',
-    desc: 'Android & iOS customer and partner applications',
     icon: Smartphone,
     iconBox: 'bg-orange-50 text-brand-orange border-orange-200 group-hover:bg-brand-orange group-hover:text-white group-hover:border-brand-orange',
     hoverText: 'group-hover:text-brand-orange',
@@ -48,7 +45,6 @@ const serviceLinks = [
   {
     name: 'Digital Marketing & SEO',
     path: '/services/digital-marketing',
-    desc: 'SEO, digital campaigns, social visibility & lead generation',
     icon: TrendingUp,
     iconBox: 'bg-amber-50 text-amber-700 border-amber-200 group-hover:bg-amber-600 group-hover:text-white group-hover:border-amber-600',
     hoverText: 'group-hover:text-amber-700',
@@ -246,20 +242,15 @@ export const Navbar = () => {
                       <Link
                         key={item.name}
                         to={item.path}
-                        className={`flex items-start space-x-3 p-2.5 rounded-xl ${item.hoverBg} transition-colors group`}
+                        className={`flex items-center space-x-3 p-2.5 rounded-xl ${item.hoverBg} transition-colors group`}
                       >
                         <div
-                          className={`w-8 h-8 rounded-lg flex items-center justify-center border shrink-0 transition-colors mt-0.5 ${item.iconBox}`}
+                          className={`w-8 h-8 rounded-lg flex items-center justify-center border shrink-0 transition-colors ${item.iconBox}`}
                         >
                           <Icon className="w-4 h-4" />
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <div className={`text-xs font-bold text-brand-navy ${item.hoverText} transition-colors`}>
-                            {item.name}
-                          </div>
-                          <div className="text-[11px] text-slate-500 line-clamp-1 leading-snug mt-0.5">
-                            {item.desc}
-                          </div>
+                        <div className={`text-xs font-bold text-brand-navy ${item.hoverText} transition-colors`}>
+                          {item.name}
                         </div>
                       </Link>
                     );
