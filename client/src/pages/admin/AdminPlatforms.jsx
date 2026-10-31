@@ -90,8 +90,12 @@ export const AdminPlatforms = () => {
       detailedDescription: p.detailedDescription || '',
       problemSolved: p.problemSolved || '',
       websiteUrl: p.websiteUrl || '',
-      keyFeaturesText: (p.keyFeatures || []).join('\n'),
-      partnerOpportunitiesText: (p.partnerOpportunities || []).join('\n'),
+      keyFeaturesText: Array.isArray(p.keyFeatures)
+        ? p.keyFeatures.join('\n')
+        : (typeof p.keyFeatures === 'string' ? p.keyFeatures : ''),
+      partnerOpportunitiesText: Array.isArray(p.partnerOpportunities)
+        ? p.partnerOpportunities.join('\n')
+        : (typeof p.partnerOpportunities === 'string' ? p.partnerOpportunities : ''),
       targetAudience: p.targetAudience || '',
       status: p.status || 'Under Development',
       displayOrder: p.displayOrder || 0,
@@ -281,15 +285,19 @@ export const AdminPlatforms = () => {
                       <Badge status={p.status}>{p.status}</Badge>
                     </td>
                     <td className="py-3.5 px-4">
-                      <a
-                        href={p.websiteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-brand-blue hover:text-blue-800 font-medium inline-flex items-center"
-                      >
-                        <span className="truncate max-w-[150px]">{p.websiteUrl}</span>
-                        <ExternalLink className="w-3 h-3 ml-1" />
-                      </a>
+                      {p.websiteUrl ? (
+                        <a
+                          href={p.websiteUrl.startsWith('http') ? p.websiteUrl : `https://${p.websiteUrl}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-brand-blue hover:text-blue-800 font-medium inline-flex items-center"
+                        >
+                          <span className="truncate max-w-[150px]">{p.websiteUrl}</span>
+                          <ExternalLink className="w-3 h-3 ml-1" />
+                        </a>
+                      ) : (
+                        <span className="text-slate-400 font-mono text-[11px]">—</span>
+                      )}
                     </td>
                     <td className="py-3.5 px-4 text-right space-x-2">
                       <button
@@ -610,7 +618,7 @@ export const AdminPlatforms = () => {
 
               {viewingPlatform.websiteUrl && (
                 <a
-                  href={viewingPlatform.websiteUrl}
+                  href={viewingPlatform.websiteUrl.startsWith('http') ? viewingPlatform.websiteUrl : `https://${viewingPlatform.websiteUrl}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-brand-blue font-medium hover:bg-slate-50 transition-colors flex items-center space-x-1.5 shadow-2xs text-[11px]"
@@ -667,11 +675,8 @@ export const AdminPlatforms = () => {
               <div className="p-3.5 rounded-xl border border-slate-200 bg-slate-50">
                 <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-2 font-mono flex items-center justify-between">
                   <span>Key Features & Modules</span>
-                  <span className="text-[10px] text-brand-blue font-bold">
-                    {(viewingPlatform.keyFeatures || []).length} features
-                  </span>
                 </div>
-                {viewingPlatform.keyFeatures && viewingPlatform.keyFeatures.length > 0 ? (
+                {Array.isArray(viewingPlatform.keyFeatures) && viewingPlatform.keyFeatures.length > 0 ? (
                   <ul className="space-y-1.5">
                     {viewingPlatform.keyFeatures.map((feat, idx) => (
                       <li key={idx} className="flex items-start space-x-2 text-slate-700">
@@ -680,6 +685,8 @@ export const AdminPlatforms = () => {
                       </li>
                     ))}
                   </ul>
+                ) : typeof viewingPlatform.keyFeatures === 'string' && viewingPlatform.keyFeatures.trim() ? (
+                  <p className="text-slate-700 leading-relaxed font-sans whitespace-pre-wrap">{viewingPlatform.keyFeatures}</p>
                 ) : (
                   <p className="text-slate-400 italic">No features listed.</p>
                 )}
@@ -688,11 +695,8 @@ export const AdminPlatforms = () => {
               <div className="p-3.5 rounded-xl border border-slate-200 bg-slate-50">
                 <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-2 font-mono flex items-center justify-between">
                   <span>Partner & Business Opportunities</span>
-                  <span className="text-[10px] text-brand-blue font-bold">
-                    {(viewingPlatform.partnerOpportunities || []).length} opportunities
-                  </span>
                 </div>
-                {viewingPlatform.partnerOpportunities && viewingPlatform.partnerOpportunities.length > 0 ? (
+                {Array.isArray(viewingPlatform.partnerOpportunities) && viewingPlatform.partnerOpportunities.length > 0 ? (
                   <ul className="space-y-1.5">
                     {viewingPlatform.partnerOpportunities.map((opp, idx) => (
                       <li key={idx} className="flex items-start space-x-2 text-slate-700">
@@ -701,6 +705,8 @@ export const AdminPlatforms = () => {
                       </li>
                     ))}
                   </ul>
+                ) : typeof viewingPlatform.partnerOpportunities === 'string' && viewingPlatform.partnerOpportunities.trim() ? (
+                  <p className="text-slate-700 leading-relaxed font-sans whitespace-pre-wrap">{viewingPlatform.partnerOpportunities}</p>
                 ) : (
                   <p className="text-slate-400 italic">No partner opportunities listed.</p>
                 )}
@@ -729,29 +735,16 @@ export const AdminPlatforms = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="pt-3 border-t border-slate-200 flex items-center justify-between">
+            <div className="pt-3 border-t border-slate-200 flex items-center justify-end">
               <button
                 type="button"
                 onClick={() => {
                   setViewModalOpen(false);
                   setViewingPlatform(null);
                 }}
-                className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors"
+                className="px-5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors"
               >
                 Close View
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  const p = viewingPlatform;
-                  setViewModalOpen(false);
-                  setViewingPlatform(null);
-                  openEditModal(p);
-                }}
-                className="px-4 py-2 rounded-xl bg-brand-blue hover:bg-blue-700 text-white text-xs font-bold flex items-center space-x-1.5 shadow-xs transition-colors"
-              >
-                <Edit className="w-3.5 h-3.5" />
-                <span>Edit Platform Details</span>
               </button>
             </div>
           </div>

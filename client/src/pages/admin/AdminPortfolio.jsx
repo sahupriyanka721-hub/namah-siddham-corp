@@ -610,7 +610,7 @@ export const AdminPortfolio = () => {
                     {(viewingProject.technologies || []).length} technologies
                   </span>
                 </div>
-                {viewingProject.technologies && viewingProject.technologies.length > 0 ? (
+                {Array.isArray(viewingProject.technologies) && viewingProject.technologies.length > 0 ? (
                   <div className="flex flex-wrap gap-2">
                     {viewingProject.technologies.map((tech, idx) => (
                       <span
@@ -618,6 +618,17 @@ export const AdminPortfolio = () => {
                         className="px-2.5 py-1 rounded-lg text-xs font-mono font-semibold bg-white border border-surface-200 text-brand-navy shadow-2xs"
                       >
                         {tech}
+                      </span>
+                    ))}
+                  </div>
+                ) : typeof viewingProject.technologies === 'string' && viewingProject.technologies.trim() ? (
+                  <div className="flex flex-wrap gap-2">
+                    {viewingProject.technologies.split(',').map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2.5 py-1 rounded-lg text-xs font-mono font-semibold bg-white border border-surface-200 text-brand-navy shadow-2xs"
+                      >
+                        {tech.trim()}
                       </span>
                     ))}
                   </div>
@@ -669,29 +680,16 @@ export const AdminPortfolio = () => {
             </div>
 
             {/* Footer Actions */}
-            <div className="pt-3 border-t border-surface-200 flex items-center justify-between">
+            <div className="pt-3 border-t border-surface-200 flex items-center justify-end">
               <button
                 type="button"
                 onClick={() => {
                   setViewModalOpen(false);
                   setViewingProject(null);
                 }}
-                className="px-4 py-2 rounded-xl bg-surface-100 hover:bg-surface-200 text-surface-700 text-xs font-semibold transition-colors"
+                className="px-5 py-2 rounded-xl bg-surface-100 hover:bg-surface-200 text-surface-700 text-xs font-semibold transition-colors"
               >
                 Close View
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  const p = viewingProject;
-                  setViewModalOpen(false);
-                  setViewingProject(null);
-                  openEditModal(p);
-                }}
-                className="px-4 py-2 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-700 hover:to-brand-blue text-white text-xs font-bold flex items-center space-x-1.5 shadow-xs transition-colors"
-              >
-                <Edit2 className="w-3.5 h-3.5" />
-                <span>Edit Project Details</span>
               </button>
             </div>
           </div>

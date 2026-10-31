@@ -678,29 +678,16 @@ export const AdminServices = () => {
             </div>
 
             {/* Footer Actions */}
-            <div className="pt-3 border-t border-surface-200 flex items-center justify-between">
+            <div className="pt-3 border-t border-surface-200 flex items-center justify-end">
               <button
                 type="button"
                 onClick={() => {
                   setViewModalOpen(false);
                   setViewingService(null);
                 }}
-                className="px-4 py-2 rounded-xl bg-surface-100 hover:bg-surface-200 text-surface-700 text-xs font-semibold transition-colors"
+                className="px-5 py-2 rounded-xl bg-surface-100 hover:bg-surface-200 text-surface-700 text-xs font-semibold transition-colors"
               >
                 Close View
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  const s = viewingService;
-                  setViewModalOpen(false);
-                  setViewingService(null);
-                  openEditModal(s);
-                }}
-                className="px-4 py-2 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-700 hover:to-brand-blue text-white text-xs font-bold flex items-center space-x-1.5 shadow-xs transition-colors"
-              >
-                <Edit2 className="w-3.5 h-3.5" />
-                <span>Edit Service Details</span>
               </button>
             </div>
           </div>
