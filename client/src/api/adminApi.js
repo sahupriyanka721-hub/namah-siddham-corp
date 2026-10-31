@@ -46,6 +46,18 @@ const saveStoredAgreements = (agreements) => {
   localStorage.setItem('namah_mock_agreements', JSON.stringify(agreements));
 };
 
+const getStoredTeam = () => {
+  const local = JSON.parse(localStorage.getItem('namah_mock_team') || 'null');
+  if (local && Array.isArray(local) && local.length > 0) {
+    return local;
+  }
+  return mockTeam;
+};
+
+const saveStoredTeam = (team) => {
+  localStorage.setItem('namah_mock_team', JSON.stringify(team));
+};
+
 export const adminApi = {
   // Auth
   login: (credentials) => apiClient.post('/auth/login', credentials),
@@ -262,27 +274,56 @@ export const adminApi = {
   // Leadership Team
   getTeam: () =>
     withFallback(
-      () => apiClient.get('/admin/team'),
-      { success: true, data: mockTeam }
+      async () => {
+        const res = await apiClient.get('/admin/team');
+        if (res.data?.data && res.data.data.length > 0) {
+          saveStoredTeam(res.data.data);
+        }
+        return res;
+      },
+      () => ({ success: true, data: getStoredTeam() })
     ),
 
-  createTeamMember: (data) =>
-    withFallback(
-      () => apiClient.post('/admin/team', data),
-      { success: true, message: 'Team member added.', data }
-    ),
+  createTeamMember: async (data) => {
+    try {
+      const res = await apiClient.post('/admin/team', data);
+      const team = getStoredTeam();
+      const newMember = res.data?.data || { ...data, _id: 'team_' + Date.now() };
+      saveStoredTeam([newMember, ...team]);
+      return res;
+    } catch (err) {
+      const team = getStoredTeam();
+      const newMember = { ...data, _id: 'team_' + Date.now(), createdAt: new Date().toISOString() };
+      saveStoredTeam([newMember, ...team]);
+      return { data: { success: true, message: 'Team member added.', data: newMember } };
+    }
+  },
 
-  updateTeamMember: (id, data) =>
-    withFallback(
-      () => apiClient.put(`/admin/team/${id}`, data),
-      { success: true, message: 'Team member updated.', data }
-    ),
+  updateTeamMember: async (id, data) => {
+    try {
+      const res = await apiClient.put(`/admin/team/${id}`, data);
+      const team = getStoredTeam().map((m) => (m._id === id ? { ...m, ...data } : m));
+      saveStoredTeam(team);
+      return res;
+    } catch (err) {
+      const team = getStoredTeam().map((m) => (m._id === id ? { ...m, ...data } : m));
+      saveStoredTeam(team);
+      return { data: { success: true, message: 'Team member updated.', data } };
+    }
+  },
 
-  deleteTeamMember: (id) =>
-    withFallback(
-      () => apiClient.delete(`/admin/team/${id}`),
-      { success: true, message: 'Member removed.' }
-    ),
+  deleteTeamMember: async (id) => {
+    try {
+      const res = await apiClient.delete(`/admin/team/${id}`);
+      const team = getStoredTeam().filter((m) => m._id !== id);
+      saveStoredTeam(team);
+      return res;
+    } catch (err) {
+      const team = getStoredTeam().filter((m) => m._id !== id);
+      saveStoredTeam(team);
+      return { data: { success: true, message: 'Member removed.' } };
+    }
+  },
 
   // News & Updates
   getNews: (params) =>

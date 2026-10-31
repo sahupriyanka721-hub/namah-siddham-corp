@@ -519,6 +519,16 @@ export const Navbar = () => {
               Careers &amp; Opportunities
             </Link>
             <Link
+              to="/team"
+              className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+                isActive('/team')
+                  ? 'bg-royal-50 text-royal-600 font-bold'
+                  : 'text-slate-700 hover:bg-slate-50'
+              }`}
+            >
+              Leadership &amp; Team
+            </Link>
+            <Link
               to="/partners"
               className={`block px-3 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
                 isActive('/partners')

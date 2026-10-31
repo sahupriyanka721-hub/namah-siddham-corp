@@ -1,4 +1,5 @@
 import apiClient from './client';
+import { mockTeam } from '../data/mockData';
 
 // Initial fallback datasets ensuring continuous offline/preview operability
 const defaultServices = [
@@ -149,8 +150,17 @@ export const publicApi = {
   // Leadership Team
   getTeam: () =>
     withFallback(
-      () => apiClient.get('/public/team'),
-      []
+      async () => {
+        const res = await apiClient.get('/public/team');
+        if (res.data?.data && res.data.data.length > 0) {
+          localStorage.setItem('namah_mock_team', JSON.stringify(res.data.data));
+        }
+        return res;
+      },
+      () => {
+        const local = JSON.parse(localStorage.getItem('namah_mock_team') || 'null');
+        return local && Array.isArray(local) && local.length > 0 ? local : mockTeam;
+      }
     ),
 
   // News & Updates

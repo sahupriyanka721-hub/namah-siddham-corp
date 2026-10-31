@@ -3,6 +3,7 @@ import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
 import Preloader from './components/common/Preloader';
+import CookieConsent from './components/common/CookieConsent';
 
 // Public Pages
 import HomePage from './pages/public/HomePage';
@@ -65,6 +66,7 @@ export function App() {
   return (
     <>
       <Preloader />
+      <CookieConsent />
       <Routes>
         {/* On admin subdomain, root '/' and '/login' redirect directly to Admin Suite */}
         {isAdminHost && (

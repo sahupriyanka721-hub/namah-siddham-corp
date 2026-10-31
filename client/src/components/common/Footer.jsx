@@ -211,6 +211,13 @@ export const Footer = () => {
                 Partner Inquiries
               </Link>
             </div>
+
+            {/* Leadership & Team Link */}
+            <div className="pt-2 text-xs">
+              <Link to="/team" className="text-amber-400 font-bold hover:text-white transition-colors inline-flex items-center space-x-1">
+                <span>Meet Leadership &amp; Board →</span>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -223,6 +230,10 @@ export const Footer = () => {
             <span>•</span>
             <Link to="/terms-of-use" className="hover:text-gold-400 transition-colors">
               Terms of Use
+            </Link>
+            <span>•</span>
+            <Link to="/cookie-policy" className="text-sky-300 font-semibold hover:text-gold-400 transition-colors">
+              Cookie Policy
             </Link>
             <span>•</span>
             <Link to="/disclaimer" className="hover:text-gold-400 transition-colors">
