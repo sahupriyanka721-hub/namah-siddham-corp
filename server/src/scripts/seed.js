@@ -20,11 +20,13 @@ import JobOpening from '../models/JobOpening.js';
 import Agreement from '../models/Agreement.js';
 import { defaultSeedAgreement } from '../controllers/agreementController.js';
 
-const seedDatabase = async () => {
+export const seedDatabase = async (isStandalone = false) => {
   try {
-    console.log('[Seed] Connecting to database...');
-    await mongoose.connect(ENV.MONGODB_URI);
-    console.log('[Seed] Connected.');
+    if (isStandalone) {
+      console.log('[Seed] Connecting to database...');
+      await mongoose.connect(ENV.MONGODB_URI);
+      console.log('[Seed] Connected.');
+    }
 
     // 1. Seed or Update Initial Superadmin
     console.log('[Seed] Provisioning initial administrator...');
@@ -877,11 +879,35 @@ You can adjust cookie settings through your browser. Please note that disabling 
     console.log(' Portfolio:   4 Projects Seeded');
     console.log('======================================================\n');
 
-    process.exit(0);
+    if (isStandalone) {
+      process.exit(0);
+    }
+    return true;
   } catch (error) {
     console.error('[Seed] Error seeding database:', error);
-    process.exit(1);
+    if (isStandalone) {
+      process.exit(1);
+    }
+    throw error;
   }
 };
 
-seedDatabase();
+export const autoSeedIfEmpty = async () => {
+  try {
+    const adminCount = await AdminUser.countDocuments();
+    if (adminCount === 0) {
+      console.log('[AutoSeed] Fresh database detected. Running initial seed data...');
+      await seedDatabase(false);
+      console.log('[AutoSeed] Initial database setup completed successfully.');
+    } else {
+      console.log(`[AutoSeed] Database already initialized (${adminCount} admin user(s) present).`);
+    }
+  } catch (error) {
+    console.error('[AutoSeed] Error checking database seed state:', error.message);
+  }
+};
+
+// Auto-run if executed directly as a standalone CLI script
+if (process.argv[1] && process.argv[1].replace(/\\/g, '/').endsWith('seed.js')) {
+  seedDatabase(true);
+}

@@ -7,6 +7,7 @@ import morgan from 'morgan';
 import { ENV } from './config/env.js';
 import { connectDB, getDBStatus } from './config/db.js';
 import { errorHandler } from './middleware/errorHandler.js';
+import { autoSeedIfEmpty } from './scripts/seed.js';
 
 // Route imports
 import authRoutes from './routes/authRoutes.js';
@@ -64,6 +65,18 @@ if (ENV.NODE_ENV !== 'test') {
 const uploadDir = path.resolve(process.cwd(), ENV.UPLOAD_DIR);
 app.use('/uploads', express.static(uploadDir));
 
+// Base root endpoint
+app.get('/', (req, res) => {
+  res.status(200).json({
+    status: 'online',
+    message: 'Namah Siddham Corporation API Server is running.',
+    company: 'Namah Siddham Corporation Private Limited',
+    cin: 'U77100MP2026PTC087531',
+    portal: 'https://namahsiddham.in',
+    health: '/api/health',
+  });
+});
+
 // System Health Check
 app.get('/api/health', (req, res) => {
   res.status(200).json({
@@ -96,6 +109,14 @@ app.use(errorHandler);
 const startServer = async () => {
   try {
     await connectDB();
+
+    // Auto-provision initial data if database is fresh
+    try {
+      await autoSeedIfEmpty();
+    } catch (seedErr) {
+      console.warn('[AutoSeed] Non-fatal initialization notice:', seedErr.message);
+    }
+
     const server = app.listen(ENV.PORT, () => {
       console.log(`[Server] Namah Siddham API running on http://localhost:${ENV.PORT}`);
       console.log(`[Server] Environment: ${ENV.NODE_ENV}`);
