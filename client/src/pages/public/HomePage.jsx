@@ -26,6 +26,10 @@ import { publicApi } from '../../api/publicApi';
 import { useSettings } from '../../context/SettingsContext';
 import { SeoMeta } from '../../components/public/SeoMeta';
 import { HeroSection } from '../../components/public/HeroSection';
+import { VisionSection } from '../../components/public/VisionSection';
+import { MissionSection } from '../../components/public/MissionSection';
+import { OurApproachSection } from '../../components/public/OurApproachSection';
+import { FinalCTASection } from '../../components/public/FinalCTASection';
 
 export const HomePage = () => {
   const { settings } = useSettings();
@@ -486,42 +490,19 @@ export const HomePage = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION I: COMPANY VISION AND MISSION */}
+      {/* SECTION 2: OUR VISION (Per Corporate Brand Standards)                     */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="shiny-glass rounded-3xl p-6 sm:p-10 border-2 border-sky-100 shadow-xl shadow-sky-500/5 space-y-8 text-left">
-          {/* Company Vision */}
-          <div className="space-y-3 max-w-4xl text-left flex flex-col items-start">
-            <span className="shiny-badge inline-flex items-center text-xs font-bold text-sky-700 uppercase tracking-widest font-mono px-3 py-1 rounded-full w-fit">
-              <Compass className="w-4 h-4 mr-1.5" />
-              Company Vision
-            </span>
-            <h3 className="font-serif font-bold text-2xl text-slate-900 text-left">
-              Accessible Digital Opportunity
-            </h3>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light italic text-left max-w-3xl">
-              "To build accessible and scalable digital platforms that simplify everyday needs and create opportunities for people and businesses."
-            </p>
-          </div>
+      <VisionSection />
 
-          {/* Elegant Full-width Left Divider */}
-          <div className="border-t border-sky-100/90 w-full" />
+      {/* ========================================================================= */}
+      {/* SECTION 3: OUR MISSION (6 Modern Responsive Commitment Cards)             */}
+      {/* ========================================================================= */}
+      <MissionSection />
 
-          {/* Company Mission */}
-          <div className="space-y-3 max-w-4xl text-left flex flex-col items-start">
-            <span className="shiny-badge inline-flex items-center text-xs font-bold text-orange-700 uppercase tracking-widest font-mono px-3 py-1 rounded-full w-fit">
-              <Sparkles className="w-4 h-4 mr-1.5" />
-              Company Mission
-            </span>
-            <h3 className="font-serif font-bold text-2xl text-slate-900 text-left">
-              Technology &amp; Specialized Platforms
-            </h3>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light italic text-left max-w-3xl">
-              "To combine technology, practical business solutions, and specialized online platforms to improve digital access, convenience, and collaboration."
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* ========================================================================= */}
+      {/* SECTION 4: OUR APPROACH (How We Create Value - 4-Step Process)             */}
+      {/* ========================================================================= */}
+      <OurApproachSection />
 
       {/* ========================================================================= */}
       {/* SECTION J: LATEST UPDATES (Database-driven) */}
@@ -578,50 +559,9 @@ export const HomePage = () => {
       )}
 
       {/* ========================================================================= */}
-      {/* SECTION K: FINAL CTA (Vibrant Light Electric Blue Theme) */}
+      {/* SECTION 6: FINAL CALL TO ACTION (Per Corporate Brand Standards)           */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 rounded-3xl p-6 sm:p-10 text-white border border-sky-300/40 shadow-2xl shadow-sky-500/25 flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden">
-          {/* Subtle atmospheric glow */}
-          <div className="absolute top-0 right-1/4 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 right-10 w-64 h-64 bg-gold-400/20 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="space-y-3 max-w-2xl relative z-10">
-            <span className="text-xs font-bold text-gold-300 uppercase tracking-widest font-serif">
-              Get Started
-            </span>
-            <h2 className="font-serif font-black text-2xl sm:text-4xl text-white">
-              Have a Digital Idea? Let's Build It Together.
-            </h2>
-            <p className="text-xs sm:text-base text-sky-100 leading-relaxed font-normal">
-              Connect with our team to discuss software development, mobile applications, digital marketing, or opportunities across our digital platforms.
-            </p>
-            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-sky-100 font-semibold">
-              <a href="tel:9516262715" className="hover:text-amber-300 transition-colors flex items-center space-x-1.5">
-                <span>📞 Call: 9516262715</span>
-              </a>
-              <span className="text-sky-300">•</span>
-              <a href="mailto:nscpl01@gmail.com" className="hover:text-amber-300 transition-colors flex items-center space-x-1.5">
-                <span>✉️ Email: nscpl01@gmail.com</span>
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full lg:w-auto relative z-10">
-            <Link
-              to="/contact"
-              className="shiny-btn px-7 py-3.5 rounded-2xl bg-white hover:bg-sky-50 text-sky-700 font-extrabold text-sm text-center shadow-xl shadow-sky-950/20 transition-all transform hover:-translate-y-0.5"
-            >
-              Discuss Your Project
-            </Link>
-            <Link
-              to="/contact"
-              className="shiny-btn px-7 py-3.5 rounded-2xl border-2 border-white hover:bg-white/15 text-white font-bold text-sm text-center transition-all shadow-sm"
-            >
-              Contact Us
-            </Link>
-          </div>
-        </div>
-      </section>
+      <FinalCTASection />
     </div>
   );
 };
