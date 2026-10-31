@@ -596,6 +596,15 @@ export const HomePage = () => {
             <p className="text-xs sm:text-base text-sky-100 leading-relaxed font-normal">
               Connect with our team to discuss software development, mobile applications, digital marketing, or opportunities across our digital platforms.
             </p>
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-sky-100 font-semibold">
+              <a href="tel:9516262715" className="hover:text-amber-300 transition-colors flex items-center space-x-1.5">
+                <span>📞 Call: 9516262715</span>
+              </a>
+              <span className="text-sky-300">•</span>
+              <a href="mailto:nscpl01@gmail.com" className="hover:text-amber-300 transition-colors flex items-center space-x-1.5">
+                <span>✉️ Email: nscpl01@gmail.com</span>
+              </a>
+            </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full lg:w-auto relative z-10">
             <Link

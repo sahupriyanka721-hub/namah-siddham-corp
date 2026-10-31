@@ -552,9 +552,19 @@ export const Navbar = () => {
           </div>
 
           {/* Quick Contact Line in Mobile Drawer */}
-          <div className="pt-3 text-[11px] text-slate-500 flex items-center justify-between border-t border-slate-100">
-            <span>Bhopal, MP, India</span>
-            <span className="font-mono text-royal-600 font-semibold">CIN: U77100MP2026PTC087531</span>
+          <div className="pt-3 text-xs text-slate-600 flex flex-col space-y-1.5 border-t border-slate-100">
+            <div className="flex items-center justify-between text-[11px] text-slate-500">
+              <span>Bhopal, MP, India</span>
+              <span className="font-mono text-brand-blue font-semibold">CIN: U77100MP2026PTC087531</span>
+            </div>
+            <div className="flex items-center justify-between pt-1 font-semibold text-slate-700">
+              <a href="tel:9516262715" className="hover:text-brand-blue flex items-center space-x-1">
+                <span>📞 9516262715</span>
+              </a>
+              <a href="mailto:nscpl01@gmail.com" className="hover:text-brand-blue flex items-center space-x-1">
+                <span>✉️ nscpl01@gmail.com</span>
+              </a>
+            </div>
           </div>
         </div>
       )}

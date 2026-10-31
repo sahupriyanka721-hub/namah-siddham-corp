@@ -11,6 +11,8 @@ import {
   Store,
   Briefcase,
   Users,
+  Phone,
+  Mail,
 } from 'lucide-react';
 import { publicApi } from '../../api/publicApi';
 import { SeoMeta } from '../../components/public/SeoMeta';
@@ -216,6 +218,29 @@ export const PartnerPage = () => {
                     <p className="text-[11px] text-surface-400">Platform listing or joint development begins</p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Direct Contact & Partnership Desk */}
+            <div className="p-4 rounded-2xl bg-navy-900/90 border border-navy-800 space-y-2 text-xs">
+              <span className="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider block">
+                Direct Partnership Desk
+              </span>
+              <div className="flex flex-col space-y-1.5 text-xs font-semibold text-slate-300">
+                <a
+                  href="tel:9516262715"
+                  className="flex items-center space-x-2 hover:text-white transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span>Call: 9516262715</span>
+                </a>
+                <a
+                  href="mailto:nscpl01@gmail.com"
+                  className="flex items-center space-x-2 hover:text-white transition-colors"
+                >
+                  <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span>Email: nscpl01@gmail.com</span>
+                </a>
               </div>
             </div>
 

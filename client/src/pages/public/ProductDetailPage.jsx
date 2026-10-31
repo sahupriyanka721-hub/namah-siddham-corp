@@ -15,6 +15,8 @@ import {
   Sparkles,
   Send,
   Building,
+  Phone,
+  Mail,
 } from 'lucide-react';
 import { publicApi } from '../../api/publicApi';
 import { SeoMeta } from '../../components/public/SeoMeta';
@@ -374,6 +376,27 @@ export const ProductDetailPage = () => {
                   <span className="font-bold text-navy-900 block">Location:</span>
                   <span>Bhopal, Madhya Pradesh, India</span>
                 </div>
+              </div>
+
+              {/* Official Partnership & Inquiry Desk */}
+              <div className="pt-3 border-t border-surface-200 space-y-1.5 text-xs">
+                <span className="font-bold text-navy-900 block text-[10px] uppercase tracking-wider font-mono text-royal-600">
+                  Partnership &amp; Inquiry Desk
+                </span>
+                <a
+                  href="tel:9516262715"
+                  className="flex items-center space-x-2 text-slate-700 hover:text-royal-600 transition"
+                >
+                  <Phone className="w-3.5 h-3.5 text-royal-600" />
+                  <span>Call: 9516262715</span>
+                </a>
+                <a
+                  href="mailto:nscpl01@gmail.com"
+                  className="flex items-center space-x-2 text-slate-700 hover:text-amber-700 transition"
+                >
+                  <Mail className="w-3.5 h-3.5 text-amber-600" />
+                  <span>Email: nscpl01@gmail.com</span>
+                </a>
               </div>
 
               {websiteUrl && (

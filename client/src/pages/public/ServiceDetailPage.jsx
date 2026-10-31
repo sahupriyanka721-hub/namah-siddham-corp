@@ -19,6 +19,8 @@ import {
   CheckCircle,
   AlertCircle,
   ChevronRight,
+  Phone,
+  Mail,
 } from 'lucide-react';
 import { publicApi } from '../../api/publicApi';
 import { SeoMeta } from '../../components/public/SeoMeta';
@@ -437,6 +439,29 @@ export const ServiceDetailPage = () => {
               <p className="text-xs text-surface-500 mt-1">
                 Connect with our engineering team regarding {service.title}.
               </p>
+            </div>
+
+            {/* Direct Contact & Inquiry Desk */}
+            <div className="p-3.5 bg-sky-50/90 border border-sky-200 rounded-2xl space-y-2 text-xs">
+              <span className="text-[10px] font-mono font-bold text-brand-blue uppercase tracking-wider block">
+                Official Inquiry Desk
+              </span>
+              <div className="flex flex-col space-y-1.5 text-xs font-semibold text-brand-navy">
+                <a
+                  href="tel:9516262715"
+                  className="flex items-center space-x-2 hover:text-brand-blue transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-brand-blue shrink-0" />
+                  <span>Call: 9516262715</span>
+                </a>
+                <a
+                  href="mailto:nscpl01@gmail.com"
+                  className="flex items-center space-x-2 hover:text-amber-700 transition-colors"
+                >
+                  <Mail className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                  <span>Email: nscpl01@gmail.com</span>
+                </a>
+              </div>
             </div>
 
             {/* Success Notification */}

@@ -117,8 +117,8 @@ export const adminApi = {
           companyName: 'Namah Siddham Corporation Private Limited',
           companyType: 'Private Limited Company',
           cin: 'U77100MP2026PTC087531',
-          officialEmail: 'contact@namahsiddham.com',
-          officialPhone: '+91 755 0000000',
+          officialEmail: 'nscpl01@gmail.com',
+          officialPhone: '9516262715',
           registeredOffice: {
             city: 'Bhopal',
             state: 'Madhya Pradesh',

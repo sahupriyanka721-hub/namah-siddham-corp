@@ -9,9 +9,9 @@ const defaultSettings = {
   cin: 'U77100MP2026PTC087531',
   businessPositioning:
     'A multi-platform digital business company building and operating specialized online marketplaces and aggregator platforms.',
-  officialEmail: 'contact@namahsiddham.com',
-  grievanceEmail: 'grievance@namahsiddham.com',
-  officialPhone: '+91 731 0000000',
+  officialEmail: 'nscpl01@gmail.com',
+  grievanceEmail: 'nscpl01@gmail.com',
+  officialPhone: '9516262715',
   registeredOffice: {
     addressLine1: 'Corporate Tower, Main Road',
     city: 'Bhopal',
