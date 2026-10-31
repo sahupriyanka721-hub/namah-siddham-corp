@@ -30,6 +30,10 @@ export const AdminServices = () => {
   const [deleteConfirmId, setDeleteConfirmId] = useState(null);
   const [notification, setNotification] = useState(null);
 
+  // View Modal State (Read-only)
+  const [viewModalOpen, setViewModalOpen] = useState(false);
+  const [viewingService, setViewingService] = useState(null);
+
   const initialForm = {
     title: '',
     slug: '',
@@ -284,15 +288,16 @@ export const AdminServices = () => {
                       )}
                     </td>
                     <td className="py-4 px-4 text-right space-x-2">
-                      <a
-                        href={`/services/${s.slug}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-1.5 rounded-lg text-surface-400 hover:text-brand-navy inline-block"
-                        title="Preview Public Page"
+                      <button
+                        onClick={() => {
+                          setViewingService(s);
+                          setViewModalOpen(true);
+                        }}
+                        className="p-1.5 rounded-lg text-surface-400 hover:text-brand-navy hover:bg-surface-100 inline-block transition-colors"
+                        title="View Service Details (Read Only)"
                       >
                         <Eye className="w-4 h-4" />
-                      </a>
+                      </button>
                       <button
                         onClick={() => openEditModal(s)}
                         className="p-1.5 rounded-lg text-brand-blue hover:bg-sky-50 inline-block"
@@ -531,6 +536,173 @@ export const AdminServices = () => {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+      {/* View Service Details Modal (Read Only) */}
+      {viewModalOpen && viewingService && (
+        <div className="fixed inset-0 z-50 bg-[#0B132B]/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto space-y-5 border border-surface-200 shadow-soft-xl">
+            {/* Header */}
+            <div className="flex items-start justify-between border-b border-surface-200 pb-4">
+              <div className="space-y-1.5">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-blue-50 text-brand-blue border border-blue-200">
+                    Service Details (Read Only)
+                  </span>
+                  <span
+                    className={`px-2.5 py-0.5 rounded-full font-mono text-[10px] font-bold ${
+                      viewingService.status === 'Published'
+                        ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                        : 'bg-amber-100 text-amber-900 border border-amber-300'
+                    }`}
+                  >
+                    {viewingService.status}
+                  </span>
+                  {viewingService.isFeatured && (
+                    <span className="px-2.5 py-0.5 rounded-full font-mono text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200">
+                      ★ Featured on Homepage
+                    </span>
+                  )}
+                </div>
+                <h3 className="font-heading font-black text-xl text-brand-navy">
+                  {viewingService.title}
+                </h3>
+                <div className="flex flex-wrap items-center gap-3 text-xs text-surface-500 font-mono">
+                  <span>Slug: <strong className="text-brand-blue">{viewingService.slug}</strong></span>
+                  <span>•</span>
+                  <span>Icon: <strong className="text-brand-navy">{viewingService.icon || 'Globe'}</strong></span>
+                  <span>•</span>
+                  <span>Display Order: <strong className="text-brand-navy">{viewingService.displayOrder ?? 0}</strong></span>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  setViewModalOpen(false);
+                  setViewingService(null);
+                }}
+                className="text-surface-400 hover:text-brand-navy p-1 text-sm font-bold rounded-lg hover:bg-surface-100 transition-colors"
+                title="Close"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Read-Only Form Fields */}
+            <div className="space-y-4 text-xs">
+              {/* Short Description */}
+              <div className="bg-surface-50 p-4 rounded-2xl border border-surface-200">
+                <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-1 font-mono">
+                  Short Description
+                </div>
+                <p className="text-surface-700 leading-relaxed font-sans text-xs">
+                  {viewingService.shortDescription || 'No short description provided.'}
+                </p>
+              </div>
+
+              {/* Detailed Description */}
+              <div className="bg-white p-4 rounded-2xl border border-surface-200">
+                <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-1 font-mono">
+                  Detailed Scope & Description
+                </div>
+                <p className="text-surface-700 leading-relaxed whitespace-pre-wrap font-sans text-xs">
+                  {viewingService.detailedDescription || 'No detailed description provided.'}
+                </p>
+              </div>
+
+              {/* Key Features & Deliverables Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-surface-50 p-4 rounded-2xl border border-surface-200">
+                  <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-2 font-mono flex items-center justify-between">
+                    <span>Key Features</span>
+                    <span className="text-[10px] text-brand-blue font-bold">
+                      {(viewingService.keyFeatures || []).length} items
+                    </span>
+                  </div>
+                  {viewingService.keyFeatures && viewingService.keyFeatures.length > 0 ? (
+                    <ul className="space-y-1.5">
+                      {viewingService.keyFeatures.map((feat, idx) => (
+                        <li key={idx} className="flex items-start space-x-2 text-surface-700">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-surface-400 italic">No key features listed.</p>
+                  )}
+                </div>
+
+                <div className="bg-surface-50 p-4 rounded-2xl border border-surface-200">
+                  <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-2 font-mono flex items-center justify-between">
+                    <span>Typical Deliverables</span>
+                    <span className="text-[10px] text-brand-blue font-bold">
+                      {(viewingService.deliverables || []).length} items
+                    </span>
+                  </div>
+                  {viewingService.deliverables && viewingService.deliverables.length > 0 ? (
+                    <ul className="space-y-1.5">
+                      {viewingService.deliverables.map((del, idx) => (
+                        <li key={idx} className="flex items-start space-x-2 text-surface-700">
+                          <span className="w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0 mt-1.5"></span>
+                          <span>{del}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-surface-400 italic">No deliverables listed.</p>
+                  )}
+                </div>
+              </div>
+
+              {/* SEO Meta */}
+              <div className="bg-surface-50 p-4 rounded-2xl border border-surface-200">
+                <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-2 font-mono">
+                  SEO & Meta Information
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <span className="text-surface-400 text-[10px] uppercase font-mono block">SEO Title:</span>
+                    <span className="font-medium text-brand-navy">
+                      {viewingService.seoTitle || viewingService.title || 'Default Title'}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-surface-400 text-[10px] uppercase font-mono block">SEO Description:</span>
+                    <span className="font-medium text-surface-700">
+                      {viewingService.seoDescription || viewingService.shortDescription || 'Default Description'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer Actions */}
+            <div className="pt-3 border-t border-surface-200 flex items-center justify-between">
+              <button
+                type="button"
+                onClick={() => {
+                  setViewModalOpen(false);
+                  setViewingService(null);
+                }}
+                className="px-4 py-2 rounded-xl bg-surface-100 hover:bg-surface-200 text-surface-700 text-xs font-semibold transition-colors"
+              >
+                Close View
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  const s = viewingService;
+                  setViewModalOpen(false);
+                  setViewingService(null);
+                  openEditModal(s);
+                }}
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-700 hover:to-brand-blue text-white text-xs font-bold flex items-center space-x-1.5 shadow-xs transition-colors"
+              >
+                <Edit2 className="w-3.5 h-3.5" />
+                <span>Edit Service Details</span>
+              </button>
+            </div>
           </div>
         </div>
       )}

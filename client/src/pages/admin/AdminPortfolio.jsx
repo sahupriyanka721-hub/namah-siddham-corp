@@ -26,6 +26,10 @@ export const AdminPortfolio = () => {
   const [deleteConfirmId, setDeleteConfirmId] = useState(null);
   const [notification, setNotification] = useState(null);
 
+  // View Modal State (Read-only)
+  const [viewModalOpen, setViewModalOpen] = useState(false);
+  const [viewingProject, setViewingProject] = useState(null);
+
   const initialForm = {
     name: '',
     slug: '',
@@ -288,15 +292,16 @@ export const AdminPortfolio = () => {
                       )}
                     </td>
                     <td className="py-4 px-4 text-right space-x-2">
-                      <a
-                        href={`/portfolio/${p.slug}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-1.5 rounded-lg text-surface-400 hover:text-brand-navy inline-block"
-                        title="Preview Case Study"
+                      <button
+                        onClick={() => {
+                          setViewingProject(p);
+                          setViewModalOpen(true);
+                        }}
+                        className="p-1.5 rounded-lg text-surface-400 hover:text-brand-navy hover:bg-surface-100 inline-block transition-colors"
+                        title="View Project Details (Read Only)"
                       >
                         <Eye className="w-4 h-4" />
-                      </a>
+                      </button>
                       <button
                         onClick={() => openEditModal(p)}
                         className="p-1.5 rounded-lg text-brand-blue hover:bg-sky-50 inline-block"
@@ -520,6 +525,175 @@ export const AdminPortfolio = () => {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+      {/* View Portfolio Project Modal (Read Only) */}
+      {viewModalOpen && viewingProject && (
+        <div className="fixed inset-0 z-50 bg-[#0B132B]/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto space-y-5 border border-surface-200 shadow-soft-xl">
+            {/* Header */}
+            <div className="flex items-start justify-between border-b border-surface-200 pb-4">
+              <div className="space-y-1.5">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono bg-blue-50 text-brand-blue border border-blue-200">
+                    Project Details (Read Only)
+                  </span>
+                  <span
+                    className={`px-2.5 py-0.5 rounded-full font-mono text-[10px] font-bold ${
+                      viewingProject.projectType === 'Client Project'
+                        ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                        : viewingProject.projectType === 'Internal Product'
+                        ? 'bg-amber-100 text-brand-orange border border-amber-300'
+                        : 'bg-sky-100 text-brand-blue border border-sky-300'
+                    }`}
+                  >
+                    {viewingProject.projectType}
+                  </span>
+                  <span className="font-mono text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-surface-100 text-brand-navy border border-surface-200">
+                    {viewingProject.status || 'Published'}
+                  </span>
+                  {viewingProject.isFeatured && (
+                    <span className="px-2.5 py-0.5 rounded-full font-mono text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200">
+                      ★ Featured Showcase
+                    </span>
+                  )}
+                </div>
+                <h3 className="font-heading font-black text-xl text-brand-navy">
+                  {viewingProject.name}
+                </h3>
+                <div className="flex flex-wrap items-center gap-3 text-xs text-surface-500 font-mono">
+                  <span>Industry: <strong className="text-brand-blue">{viewingProject.industry}</strong></span>
+                  <span>•</span>
+                  <span>Category: <strong className="text-brand-navy">{viewingProject.category || 'Website Development'}</strong></span>
+                  <span>•</span>
+                  <span>Slug: <strong className="text-brand-blue">{viewingProject.slug}</strong></span>
+                  <span>•</span>
+                  <span>Order: <strong className="text-brand-navy">{viewingProject.displayOrder ?? 0}</strong></span>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  setViewModalOpen(false);
+                  setViewingProject(null);
+                }}
+                className="text-surface-400 hover:text-brand-navy p-1 text-sm font-bold rounded-lg hover:bg-surface-100 transition-colors"
+                title="Close"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Read-Only Form Fields */}
+            <div className="space-y-4 text-xs">
+              {/* Live URL Link (if available) */}
+              {viewingProject.projectUrl && (
+                <div className="p-3 bg-blue-50/60 rounded-xl border border-blue-100 flex items-center justify-between">
+                  <span className="text-surface-500 text-[11px] font-medium">Live Project / Demo URL:</span>
+                  <a
+                    href={viewingProject.projectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono font-bold text-brand-blue hover:underline flex items-center space-x-1 text-[11px]"
+                  >
+                    <span>{viewingProject.projectUrl}</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              )}
+
+              {/* Technologies */}
+              <div className="bg-surface-50 p-4 rounded-2xl border border-surface-200">
+                <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-2 font-mono flex items-center justify-between">
+                  <span>Technologies & Stack</span>
+                  <span className="text-[10px] text-brand-blue font-bold">
+                    {(viewingProject.technologies || []).length} technologies
+                  </span>
+                </div>
+                {viewingProject.technologies && viewingProject.technologies.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {viewingProject.technologies.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2.5 py-1 rounded-lg text-xs font-mono font-semibold bg-white border border-surface-200 text-brand-navy shadow-2xs"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-surface-400 italic">No technologies listed.</p>
+                )}
+              </div>
+
+              {/* Short Description */}
+              <div className="bg-surface-50 p-4 rounded-2xl border border-surface-200">
+                <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-1 font-mono">
+                  Short Summary
+                </div>
+                <p className="text-surface-700 leading-relaxed font-sans text-xs">
+                  {viewingProject.shortDescription || 'No short description provided.'}
+                </p>
+              </div>
+
+              {/* Detailed Description */}
+              <div className="bg-white p-4 rounded-2xl border border-surface-200">
+                <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-1 font-mono">
+                  Detailed Case Study & Specifications
+                </div>
+                <p className="text-surface-700 leading-relaxed whitespace-pre-wrap font-sans text-xs">
+                  {viewingProject.detailedDescription || 'No detailed description provided.'}
+                </p>
+              </div>
+
+              {/* SEO Meta */}
+              <div className="bg-surface-50 p-4 rounded-2xl border border-surface-200">
+                <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-2 font-mono">
+                  SEO & Meta Information
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <span className="text-surface-400 text-[10px] uppercase font-mono block">SEO Title:</span>
+                    <span className="font-medium text-brand-navy">
+                      {viewingProject.seoTitle || viewingProject.name || 'Default Title'}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-surface-400 text-[10px] uppercase font-mono block">SEO Description:</span>
+                    <span className="font-medium text-surface-700">
+                      {viewingProject.seoDescription || viewingProject.shortDescription || 'Default Description'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer Actions */}
+            <div className="pt-3 border-t border-surface-200 flex items-center justify-between">
+              <button
+                type="button"
+                onClick={() => {
+                  setViewModalOpen(false);
+                  setViewingProject(null);
+                }}
+                className="px-4 py-2 rounded-xl bg-surface-100 hover:bg-surface-200 text-surface-700 text-xs font-semibold transition-colors"
+              >
+                Close View
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  const p = viewingProject;
+                  setViewModalOpen(false);
+                  setViewingProject(null);
+                  openEditModal(p);
+                }}
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-700 hover:to-brand-blue text-white text-xs font-bold flex items-center space-x-1.5 shadow-xs transition-colors"
+              >
+                <Edit2 className="w-3.5 h-3.5" />
+                <span>Edit Project Details</span>
+              </button>
+            </div>
           </div>
         </div>
       )}

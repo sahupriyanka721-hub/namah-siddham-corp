@@ -30,6 +30,10 @@ export const AdminPlatforms = () => {
   const [uploadingLogo, setUploadingLogo] = useState(false);
   const [formError, setFormError] = useState(null);
 
+  // View Modal State (Read-only)
+  const [viewModalOpen, setViewModalOpen] = useState(false);
+  const [viewingPlatform, setViewingPlatform] = useState(null);
+
   const initialForm = {
     name: '',
     slug: '',
@@ -288,15 +292,16 @@ export const AdminPlatforms = () => {
                       </a>
                     </td>
                     <td className="py-3.5 px-4 text-right space-x-2">
-                      <a
-                        href={`/products/${p.slug}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <button
+                        onClick={() => {
+                          setViewingPlatform(p);
+                          setViewModalOpen(true);
+                        }}
                         className="p-1.5 rounded-lg text-slate-500 hover:text-brand-navy inline-block hover:bg-slate-100 transition-colors"
-                        title="View Public Page"
+                        title="View Platform Details (Read Only)"
                       >
                         <Eye className="w-4 h-4" />
-                      </a>
+                      </button>
                       <button
                         onClick={() => openEditModal(p)}
                         className="p-1.5 rounded-lg text-brand-blue hover:bg-sky-50 inline-block font-semibold transition-colors"
@@ -560,6 +565,197 @@ export const AdminPlatforms = () => {
             </Button>
           </div>
         </form>
+      </Modal>
+
+      {/* View Platform Details Modal (Read Only) */}
+      <Modal
+        isOpen={viewModalOpen && !!viewingPlatform}
+        onClose={() => {
+          setViewModalOpen(false);
+          setViewingPlatform(null);
+        }}
+        title="Digital Platform Details (Read Only)"
+        maxWidth="max-w-3xl"
+      >
+        {viewingPlatform && (
+          <div className="space-y-5 text-xs">
+            {/* Header / Identity Banner */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+              <div className="flex items-center space-x-3">
+                {viewingPlatform.logoUrl ? (
+                  <img
+                    src={viewingPlatform.logoUrl}
+                    alt=""
+                    className="w-12 h-12 rounded-xl object-contain border border-slate-200 p-1 bg-white shadow-xs"
+                  />
+                ) : (
+                  <div className="w-12 h-12 rounded-xl bg-brand-navy text-brand-gold font-bold flex items-center justify-center text-sm shadow-inner">
+                    {viewingPlatform.name.substring(0, 2).toUpperCase()}
+                  </div>
+                )}
+                <div>
+                  <div className="flex items-center space-x-2">
+                    <h4 className="text-lg font-bold text-brand-navy font-heading">{viewingPlatform.name}</h4>
+                    <Badge status={viewingPlatform.status}>{viewingPlatform.status}</Badge>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 mt-0.5 text-slate-500 font-mono text-[11px]">
+                    <span className="text-brand-blue font-bold">{viewingPlatform.category || 'Platform'}</span>
+                    <span>•</span>
+                    <span>Slug: <strong>{viewingPlatform.slug}</strong></span>
+                    <span>•</span>
+                    <span>Display Order: <strong>{viewingPlatform.displayOrder ?? 0}</strong></span>
+                  </div>
+                </div>
+              </div>
+
+              {viewingPlatform.websiteUrl && (
+                <a
+                  href={viewingPlatform.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-brand-blue font-medium hover:bg-slate-50 transition-colors flex items-center space-x-1.5 shadow-2xs text-[11px]"
+                >
+                  <span className="truncate max-w-[180px]">{viewingPlatform.websiteUrl}</span>
+                  <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                </a>
+              )}
+            </div>
+
+            {/* Target Audience & Problem Solved */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-3.5 rounded-xl border border-slate-200 bg-white">
+                <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-1 font-mono">
+                  Target Audience
+                </div>
+                <p className="text-slate-700 font-medium">
+                  {viewingPlatform.targetAudience || 'Not specified'}
+                </p>
+              </div>
+
+              <div className="p-3.5 rounded-xl border border-slate-200 bg-white">
+                <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-1 font-mono">
+                  Problem Solved
+                </div>
+                <p className="text-slate-700 leading-relaxed">
+                  {viewingPlatform.problemSolved || 'Not specified'}
+                </p>
+              </div>
+            </div>
+
+            {/* Short Description */}
+            <div className="p-3.5 rounded-xl border border-slate-200 bg-slate-50">
+              <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-1 font-mono">
+                Short Description
+              </div>
+              <p className="text-slate-700 leading-relaxed font-sans">
+                {viewingPlatform.shortDescription || 'No short description provided.'}
+              </p>
+            </div>
+
+            {/* Detailed Description */}
+            <div className="p-3.5 rounded-xl border border-slate-200 bg-white">
+              <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-1 font-mono">
+                Detailed Platform Overview
+              </div>
+              <p className="text-slate-700 leading-relaxed whitespace-pre-wrap font-sans">
+                {viewingPlatform.detailedDescription || 'No detailed description provided.'}
+              </p>
+            </div>
+
+            {/* Key Features & Partner Opportunities */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-3.5 rounded-xl border border-slate-200 bg-slate-50">
+                <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-2 font-mono flex items-center justify-between">
+                  <span>Key Features & Modules</span>
+                  <span className="text-[10px] text-brand-blue font-bold">
+                    {(viewingPlatform.keyFeatures || []).length} features
+                  </span>
+                </div>
+                {viewingPlatform.keyFeatures && viewingPlatform.keyFeatures.length > 0 ? (
+                  <ul className="space-y-1.5">
+                    {viewingPlatform.keyFeatures.map((feat, idx) => (
+                      <li key={idx} className="flex items-start space-x-2 text-slate-700">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-slate-400 italic">No features listed.</p>
+                )}
+              </div>
+
+              <div className="p-3.5 rounded-xl border border-slate-200 bg-slate-50">
+                <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-2 font-mono flex items-center justify-between">
+                  <span>Partner & Business Opportunities</span>
+                  <span className="text-[10px] text-brand-blue font-bold">
+                    {(viewingPlatform.partnerOpportunities || []).length} opportunities
+                  </span>
+                </div>
+                {viewingPlatform.partnerOpportunities && viewingPlatform.partnerOpportunities.length > 0 ? (
+                  <ul className="space-y-1.5">
+                    {viewingPlatform.partnerOpportunities.map((opp, idx) => (
+                      <li key={idx} className="flex items-start space-x-2 text-slate-700">
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0 mt-1.5"></span>
+                        <span>{opp}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-slate-400 italic">No partner opportunities listed.</p>
+                )}
+              </div>
+            </div>
+
+            {/* SEO Information */}
+            <div className="p-3.5 rounded-xl border border-slate-200 bg-white">
+              <div className="font-bold text-brand-navy uppercase tracking-wider text-[10px] mb-2 font-mono">
+                SEO & Meta Details
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <span className="text-slate-400 text-[10px] uppercase font-mono block">SEO Title:</span>
+                  <span className="font-medium text-brand-navy">
+                    {viewingPlatform.seoTitle || viewingPlatform.name || 'Default Title'}
+                  </span>
+                </div>
+                <div>
+                  <span className="text-slate-400 text-[10px] uppercase font-mono block">SEO Description:</span>
+                  <span className="font-medium text-slate-700">
+                    {viewingPlatform.seoDescription || viewingPlatform.shortDescription || 'Default Description'}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="pt-3 border-t border-slate-200 flex items-center justify-between">
+              <button
+                type="button"
+                onClick={() => {
+                  setViewModalOpen(false);
+                  setViewingPlatform(null);
+                }}
+                className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors"
+              >
+                Close View
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  const p = viewingPlatform;
+                  setViewModalOpen(false);
+                  setViewingPlatform(null);
+                  openEditModal(p);
+                }}
+                className="px-4 py-2 rounded-xl bg-brand-blue hover:bg-blue-700 text-white text-xs font-bold flex items-center space-x-1.5 shadow-xs transition-colors"
+              >
+                <Edit className="w-3.5 h-3.5" />
+                <span>Edit Platform Details</span>
+              </button>
+            </div>
+          </div>
+        )}
       </Modal>
     </div>
   );
