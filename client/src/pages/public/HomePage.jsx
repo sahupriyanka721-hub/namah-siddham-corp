@@ -25,6 +25,7 @@ import {
 import { publicApi } from '../../api/publicApi';
 import { useSettings } from '../../context/SettingsContext';
 import { SeoMeta } from '../../components/public/SeoMeta';
+import { HeroSection } from '../../components/public/HeroSection';
 
 export const HomePage = () => {
   const { settings } = useSettings();
@@ -59,64 +60,9 @@ export const HomePage = () => {
       />
 
       {/* ========================================================================= */}
-      {/* SECTION A: HERO BANNER (Radiant Sky-Blue Atmosphere & Shiny Elements)    */}
+      {/* SECTION A: PREMIUM TWO-COLUMN HERO SECTION WITH 16:9 ANIMATED SLIDER       */}
       {/* ========================================================================= */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#E0F2FE]/80 via-[#F0F8FF] to-[#E6F2FC] text-slate-900 pt-8 sm:pt-12 pb-8 sm:pb-10 border-b border-sky-200/80">
-        {/* Soft atmospheric glowing ambient orbs */}
-        <div className="absolute -top-20 left-1/4 w-[600px] h-[600px] bg-sky-400/20 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-blue-400/15 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-10 left-1/3 w-[400px] h-[400px] bg-amber-400/10 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#0284C7_1.5px,transparent_1.5px)] [background-size:26px_26px] pointer-events-none" />
-
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="space-y-5 max-w-5xl mx-auto">
-            {/* Clean, Elegant Headline strictly in 2 Lines */}
-            <h1 className="font-sans font-black text-[18px] xs:text-[21px] sm:text-3xl md:text-[36px] lg:text-[42px] xl:text-[46px] text-brand-navy tracking-tight leading-tight sm:leading-snug">
-              <span className="block sm:whitespace-nowrap">
-                Empowering Businesses Through Technology,
-              </span>
-              <span className="block sm:whitespace-nowrap text-gradient-ns mt-1 sm:mt-1.5">
-                Innovation &amp; Digital Transformation
-              </span>
-            </h1>
-
-            {/* Left-Aligned Corporate Narrative */}
-            <div className="max-w-4xl mx-auto space-y-4 text-left">
-              {/* Paragraph 1 */}
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-left">
-                At <strong className="font-bold text-brand-navy">Namah Siddham Corporation Private Limited</strong>, we believe that technology is more than just a tool — it is a powerful force for transforming ideas into opportunities and businesses into digital success stories.
-              </p>
-
-              {/* Paragraph 2 */}
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-left">
-                We combine our expertise in website development, custom software solutions, mobile application development, and digital marketing with a growing ecosystem of innovative digital products designed to simplify everyday needs and connect people, businesses, and opportunities. From helping businesses establish a strong online presence and streamline their operations to building specialized platforms such as <span className="font-semibold text-brand-blue">HomeServixo</span>, <span className="font-semibold text-brand-orange">Carrento</span>, <span className="font-semibold text-amber-700">Jainamshree</span>, and <span className="font-semibold text-emerald-700">SuperiorMart</span>, our vision is to create meaningful digital experiences that bring convenience, connectivity, and new possibilities to the modern world.
-              </p>
-
-              {/* Paragraph 3 */}
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal text-left">
-                Whether you are a startup with a bold idea, an established business ready to embrace digital transformation, or a customer or partner looking to be part of an evolving digital ecosystem, Namah Siddham aims to bring the right technology, practical solutions, and forward-thinking approach to help you move ahead with confidence.
-              </p>
-            </div>
-
-            {/* Shiny CTAs matching Logo Palette */}
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
-              <Link
-                to="/services"
-                className="shiny-btn inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-sky-500/30 hover:shadow-sky-400/50 transition-all transform hover:-translate-y-0.5 border border-sky-300/40"
-              >
-                <span>Explore Our IT Services</span>
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-              <Link
-                to="/products"
-                className="shiny-btn inline-flex items-center justify-center px-8 py-3.5 rounded-2xl bg-white/95 hover:bg-orange-500 text-orange-600 hover:text-white border-2 border-orange-400/80 font-bold text-sm sm:text-base transition-all transform hover:-translate-y-0.5 shadow-md shadow-orange-500/10"
-              >
-                <span>Discover Our Products</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* ========================================================================= */}
       {/* SECTION B: COMPANY INTRODUCTION */}
@@ -298,14 +244,14 @@ export const HomePage = () => {
         <div className="absolute top-1/2 right-10 -translate-y-1/2 w-96 h-96 bg-gold-400/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
-          <div className="max-w-3xl mx-auto space-y-2.5 text-center flex flex-col items-center">
+          <div className="max-w-5xl mx-auto space-y-2.5 text-center flex flex-col items-center">
             <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
               Operational Framework
             </span>
             <h2 className="font-serif font-black text-xl sm:text-2xl lg:text-3xl text-brand-navy text-center">
               How Our Business Model <span className="text-gradient-ns">Creates Value</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed text-center">
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed text-center max-w-5xl md:whitespace-nowrap">
               A streamlined 4-stage digital pipeline connecting real consumer needs with specialized platforms and verified partners.
             </p>
           </div>
@@ -393,7 +339,7 @@ export const HomePage = () => {
       {/* SECTION G: PORTFOLIO */}
       {/* ========================================================================= */}
       <section id="portfolio" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <div className="max-w-3xl mx-auto space-y-2.5 text-center flex flex-col items-center">
+        <div className="max-w-5xl mx-auto space-y-2.5 text-center flex flex-col items-center">
           <span className="shiny-badge inline-flex items-center text-xs font-bold text-brand-blue uppercase tracking-widest font-mono px-3 py-1 rounded-full">
             Engineering Showcase
           </span>
@@ -401,7 +347,7 @@ export const HomePage = () => {
             Selected Projects &amp;{' '}
             <span className="text-gradient-blue">Case Studies</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-700 leading-relaxed text-center">
+          <p className="text-sm sm:text-base text-slate-700 leading-relaxed text-center max-w-5xl md:whitespace-nowrap">
             Completed software architectures, digital platform demonstrations, and internal technology implementations.
           </p>
           <div className="pt-1">

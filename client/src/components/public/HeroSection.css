@@ -1,0 +1,52 @@
+/* HeroSection.css - Premium Animated Styles for Namah Siddham Hero Section */
+
+@keyframes heroKenBurns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+.hero-ken-burns {
+  animation: heroKenBurns 6s ease-out forwards;
+}
+
+@keyframes heroPulseGlow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.05);
+  }
+}
+
+.hero-glow-orb {
+  animation: heroPulseGlow 8s ease-in-out infinite;
+}
+
+/* Slide Transition Animations */
+.hero-slide-enter {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+.hero-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1), transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-ken-burns,
+  .hero-glow-orb,
+  .hero-slide-active {
+    animation: none !important;
+    transition: opacity 200ms ease !important;
+    transform: none !important;
+  }
+}
