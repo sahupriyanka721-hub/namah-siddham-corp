@@ -26,6 +26,9 @@ app.use(
 // CORS configuration
 const allowedOrigins = [
   ENV.CLIENT_URL,
+  'https://namahsiddham.in',
+  'https://www.namahsiddham.in',
+  'https://namah-siddham-corp.vercel.app',
   'http://localhost:5173',
   'http://localhost:3000',
   'http://127.0.0.1:5173',
