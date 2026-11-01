@@ -29,28 +29,23 @@ import { HeroSection } from '../../components/public/HeroSection';
 import { VisionSection } from '../../components/public/VisionSection';
 import { MissionSection } from '../../components/public/MissionSection';
 import { OurApproachSection } from '../../components/public/OurApproachSection';
-import { LeadershipSection } from '../../components/public/LeadershipSection';
 import { FinalCTASection } from '../../components/public/FinalCTASection';
 
 export const HomePage = () => {
   const { settings } = useSettings();
   const [portfolio, setPortfolio] = useState([]);
   const [news, setNews] = useState([]);
-  const [team, setTeam] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [portfolioRes, newsRes, teamRes] = await Promise.all([
+        const [portfolioRes, newsRes] = await Promise.all([
           publicApi.getPortfolio(),
           publicApi.getNews(),
-          publicApi.getTeam(),
         ]);
         setPortfolio(portfolioRes.data?.data?.slice(0, 3) || []);
         setNews(newsRes.data?.data?.slice(0, 3) || []);
-        const rawTeam = teamRes?.data?.data || teamRes?.data || [];
-        setTeam(Array.isArray(rawTeam) && rawTeam.length > 0 ? rawTeam : []);
       } catch (err) {
         console.error('Failed to load homepage data:', err);
       } finally {
@@ -508,11 +503,6 @@ export const HomePage = () => {
       {/* SECTION 4: OUR APPROACH (How We Create Value - 4-Step Process)             */}
       {/* ========================================================================= */}
       <OurApproachSection />
-
-      {/* ========================================================================= */}
-      {/* SECTION 5: LEADERSHIP & GOVERNANCE TEAM (Above Latest Updates)             */}
-      {/* ========================================================================= */}
-      <LeadershipSection team={team} />
 
       {/* ========================================================================= */}
       {/* SECTION J: LATEST UPDATES (Database-driven) */}
