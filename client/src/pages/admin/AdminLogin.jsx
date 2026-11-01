@@ -13,9 +13,6 @@ import {
   CheckCircle2,
   RefreshCw,
   Sparkles,
-  Layers,
-  Cpu,
-  Globe2,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { Button } from '../../components/common/Button';
@@ -36,8 +33,8 @@ export const AdminLogin = () => {
   const [timer, setTimer] = useState(0);
 
   // Mobile & Password States
-  const [identifier, setIdentifier] = useState('8319955741');
-  const [password, setPassword] = useState('Admin.namahsiddham@123');
+  const [identifier, setIdentifier] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   // General States
@@ -176,27 +173,6 @@ export const AdminLogin = () => {
                   alt="Namah Siddham Corporation - IT Services and Digital Products Ecosystem"
                   className="w-full h-auto object-cover transform hover:scale-[1.01] transition-transform duration-500"
                 />
-
-                {/* Bottom subtle banner overlay */}
-                <div className="p-4 sm:p-5 bg-gradient-to-t from-[#070D1F] via-[#070D1F]/90 to-transparent border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
-                  <div className="flex items-center space-x-2">
-                    <Globe2 className="w-4 h-4 text-sky-400 shrink-0" />
-                    <span className="text-slate-200 font-semibold">
-                      Bhopal HQ • Pan-India Digital Reach
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-[11px] text-slate-300 font-mono">
-                    <span className="inline-flex items-center text-brand-gold font-bold">
-                      <Cpu className="w-3.5 h-3.5 mr-1" />
-                      4 IT Services
-                    </span>
-                    <span>•</span>
-                    <span className="inline-flex items-center text-sky-300 font-bold">
-                      <Layers className="w-3.5 h-3.5 mr-1" />
-                      4 Digital Platforms
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -434,7 +410,7 @@ export const AdminLogin = () => {
 
               {/* Mode 2: Mobile Number & Password */}
               {authMode === 'password' && (
-                <form onSubmit={handlePasswordLogin} className="space-y-4">
+                <form onSubmit={handlePasswordLogin} autoComplete="off" className="space-y-4">
                   <div className="space-y-1.5">
                     <label className="block text-xs font-bold text-brand-navy uppercase tracking-wider">
                       Admin Mobile Number / Email
@@ -444,6 +420,7 @@ export const AdminLogin = () => {
                       <input
                         type="text"
                         required
+                        autoComplete="off"
                         placeholder="Enter mobile number (e.g. 8319955741) or email"
                         value={identifier}
                         onChange={(e) => setIdentifier(e.target.value)}
@@ -461,7 +438,8 @@ export const AdminLogin = () => {
                       <input
                         type={showPassword ? 'text' : 'password'}
                         required
-                        placeholder="Admin.namahsiddham@123"
+                        autoComplete="new-password"
+                        placeholder="••••••••••••"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         className="w-full pl-10 pr-11 py-2.5 text-xs sm:text-sm bg-surface-50/80 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue focus:bg-white text-brand-navy placeholder:text-surface-400 transition-all shadow-inner"
