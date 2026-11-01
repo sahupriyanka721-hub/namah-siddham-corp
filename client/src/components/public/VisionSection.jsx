@@ -11,7 +11,6 @@ import {
   Store,
   Sparkles,
   CheckCircle2,
-  MapPin,
   ShieldCheck,
 } from 'lucide-react';
 
@@ -233,18 +232,6 @@ export const VisionSection = ({ className = '' }) => {
                       </p>
                     </div>
                   </div>
-                </div>
-
-                {/* Bottom Footer: Bhopal Hub & Pan-India Reach */}
-                <div className="pt-3 border-t border-sky-100 flex items-center justify-between text-xs font-mono text-slate-500">
-                  <span className="flex items-center space-x-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-brand-orange" />
-                    <span>Registered Office: Bhopal, MP</span>
-                  </span>
-                  <span className="text-brand-blue font-bold flex items-center space-x-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Pan-India Reach</span>
-                  </span>
                 </div>
 
               </div>
