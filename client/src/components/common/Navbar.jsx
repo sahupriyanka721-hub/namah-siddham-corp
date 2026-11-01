@@ -15,7 +15,6 @@ import {
   Smartphone,
   TrendingUp,
 } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
 
 const serviceLinks = [
   {
@@ -109,7 +108,6 @@ export const Navbar = () => {
   const [productsDropdown, setProductsDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { isAuthenticated } = useAuth();
 
   const servicesTimeoutRef = useRef(null);
   const productsTimeoutRef = useRef(null);
@@ -390,23 +388,13 @@ export const Navbar = () => {
           {/* 3. SIGN IN / PORTAL BUTTON (Desktop)                      */}
           {/* ========================================================= */}
           <div className="hidden lg:flex items-center pl-1 shrink-0">
-            {isAuthenticated ? (
-              <Link
-                to="/admin/dashboard"
-                className="inline-flex items-center px-3.5 py-1.5 text-xs font-bold rounded-xl text-brand-navy hover:text-brand-blue bg-sky-50 hover:bg-sky-100 border border-sky-200 transition-all shadow-xs"
-              >
-                <span className="w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-pulse" />
-                <span>Dashboard</span>
-              </Link>
-            ) : (
-              <Link
-                to="/admin/login"
-                className="inline-flex items-center px-3.5 py-1.5 text-xs font-bold rounded-xl text-brand-navy hover:text-brand-blue bg-slate-50 hover:bg-sky-50/90 border border-slate-200/90 hover:border-sky-300 transition-all shadow-xs group"
-              >
-                <LogIn className="w-3.5 h-3.5 mr-1.5 text-brand-blue group-hover:translate-x-0.5 transition-transform" />
-                <span>Sign In</span>
-              </Link>
-            )}
+            <Link
+              to="/admin/login"
+              className="inline-flex items-center px-3.5 py-1.5 text-xs font-bold rounded-xl text-brand-navy hover:text-brand-blue bg-slate-50 hover:bg-sky-50/90 border border-slate-200/90 hover:border-sky-300 transition-all shadow-xs group"
+            >
+              <LogIn className="w-3.5 h-3.5 mr-1.5 text-brand-blue group-hover:translate-x-0.5 transition-transform" />
+              <span>Sign In</span>
+            </Link>
           </div>
 
           {/* ========================================================= */}
@@ -553,11 +541,11 @@ export const Navbar = () => {
           {/* Mobile Sign In */}
           <div className="pt-2 border-t border-slate-100">
             <Link
-              to={isAuthenticated ? "/admin/dashboard" : "/admin/login"}
+              to="/admin/login"
               className="flex items-center justify-center space-x-2 w-full py-2.5 rounded-xl bg-slate-50 hover:bg-sky-50 text-brand-navy hover:text-brand-blue border border-slate-200 text-xs font-bold transition-all shadow-xs"
             >
               <LogIn className="w-4 h-4 text-brand-blue" />
-              <span>{isAuthenticated ? "Admin Dashboard" : "Sign In"}</span>
+              <span>Sign In</span>
             </Link>
           </div>
 
