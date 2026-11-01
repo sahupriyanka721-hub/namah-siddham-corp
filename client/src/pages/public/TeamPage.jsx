@@ -12,7 +12,7 @@ export const TeamPage = () => {
     const fetchTeam = async () => {
       try {
         const res = await publicApi.getTeam();
-        const data = res.data?.data;
+        const data = res.data?.data || (Array.isArray(res.data) ? res.data : null);
         if (data && data.length > 0) {
           setTeam(data);
         } else {

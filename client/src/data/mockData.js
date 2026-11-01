@@ -212,13 +212,28 @@ export const mockJobs = [
 
 export const mockTeam = [
   {
+    _id: 'team_0',
+    name: 'Arpit Jain',
+    role: 'Director',
+    designation: 'Director',
+    bio: 'Director at Namah Siddham Corporation Private Limited. Guiding corporate strategy, technological innovation, and long-term organizational expansion across Madhya Pradesh and Pan-India.',
+    biography: 'Director at Namah Siddham Corporation Private Limited. Guiding corporate strategy, technological innovation, and long-term organizational expansion across Madhya Pradesh and Pan-India.',
+    displayOrder: 0,
+    isPublished: true,
+    linkedinUrl: 'https://linkedin.com/company/namahsiddham',
+    socialLinks: {
+      linkedin: 'https://linkedin.com/company/namahsiddham',
+    },
+  },
+  {
     _id: 'team_1',
     name: 'Board of Directors',
-    role: 'Corporate Governance & Executive Leadership',
-    designation: 'Corporate Governance & Executive Leadership',
+    role: 'Corporate Management',
+    designation: 'Corporate Management',
     bio: 'Guiding Namah Siddham Corporation Private Limited with a commitment to corporate integrity, sustainable platform aggregation, and transparent stakeholder value.',
     biography: 'Guiding Namah Siddham Corporation Private Limited with a commitment to corporate integrity, sustainable platform aggregation, and transparent stakeholder value.',
     displayOrder: 1,
+    isPublished: true,
     linkedinUrl: 'https://linkedin.com/company/namahsiddham',
     socialLinks: {
       linkedin: 'https://linkedin.com/company/namahsiddham',
