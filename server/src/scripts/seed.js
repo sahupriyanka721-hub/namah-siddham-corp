@@ -844,7 +844,7 @@ You can adjust cookie settings through your browser. Please note that disabling 
     console.log('[Seed] Seeding corporate leadership...');
     const leadership = [
       {
-        name: 'Arpit Jain',
+        name: 'Varsha Jain',
         designation: 'Director',
         biography:
           'Director at Namah Siddham Corporation Private Limited. Guiding corporate strategy, technological innovation, and long-term organizational expansion across Madhya Pradesh and Pan-India.',

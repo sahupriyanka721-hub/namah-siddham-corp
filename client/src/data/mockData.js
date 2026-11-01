@@ -213,7 +213,7 @@ export const mockJobs = [
 export const mockTeam = [
   {
     _id: 'team_0',
-    name: 'Arpit Jain',
+    name: 'Varsha Jain',
     role: 'Director',
     designation: 'Director',
     bio: 'Director at Namah Siddham Corporation Private Limited. Guiding corporate strategy, technological innovation, and long-term organizational expansion across Madhya Pradesh and Pan-India.',
