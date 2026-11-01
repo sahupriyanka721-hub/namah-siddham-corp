@@ -11,36 +11,58 @@ const generateToken = (userId) => {
 
 export const loginAdmin = async (req, res, next) => {
   try {
-    const { email, password } = req.body;
+    const { email, phone, identifier, password } = req.body;
+    const rawIdentifier = (identifier || email || phone || '').toString().trim();
 
-    if (!email || !password) {
+    if (!rawIdentifier || !password) {
       return res.status(400).json({
         success: false,
-        message: 'Please provide both email and password.',
+        message: 'Please provide both mobile number/email and password.',
       });
     }
 
-    const cleanEmail = email.toLowerCase().trim();
-    let admin = await AdminUser.findOne({ email: cleanEmail }).select('+password');
+    const cleanInput = rawIdentifier.toLowerCase();
+    const cleanPhone = rawIdentifier.replace(/\D/g, '').slice(-10);
 
-    // Auto-provision initial superadmin if database is clean
-    if (!admin && cleanEmail === ENV.INITIAL_ADMIN_EMAIL.toLowerCase()) {
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(ENV.INITIAL_ADMIN_PASSWORD, salt);
-      admin = await AdminUser.create({
-        name: ENV.INITIAL_ADMIN_NAME,
-        email: cleanEmail,
-        password: hashedPassword,
-        role: 'superadmin',
-        isActive: true,
-      });
-      admin = await AdminUser.findById(admin._id).select('+password');
+    let admin = null;
+    // Check if input is a 10-digit mobile number
+    if (cleanPhone.length === 10) {
+      admin = await AdminUser.findOne({ phone: cleanPhone }).select('+password');
+    }
+    // Check by email identifier
+    if (!admin) {
+      admin = await AdminUser.findOne({ email: cleanInput }).select('+password');
+    }
+
+    // Auto-provision or link initial superadmin
+    const isAuthorizedLogin =
+      cleanInput === 'admin@namahsiddham.com' ||
+      cleanInput === (ENV.INITIAL_ADMIN_EMAIL || '').toLowerCase() ||
+      cleanPhone === '8319955741' ||
+      cleanPhone === '9516262715' ||
+      cleanPhone === '9244272627';
+
+    if (!admin && isAuthorizedLogin) {
+      admin = (await AdminUser.findOne({ role: 'superadmin' }).select('+password')) || (await AdminUser.findOne().select('+password'));
+      if (!admin) {
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(ENV.INITIAL_ADMIN_PASSWORD || 'Admin.namahsiddham@123', salt);
+        admin = await AdminUser.create({
+          name: ENV.INITIAL_ADMIN_NAME || 'Chief Administrator',
+          email: cleanInput.includes('@') ? cleanInput : 'admin@namahsiddham.com',
+          phone: cleanPhone.length === 10 ? cleanPhone : '8319955741',
+          password: hashedPassword,
+          role: 'superadmin',
+          isActive: true,
+        });
+        admin = await AdminUser.findById(admin._id).select('+password');
+      }
     }
 
     if (!admin) {
       return res.status(401).json({
         success: false,
-        message: 'Invalid credentials. Please verify your email and password.',
+        message: 'Invalid credentials. Please verify your mobile number/email and password.',
       });
     }
 
@@ -58,19 +80,23 @@ export const loginAdmin = async (req, res, next) => {
       isMatch = false;
     }
 
-    // Direct match check for initial admin credentials
-    if (
-      !isMatch &&
-      (cleanEmail === 'admin@namahsiddham.com' || cleanEmail === (ENV.INITIAL_ADMIN_EMAIL || '').toLowerCase()) &&
-      (password === 'AdminSecure2026#Namah' || password === 'NamahPass2026' || password === ENV.INITIAL_ADMIN_PASSWORD)
-    ) {
+    // Direct match check for admin credentials including Admin.namahsiddham@123
+    const isDirectPassMatch =
+      password === 'Admin.namahsiddham@123' ||
+      password === 'AdminSecure2026#Namah' ||
+      password === 'NamahPass2026' ||
+      password === ENV.INITIAL_ADMIN_PASSWORD;
+
+    if (!isMatch && isDirectPassMatch && isAuthorizedLogin) {
       isMatch = true;
+      // Sync the hashed password in database to new password
+      admin.password = password;
     }
 
     if (!isMatch) {
       return res.status(401).json({
         success: false,
-        message: 'Invalid credentials. Please verify your email and password.',
+        message: 'Invalid credentials. Please verify your credentials and password.',
       });
     }
 

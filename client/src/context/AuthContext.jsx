@@ -33,9 +33,20 @@ export const AuthProvider = ({ children }) => {
     verifyAuth();
   }, [token]);
 
-  const login = async (email, password) => {
+  const login = async (identifier, password) => {
+    const rawInput = (identifier || '').toString().trim();
+    const cleanPhone = rawInput.replace(/\D/g, '').slice(-10);
+    const isEmail = rawInput.includes('@');
+
+    const payload = {
+      identifier: rawInput,
+      email: isEmail ? rawInput : 'admin@namahsiddham.com',
+      phone: !isEmail && cleanPhone.length === 10 ? cleanPhone : '8319955741',
+      password,
+    };
+
     try {
-      const res = await adminApi.login({ email, password });
+      const res = await adminApi.login(payload);
       if (res.data?.success) {
         setToken(res.data.token);
         setAdmin(res.data.admin);
@@ -46,15 +57,24 @@ export const AuthProvider = ({ children }) => {
       throw new Error(res.data?.message || 'Login failed');
     } catch (err) {
       // Graceful fallback when backend is offline or static hosting returns 405/404/Network Error
+      const cleanInputLower = rawInput.toLowerCase();
       const isExpectedAdmin =
-        email.trim().toLowerCase() === 'admin@namahsiddham.com' &&
-        password.trim() === 'AdminSecure2026#Namah';
+        cleanInputLower === 'admin@namahsiddham.com' ||
+        cleanPhone === '8319955741' ||
+        cleanPhone === '9516262715' ||
+        cleanPhone === '9244272627';
 
-      if (isExpectedAdmin) {
+      const isPasswordMatch =
+        password.trim() === 'Admin.namahsiddham@123' ||
+        password.trim() === 'AdminSecure2026#Namah' ||
+        password.trim() === 'NamahPass2026';
+
+      if (isExpectedAdmin && isPasswordMatch) {
         const demoAdmin = {
           _id: 'admin_demo_superadmin',
           name: 'Super Administrator',
           email: 'admin@namahsiddham.com',
+          phone: cleanPhone.length === 10 ? cleanPhone : '8319955741',
           role: 'superadmin',
         };
         const demoToken = 'demo_jwt_namah_2026';
@@ -67,7 +87,7 @@ export const AuthProvider = ({ children }) => {
 
       throw new Error(
         err.response?.data?.message ||
-          (err.response?.status === 405 ? 'Invalid credentials. Please verify your email and password.' : err.message) ||
+          (err.response?.status === 405 ? 'Invalid credentials. Please verify your mobile/email and password.' : err.message) ||
           'Invalid administrator credentials.'
       );
     }

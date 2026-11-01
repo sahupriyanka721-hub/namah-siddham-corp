@@ -10,7 +10,7 @@ export const ENV = {
   COOKIE_SECRET: process.env.COOKIE_SECRET || 'cookie_secret_namah_siddham_key_secure',
   CLIENT_URL: process.env.CLIENT_URL || 'http://localhost:5173',
   INITIAL_ADMIN_EMAIL: process.env.INITIAL_ADMIN_EMAIL || 'admin@namahsiddham.com',
-  INITIAL_ADMIN_PASSWORD: process.env.INITIAL_ADMIN_PASSWORD || 'AdminSecure2026#Namah',
+  INITIAL_ADMIN_PASSWORD: process.env.INITIAL_ADMIN_PASSWORD || 'Admin.namahsiddham@123',
   INITIAL_ADMIN_NAME: process.env.INITIAL_ADMIN_NAME || 'Chief Administrator',
   UPLOAD_DIR: process.env.UPLOAD_DIR || 'uploads',
   MAX_FILE_SIZE_MB: parseInt(process.env.MAX_FILE_SIZE_MB || '5', 10),
