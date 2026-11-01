@@ -81,7 +81,6 @@ export const AdminLogin = () => {
       setSuccessMsg('OTP sent successfully.');
       const code = res?.otp || '123456';
       setReceivedOtp(code);
-      setOtp(code); // Auto-fill OTP directly into input field
     } catch (err) {
       setError(err.message || 'Failed to send OTP. Please try again.');
     } finally {
@@ -307,9 +306,11 @@ export const AdminLogin = () => {
                           </span>
                           <input
                             type="tel"
+                            name="admin_otp_phone"
                             maxLength="10"
                             required
-                            placeholder="Enter mobile number"
+                            autoComplete="off"
+                            placeholder=""
                             value={phone}
                             onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
                             className="w-full px-3 py-2.5 text-sm bg-transparent text-brand-navy placeholder:text-surface-400 focus:outline-none font-medium tracking-wider"
@@ -352,10 +353,12 @@ export const AdminLogin = () => {
                           <KeyRound className="w-4 h-4 text-surface-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                           <input
                             type="text"
+                            name="admin_otp_code"
                             maxLength="6"
                             required
                             autoFocus
-                            placeholder="••••••"
+                            autoComplete="off"
+                            placeholder=""
                             value={otp}
                             onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
                             className="w-full pl-10 pr-4 py-3 text-center text-lg sm:text-xl font-mono tracking-[0.5em] bg-surface-50/80 border border-surface-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue focus:bg-white text-brand-navy font-bold transition-all shadow-inner"
@@ -419,9 +422,10 @@ export const AdminLogin = () => {
                       <Smartphone className="w-4 h-4 text-surface-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                       <input
                         type="text"
+                        name="admin_mobile_id"
                         required
                         autoComplete="off"
-                        placeholder="Enter mobile number (e.g. 8319955741) or email"
+                        placeholder=""
                         value={identifier}
                         onChange={(e) => setIdentifier(e.target.value)}
                         className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm bg-surface-50/80 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue focus:bg-white text-brand-navy placeholder:text-surface-400 transition-all shadow-inner font-medium"
@@ -437,9 +441,10 @@ export const AdminLogin = () => {
                       <Lock className="w-4 h-4 text-surface-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                       <input
                         type={showPassword ? 'text' : 'password'}
+                        name="admin_secret_key"
                         required
                         autoComplete="new-password"
-                        placeholder="••••••••••••"
+                        placeholder=""
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         className="w-full pl-10 pr-11 py-2.5 text-xs sm:text-sm bg-surface-50/80 border border-surface-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-brand-blue focus:bg-white text-brand-navy placeholder:text-surface-400 transition-all shadow-inner"
