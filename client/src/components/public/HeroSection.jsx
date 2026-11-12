@@ -26,7 +26,8 @@ export const heroSlides = [
     image: '/assets/services/web-development.jpg',
     fallbackImage: '/assets/services/web-dev.jpg',
     icon: Code2,
-    alt: 'Professional website displayed on desktop monitor and laptop UI - Namah Siddham Corporation',
+    alt: 'Static Website Development showcase with HTML5, CSS3, JS, Bootstrap - Namah Siddham Corporation',
+    hasGraphicBanner: true,
   },
   {
     id: 'custom-software',
@@ -37,7 +38,8 @@ export const heroSlides = [
     image: '/assets/services/custom-software.jpg',
     fallbackImage: '/assets/services/software-dev.jpg',
     icon: Cpu,
-    alt: 'Enterprise custom software dashboard with analytics and workflow screens - Namah Siddham Corporation',
+    alt: 'Custom Software Development with React, Node, MongoDB, Cloud Hosting - Namah Siddham Corporation',
+    hasGraphicBanner: true,
   },
   {
     id: 'mobile-apps',
@@ -48,7 +50,8 @@ export const heroSlides = [
     image: '/assets/services/mobile-apps.jpg',
     fallbackImage: '/assets/services/mobile-dev.jpg',
     icon: Smartphone,
-    alt: 'Modern smartphones displaying attractive mobile application UI/UX - Namah Siddham Corporation',
+    alt: 'Mobile Application Development with Flutter, Dart, Firebase - Namah Siddham Corporation',
+    hasGraphicBanner: true,
   },
   {
     id: 'digital-marketing',
@@ -59,7 +62,8 @@ export const heroSlides = [
     image: '/assets/services/digital-marketing.jpg',
     fallbackImage: '/assets/services/custom-software.jpg',
     icon: TrendingUp,
-    alt: 'Digital marketing analytics dashboard with SEO and campaigns - Namah Siddham Corporation',
+    alt: 'Digital Marketing and SEO growth strategy analytics - Namah Siddham Corporation',
+    hasGraphicBanner: true,
   },
   {
     id: 'homeservixo',
@@ -71,6 +75,7 @@ export const heroSlides = [
     fallbackImage: '/assets/services/custom-software.jpg',
     icon: Wrench,
     alt: 'HomeServixo appliance repair and on-demand home service booking application - Namah Siddham Corporation',
+    hasGraphicBanner: false,
   },
   {
     id: 'carrento',
@@ -81,7 +86,8 @@ export const heroSlides = [
     image: '/assets/platforms/carrento.jpg',
     fallbackImage: '/assets/services/custom-software.jpg',
     icon: Car,
-    alt: 'Carrento premium car rental and smart mobility booking platform - Namah Siddham Corporation',
+    alt: 'Carrento premium car rental and smart mobility earning platform - Namah Siddham Corporation',
+    hasGraphicBanner: true,
   },
   {
     id: 'jainamshree',
@@ -93,6 +99,7 @@ export const heroSlides = [
     fallbackImage: '/assets/services/custom-software.jpg',
     icon: Store,
     alt: 'Jainamshree Jain community-focused spiritual and pooja essentials marketplace - Namah Siddham Corporation',
+    hasGraphicBanner: false,
   },
   {
     id: 'superiormart',
@@ -104,6 +111,7 @@ export const heroSlides = [
     fallbackImage: '/assets/services/custom-software.jpg',
     icon: ShoppingBag,
     alt: 'SuperiorMart multi-category digital shopping and e-commerce platform - Namah Siddham Corporation',
+    hasGraphicBanner: false,
   },
 ];
 
@@ -212,12 +220,12 @@ export const HeroSection = () => {
               }`}
               aria-hidden={!isActive}
             >
-              {/* Background 16:9 Image with gentle Ken Burns motion on active */}
+              {/* Background 16:9 Image with gentle Ken Burns motion on active (disabled for graphic banners to prevent cropping) */}
               <img
                 src={slide.image}
                 alt={slide.alt}
                 loading={index === 0 ? 'eager' : 'lazy'}
-                className={`w-full h-full object-cover object-center ${isActive ? 'hero-ken-burns' : ''}`}
+                className={`w-full h-full object-cover object-center ${isActive && !slide.hasGraphicBanner ? 'hero-ken-burns' : ''}`}
                 onError={(e) => {
                   if (slide.fallbackImage && e.target.src !== slide.fallbackImage) {
                     e.target.src = slide.fallbackImage;
@@ -225,14 +233,18 @@ export const HeroSection = () => {
                 }}
               />
 
-              {/* Subtle top dark gradient for counter visibility */}
-              <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
+              {/* Subtle top dark gradient for counter visibility - only for photo slides without built-in graphics */}
+              {!slide.hasGraphicBanner && (
+                <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
+              )}
 
               {/* Top Bar with Category Pill & Slide Counter */}
-              <div className="absolute top-3 sm:top-4 inset-x-3 sm:inset-x-5 flex items-center justify-between z-20 pointer-events-none">
+              <div className="absolute top-2.5 sm:top-3.5 inset-x-2.5 sm:inset-x-4 flex items-center justify-between z-20 pointer-events-none">
                 <span
-                  className={`inline-flex items-center space-x-1.5 text-[9px] sm:text-[10px] font-mono font-extrabold uppercase tracking-wider px-2.5 sm:px-3 py-1 rounded-full backdrop-blur-md shadow-sm ${
-                    slide.categoryColor === 'gold'
+                  className={`inline-flex items-center space-x-1.5 text-[9px] sm:text-[10px] font-mono font-extrabold uppercase tracking-wider px-2.5 sm:px-3 py-1 rounded-full backdrop-blur-md shadow-md ${
+                    slide.hasGraphicBanner
+                      ? 'bg-slate-950/80 text-sky-200 border border-sky-400/40'
+                      : slide.categoryColor === 'gold'
                       ? 'bg-amber-950/70 text-[#F5C542] border border-[#F5C542]/50'
                       : 'bg-slate-900/70 text-sky-300 border border-sky-400/40'
                   }`}
@@ -241,22 +253,28 @@ export const HeroSection = () => {
                   <span>{slide.category}</span>
                 </span>
 
-                <span className="font-mono text-[10px] sm:text-xs font-bold text-white/90 bg-black/40 backdrop-blur-md border border-white/20 px-2 sm:px-2.5 py-0.5 rounded-full shadow-sm">
+                <span className={`font-mono text-[10px] sm:text-xs font-bold px-2 sm:px-2.5 py-0.5 rounded-full backdrop-blur-md shadow-md ${
+                  slide.hasGraphicBanner
+                    ? 'text-white bg-slate-950/80 border border-white/20'
+                    : 'text-white/90 bg-black/40 border border-white/20'
+                }`}>
                   {String(index + 1).padStart(2, '0')} / {String(totalSlides).padStart(2, '0')}
                 </span>
               </div>
 
-              {/* Bottom Overlay with Subtle Dark Gradient */}
-              <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 pt-12 sm:pt-16 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent z-20 flex flex-col justify-end">
-                <div className="space-y-1 sm:space-y-1.5">
-                  <h3 className="font-heading font-black text-base sm:text-xl md:text-2xl text-white tracking-tight drop-shadow-md">
-                    {slide.title}
-                  </h3>
-                  <p className="text-[11px] sm:text-xs md:text-sm text-slate-200 leading-snug font-normal drop-shadow-sm line-clamp-2 max-w-xl">
-                    {slide.description}
-                  </p>
+              {/* Bottom Overlay with Subtle Dark Gradient - rendered only for photo slides; graphic banners already feature full infographic typography */}
+              {!slide.hasGraphicBanner && (
+                <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 pt-12 sm:pt-16 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-transparent z-20 flex flex-col justify-end">
+                  <div className="space-y-1 sm:space-y-1.5">
+                    <h3 className="font-heading font-black text-base sm:text-xl md:text-2xl text-white tracking-tight drop-shadow-md">
+                      {slide.title}
+                    </h3>
+                    <p className="text-[11px] sm:text-xs md:text-sm text-slate-200 leading-snug font-normal drop-shadow-sm line-clamp-2 max-w-xl">
+                      {slide.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           );
         })}
