@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import './HeroSection.css';
 
-// 8 Slider slides strictly in the specified order with verified 16:9 images
+// 5 Premium Slider slides with newly uploaded branded marketing graphics
 export const heroSlides = [
   {
     id: 'web-dev',
@@ -66,18 +66,6 @@ export const heroSlides = [
     hasGraphicBanner: true,
   },
   {
-    id: 'homeservixo',
-    category: 'OUR PRODUCTS',
-    categoryColor: 'gold',
-    title: 'HomeServixo',
-    description: 'Connecting customers with reliable home service solutions.',
-    image: '/assets/platforms/homeservixo.jpg',
-    fallbackImage: '/assets/services/custom-software.jpg',
-    icon: Wrench,
-    alt: 'HomeServixo appliance repair and on-demand home service booking application - Namah Siddham Corporation',
-    hasGraphicBanner: false,
-  },
-  {
     id: 'carrento',
     category: 'OUR PRODUCTS',
     categoryColor: 'gold',
@@ -88,30 +76,6 @@ export const heroSlides = [
     icon: Car,
     alt: 'Carrento premium car rental and smart mobility earning platform - Namah Siddham Corporation',
     hasGraphicBanner: true,
-  },
-  {
-    id: 'jainamshree',
-    category: 'OUR PRODUCTS',
-    categoryColor: 'gold',
-    title: 'Jainamshree',
-    description: 'Bringing community, culture and commerce together.',
-    image: '/assets/platforms/jainamshree.jpg',
-    fallbackImage: '/assets/services/custom-software.jpg',
-    icon: Store,
-    alt: 'Jainamshree Jain community-focused spiritual and pooja essentials marketplace - Namah Siddham Corporation',
-    hasGraphicBanner: false,
-  },
-  {
-    id: 'superiormart',
-    category: 'OUR PRODUCTS',
-    categoryColor: 'gold',
-    title: 'SuperiorMart',
-    description: 'A digital marketplace for everyday shopping needs.',
-    image: '/assets/platforms/superiormart.jpg',
-    fallbackImage: '/assets/services/custom-software.jpg',
-    icon: ShoppingBag,
-    alt: 'SuperiorMart multi-category digital shopping and e-commerce platform - Namah Siddham Corporation',
-    hasGraphicBanner: false,
   },
 ];
 
