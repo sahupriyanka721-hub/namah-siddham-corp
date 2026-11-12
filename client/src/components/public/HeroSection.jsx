@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import './HeroSection.css';
 
-// 5 Premium Slider slides with newly uploaded branded marketing graphics
+// 7 Premium Slider slides with newly uploaded branded marketing graphics
 export const heroSlides = [
   {
     id: 'web-dev',
@@ -66,15 +66,39 @@ export const heroSlides = [
     hasGraphicBanner: true,
   },
   {
+    id: 'homeservixo',
+    category: 'OUR PRODUCTS',
+    categoryColor: 'gold',
+    title: 'HomeServixo',
+    description: 'Your All-in-One Home Appliances Solution: Repair, Buy, and Upgrade.',
+    image: '/assets/platforms/homeservixo.jpg',
+    fallbackImage: '/assets/services/custom-software.jpg',
+    icon: Wrench,
+    alt: 'HomeServixo Repair Seva appliance repair and technician booking platform - Namah Siddham Corporation',
+    hasGraphicBanner: true,
+  },
+  {
     id: 'carrento',
     category: 'OUR PRODUCTS',
     categoryColor: 'gold',
     title: 'Carrento',
-    description: 'Making car rentals and mobility more convenient.',
+    description: 'Drive Your Way, Explore More. Rent cars for self-drive or with driver anytime, anywhere.',
     image: '/assets/platforms/carrento.jpg',
     fallbackImage: '/assets/services/custom-software.jpg',
     icon: Car,
-    alt: 'Carrento premium car rental and smart mobility earning platform - Namah Siddham Corporation',
+    alt: 'Carrento premium car rental and smart mobility booking platform - Namah Siddham Corporation',
+    hasGraphicBanner: true,
+  },
+  {
+    id: 'jainamshree',
+    category: 'OUR PRODUCTS',
+    categoryColor: 'gold',
+    title: 'Jainamshree',
+    description: 'Your One-Stop Destination for Jain Community Products, Puja Essentials, and Literature.',
+    image: '/assets/platforms/jainamshree.jpg',
+    fallbackImage: '/assets/services/custom-software.jpg',
+    icon: Store,
+    alt: 'Jainamshree pure pious Jain community e-commerce marketplace - Namah Siddham Corporation',
     hasGraphicBanner: true,
   },
 ];
