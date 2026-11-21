@@ -19,7 +19,9 @@ import {
   X,
   ExternalLink,
   ChevronRight,
+  ShieldCheck,
 } from 'lucide-react';
+import { useAuth } from '../../context/AuthContext';
 
 const menuGroups = [
   {
@@ -65,6 +67,8 @@ const menuGroups = [
 ];
 
 export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
+  const { admin } = useAuth();
+
   return (
     <>
       {/* Mobile Backdrop */}
@@ -157,6 +161,45 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
               })}
             </div>
           ))}
+        </div>
+
+        {/* Pinned Admin Profile Quick Access Card */}
+        <div className="p-3 border-t border-[#1B2A4A] bg-[#070D1F]/50">
+          <NavLink
+            to="/admin/profile"
+            onClick={() => setMobileOpen(false)}
+            className={({ isActive }) =>
+              `flex items-center space-x-3 p-2.5 rounded-2xl transition-all duration-200 border ${
+                isActive
+                  ? 'bg-gradient-to-r from-brand-blue to-blue-600 text-white font-bold border-white/20 shadow-md ring-1 ring-white/10'
+                  : 'bg-[#13203C]/90 hover:bg-[#1B2A4A] text-slate-200 border-[#1B2A4A] hover:border-brand-gold/40'
+              }`
+            }
+          >
+            <div className="relative shrink-0">
+              {admin?.avatarUrl ? (
+                <img
+                  src={admin.avatarUrl}
+                  alt={admin.name || 'Admin'}
+                  className="w-9 h-9 rounded-xl object-cover ring-2 ring-brand-gold/60"
+                />
+              ) : (
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-blue to-blue-600 text-white flex items-center justify-center font-bold text-xs ring-2 ring-brand-gold/60">
+                  <UserCircle className="w-5 h-5" />
+                </div>
+              )}
+              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-[#0B132B]" />
+            </div>
+            <div className="flex-1 min-w-0 text-left">
+              <div className="text-xs font-bold truncate text-white">
+                {admin?.name || 'Administrator'}
+              </div>
+              <div className="text-[10px] text-brand-gold font-mono uppercase tracking-wider flex items-center justify-between">
+                <span>Admin Profile</span>
+                <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+              </div>
+            </div>
+          </NavLink>
         </div>
 
         {/* Corporate Identity & View Public Site Footer */}

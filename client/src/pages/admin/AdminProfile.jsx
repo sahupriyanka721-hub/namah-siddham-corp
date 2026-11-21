@@ -43,6 +43,20 @@ export const AdminProfile = () => {
   const [statusMessage, setStatusMessage] = useState(null);
 
   useEffect(() => {
+    const fetchLatestProfile = async () => {
+      try {
+        const res = await adminApi.getMe();
+        if (res.data?.admin) {
+          updateAdminProfile(res.data.admin);
+        }
+      } catch (err) {
+        console.error('Could not refresh admin profile:', err);
+      }
+    };
+    fetchLatestProfile();
+  }, []);
+
+  useEffect(() => {
     if (admin) {
       setProfileForm({
         name: admin.name || '',

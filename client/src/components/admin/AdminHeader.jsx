@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu, LogOut, User, ExternalLink, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Menu, LogOut, User, ExternalLink, ShieldCheck, UserCircle } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
 export const AdminHeader = ({ setMobileOpen, pageTitle }) => {
@@ -48,18 +49,22 @@ export const AdminHeader = ({ setMobileOpen, pageTitle }) => {
           <ExternalLink className="w-3 h-3" />
         </a>
 
-        {/* Admin User Info Chip */}
+        {/* Admin User Info Chip - Clickable to open Admin Profile */}
         {admin && (
-          <div className="flex items-center space-x-2.5 sm:pl-2 sm:border-l sm:border-surface-200">
-            <div className="relative">
+          <Link
+            to="/admin/profile"
+            title="View & Edit Admin Profile"
+            className="flex items-center space-x-2.5 sm:pl-2 sm:border-l sm:border-surface-200 p-1.5 rounded-2xl hover:bg-sky-50 transition-all border border-transparent hover:border-sky-200 group"
+          >
+            <div className="relative shrink-0">
               {admin.avatarUrl ? (
                 <img
                   src={admin.avatarUrl}
                   alt={admin.name || 'Admin'}
-                  className="w-8 h-8 rounded-full object-cover ring-2 ring-brand-gold/50 shadow-xs"
+                  className="w-8 h-8 rounded-full object-cover ring-2 ring-brand-gold/50 group-hover:ring-brand-blue shadow-xs transition-all"
                 />
               ) : (
-                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-blue to-blue-600 text-white flex items-center justify-center font-bold text-xs ring-2 ring-brand-gold/50 shadow-xs">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-blue to-blue-600 text-white flex items-center justify-center font-bold text-xs ring-2 ring-brand-gold/50 group-hover:ring-brand-blue shadow-xs transition-all">
                   <User className="w-4 h-4" />
                 </div>
               )}
@@ -69,14 +74,14 @@ export const AdminHeader = ({ setMobileOpen, pageTitle }) => {
               />
             </div>
             <div className="hidden sm:block text-left leading-tight">
-              <div className="text-xs font-bold text-brand-navy truncate max-w-[120px]">
+              <div className="text-xs font-bold text-brand-navy group-hover:text-brand-blue transition-colors truncate max-w-[120px]">
                 {admin.name || 'Administrator'}
               </div>
               <div className="text-[10px] text-brand-orange font-bold uppercase tracking-wider font-mono">
                 {admin.role || 'Super Admin'}
               </div>
             </div>
-          </div>
+          </Link>
         )}
 
         {/* Logout Button */}

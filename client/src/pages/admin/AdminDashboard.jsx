@@ -19,6 +19,7 @@ import {
   Activity,
   Calendar,
   Building2,
+  UserCircle,
 } from 'lucide-react';
 import { adminApi } from '../../api/adminApi';
 import { StatCard } from '../../components/admin/StatCard';
@@ -92,6 +93,14 @@ export const AdminDashboard = () => {
           <div className="flex flex-wrap lg:flex-col xl:flex-row items-start lg:items-end gap-3 shrink-0">
             {/* Quick action buttons */}
             <div className="flex items-center gap-2">
+              <Link
+                to="/admin/profile"
+                className="inline-flex items-center px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/20 transition-all hover:scale-[1.02] shadow-sm"
+              >
+                <UserCircle className="w-3.5 h-3.5 mr-1.5 text-brand-gold" />
+                <span>My Profile</span>
+              </Link>
+
               <Link
                 to="/admin/services"
                 className="inline-flex items-center px-4 py-2 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 hover:from-blue-600 hover:to-brand-blue text-white text-xs font-bold shadow-md shadow-brand-blue/30 border border-white/20 transition-all hover:scale-[1.02]"
