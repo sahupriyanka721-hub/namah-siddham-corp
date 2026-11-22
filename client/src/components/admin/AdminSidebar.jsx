@@ -178,10 +178,15 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
             }
           >
             <div className="relative shrink-0">
-              {admin?.avatarUrl ? (
+              {admin?.avatarUrl || admin?.localAvatar ? (
                 <img
-                  src={getAvatarSrc(admin.avatarUrl)}
+                  src={getAvatarSrc(admin.avatarUrl || admin.localAvatar)}
                   alt={admin.name || 'Admin'}
+                  onError={(e) => {
+                    if (admin.localAvatar && e.currentTarget.src !== admin.localAvatar) {
+                      e.currentTarget.src = admin.localAvatar;
+                    }
+                  }}
                   className="w-9 h-9 rounded-xl object-cover ring-2 ring-brand-gold/60"
                 />
               ) : (

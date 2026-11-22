@@ -58,10 +58,15 @@ export const AdminHeader = ({ setMobileOpen, pageTitle }) => {
             className="flex items-center space-x-2.5 sm:pl-2 sm:border-l sm:border-surface-200 p-1.5 rounded-2xl hover:bg-sky-50 transition-all border border-transparent hover:border-sky-200 group"
           >
             <div className="relative shrink-0">
-              {admin.avatarUrl ? (
+              {admin.avatarUrl || admin.localAvatar ? (
                 <img
-                  src={getAvatarSrc(admin.avatarUrl)}
+                  src={getAvatarSrc(admin.avatarUrl || admin.localAvatar)}
                   alt={admin.name || 'Admin'}
+                  onError={(e) => {
+                    if (admin.localAvatar && e.currentTarget.src !== admin.localAvatar) {
+                      e.currentTarget.src = admin.localAvatar;
+                    }
+                  }}
                   className="w-8 h-8 rounded-full object-cover ring-2 ring-brand-gold/50 group-hover:ring-brand-blue shadow-xs transition-all"
                 />
               ) : (

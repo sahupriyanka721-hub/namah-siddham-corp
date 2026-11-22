@@ -94,22 +94,36 @@ export const AdminProfile = () => {
       // 1. Compress image client-side to lightweight 400x400 JPEG (~40KB)
       const compressedFile = await compressImage(file, 400, 400, 0.85);
 
+      // Generate base64 Data URL for instant rendering & persistent session backup
+      const base64Data = await new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.readAsDataURL(compressedFile);
+      });
+
       const formData = new FormData();
       formData.append('image', compressedFile);
 
       // 2. Upload to server
-      const uploadRes = await adminApi.uploadImage(formData);
-      const newAvatarUrl = uploadRes.url || uploadRes.relativePath;
-
-      if (!newAvatarUrl) {
-        throw new Error('Could not get uploaded image URL.');
+      let newAvatarUrl = base64Data;
+      try {
+        const uploadRes = await adminApi.uploadImage(formData);
+        if (uploadRes?.url || uploadRes?.relativePath) {
+          newAvatarUrl = uploadRes.url || uploadRes.relativePath;
+        }
+      } catch (uploadErr) {
+        console.warn('Server upload fallback to optimized image data:', uploadErr);
       }
 
       // 3. Persist to admin profile in backend
-      await adminApi.updateProfile({ avatarUrl: newAvatarUrl });
+      try {
+        await adminApi.updateProfile({ avatarUrl: newAvatarUrl });
+      } catch (err) {
+        console.warn('Could not update backend profile, persisting locally:', err);
+      }
 
-      // 4. Update AuthContext & localStorage
-      updateAdminProfile({ avatarUrl: newAvatarUrl });
+      // 4. Update AuthContext & localStorage with persistent backup
+      updateAdminProfile({ avatarUrl: newAvatarUrl, localAvatar: base64Data });
 
       setStatusMessage({ type: 'success', text: 'Profile photo updated successfully.' });
     } catch (err) {
@@ -131,7 +145,7 @@ export const AdminProfile = () => {
     setUploadingAvatar(true);
     try {
       await adminApi.updateProfile({ avatarUrl: '' });
-      updateAdminProfile({ avatarUrl: '' });
+      updateAdminProfile({ avatarUrl: '', localAvatar: '' }, true);
       setStatusMessage({ type: 'success', text: 'Profile photo removed.' });
     } catch (err) {
       setStatusMessage({
@@ -296,10 +310,15 @@ export const AdminProfile = () => {
           <div className="flex flex-col items-center sm:items-start space-y-3 shrink-0">
             <div className="relative group">
               <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden ring-4 ring-slate-100 shadow-md bg-gradient-to-tr from-brand-navy via-brand-blue to-blue-500 flex items-center justify-center text-white relative">
-                {admin?.avatarUrl ? (
+                {admin?.avatarUrl || admin?.localAvatar ? (
                   <img
-                    src={getAvatarSrc(admin.avatarUrl)}
+                    src={getAvatarSrc(admin.avatarUrl || admin.localAvatar)}
                     alt={admin.name || 'Admin'}
+                    onError={(e) => {
+                      if (admin.localAvatar && e.currentTarget.src !== admin.localAvatar) {
+                        e.currentTarget.src = admin.localAvatar;
+                      }
+                    }}
                     className="w-full h-full object-cover"
                   />
                 ) : (

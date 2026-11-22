@@ -67,14 +67,21 @@ export const adminApi = {
   getMe: () =>
     withFallback(
       () => apiClient.get('/auth/me'),
-      {
-        success: true,
-        admin: {
-          _id: 'admin_demo_superadmin',
-          name: 'Chief Administrator',
-          email: 'admin@namahsiddham.com',
-          role: 'superadmin',
-        },
+      () => {
+        const persistent = JSON.parse(localStorage.getItem('namah_admin_persistent_profile') || '{}');
+        const session = JSON.parse(localStorage.getItem('namah_admin_user') || '{}');
+        return {
+          success: true,
+          admin: {
+            _id: 'admin_demo_superadmin',
+            name: session.name || persistent.name || 'Chief Administrator',
+            email: session.email || persistent.email || 'admin@namahsiddham.com',
+            phone: session.phone || persistent.phone || '8319955741',
+            role: 'superadmin',
+            avatarUrl: session.avatarUrl || persistent.avatarUrl || '',
+            localAvatar: session.localAvatar || persistent.localAvatar || '',
+          },
+        };
       }
     ),
   changePassword: (data) =>
@@ -87,8 +94,10 @@ export const adminApi = {
       () => apiClient.put('/auth/profile', data),
       () => {
         const current = JSON.parse(localStorage.getItem('namah_admin_user') || '{}');
-        const updated = { ...current, ...data };
+        const persistent = JSON.parse(localStorage.getItem('namah_admin_persistent_profile') || '{}');
+        const updated = { ...persistent, ...current, ...data };
         localStorage.setItem('namah_admin_user', JSON.stringify(updated));
+        localStorage.setItem('namah_admin_persistent_profile', JSON.stringify(updated));
         return { success: true, message: 'Profile updated successfully.', admin: updated };
       }
     ),
