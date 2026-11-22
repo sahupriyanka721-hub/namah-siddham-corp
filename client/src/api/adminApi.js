@@ -95,7 +95,7 @@ export const adminApi = {
   uploadImage: async (formData) => {
     try {
       const res = await apiClient.post('/upload/image', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+        headers: { 'Content-Type': undefined },
       });
       return res.data;
     } catch (err) {

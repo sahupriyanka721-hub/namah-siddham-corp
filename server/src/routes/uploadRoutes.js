@@ -10,13 +10,20 @@ router.post('/image', protectAdmin, upload.single('image'), (req, res) => {
     return res.status(400).json({ success: false, message: 'No file uploaded.' });
   }
 
-  // Normalize path for web
+  // Determine base host (Render, local, or custom domain)
+  const isLocal = req.hostname === 'localhost' || req.hostname === '127.0.0.1';
+  const protocol = req.headers['x-forwarded-proto'] || (isLocal ? req.protocol : 'https');
+  const host = req.get('host') || 'namah-siddham-corp.onrender.com';
+  const baseUrl = `${protocol}://${host}`;
+
   const relativePath = `/uploads/images/${req.file.filename}`;
+  const fullUrl = `${baseUrl}${relativePath}`;
 
   res.status(200).json({
     success: true,
     message: 'Image uploaded successfully.',
-    url: relativePath,
+    url: fullUrl,
+    relativePath,
     filename: req.file.filename,
     size: req.file.size,
   });
@@ -28,12 +35,19 @@ router.post('/document', upload.single('document'), (req, res) => {
     return res.status(400).json({ success: false, message: 'No file uploaded.' });
   }
 
+  const isLocal = req.hostname === 'localhost' || req.hostname === '127.0.0.1';
+  const protocol = req.headers['x-forwarded-proto'] || (isLocal ? req.protocol : 'https');
+  const host = req.get('host') || 'namah-siddham-corp.onrender.com';
+  const baseUrl = `${protocol}://${host}`;
+
   const relativePath = `/uploads/documents/${req.file.filename}`;
+  const fullUrl = `${baseUrl}${relativePath}`;
 
   res.status(200).json({
     success: true,
     message: 'Document uploaded successfully.',
-    url: relativePath,
+    url: fullUrl,
+    relativePath,
     filename: req.file.filename,
     size: req.file.size,
   });

@@ -164,7 +164,21 @@ export const AuthProvider = ({ children }) => {
   const updateAdminProfile = (updatedData) => {
     setAdmin((prev) => {
       const merged = { ...prev, ...updatedData };
-      localStorage.setItem('namah_admin_user', JSON.stringify(merged));
+      try {
+        localStorage.setItem('namah_admin_user', JSON.stringify(merged));
+      } catch (err) {
+        console.warn('Could not store full admin in localStorage (quota):', err);
+        try {
+          // If quota exceeded, store without large base64 avatar
+          const safeCopy = { ...merged };
+          if (safeCopy.avatarUrl && safeCopy.avatarUrl.startsWith('data:')) {
+            safeCopy.avatarUrl = '';
+          }
+          localStorage.setItem('namah_admin_user', JSON.stringify(safeCopy));
+        } catch (e) {
+          // Ignore fallback quota error
+        }
+      }
       return merged;
     });
   };

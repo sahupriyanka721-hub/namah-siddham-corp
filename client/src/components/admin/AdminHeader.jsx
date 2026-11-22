@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, LogOut, User, ExternalLink, ShieldCheck, UserCircle } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { getAvatarSrc } from '../../utils/imageCompressor';
 
 export const AdminHeader = ({ setMobileOpen, pageTitle }) => {
   const { admin, logout } = useAuth();
@@ -59,7 +60,7 @@ export const AdminHeader = ({ setMobileOpen, pageTitle }) => {
             <div className="relative shrink-0">
               {admin.avatarUrl ? (
                 <img
-                  src={admin.avatarUrl}
+                  src={getAvatarSrc(admin.avatarUrl)}
                   alt={admin.name || 'Admin'}
                   className="w-8 h-8 rounded-full object-cover ring-2 ring-brand-gold/50 group-hover:ring-brand-blue shadow-xs transition-all"
                 />

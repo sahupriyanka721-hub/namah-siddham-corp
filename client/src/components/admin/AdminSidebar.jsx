@@ -22,6 +22,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { getAvatarSrc } from '../../utils/imageCompressor';
 
 const menuGroups = [
   {
@@ -179,7 +180,7 @@ export const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
             <div className="relative shrink-0">
               {admin?.avatarUrl ? (
                 <img
-                  src={admin.avatarUrl}
+                  src={getAvatarSrc(admin.avatarUrl)}
                   alt={admin.name || 'Admin'}
                   className="w-9 h-9 rounded-xl object-cover ring-2 ring-brand-gold/60"
                 />

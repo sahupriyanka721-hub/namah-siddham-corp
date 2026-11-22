@@ -18,6 +18,7 @@ import {
 import { useAuth } from '../../context/AuthContext';
 import { adminApi } from '../../api/adminApi';
 import { Button } from '../../components/common/Button';
+import { compressImage, getAvatarSrc } from '../../utils/imageCompressor';
 
 export const AdminProfile = () => {
   const { admin, updateAdminProfile } = useAuth();
@@ -80,9 +81,9 @@ export const AdminProfile = () => {
       return;
     }
 
-    // Validate size (max 5MB)
-    if (file.size > 5 * 1024 * 1024) {
-      setStatusMessage({ type: 'error', text: 'Image size should not exceed 5MB.' });
+    // Validate size (max 25MB before compression)
+    if (file.size > 25 * 1024 * 1024) {
+      setStatusMessage({ type: 'error', text: 'Image size should not exceed 25MB.' });
       return;
     }
 
@@ -90,18 +91,29 @@ export const AdminProfile = () => {
     setUploadingAvatar(true);
 
     try {
+      // 1. Compress image client-side to lightweight 400x400 JPEG (~40KB)
+      const compressedFile = await compressImage(file, 400, 400, 0.85);
+
       const formData = new FormData();
-      formData.append('image', file);
+      formData.append('image', compressedFile);
 
+      // 2. Upload to server
       const uploadRes = await adminApi.uploadImage(formData);
-      const newAvatarUrl = uploadRes.url;
+      const newAvatarUrl = uploadRes.url || uploadRes.relativePath;
 
-      // Persist to admin profile
+      if (!newAvatarUrl) {
+        throw new Error('Could not get uploaded image URL.');
+      }
+
+      // 3. Persist to admin profile in backend
       await adminApi.updateProfile({ avatarUrl: newAvatarUrl });
+
+      // 4. Update AuthContext & localStorage
       updateAdminProfile({ avatarUrl: newAvatarUrl });
 
       setStatusMessage({ type: 'success', text: 'Profile photo updated successfully.' });
     } catch (err) {
+      console.error('Avatar upload error:', err);
       setStatusMessage({
         type: 'error',
         text: err.response?.data?.message || err.message || 'Failed to upload profile photo.',
@@ -286,7 +298,7 @@ export const AdminProfile = () => {
               <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden ring-4 ring-slate-100 shadow-md bg-gradient-to-tr from-brand-navy via-brand-blue to-blue-500 flex items-center justify-center text-white relative">
                 {admin?.avatarUrl ? (
                   <img
-                    src={admin.avatarUrl}
+                    src={getAvatarSrc(admin.avatarUrl)}
                     alt={admin.name || 'Admin'}
                     className="w-full h-full object-cover"
                   />
@@ -357,7 +369,7 @@ export const AdminProfile = () => {
                   </>
                 )}
               </div>
-              <p className="text-[10px] text-slate-400">JPG, PNG or WEBP (Max 5MB)</p>
+              <p className="text-[10px] text-slate-400">JPG, PNG or WEBP (Auto-compressed & optimized)</p>
             </div>
           </div>
 
